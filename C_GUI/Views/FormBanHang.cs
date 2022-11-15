@@ -2,6 +2,7 @@
 {
     public partial class FormBanHang : Form
     {
+        //Test
         public FormBanHang()
         {
             InitializeComponent();

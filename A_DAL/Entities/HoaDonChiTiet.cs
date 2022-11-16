@@ -8,6 +8,7 @@
         public Guid Id { get; set; }
         public Guid IdChiTietGiay { get; set; }
         public Guid IdHoaDon { get; set; }
+        public int SoLuong { get; set; } = 0!;
         public float DonGia { get; set; } = 0!;
         public int TrangThai { get; set; } = 0!;
 

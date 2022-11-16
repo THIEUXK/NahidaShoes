@@ -8,6 +8,8 @@ namespace B_BUS.IServices
         bool Add(NhanVien obj);
         bool Update(NhanVien obj);
         bool Delete(NhanVien obj);
+        List<NhanVien> GetAll();
+        NhanVien? GetByMa(string? ma);
         List<NhanVienView> GetAllView();
     }
 }

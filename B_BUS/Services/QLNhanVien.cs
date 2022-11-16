@@ -49,6 +49,13 @@ namespace B_BUS.Services
             return igNhanVien.GetAll().Find(c => c.MaNhanVien == ma);
         }
 
+        public bool CheckMa(string ma)
+        {
+            //checkma
+
+            return !igChucVu.GetAll().Any(c => c.MaChucVu == ma);
+        }
+
         public List<NhanVienView> GetAllView()
         {
             // getall

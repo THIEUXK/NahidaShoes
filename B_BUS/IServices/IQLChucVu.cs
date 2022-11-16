@@ -8,6 +8,10 @@ namespace B_BUS.IServices
         bool Add(ChucVu obj);
         bool Update(ChucVu obj);
         bool Delete(ChucVu obj);
+        List<ChucVu> GetAll();
+        ChucVu? GetByMa(string? ma);
+        bool CheckMa(string ma);
+
         List<ChucVuView> GetAllView();
     }
 }

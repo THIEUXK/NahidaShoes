@@ -33,6 +33,25 @@ namespace B_BUS.Services
             return igQuyDoi.Delete(obj);
         }
 
+        public List<QuyDoi> GetAll()
+        {
+            //GetAll
+            return igQuyDoi.GetAll();
+        }
+
+        public QuyDoi? GetByMa(string? ma)
+        {
+            //GetByMa
+            return igQuyDoi.GetAll().Find(c => c.MaQuyDoi == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            //checkma
+
+            return !igQuyDoi.GetAll().Any(c => c.MaQuyDoi == ma);
+        }
+
         public List<QuyDoiView> GetAllView()
         {
             // getall

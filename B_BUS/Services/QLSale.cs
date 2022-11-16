@@ -33,6 +33,25 @@ namespace B_BUS.Services
             return igsale.Delete(obj);
         }
 
+        public List<Sale> GetAll()
+        {
+            //GetAll
+            return igsale.GetAll();
+        }
+
+        public Sale? GetByMa(string? ma)
+        {
+            //GetByMa
+            return igsale.GetAll().Find(c => c.MaGiamGia == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            //checkma
+
+            return !igsale.GetAll().Any(c => c.MaGiamGia == ma);
+        }
+
         public List<SaleView> GetAllView()
         {
             // getall

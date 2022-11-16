@@ -362,7 +362,7 @@ namespace ADAL.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     MaHoaDon = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ThoiGianTao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ThoiGianThanhToan = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ThoiGianThanhToan = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IdKhachHang = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdNhanVien = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     GiamGia = table.Column<float>(type: "real", nullable: false),
@@ -532,33 +532,33 @@ namespace ADAL.Migrations
                 columns: new[] { "Id", "KichCo", "MaKichCo", "TrangThai" },
                 values: new object[,]
                 {
-                    { new Guid("1fd05d20-4e5a-460d-b691-349c329652d3"), 1, "KC1", 0 },
-                    { new Guid("6237d811-d11b-4165-b6aa-50b70ebfd4c6"), 2, "KC2", 0 },
-                    { new Guid("874a7601-4307-43fc-ae03-5f48cf01bbe7"), 5, "KC5", 0 },
-                    { new Guid("90a04236-21ef-46e2-8935-1145c1c1f278"), 3, "KC3", 0 },
-                    { new Guid("dc22b62f-7f72-44ee-bbd6-26e47a36d937"), 4, "KC4", 0 }
+                    { new Guid("23fd8acd-35b6-4386-ad7a-eec87b3a949c"), 4, "KC4", 0 },
+                    { new Guid("4badeba9-ca83-4df3-9dce-aa97f3cc923d"), 3, "KC3", 0 },
+                    { new Guid("82886453-e29e-475f-94b7-b3dcbed00e6b"), 5, "KC5", 0 },
+                    { new Guid("9ab9876e-e95d-4f29-991b-b755863f0d1a"), 1, "KC1", 0 },
+                    { new Guid("9ba4ec54-67db-4353-bed7-02030a990156"), 2, "KC2", 0 }
                 });
 
             _ = migrationBuilder.InsertData(
                 table: "ChucVu",
                 columns: new[] { "Id", "MaChucVu", "TenChucVu", "TrangThai" },
-                values: new object[] { new Guid("a461059e-3569-475c-84d0-95f9394691c2"), "CV1", "Nhân viên", 0 });
+                values: new object[] { new Guid("b18389a1-efe4-440e-a8e2-61a0e8d8f592"), "CV1", "Nhân viên", 0 });
 
             _ = migrationBuilder.InsertData(
                 table: "CuaHang",
                 columns: new[] { "Id", "DiaChi", "MaCuaHang", "TenCuaHang", "TrangThai" },
-                values: new object[] { new Guid("fc833c25-ebb6-44c2-850c-71b309e2314e"), "Hà Nội", "CH1", "Cửa hàng 1", 0 });
+                values: new object[] { new Guid("df5f0843-f5a5-4a71-a76a-74c111f9e824"), "Hà Nội", "CH1", "Cửa hàng 1", 0 });
 
             _ = migrationBuilder.InsertData(
                 table: "Giay",
                 columns: new[] { "Id", "MaGiay", "TenGiay", "TrangThai" },
                 values: new object[,]
                 {
-                    { new Guid("06478ca2-009a-4d80-a144-34e41d8990dd"), "G1", "Giày 1", 0 },
-                    { new Guid("20dc1cf7-b2da-45da-928b-f3ed6721e8bb"), "G5", "Giày 5", 0 },
-                    { new Guid("24419e78-a601-4b78-9979-41bfd262df3a"), "G4", "Giày 4", 0 },
-                    { new Guid("914bb385-fa1f-4fc3-ac3c-1193298fa55c"), "G3", "Giày 3", 0 },
-                    { new Guid("e36b5c47-ff9c-4f62-96b8-e072ad92d17f"), "G2", "Giày 2", 0 }
+                    { new Guid("0018e408-089e-464f-b53b-ea525cff069c"), "G1", "Giày 1", 0 },
+                    { new Guid("5d7b56bc-378f-4187-b45c-a9f86f4468eb"), "G3", "Giày 3", 0 },
+                    { new Guid("73e21b9d-6cf2-44f0-9d1c-aeb8231d2e3b"), "G4", "Giày 4", 0 },
+                    { new Guid("7c1d2b44-6cb3-4024-bfa5-f27418790e49"), "G2", "Giày 2", 0 },
+                    { new Guid("f8ff2f30-3778-4d8f-b50a-e6f719cfda26"), "G5", "Giày 5", 0 }
                 });
 
             _ = migrationBuilder.InsertData(
@@ -566,11 +566,11 @@ namespace ADAL.Migrations
                 columns: new[] { "Id", "MaHangGiay", "TenHangGiay", "TrangThai" },
                 values: new object[,]
                 {
-                    { new Guid("08d3ccdd-b0dc-40c3-bba2-adc515e49c7b"), "HG1", "Hãng giày 1", 0 },
-                    { new Guid("89b0ae32-f859-491f-bbc2-8bdd25239fe7"), "HG2", "Hãng giày 2", 0 },
-                    { new Guid("ad9d752e-c060-46d0-aa45-799c246aa9c9"), "HG3", "Hãng giày 3", 0 },
-                    { new Guid("ec4283d1-7c60-4677-8ff9-97cc41b17381"), "HG4", "Hãng giày 4", 0 },
-                    { new Guid("f7c642c8-808d-4fd3-8acb-ab3ab6b20852"), "HG5", "Hãng giày 5", 0 }
+                    { new Guid("06194216-0662-4cb4-94c9-1ff1200fbaa7"), "HG3", "Hãng giày 3", 0 },
+                    { new Guid("183a85d3-d1bf-4162-a6d7-4a55c7fa68b3"), "HG5", "Hãng giày 5", 0 },
+                    { new Guid("d183b232-3f41-4a5a-8264-63a119947b4f"), "HG4", "Hãng giày 4", 0 },
+                    { new Guid("e3958fb7-5581-46fc-819f-4fba1d69b3e4"), "HG1", "Hãng giày 1", 0 },
+                    { new Guid("e670b84e-f7e5-48dd-ac49-f8a95efb8a28"), "HG2", "Hãng giày 2", 0 }
                 });
 
             _ = migrationBuilder.InsertData(
@@ -578,8 +578,8 @@ namespace ADAL.Migrations
                 columns: new[] { "Id", "DiaChi", "Email", "MaKhachHang", "NgaySinh", "Sdt", "SoCCCD", "TenKhachHang", "TrangThai" },
                 values: new object[,]
                 {
-                    { new Guid("a3cf634b-258f-4175-be33-13fc8f83b8ed"), "Hà Nội", null, "KH1", new DateTime(2022, 11, 14, 3, 39, 29, 739, DateTimeKind.Local).AddTicks(1837), "0385922775", "12345", "Khách hàng 1", 0 },
-                    { new Guid("d3834548-68d3-45f9-8605-9f211ad94806"), "Hà Nội", null, "KH2", new DateTime(2022, 11, 14, 3, 39, 29, 739, DateTimeKind.Local).AddTicks(1867), "0385922775", "01234", "Khách hàng 2", 0 }
+                    { new Guid("1c012dd2-73e1-4d49-a208-5ccc7475b8b8"), "Hà Nội", null, "KH1", new DateTime(2022, 11, 16, 0, 40, 17, 919, DateTimeKind.Local).AddTicks(1411), "0385922775", "12345", "Khách hàng 1", 0 },
+                    { new Guid("ab801907-3b74-43ec-b0d9-17dbbd3f19ff"), "Hà Nội", null, "KH2", new DateTime(2022, 11, 16, 0, 40, 17, 919, DateTimeKind.Local).AddTicks(1434), "0385922775", "01234", "Khách hàng 2", 0 }
                 });
 
             _ = migrationBuilder.InsertData(
@@ -587,11 +587,11 @@ namespace ADAL.Migrations
                 columns: new[] { "Id", "MaMauSac", "TenMauSac", "TrangThai" },
                 values: new object[,]
                 {
-                    { new Guid("11598eaf-e780-468f-ba6c-d1b3e54e8347"), "MS4", "Màu sắc 4", 0 },
-                    { new Guid("1e20b456-e3b2-431b-b61d-f616fa2540e6"), "MS1", "Màu sắc 1", 0 },
-                    { new Guid("58d2072c-af26-47f2-9c3a-4f9ad17ea60a"), "MS2", "Màu sắc 2", 0 },
-                    { new Guid("8b66b543-1bb2-4aea-b60c-d5d1e3e9fb55"), "MS5", "Màu sắc 5", 0 },
-                    { new Guid("b8ba4364-56e2-4be1-bd0b-4866233aff8e"), "MS3", "Màu sắc 3", 0 }
+                    { new Guid("1b1e29a8-91a3-4806-8b17-22ce23ea9691"), "MS5", "Màu sắc 5", 0 },
+                    { new Guid("1e113d7c-a0ff-4e79-8b9d-3e20205bb7d7"), "MS4", "Màu sắc 4", 0 },
+                    { new Guid("b8ffac07-74b8-436a-881d-63c47bd1355b"), "MS2", "Màu sắc 2", 0 },
+                    { new Guid("d26073e9-2f7d-40fb-adb4-f5cd2e130321"), "MS3", "Màu sắc 3", 0 },
+                    { new Guid("e759a64e-0825-49d8-bfba-50b3dc30eef6"), "MS1", "Màu sắc 1", 0 }
                 });
 
             _ = migrationBuilder.InsertData(
@@ -599,11 +599,11 @@ namespace ADAL.Migrations
                 columns: new[] { "Id", "DiaChi", "MaNsx", "TenNsx" },
                 values: new object[,]
                 {
-                    { new Guid("0f30a506-f09d-477c-b959-38ae7ec1b431"), "Hà Nội", "NSX3", "Nhà sản xuất 3" },
-                    { new Guid("1d8a40d1-64eb-4395-addd-5a3e82ae0350"), "Hà Nội", "NSX4", "Nhà sản xuất 4" },
-                    { new Guid("468093b5-3ecf-4ca1-bff3-c7428f6b638f"), "Hà Nội", "NSX5", "Nhà sản xuất 5" },
-                    { new Guid("cc8605bc-b431-4097-b969-73a5e74318c2"), "Hà Nội", "NSX1", "Nhà sản xuất 1" },
-                    { new Guid("e2a8b87d-1856-4292-9daf-c89da39a51f2"), "Hà Nội", "NSX2", "Nhà sản xuất 2" }
+                    { new Guid("182f595c-e8a2-4d82-b89b-4e414074d21e"), "Hà Nội", "NSX1", "Nhà sản xuất 1" },
+                    { new Guid("2f4e53c5-02cd-4c14-a0a1-d5afc6651403"), "Hà Nội", "NSX5", "Nhà sản xuất 5" },
+                    { new Guid("6d45a6bf-8791-4198-adc0-30749e38e47f"), "Hà Nội", "NSX3", "Nhà sản xuất 3" },
+                    { new Guid("7379f54e-61af-4599-b610-8b09967cdab5"), "Hà Nội", "NSX4", "Nhà sản xuất 4" },
+                    { new Guid("e13a1047-022c-4901-a473-9d6fbe6268ed"), "Hà Nội", "NSX2", "Nhà sản xuất 2" }
                 });
 
             _ = migrationBuilder.InsertData(
@@ -611,11 +611,11 @@ namespace ADAL.Migrations
                 columns: new[] { "Id", "MaSize", "SoSize", "TenSize", "TrangThai" },
                 values: new object[,]
                 {
-                    { new Guid("3101592b-bbbc-4257-8fa7-d4257dd0623e"), "SZ4", 33, "Size 4", 0 },
-                    { new Guid("3cd7ce8b-e2ce-43fa-8c77-95fb0ae1c14d"), "SZ2", 31, "Size 2", 0 },
-                    { new Guid("6698a12a-6a0b-4790-a8e5-592cdb216868"), "SZ5", 34, "Size 5", 0 },
-                    { new Guid("9541cf43-cd9d-476d-b009-2e149419d01d"), "SZ1", 30, "Size 1", 0 },
-                    { new Guid("b3800344-67f5-44bc-bc06-999926d0d914"), "SZ3", 32, "Size 3", 0 }
+                    { new Guid("083bb147-a858-46ed-a053-231d64d72a34"), "SZ3", 32, "Size 3", 0 },
+                    { new Guid("914a06ad-4243-4cc8-a9b0-415a9e1d5df4"), "SZ4", 33, "Size 4", 0 },
+                    { new Guid("9fd21196-ee3a-44ae-9ecb-32e815635506"), "SZ2", 31, "Size 2", 0 },
+                    { new Guid("ac0b2bf3-4ff8-40db-8fdc-10714c1f29af"), "SZ1", 30, "Size 1", 0 },
+                    { new Guid("d9307aac-0deb-43a5-b8e3-be66f7124982"), "SZ5", 34, "Size 5", 0 }
                 });
 
             _ = migrationBuilder.InsertData(
@@ -623,16 +623,16 @@ namespace ADAL.Migrations
                 columns: new[] { "Id", "GiaBan", "GiaNhap", "IdChieuCaoDeGiay", "IdGiay", "IdHangGiay", "IdMauSac", "IdNsx", "IdSize", "MoTa", "SoLuongTon", "TrangThai" },
                 values: new object[,]
                 {
-                    { new Guid("25935c54-b421-4d09-8fa7-43ffc6e728a9"), 10000f, 7000f, new Guid("6237d811-d11b-4165-b6aa-50b70ebfd4c6"), new Guid("e36b5c47-ff9c-4f62-96b8-e072ad92d17f"), new Guid("89b0ae32-f859-491f-bbc2-8bdd25239fe7"), new Guid("8b66b543-1bb2-4aea-b60c-d5d1e3e9fb55"), new Guid("e2a8b87d-1856-4292-9daf-c89da39a51f2"), new Guid("3101592b-bbbc-4257-8fa7-d4257dd0623e"), null, 100, 0 },
-                    { new Guid("5ffddf52-1b8f-4778-aaa0-b235cf5398b7"), 10000f, 7000f, new Guid("874a7601-4307-43fc-ae03-5f48cf01bbe7"), new Guid("24419e78-a601-4b78-9979-41bfd262df3a"), new Guid("08d3ccdd-b0dc-40c3-bba2-adc515e49c7b"), new Guid("8b66b543-1bb2-4aea-b60c-d5d1e3e9fb55"), new Guid("0f30a506-f09d-477c-b959-38ae7ec1b431"), new Guid("9541cf43-cd9d-476d-b009-2e149419d01d"), null, 100, 0 },
-                    { new Guid("73648271-dfb1-45fd-9beb-14120bc07592"), 10000f, 7000f, new Guid("90a04236-21ef-46e2-8935-1145c1c1f278"), new Guid("e36b5c47-ff9c-4f62-96b8-e072ad92d17f"), new Guid("f7c642c8-808d-4fd3-8acb-ab3ab6b20852"), new Guid("b8ba4364-56e2-4be1-bd0b-4866233aff8e"), new Guid("1d8a40d1-64eb-4395-addd-5a3e82ae0350"), new Guid("6698a12a-6a0b-4790-a8e5-592cdb216868"), null, 100, 0 },
-                    { new Guid("74267484-e487-442f-81ba-35a0d0ca7143"), 10000f, 7000f, new Guid("90a04236-21ef-46e2-8935-1145c1c1f278"), new Guid("e36b5c47-ff9c-4f62-96b8-e072ad92d17f"), new Guid("ec4283d1-7c60-4677-8ff9-97cc41b17381"), new Guid("1e20b456-e3b2-431b-b61d-f616fa2540e6"), new Guid("468093b5-3ecf-4ca1-bff3-c7428f6b638f"), new Guid("b3800344-67f5-44bc-bc06-999926d0d914"), null, 100, 0 },
-                    { new Guid("744fd792-0f87-4080-919a-aafe22479a7e"), 10000f, 7000f, new Guid("1fd05d20-4e5a-460d-b691-349c329652d3"), new Guid("06478ca2-009a-4d80-a144-34e41d8990dd"), new Guid("08d3ccdd-b0dc-40c3-bba2-adc515e49c7b"), new Guid("b8ba4364-56e2-4be1-bd0b-4866233aff8e"), new Guid("0f30a506-f09d-477c-b959-38ae7ec1b431"), new Guid("3cd7ce8b-e2ce-43fa-8c77-95fb0ae1c14d"), null, 100, 0 },
-                    { new Guid("9cb0afad-97b9-4269-a1d7-149ef7d4dc37"), 10000f, 7000f, new Guid("1fd05d20-4e5a-460d-b691-349c329652d3"), new Guid("24419e78-a601-4b78-9979-41bfd262df3a"), new Guid("ad9d752e-c060-46d0-aa45-799c246aa9c9"), new Guid("b8ba4364-56e2-4be1-bd0b-4866233aff8e"), new Guid("0f30a506-f09d-477c-b959-38ae7ec1b431"), new Guid("3cd7ce8b-e2ce-43fa-8c77-95fb0ae1c14d"), null, 100, 0 },
-                    { new Guid("b3729e75-2868-42e5-a231-8a936d1fc044"), 10000f, 7000f, new Guid("90a04236-21ef-46e2-8935-1145c1c1f278"), new Guid("914bb385-fa1f-4fc3-ac3c-1193298fa55c"), new Guid("89b0ae32-f859-491f-bbc2-8bdd25239fe7"), new Guid("1e20b456-e3b2-431b-b61d-f616fa2540e6"), new Guid("e2a8b87d-1856-4292-9daf-c89da39a51f2"), new Guid("9541cf43-cd9d-476d-b009-2e149419d01d"), null, 100, 0 },
-                    { new Guid("cada3a66-1546-4237-b5c0-a067d2f3cb33"), 10000f, 7000f, new Guid("6237d811-d11b-4165-b6aa-50b70ebfd4c6"), new Guid("914bb385-fa1f-4fc3-ac3c-1193298fa55c"), new Guid("f7c642c8-808d-4fd3-8acb-ab3ab6b20852"), new Guid("58d2072c-af26-47f2-9c3a-4f9ad17ea60a"), new Guid("0f30a506-f09d-477c-b959-38ae7ec1b431"), new Guid("9541cf43-cd9d-476d-b009-2e149419d01d"), null, 100, 0 },
-                    { new Guid("d6b72661-551e-4fb7-aa79-ff973f441c28"), 10000f, 7000f, new Guid("874a7601-4307-43fc-ae03-5f48cf01bbe7"), new Guid("24419e78-a601-4b78-9979-41bfd262df3a"), new Guid("f7c642c8-808d-4fd3-8acb-ab3ab6b20852"), new Guid("58d2072c-af26-47f2-9c3a-4f9ad17ea60a"), new Guid("e2a8b87d-1856-4292-9daf-c89da39a51f2"), new Guid("6698a12a-6a0b-4790-a8e5-592cdb216868"), null, 100, 0 },
-                    { new Guid("ea52f8df-bb8b-4724-b312-4ea9ea50ca2e"), 10000f, 7000f, new Guid("1fd05d20-4e5a-460d-b691-349c329652d3"), new Guid("06478ca2-009a-4d80-a144-34e41d8990dd"), new Guid("08d3ccdd-b0dc-40c3-bba2-adc515e49c7b"), new Guid("8b66b543-1bb2-4aea-b60c-d5d1e3e9fb55"), new Guid("468093b5-3ecf-4ca1-bff3-c7428f6b638f"), new Guid("b3800344-67f5-44bc-bc06-999926d0d914"), null, 100, 0 }
+                    { new Guid("2f54d08c-7d4c-4658-8e11-e4a6f6006e12"), 10000f, 7000f, new Guid("23fd8acd-35b6-4386-ad7a-eec87b3a949c"), new Guid("f8ff2f30-3778-4d8f-b50a-e6f719cfda26"), new Guid("d183b232-3f41-4a5a-8264-63a119947b4f"), new Guid("1b1e29a8-91a3-4806-8b17-22ce23ea9691"), new Guid("182f595c-e8a2-4d82-b89b-4e414074d21e"), new Guid("083bb147-a858-46ed-a053-231d64d72a34"), null, 100, 0 },
+                    { new Guid("698ea76d-0580-4dc2-8030-8fd7f9f0824e"), 10000f, 7000f, new Guid("82886453-e29e-475f-94b7-b3dcbed00e6b"), new Guid("7c1d2b44-6cb3-4024-bfa5-f27418790e49"), new Guid("06194216-0662-4cb4-94c9-1ff1200fbaa7"), new Guid("b8ffac07-74b8-436a-881d-63c47bd1355b"), new Guid("6d45a6bf-8791-4198-adc0-30749e38e47f"), new Guid("d9307aac-0deb-43a5-b8e3-be66f7124982"), null, 100, 0 },
+                    { new Guid("727165e0-829f-44cd-8c01-87128d3699e8"), 10000f, 7000f, new Guid("82886453-e29e-475f-94b7-b3dcbed00e6b"), new Guid("0018e408-089e-464f-b53b-ea525cff069c"), new Guid("e3958fb7-5581-46fc-819f-4fba1d69b3e4"), new Guid("1e113d7c-a0ff-4e79-8b9d-3e20205bb7d7"), new Guid("7379f54e-61af-4599-b610-8b09967cdab5"), new Guid("d9307aac-0deb-43a5-b8e3-be66f7124982"), null, 100, 0 },
+                    { new Guid("72a045f6-4750-4b4c-9a71-7b111cbb3464"), 10000f, 7000f, new Guid("9ba4ec54-67db-4353-bed7-02030a990156"), new Guid("0018e408-089e-464f-b53b-ea525cff069c"), new Guid("183a85d3-d1bf-4162-a6d7-4a55c7fa68b3"), new Guid("1e113d7c-a0ff-4e79-8b9d-3e20205bb7d7"), new Guid("7379f54e-61af-4599-b610-8b09967cdab5"), new Guid("9fd21196-ee3a-44ae-9ecb-32e815635506"), null, 100, 0 },
+                    { new Guid("8a39c1c7-905f-49ef-ab88-700c3d1e5744"), 10000f, 7000f, new Guid("4badeba9-ca83-4df3-9dce-aa97f3cc923d"), new Guid("5d7b56bc-378f-4187-b45c-a9f86f4468eb"), new Guid("d183b232-3f41-4a5a-8264-63a119947b4f"), new Guid("1b1e29a8-91a3-4806-8b17-22ce23ea9691"), new Guid("182f595c-e8a2-4d82-b89b-4e414074d21e"), new Guid("083bb147-a858-46ed-a053-231d64d72a34"), null, 100, 0 },
+                    { new Guid("d6696331-32b8-416f-874e-e0d6db7aded5"), 10000f, 7000f, new Guid("23fd8acd-35b6-4386-ad7a-eec87b3a949c"), new Guid("5d7b56bc-378f-4187-b45c-a9f86f4468eb"), new Guid("183a85d3-d1bf-4162-a6d7-4a55c7fa68b3"), new Guid("d26073e9-2f7d-40fb-adb4-f5cd2e130321"), new Guid("182f595c-e8a2-4d82-b89b-4e414074d21e"), new Guid("9fd21196-ee3a-44ae-9ecb-32e815635506"), null, 100, 0 },
+                    { new Guid("dd73b252-6466-4234-9420-483de3967a92"), 10000f, 7000f, new Guid("4badeba9-ca83-4df3-9dce-aa97f3cc923d"), new Guid("5d7b56bc-378f-4187-b45c-a9f86f4468eb"), new Guid("183a85d3-d1bf-4162-a6d7-4a55c7fa68b3"), new Guid("1e113d7c-a0ff-4e79-8b9d-3e20205bb7d7"), new Guid("182f595c-e8a2-4d82-b89b-4e414074d21e"), new Guid("083bb147-a858-46ed-a053-231d64d72a34"), null, 100, 0 },
+                    { new Guid("e8667725-7210-4461-8c1e-ed80aa83eeb4"), 10000f, 7000f, new Guid("23fd8acd-35b6-4386-ad7a-eec87b3a949c"), new Guid("73e21b9d-6cf2-44f0-9d1c-aeb8231d2e3b"), new Guid("183a85d3-d1bf-4162-a6d7-4a55c7fa68b3"), new Guid("1b1e29a8-91a3-4806-8b17-22ce23ea9691"), new Guid("7379f54e-61af-4599-b610-8b09967cdab5"), new Guid("9fd21196-ee3a-44ae-9ecb-32e815635506"), null, 100, 0 },
+                    { new Guid("f5776735-8478-46f7-83f1-3244344ee82e"), 10000f, 7000f, new Guid("9ba4ec54-67db-4353-bed7-02030a990156"), new Guid("7c1d2b44-6cb3-4024-bfa5-f27418790e49"), new Guid("e670b84e-f7e5-48dd-ac49-f8a95efb8a28"), new Guid("e759a64e-0825-49d8-bfba-50b3dc30eef6"), new Guid("2f4e53c5-02cd-4c14-a0a1-d5afc6651403"), new Guid("9fd21196-ee3a-44ae-9ecb-32e815635506"), null, 100, 0 },
+                    { new Guid("fd415eb7-949d-4279-9ba0-664b99d2b509"), 10000f, 7000f, new Guid("9ba4ec54-67db-4353-bed7-02030a990156"), new Guid("73e21b9d-6cf2-44f0-9d1c-aeb8231d2e3b"), new Guid("e3958fb7-5581-46fc-819f-4fba1d69b3e4"), new Guid("b8ffac07-74b8-436a-881d-63c47bd1355b"), new Guid("182f595c-e8a2-4d82-b89b-4e414074d21e"), new Guid("9fd21196-ee3a-44ae-9ecb-32e815635506"), null, 100, 0 }
                 });
 
             _ = migrationBuilder.InsertData(
@@ -640,8 +640,8 @@ namespace ADAL.Migrations
                 columns: new[] { "Id", "DiaChi", "Email", "GioiTinh", "IdChucVu", "IdCuaHang", "MaNhanVien", "MatKhau", "NgaySinh", "Sdt", "TenNhanVien", "TrangThai" },
                 values: new object[,]
                 {
-                    { new Guid("34062bbc-3f4f-4b38-8628-46ebd9914a0b"), "Hà Nội", null, 0, new Guid("a461059e-3569-475c-84d0-95f9394691c2"), new Guid("fc833c25-ebb6-44c2-850c-71b309e2314e"), "NV1", "00000", new DateTime(2022, 11, 14, 3, 39, 29, 739, DateTimeKind.Local).AddTicks(1726), "0385922775", "Nhân viên 1", 0 },
-                    { new Guid("9f421dd2-39fe-45fc-92d8-08e94b7043b5"), "Hà Nội", null, 1, new Guid("a461059e-3569-475c-84d0-95f9394691c2"), new Guid("fc833c25-ebb6-44c2-850c-71b309e2314e"), "NV2", "00000", new DateTime(2022, 11, 14, 3, 39, 29, 739, DateTimeKind.Local).AddTicks(1790), "0385922775", "Nhân viên 2", 0 }
+                    { new Guid("0e8b792a-98c1-4181-8e2f-86331faefab3"), "Hà Nội", null, 1, new Guid("b18389a1-efe4-440e-a8e2-61a0e8d8f592"), new Guid("df5f0843-f5a5-4a71-a76a-74c111f9e824"), "NV2", "00000", new DateTime(2022, 11, 16, 0, 40, 17, 919, DateTimeKind.Local).AddTicks(1396), "0385922775", "Nhân viên 2", 0 },
+                    { new Guid("ca61d1c2-025e-4a33-aaab-d2d753f40c5a"), "Hà Nội", null, 0, new Guid("b18389a1-efe4-440e-a8e2-61a0e8d8f592"), new Guid("df5f0843-f5a5-4a71-a76a-74c111f9e824"), "NV1", "00000", new DateTime(2022, 11, 16, 0, 40, 17, 919, DateTimeKind.Local).AddTicks(1376), "0385922775", "Nhân viên 1", 0 }
                 });
 
             _ = migrationBuilder.CreateIndex(

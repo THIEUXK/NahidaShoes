@@ -38,6 +38,11 @@ namespace B_BUS.Services
             return igHoaDon.Delete(obj);
         }
 
+        public bool CheckMa(string ma)
+        {
+            return !igHoaDon.GetAll().Any(c => c.MaHoaDon == ma);
+        }
+
         public List<HoaDonView> GetAllView()
         {
             // getall

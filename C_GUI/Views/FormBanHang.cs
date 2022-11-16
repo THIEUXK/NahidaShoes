@@ -31,7 +31,7 @@ namespace C_GUI.Views
             _lsvShowSanPham.Items.Clear();
             foreach (B_BUS.View_Models.ChiTietGiayView item in _qlChiTietGiay.GetAllView())
             {
-                string[] row = { item.Giay.TenGiay, item.MauSac.TenMauSac, item.HangGiay.TenHangGiay, item.Nsx.TenNsx, item.Size.TenSize, item.ChieuCaoDeGiay.MaKichCo, item.ChiTietGiay.GiaBan.ToString(), item.ChiTietGiay.SoLuongTon.ToString(), item.ChiTietGiay.MoTa };
+                string[] row = { item.ChiTietGiay.Id.ToString(), item.Giay.TenGiay, item.MauSac.TenMauSac, item.HangGiay.TenHangGiay, item.Nsx.TenNsx, item.Size.TenSize, item.ChieuCaoDeGiay.MaKichCo, item.ChiTietGiay.GiaBan.ToString(), item.ChiTietGiay.SoLuongTon.ToString(), item.ChiTietGiay.MoTa };
                 ListViewItem listViewItem = new(row);
                 _ = _lsvShowSanPham.Items.Add(listViewItem);
             }
@@ -53,11 +53,11 @@ namespace C_GUI.Views
         {
             if (_cbxNhanVien.SelectedItem != null && _cbxKhachHang.SelectedItem != null && _tbxMaHoaDon.Texts.Trim() != "")
             {
-                if (_qlHoaDon.CheckMa(_tbxMaHoaDon.Texts.Trim()))
+                string maHoaDon = _tbxMaHoaDon.Texts.Trim();
+                Guid idKhachHang = _qlKhachHang.GetByMa(_cbxKhachHang.SelectedItem.ToString()).Id;
+                Guid idNhanVien = _qlNhanVien.GetByMa(_cbxNhanVien.SelectedItem.ToString()).Id;
+                if (_qlHoaDon.CheckMa(maHoaDon))
                 {
-                    string maHoaDon = _tbxMaHoaDon.Texts.Trim();
-                    Guid idKhachHang = _qlKhachHang.GetByMa(_cbxKhachHang.SelectedItem.ToString()).Id;
-                    Guid idNhanVien = _qlNhanVien.GetByMa(_cbxNhanVien.SelectedItem.ToString()).Id;
                     bool thongBao = _qlHoaDon.Add(new HoaDon() { MaHoaDon = maHoaDon, IdKhachHang = idKhachHang, IdNhanVien = idNhanVien });
                     if (thongBao)
                     {

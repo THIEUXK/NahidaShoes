@@ -8,6 +8,9 @@ namespace B_BUS.IServices
         bool Add(HangGiay obj);
         bool Update(HangGiay obj);
         bool Delete(HangGiay obj);
+        List<HangGiay> GetAll();
+        HangGiay? GetByMa(string? ma);
+        bool CheckMa(string ma);
         List<HangGiayView> GetAllView();
     }
 }

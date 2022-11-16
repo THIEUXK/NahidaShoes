@@ -33,6 +33,21 @@ namespace B_BUS.Services
             return _igmausac.Delete(obj);
         }
 
+        public List<MauSac> GetAll()
+        {
+            return _igmausac.GetAll();
+        }
+
+        public MauSac? GetByMa(string? ma)
+        {
+            return _igmausac.GetAll().Find(c => c.MaMauSac == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            return !_igmausac.GetAll().Any(c => c.MaMauSac == ma);
+        }
+
         public List<MauSacView> GetAllView()
         {
             // getall

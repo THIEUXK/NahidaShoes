@@ -8,6 +8,9 @@ namespace B_BUS.IServices
         bool Add(Nsx obj);
         bool Update(Nsx obj);
         bool Delete(Nsx obj);
+        List<Nsx> GetAll();
+        Nsx? GetByMa(string? ma);
+        bool CheckMa(string ma);
         List<NsxView> GetAllView();
     }
 }

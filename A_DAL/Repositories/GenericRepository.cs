@@ -1,24 +1,22 @@
 ﻿using A_DAL.Context;
 using A_DAL.IRepositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace A_DAL.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly NahidaShoesDbContext _context = new();
-        private readonly DbSet<T> table;
+        private NahidaShoesDbContext _context;
         public GenericRepository()
         {
-            table = _context.Set<T>();
+            _context = new();
         }
         public List<T> GetAll()
         {
-            return table.ToList();
+            return _context.Set<T>().ToList();
         }
         public T? GetById(object id)
         {
-            return table.Find(id);
+            return _context.Set<T>().Find(id);
         }
         public bool Add(T obj)
         {
@@ -26,17 +24,18 @@ namespace A_DAL.Repositories
             {
                 return false;
             }
-            _ = table.Add(obj);
+            _ = _context.Set<T>().Add(obj);
             Save();
             return true;
         }
         public bool Update(T obj)
         {
+            _context = new();
             if (obj == null)
             {
                 return false;
             }
-            _ = table.Update(obj);
+            _ = _context.Set<T>().Update(obj);
             Save();
             return true;
         }
@@ -46,7 +45,7 @@ namespace A_DAL.Repositories
             {
                 return false;
             }
-            _ = table.Remove(obj);
+            _ = _context.Set<T>().Remove(obj);
             Save();
             return true;
         }

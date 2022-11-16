@@ -8,7 +8,7 @@ namespace B_BUS.IServices
         bool Add(HoaDon obj);
         bool Update(HoaDon obj);
         bool Delete(HoaDon obj);
-        public bool CheckMa(string ma);
+        bool CheckMa(string ma);
         List<HoaDonView> GetAllView();
     }
 }

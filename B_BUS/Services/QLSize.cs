@@ -33,6 +33,21 @@ namespace B_BUS.Services
             return igSize.Delete(obj);
         }
 
+        public List<Size> GetAll()
+        {
+            return igSize.GetAll();
+        }
+
+        public Size? GetByMa(string? ma)
+        {
+            return igSize.GetAll().Find(c => c.MaSize == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            return !igSize.GetAll().Any(c => c.MaSize == ma);
+        }
+
         public List<SizeView> GetAllView()
         {
             // getall

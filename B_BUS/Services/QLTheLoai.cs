@@ -33,6 +33,25 @@ namespace B_BUS.Services
             return igTheLoai.Delete(obj);
         }
 
+        public List<TheLoai> GetAll()
+        {
+            //GetAll
+            return igTheLoai.GetAll();
+        }
+
+        public TheLoai? GetByMa(string? ma)
+        {
+            //GetByMa
+            return igTheLoai.GetAll().Find(c => c.MaTheLoai == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            //checkma
+
+            return !igTheLoai.GetAll().Any(c => c.MaTheLoai == ma);
+        }
+
         public List<TheLoaiView> GetAllView()
         {
             // getall

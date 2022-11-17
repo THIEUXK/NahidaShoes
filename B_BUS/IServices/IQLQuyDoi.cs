@@ -8,6 +8,9 @@ namespace B_BUS.IServices
         bool Add(QuyDoi obj);
         bool Update(QuyDoi obj);
         bool Delete(QuyDoi obj);
+        List<QuyDoi> GetAll();
+        QuyDoi? GetByMa(string? ma);
+        bool CheckMa(string ma);
         List<QuyDoiView> GetAllView();
     }
 }

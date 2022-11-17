@@ -8,6 +8,9 @@ namespace B_BUS.IServices
         bool Add(MauSac obj);
         bool Update(MauSac obj);
         bool Delete(MauSac obj);
+        List<MauSac> GetAll();
+        MauSac? GetByMa(string? ma);
+        bool CheckMa(string ma);
         List<MauSacView> GetAllView();
     }
 }

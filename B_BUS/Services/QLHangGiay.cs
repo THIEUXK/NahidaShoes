@@ -33,6 +33,21 @@ namespace B_BUS.Services
             return _iHangGiay.Delete(obj);
         }
 
+        public List<HangGiay> GetAll()
+        {
+            return _iHangGiay.GetAll();
+        }
+
+        public HangGiay? GetByMa(string? ma)
+        {
+            return _iHangGiay.GetAll().Find(c => c.MaHangGiay == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            return !_iHangGiay.GetAll().Any(c => c.MaHangGiay == ma);
+        }
+
         public List<HangGiayView> GetAllView()
         {
             // getall

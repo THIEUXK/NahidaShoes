@@ -8,6 +8,8 @@ namespace B_BUS.IServices
         bool Add(KhachHang obj);
         bool Update(KhachHang obj);
         bool Delete(KhachHang obj);
+        List<KhachHang> GetAll();
+        KhachHang? GetByMa(string? ma);
         List<KhachHangView> GetAllView();
     }
 }

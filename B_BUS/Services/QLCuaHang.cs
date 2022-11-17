@@ -34,6 +34,25 @@ namespace B_BUS.Services
             return igcuaHang.Delete(obj);
         }
 
+        public List<CuaHang> GetAll()
+        {
+            //GetAll
+            return igcuaHang.GetAll();
+        }
+
+        public CuaHang? GetByMa(string? ma)
+        {
+            //GetByMa
+            return igcuaHang.GetAll().Find(c => c.MaCuaHang == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            //checkma
+
+            return !igcuaHang.GetAll().Any(c => c.MaCuaHang == ma);
+        }
+
         public List<CuaHangView> GetAllView()
         {
             // getall

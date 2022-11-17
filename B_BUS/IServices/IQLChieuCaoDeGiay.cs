@@ -8,6 +8,9 @@ namespace B_BUS.IServices
         bool Add(ChieuCaoDeGiay obj);
         bool Update(ChieuCaoDeGiay obj);
         bool Delete(ChieuCaoDeGiay obj);
+        List<ChieuCaoDeGiay> GetAll();
+        ChieuCaoDeGiay? GetByMa(string? ma);
+        bool CheckMa(string ma);
         List<ChieuCaoDeGiayView> GetAllView();
     }
 }

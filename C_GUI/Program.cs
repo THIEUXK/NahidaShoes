@@ -1,4 +1,4 @@
-using C_GUI.Views;
+using C_GUI.QLForm;
 
 namespace C_GUI
 {
@@ -13,7 +13,7 @@ namespace C_GUI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new TrangChu());
+            Application.Run(new FormChiTietGiay());
         }
     }
 }

@@ -10,6 +10,8 @@ namespace B_BUS.IServices
         bool Delete(NhanVien obj);
         List<NhanVien> GetAll();
         NhanVien? GetByMa(string? ma);
+
+        bool CheckMa(string ma);
         List<NhanVienView> GetAllView();
     }
 }

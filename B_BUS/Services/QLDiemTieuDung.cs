@@ -35,6 +35,25 @@ namespace B_BUS.Services
             return igDiem.Delete(obj);
         }
 
+        public List<DiemTieuDung> GetAll()
+        {
+            //GetAll
+            return igDiem.GetAll();
+        }
+
+        public DiemTieuDung? GetByMa(string? ma)
+        {
+            //GetByMa
+            return igDiem.GetAll().Find(c => c.MaDiemTieuDung == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            //checkma
+
+            return !igDiem.GetAll().Any(c => c.MaDiemTieuDung == ma);
+        }
+
         public List<DiemTieuDungView> GetAllView()
         {
             // getall

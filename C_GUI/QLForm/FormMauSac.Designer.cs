@@ -1,6 +1,6 @@
 ﻿namespace C_GUI.QLForm
 {
-    partial class FormTheLoai
+    partial class FormMauSac
     {
         /// <summary>
         /// Required designer variable.
@@ -209,7 +209,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 31);
             this.label3.TabIndex = 23;
-            this.label3.Text = "Thể Loại";
+            this.label3.Text = "Màu Sắc";
             // 
             // label2
             // 
@@ -236,20 +236,20 @@
             this.dgrid_show.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrid_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_show.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgrid_show.Location = new System.Drawing.Point(0, 305);
+            this.dgrid_show.Location = new System.Drawing.Point(0, 312);
             this.dgrid_show.Name = "dgrid_show";
             this.dgrid_show.RowHeadersWidth = 51;
             this.dgrid_show.RowTemplate.Height = 29;
-            this.dgrid_show.Size = new System.Drawing.Size(796, 190);
+            this.dgrid_show.Size = new System.Drawing.Size(800, 190);
             this.dgrid_show.TabIndex = 20;
             this.dgrid_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellContentClick);
             // 
-            // FormTheLoai
+            // FormMauSac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(796, 495);
+            this.ClientSize = new System.Drawing.Size(800, 502);
             this.Controls.Add(this.txt_ten);
             this.Controls.Add(this.txt_ma);
             this.Controls.Add(this.rbtn_khonghoatdong);
@@ -263,8 +263,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgrid_show);
-            this.Name = "FormTheLoai";
-            this.Text = "FormTheLoai";
+            this.Name = "FormMauSac";
+            this.Text = "FormMauSac";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).EndInit();
             this.ResumeLayout(false);

@@ -154,7 +154,27 @@ namespace C_GUI.QLForm
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            var x = _IQlChucVu.GetAllView().FirstOrDefault(c => c.ChucVu.TenChucVu == cmb_chucvu.Texts);
 
+            var y = _IQlCuaHang.GetAllView().FirstOrDefault(c => c.CuaHang.TenCuaHang == cmb_cuahang.Texts);
+            bool thongBao = _IQlNhanVien.Update(new A_DAL.Entities.NhanVien() { Id = _ID,
+                MaNhanVien = txt_ma.Texts,
+                TenNhanVien = txt_ten.Texts,
+                Email = txt_email.Texts,
+                NgaySinh = dtt_ngaysinh.Value,
+                GioiTinh = (rbtn_nam.Checked == true ? 1 : 0),
+                Sdt = txt_sdt.Texts,
+                DiaChi = txt_diachi.Texts,
+                MatKhau = txt_matkhau.Texts,
+                TrangThai = (cbx_hoatdong.Checked == true ? 1 : 0),
+                IdChucVu = x.ChucVu.Id,
+                IdCuaHang = y.CuaHang.Id,
+            });
+            if (thongBao)
+            {
+                _ = MessageBox.Show("Sửa thành công");
+                LoadData();
+            }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)

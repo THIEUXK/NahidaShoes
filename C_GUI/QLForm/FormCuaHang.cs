@@ -32,9 +32,9 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[5].Name = "trang thai";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (var a in _IQlCuaHang.GetAllView())
+            foreach (CuaHangView a in _IQlCuaHang.GetAllView())
             {
-                dgrid_show.Rows.Add(stt++, a.CuaHang.Id,a.CuaHang.MaCuaHang,a.CuaHang.TenCuaHang,a.CuaHang.DiaChi,a.CuaHang.TrangThai==1?"hoat dong":"khong hoat dong");
+                _ = dgrid_show.Rows.Add(stt++, a.CuaHang.Id, a.CuaHang.MaCuaHang, a.CuaHang.TenCuaHang, a.CuaHang.DiaChi, a.CuaHang.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
             }
 
         }
@@ -46,7 +46,7 @@ namespace C_GUI.QLForm
                 MaCuaHang = txt_ma.Texts,
                 TenCuaHang = txt_ten.Texts,
                 DiaChi = txt_diachi.Texts,
-                TrangThai = (rbtn_hoatdong.Checked == true ? 1 : 0),
+                TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0,
             };
         }
 
@@ -57,11 +57,11 @@ namespace C_GUI.QLForm
             txt_ma.Texts = dgrid_show.Rows[index].Cells[2].Value.ToString();
             txt_ten.Texts = dgrid_show.Rows[index].Cells[3].Value.ToString();
             txt_diachi.Texts = dgrid_show.Rows[index].Cells[4].Value.ToString();
-            if ((dgrid_show.Rows[index].Cells[5].Value.ToString()) == "hoat dong")
+            if (dgrid_show.Rows[index].Cells[5].Value.ToString() == "hoat dong")
             {
                 rbtn_hoatdong.Checked = true;
             }
-            if ((dgrid_show.Rows[index].Cells[5].Value.ToString()) == "khong hoat dong")
+            if (dgrid_show.Rows[index].Cells[5].Value.ToString() == "khong hoat dong")
             {
                 rbtn_khonghoatdong.Checked = true;
             }
@@ -69,23 +69,23 @@ namespace C_GUI.QLForm
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _IQlCuaHang.Add(GetvaluaContro());
+            _ = _IQlCuaHang.Add(GetvaluaContro());
             LoadData();
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            var a = GetvaluaContro();
+            CuaHang a = GetvaluaContro();
             a.Id = _ID;
-            _IQlCuaHang.Update(a);
+            _ = _IQlCuaHang.Update(a);
             LoadData();
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            var a = GetvaluaContro();
+            CuaHang a = GetvaluaContro();
             a.Id = _ID;
-            _IQlCuaHang.Update(a);
+            _ = _IQlCuaHang.Update(a);
             LoadData();
         }
     }

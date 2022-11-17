@@ -1,13 +1,12 @@
 ﻿using A_DAL.Entities;
 using B_BUS.IServices;
-using B_BUS.Services;
 
 namespace C_GUI.QLForm
 {
     public partial class FormTheLoai : Form
     {
         public IQLTheLoai _QlTheLoai;
-        Guid _ID;
+        private Guid _ID;
         public FormTheLoai()
         {
             InitializeComponent();
@@ -23,9 +22,9 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[4].Name = "trang thai";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (var a in _QlTheLoai.GetAllView())
+            foreach (B_BUS.View_Models.TheLoaiView a in _QlTheLoai.GetAllView())
             {
-                dgrid_show.Rows.Add(stt++, a.TheLoai.Id, a.TheLoai.MaTheLoai, a.TheLoai.TenTheLoai, a.TheLoai.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
+                _ = dgrid_show.Rows.Add(stt++, a.TheLoai.Id, a.TheLoai.MaTheLoai, a.TheLoai.TenTheLoai, a.TheLoai.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
             }
 
         }
@@ -36,7 +35,7 @@ namespace C_GUI.QLForm
             {
                 MaTheLoai = txt_ma.Texts,
                 TenTheLoai = txt_ten.Texts,
-                TrangThai = (rbtn_hoatdong.Checked == true ? 1 : 0),
+                TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0,
             };
         }
 
@@ -46,11 +45,11 @@ namespace C_GUI.QLForm
             _ID = Guid.Parse(dgrid_show.Rows[index].Cells[1].Value.ToString());
             txt_ma.Texts = dgrid_show.Rows[index].Cells[2].Value.ToString();
             txt_ten.Texts = dgrid_show.Rows[index].Cells[3].Value.ToString();
-            if ((dgrid_show.Rows[index].Cells[4].Value.ToString()) == "hoat dong")
+            if (dgrid_show.Rows[index].Cells[4].Value.ToString() == "hoat dong")
             {
                 rbtn_hoatdong.Checked = true;
             }
-            if ((dgrid_show.Rows[index].Cells[4].Value.ToString()) == "khong hoat dong")
+            if (dgrid_show.Rows[index].Cells[4].Value.ToString() == "khong hoat dong")
             {
                 rbtn_khonghoatdong.Checked = true;
             }
@@ -58,7 +57,7 @@ namespace C_GUI.QLForm
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _QlTheLoai.Add(GetvaluaContro());
+            _ = _QlTheLoai.Add(GetvaluaContro());
             LoadData();
         }
 

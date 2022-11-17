@@ -1,14 +1,13 @@
 ﻿using A_DAL.Entities;
 using B_BUS.IServices;
 using B_BUS.Services;
-using System.Security.Cryptography;
 
 namespace C_GUI.Views
 {
     public partial class FormChucVu : Form
     {
         public IQLChucVu _IQlChucVu;
-        Guid _ID;
+        private Guid _ID;
         public FormChucVu()
         {
             _IQlChucVu = new QLChucVu();
@@ -26,9 +25,9 @@ namespace C_GUI.Views
             dgrid_show.Columns[4].Name = "trang thai";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (var a in _IQlChucVu.GetAllView())
+            foreach (B_BUS.View_Models.ChucVuView a in _IQlChucVu.GetAllView())
             {
-                dgrid_show.Rows.Add(stt++, a.ChucVu.Id, a.ChucVu.MaChucVu, a.ChucVu.TenChucVu, a.ChucVu.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
+                _ = dgrid_show.Rows.Add(stt++, a.ChucVu.Id, a.ChucVu.MaChucVu, a.ChucVu.TenChucVu, a.ChucVu.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
             }
 
         }
@@ -39,7 +38,7 @@ namespace C_GUI.Views
             {
                 MaChucVu = txt_ma.Texts,
                 TenChucVu = txt_ten.Texts,
-                TrangThai = (rbtn_hoatdong.Checked == true ? 1 : 0),
+                TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0,
             };
         }
 
@@ -49,11 +48,11 @@ namespace C_GUI.Views
             _ID = Guid.Parse(dgrid_show.Rows[index].Cells[1].Value.ToString());
             txt_ma.Texts = dgrid_show.Rows[index].Cells[2].Value.ToString();
             txt_ten.Texts = dgrid_show.Rows[index].Cells[3].Value.ToString();
-            if ((dgrid_show.Rows[index].Cells[4].Value.ToString()) == "hoat dong")
+            if (dgrid_show.Rows[index].Cells[4].Value.ToString() == "hoat dong")
             {
                 rbtn_hoatdong.Checked = true;
             }
-            if ((dgrid_show.Rows[index].Cells[4].Value.ToString()) == "khong hoat dong")
+            if (dgrid_show.Rows[index].Cells[4].Value.ToString() == "khong hoat dong")
             {
                 rbtn_khonghoatdong.Checked = true;
             }
@@ -61,7 +60,7 @@ namespace C_GUI.Views
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _IQlChucVu.Add(GetvaluaContro());
+            _ = _IQlChucVu.Add(GetvaluaContro());
             LoadData();
         }
 

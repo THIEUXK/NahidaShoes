@@ -39,6 +39,16 @@ namespace B_BUS.Services
             return igHoaDonchotiet.Delete(obj);
         }
 
+        public List<HoaDonChiTiet> GetAll()
+        {
+            return igHoaDonchotiet.GetAll();
+        }
+
+        public bool CheckMa(Guid idHoaDon, Guid idChiTietGiay)
+        {
+            return !igHoaDonchotiet.GetAll().Any(c => c.IdHoaDon == idHoaDon && c.IdChiTietGiay == idChiTietGiay);
+        }
+
         public List<HoaDonChiTietView> GetAllView()
         {
             // getall

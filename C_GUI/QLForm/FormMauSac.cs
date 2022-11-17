@@ -1,16 +1,27 @@
 ﻿using A_DAL.Entities;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using B_BUS.IServices;
 using B_BUS.Services;
 
 namespace C_GUI.QLForm
 {
-    public partial class FormTheLoai : Form
+    public partial class FormMauSac : Form
     {
-        public IQLTheLoai _QlTheLoai;
-        Guid _ID;
-        public FormTheLoai()
+        public IQLMauSac _IQlMauSac;
+        private Guid _ID;
+        public FormMauSac()
         {
+            _IQlMauSac = new QLMauSac();
             InitializeComponent();
+            LoadData();
         }
         public void LoadData()
         {
@@ -23,19 +34,19 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[4].Name = "trang thai";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (var a in _QlTheLoai.GetAllView())
+            foreach (var a in _IQlMauSac.GetAllView())
             {
-                dgrid_show.Rows.Add(stt++, a.TheLoai.Id, a.TheLoai.MaTheLoai, a.TheLoai.TenTheLoai, a.TheLoai.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
+                dgrid_show.Rows.Add(stt++, a.MauSac.Id, a.MauSac.MaMauSac, a.MauSac.TenMauSac, a.MauSac.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
             }
 
         }
 
-        public TheLoai GetvaluaContro()
+        public MauSac GetvaluaContro()
         {
-            return new TheLoai()
+            return new MauSac()
             {
-                MaTheLoai = txt_ma.Texts,
-                TenTheLoai = txt_ten.Texts,
+                MaMauSac = txt_ma.Texts,
+                TenMauSac = txt_ten.Texts,
                 TrangThai = (rbtn_hoatdong.Checked == true ? 1 : 0),
             };
         }
@@ -58,7 +69,7 @@ namespace C_GUI.QLForm
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _QlTheLoai.Add(GetvaluaContro());
+            _IQlMauSac.Add(GetvaluaContro());
             LoadData();
         }
 

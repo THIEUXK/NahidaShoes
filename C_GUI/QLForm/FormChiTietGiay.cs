@@ -76,7 +76,18 @@ namespace C_GUI.QLForm
 
         private void _btnThem_Click(object sender, EventArgs e)
         {
-            if (_cbxSize.SelectedItem != null && _cbxNsx.SelectedItem != null && _cbxMauSac.SelectedItem != null && _cbxHangGiay.SelectedItem != null && _cbxGiay.SelectedItem != null && _cbxChieuCaoDeGiay.SelectedItem != null && _tbxGiaNhap.IsNumberDouble && _tbxGiaBan.IsNumberDouble && _tbxSoLuongTon.IsNumberInt)
+            try
+            {
+                float giaNhap = Convert.ToSingle(_tbxGiaNhap.Texts.Trim());
+                float giaBan = Convert.ToSingle(_tbxGiaBan.Texts.Trim());
+                int soLuongTon = Convert.ToInt32(_tbxSoLuongTon.Texts.Trim());
+            }
+            catch (Exception)
+            {
+                _ = MessageBox.Show("Kiểm tra lại các giá trị đầu vào");
+                return;
+            }
+            if (_cbxSize.SelectedItem != null && _cbxNsx.SelectedItem != null && _cbxMauSac.SelectedItem != null && _cbxHangGiay.SelectedItem != null && _cbxGiay.SelectedItem != null && _cbxChieuCaoDeGiay.SelectedItem != null)
             {
                 Guid idSize = _qlSize.GetByMa(_cbxSize.SelectedItem.ToString()).Id;
                 Guid idNsx = _qlNsx.GetByMa(_cbxNsx.SelectedItem.ToString()).Id;
@@ -110,9 +121,20 @@ namespace C_GUI.QLForm
 
         private void _btnSua_Click(object sender, EventArgs e)
         {
+            try
+            {
+                float giaNhap = Convert.ToSingle(_tbxGiaNhap.Texts.Trim());
+                float giaBan = Convert.ToSingle(_tbxGiaBan.Texts.Trim());
+                int soLuongTon = Convert.ToInt32(_tbxSoLuongTon.Texts.Trim());
+            }
+            catch (Exception)
+            {
+                _ = MessageBox.Show("Kiểm tra lại các giá trị đầu vào");
+                return;
+            }
             if (idSelect != defaultId)
             {
-                if (_cbxSize.SelectedItem != null && _cbxNsx.SelectedItem != null && _cbxMauSac.SelectedItem != null && _cbxHangGiay.SelectedItem != null && _cbxGiay.SelectedItem != null && _cbxChieuCaoDeGiay.SelectedItem != null && _tbxGiaNhap.IsNumberDouble && _tbxGiaBan.IsNumberDouble && _tbxSoLuongTon.IsNumberInt)
+                if (_cbxSize.SelectedItem != null && _cbxNsx.SelectedItem != null && _cbxMauSac.SelectedItem != null && _cbxHangGiay.SelectedItem != null && _cbxGiay.SelectedItem != null && _cbxChieuCaoDeGiay.SelectedItem != null)
                 {
                     Guid idSize = _qlSize.GetByMa(_cbxSize.SelectedItem.ToString()).Id;
                     Guid idNsx = _qlNsx.GetByMa(_cbxNsx.SelectedItem.ToString()).Id;

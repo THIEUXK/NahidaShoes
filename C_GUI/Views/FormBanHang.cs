@@ -15,7 +15,7 @@ namespace C_GUI.Views
         private readonly IQLGiay _qlGiay;
         public static Guid idHoaDon;
         private readonly Guid idHoaDonDefaut;
-        private ListViewColumnSorter lvwColumnSorter;
+        private readonly ListViewColumnSorter lvwColumnSorter;
 
         public FormBanHang()
         {
@@ -225,14 +225,7 @@ namespace C_GUI.Views
             if (e.Column == lvwColumnSorter.SortColumn)
             {
                 // Reverse the current sort direction for this column.
-                if (lvwColumnSorter.Order == SortOrder.Ascending)
-                {
-                    lvwColumnSorter.Order = SortOrder.Descending;
-                }
-                else
-                {
-                    lvwColumnSorter.Order = SortOrder.Ascending;
-                }
+                lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
             }
             else
             {
@@ -251,14 +244,7 @@ namespace C_GUI.Views
             if (e.Column == lvwColumnSorter.SortColumn)
             {
                 // Reverse the current sort direction for this column.
-                if (lvwColumnSorter.Order == SortOrder.Ascending)
-                {
-                    lvwColumnSorter.Order = SortOrder.Descending;
-                }
-                else
-                {
-                    lvwColumnSorter.Order = SortOrder.Ascending;
-                }
+                lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
             }
             else
             {
@@ -277,14 +263,7 @@ namespace C_GUI.Views
             if (e.Column == lvwColumnSorter.SortColumn)
             {
                 // Reverse the current sort direction for this column.
-                if (lvwColumnSorter.Order == SortOrder.Ascending)
-                {
-                    lvwColumnSorter.Order = SortOrder.Descending;
-                }
-                else
-                {
-                    lvwColumnSorter.Order = SortOrder.Ascending;
-                }
+                lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
             }
             else
             {
@@ -303,14 +282,7 @@ namespace C_GUI.Views
             if (e.Column == lvwColumnSorter.SortColumn)
             {
                 // Reverse the current sort direction for this column.
-                if (lvwColumnSorter.Order == SortOrder.Ascending)
-                {
-                    lvwColumnSorter.Order = SortOrder.Descending;
-                }
-                else
-                {
-                    lvwColumnSorter.Order = SortOrder.Ascending;
-                }
+                lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
             }
             else
             {
@@ -327,7 +299,7 @@ namespace C_GUI.Views
         {
             if (_tbxTimKiemThongTinSanPham.Texts.Trim() != "")
             {
-                LoadChiTietGiay(_qlChiTietGiay.GetAllView().Where(c => c.Giay.TenGiay == (_tbxTimKiemThongTinSanPham.Texts.Trim())).ToList());
+                LoadChiTietGiay(_qlChiTietGiay.GetAllView().Where(c => c.Giay.TenGiay.Contains(_tbxTimKiemThongTinSanPham.Texts.Trim())).ToList());
             }
             else
             {
@@ -339,7 +311,7 @@ namespace C_GUI.Views
         {
             if (_tbxTimKiemGioHang.Texts.Trim() != "")
             {
-                LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => (c.HoaDonChiTiet.IdHoaDon == idHoaDon && _qlGiay.GetAll().Find(b => b.Id == c.ChTietGiay.IdGiay).MaGiay == (_tbxTimKiemGioHang.Texts.Trim()))).ToList());
+                LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon && _qlGiay.GetAll().Find(b => b.Id == c.ChTietGiay.IdGiay).MaGiay.Contains(_tbxTimKiemGioHang.Texts.Trim())).ToList());
             }
             else
             {
@@ -351,7 +323,7 @@ namespace C_GUI.Views
         {
             if (_tbxTimKiemHoaDonCho.Texts.Trim() != "")
             {
-                LoadHoaDonCho(_qlHoaDon.GetAllView().Where(c => (c.HoaDon.TrangThai == 0 && c.HoaDon.MaHoaDon == (_tbxTimKiemHoaDonCho.Texts.Trim()))).ToList());
+                LoadHoaDonCho(_qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai == 0 && c.HoaDon.MaHoaDon.Contains(_tbxTimKiemHoaDonCho.Texts.Trim())).ToList());
             }
             else
             {
@@ -363,7 +335,7 @@ namespace C_GUI.Views
         {
             if (_tbxTimKiemHoaDonKetThuc.Texts.Trim() != "")
             {
-                LoadHoaDonKetThuc(_qlHoaDon.GetAllView().Where(c => (c.HoaDon.TrangThai != 0 && c.HoaDon.MaHoaDon == (_tbxTimKiemHoaDonKetThuc.Texts.Trim()))).ToList());
+                LoadHoaDonKetThuc(_qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai != 0 && c.HoaDon.MaHoaDon.Contains(_tbxTimKiemHoaDonKetThuc.Texts.Trim())).ToList());
             }
             else
             {

@@ -1,4 +1,3 @@
-using C_GUI.QLForm;
 using C_GUI.Views;
 
 namespace C_GUI

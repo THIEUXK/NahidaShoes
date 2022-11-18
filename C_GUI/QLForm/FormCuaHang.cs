@@ -75,28 +75,18 @@ namespace C_GUI.QLForm
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            bool thongBao = _IQlCuaHang.Update(new A_DAL.Entities.CuaHang() { Id = _ID,MaCuaHang = txt_ma.Texts,TenCuaHang = txt_ten.Texts,DiaChi = txt_diachi.Texts , TrangThai = (rbtn_hoatdong.Checked == true ? 1 : 0) });
-            if (thongBao)
-            {
-                _ = MessageBox.Show("Sửa thành công");
-                LoadData();
-            }
+            var a = GetvaluaContro();
+            a.Id = _ID;
+            _IQlCuaHang.Update(a);
+            LoadData();
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            
-                bool thongBao = _IQlCuaHang.Delete(_IQlCuaHang.GetAll().Find(c => c.Id == _ID));
-                if (thongBao)
-                {
-                    _ = MessageBox.Show("Xóa thành công");
-                    LoadData();
-                }
-        }
-
-        private void dgrid_show_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+            var a = GetvaluaContro();
+            a.Id = _ID;
+            _IQlCuaHang.Update(a);
+            LoadData();
         }
     }
 }

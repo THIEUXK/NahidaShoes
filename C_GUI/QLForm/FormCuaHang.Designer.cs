@@ -244,7 +244,6 @@
             this.dgrid_show.RowTemplate.Height = 29;
             this.dgrid_show.Size = new System.Drawing.Size(789, 190);
             this.dgrid_show.TabIndex = 20;
-            this.dgrid_show.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellClick);
             this.dgrid_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellContentClick);
             // 
             // txt_diachi

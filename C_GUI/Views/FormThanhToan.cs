@@ -41,7 +41,7 @@ namespace C_GUI.Views
             float tongTien = 0;
             foreach (HoaDonChiTiet? item in _qlHoaDonChiTiet.GetAll().Where(c => c.IdHoaDon == FormBanHang.idHoaDon))
             {
-                tongTien += (item.SoLuong * item.DonGia);
+                tongTien += item.SoLuong * item.DonGia;
             }
             _tbxTongTien.Texts = tongTien.ToString();
         }
@@ -102,10 +102,14 @@ namespace C_GUI.Views
             float tongTien = 0;
             foreach (HoaDonChiTiet? item in _qlHoaDonChiTiet.GetAll().Where(c => c.IdHoaDon == FormBanHang.idHoaDon))
             {
-                tongTien += (item.SoLuong * item.DonGia);
+                tongTien += item.SoLuong * item.DonGia;
             }
             tongTien -= Convert.ToSingle(_tbxGiamGia.Texts);
-            if (tongTien < 0) tongTien = 0;
+            if (tongTien < 0)
+            {
+                tongTien = 0;
+            }
+
             _tbxTongTien.Texts = tongTien.ToString();
         }
     }

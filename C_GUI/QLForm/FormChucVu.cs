@@ -66,12 +66,22 @@ namespace C_GUI.Views
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-
+            bool thongBao = _IQlChucVu.Update(new A_DAL.Entities.ChucVu() { Id = _ID, MaChucVu = txt_ma.Texts, TenChucVu = txt_ten.Texts, TrangThai = (rbtn_hoatdong.Checked == true ? 1 : 0) });
+            if (thongBao)
+            {
+                _ = MessageBox.Show("Sửa thành công");
+                LoadData();
+            }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-
+            bool thongBao = _IQlChucVu.Delete(_IQlChucVu.GetAll().Find(c => c.Id == _ID));
+            if (thongBao)
+            {
+                _ = MessageBox.Show("Xóa thành công");
+                LoadData();
+            }
         }
     }
 }

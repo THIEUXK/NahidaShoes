@@ -57,5 +57,10 @@ namespace B_BUS.Services
                                                 }).ToList();
             return lst;
         }
+
+        public List<LichSuDiemTieuDung> GetAll()
+        {
+            return igLichsu.GetAll();
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace B_BUS.IServices
         bool Update(LichSuDiemTieuDung obj);
         bool Delete(LichSuDiemTieuDung obj);
         List<LichSuDiemTieuDungView> GetAllView();
+        List<LichSuDiemTieuDung> GetAll();
     }
 }

@@ -1,9 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
 namespace ADAL.Migrations
 {
@@ -13,7 +11,7 @@ namespace ADAL.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "ChieuCaoDeGiay",
                 columns: table => new
                 {
@@ -24,10 +22,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChieuCaoDeGiay", x => x.Id);
+                    _ = table.PrimaryKey("PK_ChieuCaoDeGiay", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "ChucVu",
                 columns: table => new
                 {
@@ -38,10 +36,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChucVu", x => x.Id);
+                    _ = table.PrimaryKey("PK_ChucVu", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "CuaHang",
                 columns: table => new
                 {
@@ -53,10 +51,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CuaHang", x => x.Id);
+                    _ = table.PrimaryKey("PK_CuaHang", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "Giay",
                 columns: table => new
                 {
@@ -67,10 +65,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Giay", x => x.Id);
+                    _ = table.PrimaryKey("PK_Giay", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "HangGiay",
                 columns: table => new
                 {
@@ -81,10 +79,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HangGiay", x => x.Id);
+                    _ = table.PrimaryKey("PK_HangGiay", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "KhachHang",
                 columns: table => new
                 {
@@ -100,10 +98,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_KhachHang", x => x.Id);
+                    _ = table.PrimaryKey("PK_KhachHang", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "MauSac",
                 columns: table => new
                 {
@@ -114,10 +112,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MauSac", x => x.Id);
+                    _ = table.PrimaryKey("PK_MauSac", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "Nsx",
                 columns: table => new
                 {
@@ -128,10 +126,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Nsx", x => x.Id);
+                    _ = table.PrimaryKey("PK_Nsx", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "PhuongThucThanhToan",
                 columns: table => new
                 {
@@ -141,10 +139,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PhuongThucThanhToan", x => x.Id);
+                    _ = table.PrimaryKey("PK_PhuongThucThanhToan", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "QuyDoi",
                 columns: table => new
                 {
@@ -155,10 +153,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_QuyDoi", x => x.Id);
+                    _ = table.PrimaryKey("PK_QuyDoi", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "Sale",
                 columns: table => new
                 {
@@ -172,10 +170,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Sale", x => x.Id);
+                    _ = table.PrimaryKey("PK_Sale", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "Size",
                 columns: table => new
                 {
@@ -187,10 +185,10 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Size", x => x.Id);
+                    _ = table.PrimaryKey("PK_Size", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "TheLoai",
                 columns: table => new
                 {
@@ -202,8 +200,8 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TheLoai", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_TheLoai", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_TheLoai_TheLoai_IdPhanCap",
                         column: x => x.IdPhanCap,
                         principalTable: "TheLoai",
@@ -211,7 +209,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "NhanVien",
                 columns: table => new
                 {
@@ -230,14 +228,14 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NhanVien", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_NhanVien", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_NhanVien_ChucVu_IdChucVu",
                         column: x => x.IdChucVu,
                         principalTable: "ChucVu",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_NhanVien_CuaHang_IdCuaHang",
                         column: x => x.IdCuaHang,
                         principalTable: "CuaHang",
@@ -245,7 +243,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "DiemTieuDung",
                 columns: table => new
                 {
@@ -257,8 +255,8 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DiemTieuDung", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_DiemTieuDung", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_DiemTieuDung_KhachHang_IdKhachHang",
                         column: x => x.IdKhachHang,
                         principalTable: "KhachHang",
@@ -266,7 +264,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "ChiTietGiay",
                 columns: table => new
                 {
@@ -285,38 +283,38 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChiTietGiay", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_ChiTietGiay", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietGiay_ChieuCaoDeGiay_IdChieuCaoDeGiay",
                         column: x => x.IdChieuCaoDeGiay,
                         principalTable: "ChieuCaoDeGiay",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietGiay_Giay_IdGiay",
                         column: x => x.IdGiay,
                         principalTable: "Giay",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietGiay_HangGiay_IdHangGiay",
                         column: x => x.IdHangGiay,
                         principalTable: "HangGiay",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietGiay_MauSac_IdMauSac",
                         column: x => x.IdMauSac,
                         principalTable: "MauSac",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietGiay_Nsx_IdNsx",
                         column: x => x.IdNsx,
                         principalTable: "Nsx",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietGiay_Size_IdSize",
                         column: x => x.IdSize,
                         principalTable: "Size",
@@ -324,7 +322,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "GiaoCa",
                 columns: table => new
                 {
@@ -342,14 +340,14 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GiaoCa", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_GiaoCa", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_GiaoCa_NhanVien_IdNhanVien",
                         column: x => x.IdNhanVien,
                         principalTable: "NhanVien",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_GiaoCa_NhanVien_IdNhanVienTiepQuan",
                         column: x => x.IdNhanVienTiepQuan,
                         principalTable: "NhanVien",
@@ -357,7 +355,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "HoaDon",
                 columns: table => new
                 {
@@ -373,14 +371,14 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HoaDon", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_HoaDon", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_HoaDon_KhachHang_IdKhachHang",
                         column: x => x.IdKhachHang,
                         principalTable: "KhachHang",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_HoaDon_NhanVien_IdNhanVien",
                         column: x => x.IdNhanVien,
                         principalTable: "NhanVien",
@@ -388,7 +386,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "ChiTietSale",
                 columns: table => new
                 {
@@ -399,14 +397,14 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChiTietSale", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_ChiTietSale", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietSale_ChiTietGiay_IdChiTietGiay",
                         column: x => x.IdChiTietGiay,
                         principalTable: "ChiTietGiay",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietSale_Sale_IdSale",
                         column: x => x.IdSale,
                         principalTable: "Sale",
@@ -414,7 +412,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "ChiTietTheLoai",
                 columns: table => new
                 {
@@ -425,14 +423,14 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChiTietTheLoai", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_ChiTietTheLoai", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietTheLoai_ChiTietGiay_IdChiTietGiay",
                         column: x => x.IdChiTietGiay,
                         principalTable: "ChiTietGiay",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietTheLoai_TheLoai_IdTheLoai",
                         column: x => x.IdTheLoai,
                         principalTable: "TheLoai",
@@ -440,7 +438,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "ChiTietThanhToan",
                 columns: table => new
                 {
@@ -453,14 +451,14 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChiTietThanhToan", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_ChiTietThanhToan", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietThanhToan_HoaDon_IdHoaDon",
                         column: x => x.IdHoaDon,
                         principalTable: "HoaDon",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_ChiTietThanhToan_PhuongThucThanhToan_IdPhuongThucThanhToan",
                         column: x => x.IdPhuongThucThanhToan,
                         principalTable: "PhuongThucThanhToan",
@@ -468,7 +466,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "HoaDonChiTiet",
                 columns: table => new
                 {
@@ -481,14 +479,14 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HoaDonChiTiet", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_HoaDonChiTiet", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_HoaDonChiTiet_ChiTietGiay_IdChiTietGiay",
                         column: x => x.IdChiTietGiay,
                         principalTable: "ChiTietGiay",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_HoaDonChiTiet_HoaDon_IdHoaDon",
                         column: x => x.IdHoaDon,
                         principalTable: "HoaDon",
@@ -496,7 +494,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
+            _ = migrationBuilder.CreateTable(
                 name: "LichSuDiemTieuDung",
                 columns: table => new
                 {
@@ -509,20 +507,20 @@ namespace ADAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LichSuDiemTieuDung", x => x.Id);
-                    table.ForeignKey(
+                    _ = table.PrimaryKey("PK_LichSuDiemTieuDung", x => x.Id);
+                    _ = table.ForeignKey(
                         name: "FK_LichSuDiemTieuDung_DiemTieuDung_IdDiemTieuDung",
                         column: x => x.IdDiemTieuDung,
                         principalTable: "DiemTieuDung",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_LichSuDiemTieuDung_HoaDon_IdHoaDon",
                         column: x => x.IdHoaDon,
                         principalTable: "HoaDon",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
+                    _ = table.ForeignKey(
                         name: "FK_LichSuDiemTieuDung_QuyDoi_IdQuyDoi",
                         column: x => x.IdQuyDoi,
                         principalTable: "QuyDoi",
@@ -530,7 +528,7 @@ namespace ADAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "ChieuCaoDeGiay",
                 columns: new[] { "Id", "KichCo", "MaKichCo", "TrangThai" },
                 values: new object[,]
@@ -542,17 +540,17 @@ namespace ADAL.Migrations
                     { new Guid("877f1a90-2de8-419a-9cc9-b793f2c3667a"), 4, "KC4", 0 }
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "ChucVu",
                 columns: new[] { "Id", "MaChucVu", "TenChucVu", "TrangThai" },
                 values: new object[] { new Guid("3d54cbf7-9933-4314-88db-7edbb357cb6c"), "CV1", "Nhân viên", 0 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "CuaHang",
                 columns: new[] { "Id", "DiaChi", "MaCuaHang", "TenCuaHang", "TrangThai" },
                 values: new object[] { new Guid("f1887f8f-910c-4dbc-9b30-3027bf3c8d03"), "Hà Nội", "CH1", "Cửa hàng 1", 0 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "Giay",
                 columns: new[] { "Id", "MaGiay", "TenGiay", "TrangThai" },
                 values: new object[,]
@@ -564,7 +562,7 @@ namespace ADAL.Migrations
                     { new Guid("ffaeb614-9fa6-49cf-91da-9f70b6ee1699"), "G3", "Giày 3", 0 }
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "HangGiay",
                 columns: new[] { "Id", "MaHangGiay", "TenHangGiay", "TrangThai" },
                 values: new object[,]
@@ -576,7 +574,7 @@ namespace ADAL.Migrations
                     { new Guid("ed9a3578-bb35-429b-813f-8333a920d98b"), "HG5", "Hãng giày 5", 0 }
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "KhachHang",
                 columns: new[] { "Id", "DiaChi", "Email", "MaKhachHang", "NgaySinh", "Sdt", "SoCCCD", "TenKhachHang", "TrangThai" },
                 values: new object[,]
@@ -585,7 +583,7 @@ namespace ADAL.Migrations
                     { new Guid("dda9e8c4-688c-41ca-96bc-e6dcfd33c486"), "Hà Nội", null, "KH1", new DateTime(2022, 11, 18, 7, 50, 0, 104, DateTimeKind.Local).AddTicks(6815), "0385922775", "12345", "Khách hàng 1", 0 }
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "MauSac",
                 columns: new[] { "Id", "MaMauSac", "TenMauSac", "TrangThai" },
                 values: new object[,]
@@ -597,7 +595,7 @@ namespace ADAL.Migrations
                     { new Guid("7b883e9c-18c4-4aec-902d-9ca619b2e088"), "MS4", "Màu sắc 4", 0 }
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "Nsx",
                 columns: new[] { "Id", "DiaChi", "MaNsx", "TenNsx" },
                 values: new object[,]
@@ -609,7 +607,7 @@ namespace ADAL.Migrations
                     { new Guid("c8979339-5688-4c6a-b234-ee1f1ee9d9ff"), "Hà Nội", "NSX3", "Nhà sản xuất 3" }
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "Size",
                 columns: new[] { "Id", "MaSize", "SoSize", "TenSize", "TrangThai" },
                 values: new object[,]
@@ -621,7 +619,7 @@ namespace ADAL.Migrations
                     { new Guid("b043b7f2-2ac4-45b2-9598-e525805e78a3"), "SZ2", 31, "Size 2", 0 }
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "ChiTietGiay",
                 columns: new[] { "Id", "GiaBan", "GiaNhap", "IdChieuCaoDeGiay", "IdGiay", "IdHangGiay", "IdMauSac", "IdNsx", "IdSize", "MoTa", "SoLuongTon", "TrangThai" },
                 values: new object[,]
@@ -638,7 +636,7 @@ namespace ADAL.Migrations
                     { new Guid("d9f5c6c6-a111-4ea7-ab92-c4ddb1a98754"), 10000f, 7000f, new Guid("4f1e567c-c03b-4691-af7d-0f5907b71888"), new Guid("ffaeb614-9fa6-49cf-91da-9f70b6ee1699"), new Guid("ed9a3578-bb35-429b-813f-8333a920d98b"), new Guid("02dabd87-7211-4ae9-9531-c139ce84beec"), new Guid("c8979339-5688-4c6a-b234-ee1f1ee9d9ff"), new Guid("80b654e3-fc5c-4bd3-ab7e-4f5f34dc6465"), null, 100, 0 }
                 });
 
-            migrationBuilder.InsertData(
+            _ = migrationBuilder.InsertData(
                 table: "NhanVien",
                 columns: new[] { "Id", "DiaChi", "Email", "GioiTinh", "IdChucVu", "IdCuaHang", "MaNhanVien", "MatKhau", "NgaySinh", "Sdt", "TenNhanVien", "TrangThai" },
                 values: new object[,]
@@ -647,234 +645,234 @@ namespace ADAL.Migrations
                     { new Guid("cffe5808-8c26-44d1-b0a9-f65edfcd91bd"), "Hà Nội", null, 0, new Guid("3d54cbf7-9933-4314-88db-7edbb357cb6c"), new Guid("f1887f8f-910c-4dbc-9b30-3027bf3c8d03"), "NV1", "00000", new DateTime(2022, 11, 18, 7, 50, 0, 104, DateTimeKind.Local).AddTicks(6687), "0385922775", "Nhân viên 1", 0 }
                 });
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChieuCaoDeGiay_MaKichCo",
                 table: "ChieuCaoDeGiay",
                 column: "MaKichCo",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietGiay_IdChieuCaoDeGiay",
                 table: "ChiTietGiay",
                 column: "IdChieuCaoDeGiay");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietGiay_IdGiay",
                 table: "ChiTietGiay",
                 column: "IdGiay");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietGiay_IdHangGiay",
                 table: "ChiTietGiay",
                 column: "IdHangGiay");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietGiay_IdMauSac_IdSize_IdNsx_IdHangGiay_IdChieuCaoDeGiay_IdGiay",
                 table: "ChiTietGiay",
                 columns: new[] { "IdMauSac", "IdSize", "IdNsx", "IdHangGiay", "IdChieuCaoDeGiay", "IdGiay" },
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietGiay_IdNsx",
                 table: "ChiTietGiay",
                 column: "IdNsx");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietGiay_IdSize",
                 table: "ChiTietGiay",
                 column: "IdSize");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietSale_IdChiTietGiay_IdSale",
                 table: "ChiTietSale",
                 columns: new[] { "IdChiTietGiay", "IdSale" },
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietSale_IdSale",
                 table: "ChiTietSale",
                 column: "IdSale");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietThanhToan_IdHoaDon",
                 table: "ChiTietThanhToan",
                 column: "IdHoaDon");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietThanhToan_IdPhuongThucThanhToan",
                 table: "ChiTietThanhToan",
                 column: "IdPhuongThucThanhToan");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietTheLoai_IdChiTietGiay_IdTheLoai",
                 table: "ChiTietTheLoai",
                 columns: new[] { "IdChiTietGiay", "IdTheLoai" },
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChiTietTheLoai_IdTheLoai",
                 table: "ChiTietTheLoai",
                 column: "IdTheLoai");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_ChucVu_MaChucVu",
                 table: "ChucVu",
                 column: "MaChucVu",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_CuaHang_MaCuaHang",
                 table: "CuaHang",
                 column: "MaCuaHang",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_DiemTieuDung_IdKhachHang",
                 table: "DiemTieuDung",
                 column: "IdKhachHang",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_DiemTieuDung_MaDiemTieuDung",
                 table: "DiemTieuDung",
                 column: "MaDiemTieuDung",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_GiaoCa_IdNhanVien",
                 table: "GiaoCa",
                 column: "IdNhanVien");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_GiaoCa_IdNhanVienTiepQuan",
                 table: "GiaoCa",
                 column: "IdNhanVienTiepQuan");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_GiaoCa_MaGiaoCa",
                 table: "GiaoCa",
                 column: "MaGiaoCa",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_Giay_MaGiay",
                 table: "Giay",
                 column: "MaGiay",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_HangGiay_MaHangGiay",
                 table: "HangGiay",
                 column: "MaHangGiay",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_HoaDon_IdKhachHang",
                 table: "HoaDon",
                 column: "IdKhachHang");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_HoaDon_IdNhanVien",
                 table: "HoaDon",
                 column: "IdNhanVien");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_HoaDon_MaHoaDon",
                 table: "HoaDon",
                 column: "MaHoaDon",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_HoaDonChiTiet_IdChiTietGiay_IdHoaDon",
                 table: "HoaDonChiTiet",
                 columns: new[] { "IdChiTietGiay", "IdHoaDon" },
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_HoaDonChiTiet_IdHoaDon",
                 table: "HoaDonChiTiet",
                 column: "IdHoaDon");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_KhachHang_MaKhachHang",
                 table: "KhachHang",
                 column: "MaKhachHang",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_KhachHang_SoCCCD",
                 table: "KhachHang",
                 column: "SoCCCD",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_LichSuDiemTieuDung_IdDiemTieuDung",
                 table: "LichSuDiemTieuDung",
                 column: "IdDiemTieuDung");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_LichSuDiemTieuDung_IdHoaDon_IdDiemTieuDung_IdQuyDoi",
                 table: "LichSuDiemTieuDung",
                 columns: new[] { "IdHoaDon", "IdDiemTieuDung", "IdQuyDoi" },
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_LichSuDiemTieuDung_IdQuyDoi",
                 table: "LichSuDiemTieuDung",
                 column: "IdQuyDoi");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_MauSac_MaMauSac",
                 table: "MauSac",
                 column: "MaMauSac",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_NhanVien_IdChucVu",
                 table: "NhanVien",
                 column: "IdChucVu");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_NhanVien_IdCuaHang",
                 table: "NhanVien",
                 column: "IdCuaHang");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_NhanVien_MaNhanVien",
                 table: "NhanVien",
                 column: "MaNhanVien",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_Nsx_MaNsx",
                 table: "Nsx",
                 column: "MaNsx",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_QuyDoi_MaQuyDoi",
                 table: "QuyDoi",
                 column: "MaQuyDoi",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_Sale_MaGiamGia",
                 table: "Sale",
                 column: "MaGiamGia",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_Size_MaSize",
                 table: "Size",
                 column: "MaSize",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_TheLoai_IdPhanCap",
                 table: "TheLoai",
                 column: "IdPhanCap");
 
-            migrationBuilder.CreateIndex(
+            _ = migrationBuilder.CreateIndex(
                 name: "IX_TheLoai_MaTheLoai",
                 table: "TheLoai",
                 column: "MaTheLoai",
@@ -884,73 +882,73 @@ namespace ADAL.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "ChiTietSale");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "ChiTietThanhToan");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "ChiTietTheLoai");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "GiaoCa");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "HoaDonChiTiet");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "LichSuDiemTieuDung");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "Sale");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "PhuongThucThanhToan");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "TheLoai");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "ChiTietGiay");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "DiemTieuDung");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "HoaDon");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "QuyDoi");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "ChieuCaoDeGiay");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "Giay");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "HangGiay");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "MauSac");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "Nsx");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "Size");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "KhachHang");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "NhanVien");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "ChucVu");
 
-            migrationBuilder.DropTable(
+            _ = migrationBuilder.DropTable(
                 name: "CuaHang");
         }
     }

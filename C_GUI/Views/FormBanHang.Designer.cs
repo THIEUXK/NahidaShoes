@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this._tbxTimKiemThongTinSanPham = new C_GUI.RJControls.RJTextBox();
             this._lsvShowSanPham = new System.Windows.Forms.ListView();
             this.Id = new System.Windows.Forms.ColumnHeader();
             this.TenGiay = new System.Windows.Forms.ColumnHeader();
@@ -41,16 +42,19 @@
             this.SoLuongTon = new System.Windows.Forms.ColumnHeader();
             this.MoTa = new System.Windows.Forms.ColumnHeader();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this._tbxTimKiemGioHang = new C_GUI.RJControls.RJTextBox();
             this._lsvGioHang = new System.Windows.Forms.ListView();
             this._Id = new System.Windows.Forms.ColumnHeader();
             this._TenGiay = new System.Windows.Forms.ColumnHeader();
             this._DonGia = new System.Windows.Forms.ColumnHeader();
             this._SoLuong = new System.Windows.Forms.ColumnHeader();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this._tbxTimKiemHoaDonCho = new C_GUI.RJControls.RJTextBox();
             this._lsvHoaDonCho = new System.Windows.Forms.ListView();
             this.IdHoaDon = new System.Windows.Forms.ColumnHeader();
             this.MaHoaDon = new System.Windows.Forms.ColumnHeader();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this._tbxTimKiemHoaDonKetThuc = new C_GUI.RJControls.RJTextBox();
             this._lsvHoaDonKetThuc = new System.Windows.Forms.ListView();
             this._idHoaDon = new System.Windows.Forms.ColumnHeader();
             this._MaHoaDon = new System.Windows.Forms.ColumnHeader();
@@ -79,6 +83,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this._tbxTimKiemThongTinSanPham);
             this.groupBox1.Controls.Add(this._lsvShowSanPham);
             this.groupBox1.Location = new System.Drawing.Point(375, 18);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -88,6 +93,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
+            // 
+            // _tbxTimKiemThongTinSanPham
+            // 
+            this._tbxTimKiemThongTinSanPham.BackColor = System.Drawing.SystemColors.Window;
+            this._tbxTimKiemThongTinSanPham.BorderColor = System.Drawing.Color.Black;
+            this._tbxTimKiemThongTinSanPham.BorderFocusColor = System.Drawing.Color.Red;
+            this._tbxTimKiemThongTinSanPham.BorderRadius = 15;
+            this._tbxTimKiemThongTinSanPham.BorderSize = 2;
+            this._tbxTimKiemThongTinSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._tbxTimKiemThongTinSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this._tbxTimKiemThongTinSanPham.Location = new System.Drawing.Point(5, 22);
+            this._tbxTimKiemThongTinSanPham.Margin = new System.Windows.Forms.Padding(4);
+            this._tbxTimKiemThongTinSanPham.MaxLength = 20;
+            this._tbxTimKiemThongTinSanPham.Multiline = false;
+            this._tbxTimKiemThongTinSanPham.Name = "_tbxTimKiemThongTinSanPham";
+            this._tbxTimKiemThongTinSanPham.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this._tbxTimKiemThongTinSanPham.PasswordChar = false;
+            this._tbxTimKiemThongTinSanPham.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this._tbxTimKiemThongTinSanPham.PlaceholderText = "";
+            this._tbxTimKiemThongTinSanPham.Size = new System.Drawing.Size(966, 31);
+            this._tbxTimKiemThongTinSanPham.TabIndex = 43;
+            this._tbxTimKiemThongTinSanPham.Texts = "";
+            this._tbxTimKiemThongTinSanPham.UnderlinedStyle = false;
+            this._tbxTimKiemThongTinSanPham._TextChanged += new System.EventHandler(this._tbxTimKiemThongTinSanPham__TextChanged);
             // 
             // _lsvShowSanPham
             // 
@@ -103,13 +132,14 @@
             this.SoLuongTon,
             this.MoTa});
             this._lsvShowSanPham.FullRowSelect = true;
-            this._lsvShowSanPham.Location = new System.Drawing.Point(5, 20);
+            this._lsvShowSanPham.Location = new System.Drawing.Point(5, 59);
             this._lsvShowSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._lsvShowSanPham.Name = "_lsvShowSanPham";
-            this._lsvShowSanPham.Size = new System.Drawing.Size(968, 184);
+            this._lsvShowSanPham.Size = new System.Drawing.Size(968, 145);
             this._lsvShowSanPham.TabIndex = 1;
             this._lsvShowSanPham.UseCompatibleStateImageBehavior = false;
             this._lsvShowSanPham.View = System.Windows.Forms.View.Details;
+            this._lsvShowSanPham.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this._lsvShowSanPham_ColumnClick);
             this._lsvShowSanPham.DoubleClick += new System.EventHandler(this._lsvShowSanPham_DoubleClick);
             // 
             // Id
@@ -173,6 +203,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this._tbxTimKiemGioHang);
             this.groupBox2.Controls.Add(this._lsvGioHang);
             this.groupBox2.Location = new System.Drawing.Point(1, 243);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -183,6 +214,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giỏ Hàng";
             // 
+            // _tbxTimKiemGioHang
+            // 
+            this._tbxTimKiemGioHang.BackColor = System.Drawing.SystemColors.Window;
+            this._tbxTimKiemGioHang.BorderColor = System.Drawing.Color.Black;
+            this._tbxTimKiemGioHang.BorderFocusColor = System.Drawing.Color.Red;
+            this._tbxTimKiemGioHang.BorderRadius = 15;
+            this._tbxTimKiemGioHang.BorderSize = 2;
+            this._tbxTimKiemGioHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._tbxTimKiemGioHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this._tbxTimKiemGioHang.Location = new System.Drawing.Point(7, 18);
+            this._tbxTimKiemGioHang.Margin = new System.Windows.Forms.Padding(4);
+            this._tbxTimKiemGioHang.MaxLength = 20;
+            this._tbxTimKiemGioHang.Multiline = false;
+            this._tbxTimKiemGioHang.Name = "_tbxTimKiemGioHang";
+            this._tbxTimKiemGioHang.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this._tbxTimKiemGioHang.PasswordChar = false;
+            this._tbxTimKiemGioHang.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this._tbxTimKiemGioHang.PlaceholderText = "";
+            this._tbxTimKiemGioHang.Size = new System.Drawing.Size(315, 31);
+            this._tbxTimKiemGioHang.TabIndex = 43;
+            this._tbxTimKiemGioHang.Texts = "";
+            this._tbxTimKiemGioHang.UnderlinedStyle = false;
+            this._tbxTimKiemGioHang._TextChanged += new System.EventHandler(this._tbxTimKiemGioHang__TextChanged);
+            // 
             // _lsvGioHang
             // 
             this._lsvGioHang.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -191,13 +246,14 @@
             this._DonGia,
             this._SoLuong});
             this._lsvGioHang.FullRowSelect = true;
-            this._lsvGioHang.Location = new System.Drawing.Point(5, 20);
+            this._lsvGioHang.Location = new System.Drawing.Point(5, 55);
             this._lsvGioHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._lsvGioHang.Name = "_lsvGioHang";
-            this._lsvGioHang.Size = new System.Drawing.Size(317, 190);
+            this._lsvGioHang.Size = new System.Drawing.Size(317, 155);
             this._lsvGioHang.TabIndex = 0;
             this._lsvGioHang.UseCompatibleStateImageBehavior = false;
             this._lsvGioHang.View = System.Windows.Forms.View.Details;
+            this._lsvGioHang.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this._lsvGioHang_ColumnClick);
             this._lsvGioHang.DoubleClick += new System.EventHandler(this._lsvGioHang_DoubleClick);
             // 
             // _Id
@@ -225,6 +281,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this._tbxTimKiemHoaDonCho);
             this.groupBox4.Controls.Add(this._lsvHoaDonCho);
             this.groupBox4.Location = new System.Drawing.Point(330, 243);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -235,19 +292,44 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Hóa Đơn Chờ";
             // 
+            // _tbxTimKiemHoaDonCho
+            // 
+            this._tbxTimKiemHoaDonCho.BackColor = System.Drawing.SystemColors.Window;
+            this._tbxTimKiemHoaDonCho.BorderColor = System.Drawing.Color.Black;
+            this._tbxTimKiemHoaDonCho.BorderFocusColor = System.Drawing.Color.Red;
+            this._tbxTimKiemHoaDonCho.BorderRadius = 15;
+            this._tbxTimKiemHoaDonCho.BorderSize = 2;
+            this._tbxTimKiemHoaDonCho.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._tbxTimKiemHoaDonCho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this._tbxTimKiemHoaDonCho.Location = new System.Drawing.Point(6, 18);
+            this._tbxTimKiemHoaDonCho.Margin = new System.Windows.Forms.Padding(4);
+            this._tbxTimKiemHoaDonCho.MaxLength = 20;
+            this._tbxTimKiemHoaDonCho.Multiline = false;
+            this._tbxTimKiemHoaDonCho.Name = "_tbxTimKiemHoaDonCho";
+            this._tbxTimKiemHoaDonCho.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this._tbxTimKiemHoaDonCho.PasswordChar = false;
+            this._tbxTimKiemHoaDonCho.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this._tbxTimKiemHoaDonCho.PlaceholderText = "";
+            this._tbxTimKiemHoaDonCho.Size = new System.Drawing.Size(132, 31);
+            this._tbxTimKiemHoaDonCho.TabIndex = 42;
+            this._tbxTimKiemHoaDonCho.Texts = "";
+            this._tbxTimKiemHoaDonCho.UnderlinedStyle = false;
+            this._tbxTimKiemHoaDonCho._TextChanged += new System.EventHandler(this._tbxTimKiemHoaDonCho__TextChanged);
+            // 
             // _lsvHoaDonCho
             // 
             this._lsvHoaDonCho.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IdHoaDon,
             this.MaHoaDon});
             this._lsvHoaDonCho.FullRowSelect = true;
-            this._lsvHoaDonCho.Location = new System.Drawing.Point(6, 20);
+            this._lsvHoaDonCho.Location = new System.Drawing.Point(6, 55);
             this._lsvHoaDonCho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._lsvHoaDonCho.Name = "_lsvHoaDonCho";
-            this._lsvHoaDonCho.Size = new System.Drawing.Size(133, 190);
+            this._lsvHoaDonCho.Size = new System.Drawing.Size(133, 155);
             this._lsvHoaDonCho.TabIndex = 2;
             this._lsvHoaDonCho.UseCompatibleStateImageBehavior = false;
             this._lsvHoaDonCho.View = System.Windows.Forms.View.Details;
+            this._lsvHoaDonCho.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this._lsvHoaDonCho_ColumnClick);
             this._lsvHoaDonCho.DoubleClick += new System.EventHandler(this._lsvHoaDonCho_DoubleClick);
             // 
             // IdHoaDon
@@ -263,6 +345,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this._tbxTimKiemHoaDonKetThuc);
             this.groupBox5.Controls.Add(this._lsvHoaDonKetThuc);
             this.groupBox5.Location = new System.Drawing.Point(475, 243);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -272,6 +355,30 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Hóa đơn đã kết thúc";
+            // 
+            // _tbxTimKiemHoaDonKetThuc
+            // 
+            this._tbxTimKiemHoaDonKetThuc.BackColor = System.Drawing.SystemColors.Window;
+            this._tbxTimKiemHoaDonKetThuc.BorderColor = System.Drawing.Color.Black;
+            this._tbxTimKiemHoaDonKetThuc.BorderFocusColor = System.Drawing.Color.Red;
+            this._tbxTimKiemHoaDonKetThuc.BorderRadius = 15;
+            this._tbxTimKiemHoaDonKetThuc.BorderSize = 2;
+            this._tbxTimKiemHoaDonKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._tbxTimKiemHoaDonKetThuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this._tbxTimKiemHoaDonKetThuc.Location = new System.Drawing.Point(7, 18);
+            this._tbxTimKiemHoaDonKetThuc.Margin = new System.Windows.Forms.Padding(4);
+            this._tbxTimKiemHoaDonKetThuc.MaxLength = 20;
+            this._tbxTimKiemHoaDonKetThuc.Multiline = false;
+            this._tbxTimKiemHoaDonKetThuc.Name = "_tbxTimKiemHoaDonKetThuc";
+            this._tbxTimKiemHoaDonKetThuc.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this._tbxTimKiemHoaDonKetThuc.PasswordChar = false;
+            this._tbxTimKiemHoaDonKetThuc.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this._tbxTimKiemHoaDonKetThuc.PlaceholderText = "";
+            this._tbxTimKiemHoaDonKetThuc.Size = new System.Drawing.Size(864, 31);
+            this._tbxTimKiemHoaDonKetThuc.TabIndex = 43;
+            this._tbxTimKiemHoaDonKetThuc.Texts = "";
+            this._tbxTimKiemHoaDonKetThuc.UnderlinedStyle = false;
+            this._tbxTimKiemHoaDonKetThuc._TextChanged += new System.EventHandler(this._tbxTimKiemHoaDonKetThuc__TextChanged);
             // 
             // _lsvHoaDonKetThuc
             // 
@@ -286,13 +393,14 @@
             this.GhiChu,
             this.TrangThai});
             this._lsvHoaDonKetThuc.FullRowSelect = true;
-            this._lsvHoaDonKetThuc.Location = new System.Drawing.Point(6, 20);
+            this._lsvHoaDonKetThuc.Location = new System.Drawing.Point(6, 55);
             this._lsvHoaDonKetThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._lsvHoaDonKetThuc.Name = "_lsvHoaDonKetThuc";
-            this._lsvHoaDonKetThuc.Size = new System.Drawing.Size(865, 190);
+            this._lsvHoaDonKetThuc.Size = new System.Drawing.Size(865, 155);
             this._lsvHoaDonKetThuc.TabIndex = 2;
             this._lsvHoaDonKetThuc.UseCompatibleStateImageBehavior = false;
             this._lsvHoaDonKetThuc.View = System.Windows.Forms.View.Details;
+            this._lsvHoaDonKetThuc.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this._lsvHoaDonKetThuc_ColumnClick);
             this._lsvHoaDonKetThuc.DoubleClick += new System.EventHandler(this._lsvHoaDonKetThuc_DoubleClick);
             // 
             // _idHoaDon
@@ -567,5 +675,9 @@
         private RJControls.RJComboBox _cbxNhanVien;
         private GroupBox groupBox3;
         private RJControls.RJButton _btnThanhToan;
+        private RJControls.RJTextBox _tbxTimKiemThongTinSanPham;
+        private RJControls.RJTextBox _tbxTimKiemGioHang;
+        private RJControls.RJTextBox _tbxTimKiemHoaDonCho;
+        private RJControls.RJTextBox _tbxTimKiemHoaDonKetThuc;
     }
 }

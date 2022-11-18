@@ -12,7 +12,7 @@ namespace A_DAL.Context
 
             _ = optionsBuilder.UseSqlServer("Data Source=KONAMIRS\\SQLEXPRESS;Initial Catalog=NahidaShoes;User ID=hope;Password=123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
-            _ = optionsBuilder.UseSqlServer("Data Source=MSI\\SQLEXPRESS;Initial Catalog=NahidaShoes;User ID=thieubvph20221;Password=123456;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            //_ = optionsBuilder.UseSqlServer("Data Source=MSI\\SQLEXPRESS;Initial Catalog=NahidaShoes;User ID=thieubvph20221;Password=123456;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         }
         protected override void OnModelCreating(ModelBuilder builder)

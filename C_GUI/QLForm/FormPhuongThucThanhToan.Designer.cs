@@ -28,65 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_tilequydoi = new C_GUI.RJControls.RJTextBox();
-            this.txt_maqd = new C_GUI.RJControls.RJTextBox();
+            this.txt_tenpttt = new C_GUI.RJControls.RJTextBox();
+            this.txt_mapttt = new C_GUI.RJControls.RJTextBox();
             this.btn_xoa = new C_GUI.RJControls.RJButton();
             this.btn_sua = new C_GUI.RJControls.RJButton();
             this.btn_them = new C_GUI.RJControls.RJButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tx = new System.Windows.Forms.Label();
             this.dgrid_show = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_tilequydoi
+            // txt_tenpttt
             // 
-            this.txt_tilequydoi.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_tilequydoi.BorderColor = System.Drawing.Color.Black;
-            this.txt_tilequydoi.BorderFocusColor = System.Drawing.Color.Red;
-            this.txt_tilequydoi.BorderRadius = 15;
-            this.txt_tilequydoi.BorderSize = 2;
-            this.txt_tilequydoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_tilequydoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_tilequydoi.Location = new System.Drawing.Point(165, 97);
-            this.txt_tilequydoi.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_tilequydoi.MaxLength = 20;
-            this.txt_tilequydoi.Multiline = false;
-            this.txt_tilequydoi.Name = "txt_tilequydoi";
-            this.txt_tilequydoi.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_tilequydoi.PasswordChar = false;
-            this.txt_tilequydoi.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_tilequydoi.PlaceholderText = "";
-            this.txt_tilequydoi.Size = new System.Drawing.Size(312, 35);
-            this.txt_tilequydoi.TabIndex = 58;
-            this.txt_tilequydoi.Texts = "";
-            this.txt_tilequydoi.UnderlinedStyle = false;
+            this.txt_tenpttt.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_tenpttt.BorderColor = System.Drawing.Color.Black;
+            this.txt_tenpttt.BorderFocusColor = System.Drawing.Color.Red;
+            this.txt_tenpttt.BorderRadius = 15;
+            this.txt_tenpttt.BorderSize = 2;
+            this.txt_tenpttt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_tenpttt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_tenpttt.Location = new System.Drawing.Point(24, 182);
+            this.txt_tenpttt.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_tenpttt.MaxLength = 20;
+            this.txt_tenpttt.Multiline = false;
+            this.txt_tenpttt.Name = "txt_tenpttt";
+            this.txt_tenpttt.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_tenpttt.PasswordChar = false;
+            this.txt_tenpttt.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_tenpttt.PlaceholderText = "";
+            this.txt_tenpttt.Size = new System.Drawing.Size(312, 35);
+            this.txt_tenpttt.TabIndex = 58;
+            this.txt_tenpttt.Texts = "";
+            this.txt_tenpttt.UnderlinedStyle = false;
             // 
-            // txt_maqd
+            // txt_mapttt
             // 
-            this.txt_maqd.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_maqd.BorderColor = System.Drawing.Color.Black;
-            this.txt_maqd.BorderFocusColor = System.Drawing.Color.Red;
-            this.txt_maqd.BorderRadius = 15;
-            this.txt_maqd.BorderSize = 2;
-            this.txt_maqd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_maqd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_maqd.Location = new System.Drawing.Point(165, 44);
-            this.txt_maqd.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_maqd.MaxLength = 20;
-            this.txt_maqd.Multiline = false;
-            this.txt_maqd.Name = "txt_maqd";
-            this.txt_maqd.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_maqd.PasswordChar = false;
-            this.txt_maqd.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_maqd.PlaceholderText = "";
-            this.txt_maqd.Size = new System.Drawing.Size(312, 35);
-            this.txt_maqd.TabIndex = 57;
-            this.txt_maqd.Texts = "";
-            this.txt_maqd.UnderlinedStyle = false;
+            this.txt_mapttt.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_mapttt.BorderColor = System.Drawing.Color.Black;
+            this.txt_mapttt.BorderFocusColor = System.Drawing.Color.Red;
+            this.txt_mapttt.BorderRadius = 15;
+            this.txt_mapttt.BorderSize = 2;
+            this.txt_mapttt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_mapttt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_mapttt.Location = new System.Drawing.Point(24, 83);
+            this.txt_mapttt.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_mapttt.MaxLength = 20;
+            this.txt_mapttt.Multiline = false;
+            this.txt_mapttt.Name = "txt_mapttt";
+            this.txt_mapttt.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_mapttt.PasswordChar = false;
+            this.txt_mapttt.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_mapttt.PlaceholderText = "";
+            this.txt_mapttt.Size = new System.Drawing.Size(312, 35);
+            this.txt_mapttt.TabIndex = 57;
+            this.txt_mapttt.Texts = "";
+            this.txt_mapttt.UnderlinedStyle = false;
             // 
             // btn_xoa
             // 
@@ -106,6 +106,7 @@
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.TextColor = System.Drawing.Color.Black;
             this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 
@@ -125,6 +126,7 @@
             this.btn_sua.Text = "Sửa";
             this.btn_sua.TextColor = System.Drawing.Color.Black;
             this.btn_sua.UseVisualStyleBackColor = false;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_them
             // 
@@ -144,11 +146,12 @@
             this.btn_them.Text = "Thêm";
             this.btn_them.TextColor = System.Drawing.Color.Black;
             this.btn_them.UseVisualStyleBackColor = false;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::C_GUI.Properties.Resources.z3847898028975_5ee7ff05f8092486aaff7b938d3a1083;
-            this.pictureBox1.Location = new System.Drawing.Point(540, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(556, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(261, 272);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,21 +172,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(11, 97);
+            this.label2.Location = new System.Drawing.Point(17, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 31);
+            this.label2.Size = new System.Drawing.Size(319, 31);
             this.label2.TabIndex = 48;
-            this.label2.Text = "Tỉ lệ quy đổi";
+            this.label2.Text = "tên phương thức thanh toán";
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
+            // tx
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(19, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 31);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "Mã Quy đổi";
+            this.tx.AutoSize = true;
+            this.tx.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tx.Location = new System.Drawing.Point(19, 48);
+            this.tx.Name = "tx";
+            this.tx.Size = new System.Drawing.Size(317, 31);
+            this.tx.TabIndex = 47;
+            this.tx.Text = "mã phương thức thanh toán";
             // 
             // dgrid_show
             // 
@@ -196,24 +200,26 @@
             this.dgrid_show.RowTemplate.Height = 29;
             this.dgrid_show.Size = new System.Drawing.Size(817, 190);
             this.dgrid_show.TabIndex = 46;
+            this.dgrid_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellContentClick_1);
             // 
             // FormPhuongThucThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 511);
-            this.Controls.Add(this.txt_tilequydoi);
-            this.Controls.Add(this.txt_maqd);
+            this.Controls.Add(this.txt_tenpttt);
+            this.Controls.Add(this.txt_mapttt);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_them);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tx);
             this.Controls.Add(this.dgrid_show);
             this.Name = "FormPhuongThucThanhToan";
             this.Text = "FormPhuongThucThanhToan";
+            //this.Load += new System.EventHandler(this.FormPhuongThucThanhToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).EndInit();
             this.ResumeLayout(false);
@@ -223,15 +229,15 @@
 
         #endregion
 
-        private RJControls.RJTextBox txt_tilequydoi;
-        private RJControls.RJTextBox txt_maqd;
+        private RJControls.RJTextBox txt_tenpttt;
+        private RJControls.RJTextBox txt_mapttt;
         private RJControls.RJButton btn_xoa;
         private RJControls.RJButton btn_sua;
         private RJControls.RJButton btn_them;
         private PictureBox pictureBox1;
         private Label label3;
         private Label label2;
-        private Label label1;
+        private Label tx;
         private DataGridView dgrid_show;
     }
 }

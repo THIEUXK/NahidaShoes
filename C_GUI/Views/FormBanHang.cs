@@ -15,6 +15,7 @@ namespace C_GUI.Views
         private readonly IQLGiay _qlGiay;
         public static Guid idHoaDon;
         private readonly Guid idHoaDonDefaut;
+        private ListViewColumnSorter lvwColumnSorter;
 
         public FormBanHang()
         {
@@ -25,22 +26,27 @@ namespace C_GUI.Views
             _qlNhanVien = new QLNhanVien();
             _qlHoaDon = new QLHoaDon();
             _qlGiay = new QLGiay();
-            LoadChiTietGiay();
+            LoadChiTietGiay(_qlChiTietGiay.GetAllView());
             LoadComboBox();
-            LoadHoaDonCho();
+            LoadHoaDonCho(_qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai == 0).ToList());
             idHoaDonDefaut = Guid.NewGuid();
             idHoaDon = idHoaDonDefaut;
             if (_lsvHoaDonCho.Items.Count > 0)
             {
                 idHoaDon = new Guid(_lsvHoaDonCho.Items[0].Text);
             }
-            LoadChiTietHoaDon(idHoaDon);
-            LoadHoaDonKetThuc();
+            LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
+            LoadHoaDonKetThuc(_qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai != 0).ToList());
+            lvwColumnSorter = new ListViewColumnSorter();
+            _lsvShowSanPham.ListViewItemSorter = lvwColumnSorter;
+            _lsvHoaDonCho.ListViewItemSorter = lvwColumnSorter;
+            _lsvGioHang.ListViewItemSorter = lvwColumnSorter;
+            _lsvHoaDonKetThuc.ListViewItemSorter = lvwColumnSorter;
         }
-        private void LoadChiTietGiay()
+        private void LoadChiTietGiay(List<ChiTietGiayView> lstChiTietGiayView)
         {
             _lsvShowSanPham.Items.Clear();
-            foreach (B_BUS.View_Models.ChiTietGiayView item in _qlChiTietGiay.GetAllView())
+            foreach (B_BUS.View_Models.ChiTietGiayView item in lstChiTietGiayView)
             {
                 string[] row = { item.ChiTietGiay.Id.ToString(), item.Giay.TenGiay, item.MauSac.TenMauSac, item.HangGiay.TenHangGiay, item.Nsx.TenNsx, item.Size.TenSize, item.ChieuCaoDeGiay.MaKichCo, item.ChiTietGiay.GiaBan.ToString(), item.ChiTietGiay.SoLuongTon.ToString(), item.ChiTietGiay.MoTa };
                 ListViewItem listViewItem = new(row);
@@ -48,10 +54,10 @@ namespace C_GUI.Views
             }
         }
 
-        private void LoadChiTietHoaDon(Guid? idHoaDon)
+        private void LoadChiTietHoaDon(List<HoaDonChiTietView> lstHoaDonChiTietView)
         {
             _lsvGioHang.Items.Clear();
-            foreach (B_BUS.View_Models.HoaDonChiTietView item in _qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon))
+            foreach (B_BUS.View_Models.HoaDonChiTietView item in lstHoaDonChiTietView)
             {
                 string[] row = { item.HoaDonChiTiet.Id.ToString(), _qlGiay.GetAll().Find(c => c.Id == item.ChTietGiay.IdGiay).MaGiay, item.HoaDonChiTiet.DonGia.ToString(), item.HoaDonChiTiet.SoLuong.ToString() };
                 ListViewItem listViewItem = new(row);
@@ -59,10 +65,10 @@ namespace C_GUI.Views
             }
         }
 
-        private void LoadHoaDonCho()
+        private void LoadHoaDonCho(List<HoaDonView> lstHoaDonView)
         {
             _lsvHoaDonCho.Items.Clear();
-            foreach (B_BUS.View_Models.HoaDonView item in _qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai == 0))
+            foreach (B_BUS.View_Models.HoaDonView item in lstHoaDonView)
             {
                 string[] row = { item.HoaDon.Id.ToString(), item.HoaDon.MaHoaDon };
                 ListViewItem listViewItem = new(row);
@@ -74,10 +80,10 @@ namespace C_GUI.Views
             }
         }
 
-        private void LoadHoaDonKetThuc()
+        private void LoadHoaDonKetThuc(List<HoaDonView> lstHoaDonView)
         {
             _lsvHoaDonKetThuc.Items.Clear();
-            foreach (B_BUS.View_Models.HoaDonView item in _qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai != 0))
+            foreach (B_BUS.View_Models.HoaDonView item in lstHoaDonView)
             {
                 string[] row = { item.HoaDon.Id.ToString(), item.HoaDon.MaHoaDon, item.HoaDon.ThoiGianTao.ToString(), item.HoaDon.ThoiGianThanhToan.ToString(), item.NhanVien.MaNhanVien, item.KhachHang.MaKhachHang, item.HoaDon.GiamGia.ToString(), item.HoaDon.GhiChu, item.HoaDon.TrangThai.ToString() };
                 ListViewItem listViewItem = new(row);
@@ -114,7 +120,7 @@ namespace C_GUI.Views
                     if (thongBao)
                     {
                         _ = MessageBox.Show("Thêm thành công");
-                        LoadHoaDonCho();
+                        LoadHoaDonCho(_qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai == 0).ToList());
                     }
                 }
                 else
@@ -145,7 +151,7 @@ namespace C_GUI.Views
                         }
                     }
                 }
-                LoadChiTietHoaDon(idHoaDon);
+                LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
             }
         }
 
@@ -155,7 +161,7 @@ namespace C_GUI.Views
             {
                 idHoaDon = new Guid(_lsvHoaDonCho.SelectedItems[0].Text);
             }
-            LoadChiTietHoaDon(idHoaDon);
+            LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
             LoadData(idHoaDon);
         }
 
@@ -175,7 +181,7 @@ namespace C_GUI.Views
                     _ = _qlHoaDonChiTiet.Delete(hoaDonChiTiet);
                 }
             }
-            LoadChiTietHoaDon(idHoaDon);
+            LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
         }
 
         private void _lsvHoaDonKetThuc_DoubleClick(object sender, EventArgs e)
@@ -184,7 +190,7 @@ namespace C_GUI.Views
             {
                 idHoaDon = new Guid(_lsvHoaDonKetThuc.SelectedItems[0].Text);
             }
-            LoadChiTietHoaDon(idHoaDon);
+            LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
             LoadData(idHoaDon);
         }
 
@@ -211,6 +217,158 @@ namespace C_GUI.Views
             _tbxMaHoaDon.Texts = hoaDon.HoaDon.MaHoaDon;
             _cbxKhachHang.SelectedItem = hoaDon.KhachHang.MaKhachHang;
             _cbxNhanVien.SelectedItem = hoaDon.NhanVien.MaNhanVien;
+        }
+
+        private void _lsvShowSanPham_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            // Determine if clicked column is already the column that is being sorted.
+            if (e.Column == lvwColumnSorter.SortColumn)
+            {
+                // Reverse the current sort direction for this column.
+                if (lvwColumnSorter.Order == SortOrder.Ascending)
+                {
+                    lvwColumnSorter.Order = SortOrder.Descending;
+                }
+                else
+                {
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+            }
+            else
+            {
+                // Set the column number that is to be sorted; default to ascending.
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
+
+            // Perform the sort with these new sort options.
+            _lsvShowSanPham.Sort();
+        }
+
+        private void _lsvGioHang_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            // Determine if clicked column is already the column that is being sorted.
+            if (e.Column == lvwColumnSorter.SortColumn)
+            {
+                // Reverse the current sort direction for this column.
+                if (lvwColumnSorter.Order == SortOrder.Ascending)
+                {
+                    lvwColumnSorter.Order = SortOrder.Descending;
+                }
+                else
+                {
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+            }
+            else
+            {
+                // Set the column number that is to be sorted; default to ascending.
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
+
+            // Perform the sort with these new sort options.
+            _lsvGioHang.Sort();
+        }
+
+        private void _lsvHoaDonCho_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            // Determine if clicked column is already the column that is being sorted.
+            if (e.Column == lvwColumnSorter.SortColumn)
+            {
+                // Reverse the current sort direction for this column.
+                if (lvwColumnSorter.Order == SortOrder.Ascending)
+                {
+                    lvwColumnSorter.Order = SortOrder.Descending;
+                }
+                else
+                {
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+            }
+            else
+            {
+                // Set the column number that is to be sorted; default to ascending.
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
+
+            // Perform the sort with these new sort options.
+            _lsvHoaDonCho.Sort();
+        }
+
+        private void _lsvHoaDonKetThuc_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            // Determine if clicked column is already the column that is being sorted.
+            if (e.Column == lvwColumnSorter.SortColumn)
+            {
+                // Reverse the current sort direction for this column.
+                if (lvwColumnSorter.Order == SortOrder.Ascending)
+                {
+                    lvwColumnSorter.Order = SortOrder.Descending;
+                }
+                else
+                {
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+            }
+            else
+            {
+                // Set the column number that is to be sorted; default to ascending.
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
+
+            // Perform the sort with these new sort options.
+            _lsvHoaDonKetThuc.Sort();
+        }
+
+        private void _tbxTimKiemThongTinSanPham__TextChanged(object sender, EventArgs e)
+        {
+            if (_tbxTimKiemThongTinSanPham.Texts.Trim() != "")
+            {
+                LoadChiTietGiay(_qlChiTietGiay.GetAllView().Where(c => c.Giay.TenGiay == (_tbxTimKiemThongTinSanPham.Texts.Trim())).ToList());
+            }
+            else
+            {
+                LoadChiTietGiay(_qlChiTietGiay.GetAllView());
+            }
+        }
+
+        private void _tbxTimKiemGioHang__TextChanged(object sender, EventArgs e)
+        {
+            if (_tbxTimKiemGioHang.Texts.Trim() != "")
+            {
+                LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => (c.HoaDonChiTiet.IdHoaDon == idHoaDon && _qlGiay.GetAll().Find(b => b.Id == c.ChTietGiay.IdGiay).MaGiay == (_tbxTimKiemGioHang.Texts.Trim()))).ToList());
+            }
+            else
+            {
+                LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
+            }
+        }
+
+        private void _tbxTimKiemHoaDonCho__TextChanged(object sender, EventArgs e)
+        {
+            if (_tbxTimKiemHoaDonCho.Texts.Trim() != "")
+            {
+                LoadHoaDonCho(_qlHoaDon.GetAllView().Where(c => (c.HoaDon.TrangThai == 0 && c.HoaDon.MaHoaDon == (_tbxTimKiemHoaDonCho.Texts.Trim()))).ToList());
+            }
+            else
+            {
+                LoadHoaDonCho(_qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai == 0).ToList());
+            }
+        }
+
+        private void _tbxTimKiemHoaDonKetThuc__TextChanged(object sender, EventArgs e)
+        {
+            if (_tbxTimKiemHoaDonKetThuc.Texts.Trim() != "")
+            {
+                LoadHoaDonKetThuc(_qlHoaDon.GetAllView().Where(c => (c.HoaDon.TrangThai != 0 && c.HoaDon.MaHoaDon == (_tbxTimKiemHoaDonKetThuc.Texts.Trim()))).ToList());
+            }
+            else
+            {
+                LoadHoaDonKetThuc(_qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai != 0).ToList());
+            }
         }
     }
 }

@@ -35,6 +35,25 @@ namespace B_BUS.Services
             return igGiaoCa.Delete(obj);
         }
 
+        public List<GiaoCa> GetAll()
+        {
+            //GetAll
+            return igGiaoCa.GetAll();
+        }
+
+        public GiaoCa? GetByMa(string? ma)
+        {
+            //GetByMa
+            return igGiaoCa.GetAll().Find(c => c.MaGiaoCa == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            //checkma
+
+            return !igGiaoCa.GetAll().Any(c => c.MaGiaoCa == ma);
+        }
+
         public List<GiaoCaView> GetAllView()
         {
             // getall

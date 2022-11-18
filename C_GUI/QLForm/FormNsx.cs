@@ -5,20 +5,15 @@ using B_BUS.View_Models;
 
 namespace C_GUI.QLForm
 {
-    public partial class FormCuaHang : Form
+    public partial class FormNsx : Form
     {
-        public IQLCuaHang _IQlCuaHang;
+        public IQLNsx _iQLNsx;
         private Guid _ID;
-        public FormCuaHang()
+        public FormNsx()
         {
-            _IQlCuaHang = new QLCuaHang();
+            _iQLNsx = new QLNsx();
             InitializeComponent();
             LoadData();
-        }
-
-        private void FormCuaHang_Load(object sender, EventArgs e)
-        {
-
         }
         public void LoadData()
         {
@@ -29,25 +24,17 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[2].Name = "ma";
             dgrid_show.Columns[3].Name = "ten";
             dgrid_show.Columns[4].Name = "dia chi";
-            dgrid_show.Columns[5].Name = "trang thai";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (CuaHangView a in _IQlCuaHang.GetAllView())
+            foreach (var a in _iQLNsx.GetAllView())
             {
-                _ = dgrid_show.Rows.Add(stt++, a.CuaHang.Id, a.CuaHang.MaCuaHang, a.CuaHang.TenCuaHang, a.CuaHang.DiaChi, a.CuaHang.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
+                dgrid_show.Rows.Add(stt++, a.Nsx.Id, a.Nsx.MaNsx, a.Nsx.TenNsx, a.Nsx.DiaChi);
             }
-
         }
 
-        public CuaHang GetvaluaContro()
+        private void FormNsx_Load(object sender, EventArgs e)
         {
-            return new CuaHang()
-            {
-                MaCuaHang = txt_ma.Texts,
-                TenCuaHang = txt_ten.Texts,
-                DiaChi = txt_diachi.Texts,
-                TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0,
-            };
+
         }
 
         private void dgrid_show_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,36 +44,41 @@ namespace C_GUI.QLForm
             txt_ma.Texts = dgrid_show.Rows[index].Cells[2].Value.ToString();
             txt_ten.Texts = dgrid_show.Rows[index].Cells[3].Value.ToString();
             txt_diachi.Texts = dgrid_show.Rows[index].Cells[4].Value.ToString();
-            if (dgrid_show.Rows[index].Cells[5].Value.ToString() == "hoat dong")
+        }
+        public Nsx GetCtrlValues()
+        {
+            return new Nsx()
             {
-                rbtn_hoatdong.Checked = true;
-            }
-            if (dgrid_show.Rows[index].Cells[5].Value.ToString() == "khong hoat dong")
-            {
-                rbtn_khonghoatdong.Checked = true;
-            }
+                MaNsx = txt_ma.Texts,
+                TenNsx = txt_ten.Texts,
+                DiaChi = txt_diachi.Texts,
+            };
         }
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _ = _IQlCuaHang.Add(GetvaluaContro());
+            _iQLNsx.Add(GetCtrlValues());
             LoadData();
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            CuaHang a = GetvaluaContro();
-            a.Id = _ID;
-            _ = _IQlCuaHang.Update(a);
-            LoadData();
+            bool thongBao = _iQLNsx.Update(new A_DAL.Entities.Nsx() { Id = _ID, MaNsx = txt_ma.Texts, TenNsx = txt_ten.Texts, DiaChi = txt_diachi.Texts });
+            if (thongBao)
+            {
+                _ = MessageBox.Show("Sửa thành công");
+                LoadData();
+            }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            CuaHang a = GetvaluaContro();
-            a.Id = _ID;
-            _ = _IQlCuaHang.Update(a);
-            LoadData();
+            bool thongBao = _iQLNsx.Delete(_iQLNsx.GetAll().Find(c => c.Id == _ID));
+            if (thongBao)
+            {
+                _ = MessageBox.Show("Xóa thành công");
+                LoadData();
+            }
         }
     }
 }

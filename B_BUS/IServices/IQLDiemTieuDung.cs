@@ -8,6 +8,10 @@ namespace B_BUS.IServices
         bool Add(DiemTieuDung obj);
         bool Update(DiemTieuDung obj);
         bool Delete(DiemTieuDung obj);
+        List<DiemTieuDung> GetAll();
+        DiemTieuDung? GetByMa(string? ma);
+
+        bool CheckMa(string ma);
         List<DiemTieuDungView> GetAllView();
     }
 }

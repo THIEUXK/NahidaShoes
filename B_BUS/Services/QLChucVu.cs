@@ -31,6 +31,25 @@ namespace B_BUS.Services
             return igChucvu.Delete(obj);
         }
 
+        public List<ChucVu> GetAll()
+        {
+            //GetAll
+            return igChucvu.GetAll();
+        }
+
+        public ChucVu? GetByMa(string? ma)
+        {
+            //GetByMa
+            return igChucvu.GetAll().Find(c => c.MaChucVu == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            //checkma
+
+            return !igChucvu.GetAll().Any(c => c.MaChucVu == ma);
+        }
+
         public List<ChucVuView> GetAllView()
         {
             // getall

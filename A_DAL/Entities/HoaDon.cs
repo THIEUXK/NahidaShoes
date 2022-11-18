@@ -10,8 +10,8 @@
         }
         public Guid Id { get; set; }
         public string MaHoaDon { get; set; } = null!;
-        public DateTime ThoiGianTao { get; set; }
-        public DateTime ThoiGianThanhToan { get; set; }
+        public DateTime ThoiGianTao { get; set; } = DateTime.Now;
+        public DateTime? ThoiGianThanhToan { get; set; }
         public Guid IdKhachHang { get; set; }
         public Guid IdNhanVien { get; set; }
         public float GiamGia { get; set; } = 0!;

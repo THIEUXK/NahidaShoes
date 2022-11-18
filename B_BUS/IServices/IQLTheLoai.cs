@@ -8,6 +8,9 @@ namespace B_BUS.IServices
         bool Add(TheLoai obj);
         bool Update(TheLoai obj);
         bool Delete(TheLoai obj);
+        List<TheLoai> GetAll();
+        TheLoai? GetByMa(string? ma);
+        bool CheckMa(string ma);
         List<TheLoaiView> GetAllView();
     }
 }

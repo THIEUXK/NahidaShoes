@@ -30,6 +30,21 @@ namespace B_BUS.Services
             return igChieuCaoDeGiay.Delete(obj);
         }
 
+        public List<ChieuCaoDeGiay> GetAll()
+        {
+            return igChieuCaoDeGiay.GetAll();
+        }
+
+        public ChieuCaoDeGiay? GetByMa(string? ma)
+        {
+            return igChieuCaoDeGiay.GetAll().Find(c => c.MaKichCo == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            return !igChieuCaoDeGiay.GetAll().Any(c => c.MaKichCo == ma);
+        }
+
         public List<ChieuCaoDeGiayView> GetAllView()
         {
             List<ChieuCaoDeGiayView> lst = (from a in igChieuCaoDeGiay.GetAll()

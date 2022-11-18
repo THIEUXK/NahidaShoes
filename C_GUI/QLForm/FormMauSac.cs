@@ -1,13 +1,4 @@
 ﻿using A_DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using B_BUS.IServices;
 using B_BUS.Services;
 
@@ -34,9 +25,9 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[4].Name = "trang thai";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (var a in _IQlMauSac.GetAllView())
+            foreach (B_BUS.View_Models.MauSacView a in _IQlMauSac.GetAllView())
             {
-                dgrid_show.Rows.Add(stt++, a.MauSac.Id, a.MauSac.MaMauSac, a.MauSac.TenMauSac, a.MauSac.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
+                _ = dgrid_show.Rows.Add(stt++, a.MauSac.Id, a.MauSac.MaMauSac, a.MauSac.TenMauSac, a.MauSac.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
             }
 
         }
@@ -47,7 +38,7 @@ namespace C_GUI.QLForm
             {
                 MaMauSac = txt_ma.Texts,
                 TenMauSac = txt_ten.Texts,
-                TrangThai = (rbtn_hoatdong.Checked == true ? 1 : 0),
+                TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0,
             };
         }
 
@@ -57,11 +48,11 @@ namespace C_GUI.QLForm
             _ID = Guid.Parse(dgrid_show.Rows[index].Cells[1].Value.ToString());
             txt_ma.Texts = dgrid_show.Rows[index].Cells[2].Value.ToString();
             txt_ten.Texts = dgrid_show.Rows[index].Cells[3].Value.ToString();
-            if ((dgrid_show.Rows[index].Cells[4].Value.ToString()) == "hoat dong")
+            if (dgrid_show.Rows[index].Cells[4].Value.ToString() == "hoat dong")
             {
                 rbtn_hoatdong.Checked = true;
             }
-            if ((dgrid_show.Rows[index].Cells[4].Value.ToString()) == "khong hoat dong")
+            if (dgrid_show.Rows[index].Cells[4].Value.ToString() == "khong hoat dong")
             {
                 rbtn_khonghoatdong.Checked = true;
             }
@@ -69,7 +60,7 @@ namespace C_GUI.QLForm
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _IQlMauSac.Add(GetvaluaContro());
+            _ = _IQlMauSac.Add(GetvaluaContro());
             LoadData();
         }
 

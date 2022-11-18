@@ -26,9 +26,9 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[4].Name = "dia chi";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (var a in _iQLNsx.GetAllView())
+            foreach (NsxView a in _iQLNsx.GetAllView())
             {
-                dgrid_show.Rows.Add(stt++, a.Nsx.Id, a.Nsx.MaNsx, a.Nsx.TenNsx, a.Nsx.DiaChi);
+                _ = dgrid_show.Rows.Add(stt++, a.Nsx.Id, a.Nsx.MaNsx, a.Nsx.TenNsx, a.Nsx.DiaChi);
             }
         }
 
@@ -57,7 +57,7 @@ namespace C_GUI.QLForm
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _iQLNsx.Add(GetCtrlValues());
+            _ = _iQLNsx.Add(GetCtrlValues());
             LoadData();
         }
 

@@ -81,6 +81,7 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("c9dddd17-d964-4947-bed4-37ff2d7e8b4f"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -90,11 +91,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("02dabd87-7211-4ae9-9531-c139ce84beec"),
                             IdNsx = new Guid("1e26b99a-2d8e-4e24-9dc7-47047e44ddd6"),
                             IdSize = new Guid("80b654e3-fc5c-4bd3-ab7e-4f5f34dc6465"),
+=======
+                            Id = new Guid("0b255082-dfe6-4743-bf0c-f1f8c8173aed"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("344c7160-0d58-4490-a8bf-daa0d6f98798"),
+                            IdGiay = new Guid("9f18b560-c64f-49ab-a2d8-6fb9f91e2172"),
+                            IdHangGiay = new Guid("99188928-b0a5-4d05-9941-e412345a8890"),
+                            IdMauSac = new Guid("48f99aaa-769d-46e6-97ac-fb9b500581aa"),
+                            IdNsx = new Guid("f5d5bd4d-bbca-415b-8705-2e2aca2cbb78"),
+                            IdSize = new Guid("704535ae-859e-4afa-9b11-daa07b4c0594"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("04a443a5-7d0f-42ad-b0ee-28e5ec45f24e"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -104,11 +117,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("6713ae1f-9b60-4de4-a38e-d56049e0c5e0"),
                             IdNsx = new Guid("c8979339-5688-4c6a-b234-ee1f1ee9d9ff"),
                             IdSize = new Guid("ad592169-d26b-4699-b31b-059ca4b502e4"),
+=======
+                            Id = new Guid("8fb722c7-d7e7-43ae-a48f-ed5166cb1e0c"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("31777b08-5342-4375-b438-acb7fb15f48d"),
+                            IdGiay = new Guid("66bea5f9-7f43-4285-8c7b-fbe7c6f2855b"),
+                            IdHangGiay = new Guid("99188928-b0a5-4d05-9941-e412345a8890"),
+                            IdMauSac = new Guid("a15e3fca-7d33-4802-8c2f-a9d45e2f36b1"),
+                            IdNsx = new Guid("20828b67-1b06-4710-934a-ee450269f533"),
+                            IdSize = new Guid("359f86fb-1de3-4b74-80e2-5d9830b234e0"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("af02202c-c962-4243-8238-e6317f56f0f3"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -118,11 +143,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("7b883e9c-18c4-4aec-902d-9ca619b2e088"),
                             IdNsx = new Guid("c8979339-5688-4c6a-b234-ee1f1ee9d9ff"),
                             IdSize = new Guid("ad592169-d26b-4699-b31b-059ca4b502e4"),
+=======
+                            Id = new Guid("e5dfbc10-2c6d-4453-9f2b-1c04b00c299c"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("03e38ba4-9662-4c5a-a4e5-cbb5e44b7a26"),
+                            IdGiay = new Guid("66bea5f9-7f43-4285-8c7b-fbe7c6f2855b"),
+                            IdHangGiay = new Guid("99188928-b0a5-4d05-9941-e412345a8890"),
+                            IdMauSac = new Guid("da89e225-48d2-4383-8087-6e8e5dde0e6c"),
+                            IdNsx = new Guid("20828b67-1b06-4710-934a-ee450269f533"),
+                            IdSize = new Guid("ef7d26f3-402f-4730-adb1-7182f3ebe412"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("8177adc0-f492-44f0-b015-ef2d7e1d8552"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -132,11 +169,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("77ed823f-8806-41b7-9c18-6944bbd1cff1"),
                             IdNsx = new Guid("c8979339-5688-4c6a-b234-ee1f1ee9d9ff"),
                             IdSize = new Guid("ad592169-d26b-4699-b31b-059ca4b502e4"),
+=======
+                            Id = new Guid("481ca2d7-f247-447b-9b77-9e6d8e07f646"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("ac623497-f698-4ac3-832d-a68c7d0dd3d3"),
+                            IdGiay = new Guid("9f18b560-c64f-49ab-a2d8-6fb9f91e2172"),
+                            IdHangGiay = new Guid("48aaffe5-4e2a-4a2a-81e2-8711d737ee94"),
+                            IdMauSac = new Guid("ec741ba2-76c8-495c-ba1e-9a54411ef5eb"),
+                            IdNsx = new Guid("dd36a20a-11be-4878-94ec-d3ef267a4b46"),
+                            IdSize = new Guid("704535ae-859e-4afa-9b11-daa07b4c0594"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("d9f5c6c6-a111-4ea7-ab92-c4ddb1a98754"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -146,11 +195,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("02dabd87-7211-4ae9-9531-c139ce84beec"),
                             IdNsx = new Guid("c8979339-5688-4c6a-b234-ee1f1ee9d9ff"),
                             IdSize = new Guid("80b654e3-fc5c-4bd3-ab7e-4f5f34dc6465"),
+=======
+                            Id = new Guid("ebb3957f-a642-47a0-9f6b-ba7190a9794d"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("1c78c52b-94d5-495c-8765-c1dc79949a11"),
+                            IdGiay = new Guid("91f5adf8-6cd8-4668-8b59-c2f33f15110f"),
+                            IdHangGiay = new Guid("a5803c83-ec47-49dd-9a97-ef02737d50d2"),
+                            IdMauSac = new Guid("a15e3fca-7d33-4802-8c2f-a9d45e2f36b1"),
+                            IdNsx = new Guid("cc88956d-abdd-4833-83b0-c0cff71e1ddc"),
+                            IdSize = new Guid("9b34810e-4300-44e8-a555-b8414c9ffc42"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("6d7dd411-0b66-4017-8b3b-5278c9b9f9ac"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -160,11 +221,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("6713ae1f-9b60-4de4-a38e-d56049e0c5e0"),
                             IdNsx = new Guid("c46a9983-2ccd-48dc-93c2-d2fbb9d07ed1"),
                             IdSize = new Guid("1169d9cc-6f9e-426a-9271-d3f5bbc7bdb2"),
+=======
+                            Id = new Guid("45a57827-37ed-43f3-9dac-47c7e0129b57"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("1c78c52b-94d5-495c-8765-c1dc79949a11"),
+                            IdGiay = new Guid("91f5adf8-6cd8-4668-8b59-c2f33f15110f"),
+                            IdHangGiay = new Guid("99188928-b0a5-4d05-9941-e412345a8890"),
+                            IdMauSac = new Guid("ec741ba2-76c8-495c-ba1e-9a54411ef5eb"),
+                            IdNsx = new Guid("1c9186ac-ff5e-42f1-b21b-ecb3ca99fd92"),
+                            IdSize = new Guid("ef7d26f3-402f-4730-adb1-7182f3ebe412"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("c2e3aaa5-8068-4996-b41c-e32655578988"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -174,11 +247,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("02dabd87-7211-4ae9-9531-c139ce84beec"),
                             IdNsx = new Guid("1e26b99a-2d8e-4e24-9dc7-47047e44ddd6"),
                             IdSize = new Guid("ad592169-d26b-4699-b31b-059ca4b502e4"),
+=======
+                            Id = new Guid("7b5786b0-72cf-457e-993f-2ad5147d3c1b"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("31777b08-5342-4375-b438-acb7fb15f48d"),
+                            IdGiay = new Guid("91f5adf8-6cd8-4668-8b59-c2f33f15110f"),
+                            IdHangGiay = new Guid("428195b4-dbba-4fcf-8108-8c83b746244b"),
+                            IdMauSac = new Guid("48f99aaa-769d-46e6-97ac-fb9b500581aa"),
+                            IdNsx = new Guid("1c9186ac-ff5e-42f1-b21b-ecb3ca99fd92"),
+                            IdSize = new Guid("9b34810e-4300-44e8-a555-b8414c9ffc42"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("315d48c6-e7a8-48de-acca-bf1b94379255"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -188,11 +273,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("02dabd87-7211-4ae9-9531-c139ce84beec"),
                             IdNsx = new Guid("c46a9983-2ccd-48dc-93c2-d2fbb9d07ed1"),
                             IdSize = new Guid("b043b7f2-2ac4-45b2-9598-e525805e78a3"),
+=======
+                            Id = new Guid("d831a6b8-f838-4178-b0f2-3bfc4b5cd06c"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("1c78c52b-94d5-495c-8765-c1dc79949a11"),
+                            IdGiay = new Guid("3b3c5c16-0a50-4826-96d8-118021f222d0"),
+                            IdHangGiay = new Guid("a5803c83-ec47-49dd-9a97-ef02737d50d2"),
+                            IdMauSac = new Guid("ec741ba2-76c8-495c-ba1e-9a54411ef5eb"),
+                            IdNsx = new Guid("cc88956d-abdd-4833-83b0-c0cff71e1ddc"),
+                            IdSize = new Guid("9b34810e-4300-44e8-a555-b8414c9ffc42"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("38d1ac7e-4e25-4b92-a85c-2263cfaa0b19"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -202,11 +299,23 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("7b883e9c-18c4-4aec-902d-9ca619b2e088"),
                             IdNsx = new Guid("940d39f3-695e-4bf1-8d53-ecb1fc65c446"),
                             IdSize = new Guid("1169d9cc-6f9e-426a-9271-d3f5bbc7bdb2"),
+=======
+                            Id = new Guid("9e1b9edf-62ab-4a33-b0b5-cf46dc1c04ab"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("1c78c52b-94d5-495c-8765-c1dc79949a11"),
+                            IdGiay = new Guid("9f18b560-c64f-49ab-a2d8-6fb9f91e2172"),
+                            IdHangGiay = new Guid("a1fda181-7e3e-48a1-90a4-6ed2edaa8d18"),
+                            IdMauSac = new Guid("5c13d8a8-4147-4eb0-8898-f848feeb5965"),
+                            IdNsx = new Guid("20828b67-1b06-4710-934a-ee450269f533"),
+                            IdSize = new Guid("9b34810e-4300-44e8-a555-b8414c9ffc42"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("b66a77b7-034a-421a-8d77-c81481d9132a"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
@@ -216,6 +325,17 @@ namespace ADAL.Migrations
                             IdMauSac = new Guid("77ed823f-8806-41b7-9c18-6944bbd1cff1"),
                             IdNsx = new Guid("92a2c832-eff4-43f2-a6e6-780dd113ae38"),
                             IdSize = new Guid("1169d9cc-6f9e-426a-9271-d3f5bbc7bdb2"),
+=======
+                            Id = new Guid("e554e582-1ffa-4e67-90a7-089ae206f2bb"),
+                            GiaBan = 10000f,
+                            GiaNhap = 7000f,
+                            IdChieuCaoDeGiay = new Guid("1c78c52b-94d5-495c-8765-c1dc79949a11"),
+                            IdGiay = new Guid("5bb51ecd-f2ac-4fb0-92bd-b0a6db35b76a"),
+                            IdHangGiay = new Guid("48aaffe5-4e2a-4a2a-81e2-8711d737ee94"),
+                            IdMauSac = new Guid("5c13d8a8-4147-4eb0-8898-f848feeb5965"),
+                            IdNsx = new Guid("dd36a20a-11be-4878-94ec-d3ef267a4b46"),
+                            IdSize = new Guid("eab29cf7-d544-4d98-82ae-d0151decb33f"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             SoLuongTon = 100,
                             TrangThai = 0
                         });
@@ -327,35 +447,55 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("4f1e567c-c03b-4691-af7d-0f5907b71888"),
+=======
+                            Id = new Guid("31777b08-5342-4375-b438-acb7fb15f48d"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             KichCo = 1,
                             MaKichCo = "KC1",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("2429c610-dfef-4d75-96b7-7404f71e508a"),
+=======
+                            Id = new Guid("ac623497-f698-4ac3-832d-a68c7d0dd3d3"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             KichCo = 2,
                             MaKichCo = "KC2",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("5a9d56cd-0f34-4348-bc33-4b1b3d44120f"),
+=======
+                            Id = new Guid("03e38ba4-9662-4c5a-a4e5-cbb5e44b7a26"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             KichCo = 3,
                             MaKichCo = "KC3",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("877f1a90-2de8-419a-9cc9-b793f2c3667a"),
+=======
+                            Id = new Guid("344c7160-0d58-4490-a8bf-daa0d6f98798"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             KichCo = 4,
                             MaKichCo = "KC4",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("6eaa159a-b9a6-4322-8fd7-f95476014b01"),
+=======
+                            Id = new Guid("1c78c52b-94d5-495c-8765-c1dc79949a11"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             KichCo = 5,
                             MaKichCo = "KC5",
                             TrangThai = 0
@@ -389,7 +529,11 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("3d54cbf7-9933-4314-88db-7edbb357cb6c"),
+=======
+                            Id = new Guid("56ea1170-73fc-4601-9f8d-e32c52975405"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaChucVu = "CV1",
                             TenChucVu = "Nhân viên",
                             TrangThai = 0
@@ -427,7 +571,11 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("f1887f8f-910c-4dbc-9b30-3027bf3c8d03"),
+=======
+                            Id = new Guid("6ab16c00-0ae0-460a-989f-94f121ca9397"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             DiaChi = "Hà Nội",
                             MaCuaHang = "CH1",
                             TenCuaHang = "Cửa hàng 1",
@@ -541,35 +689,55 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("d97f2312-a8ff-4550-b57b-1f132e81d6f0"),
+=======
+                            Id = new Guid("3b3c5c16-0a50-4826-96d8-118021f222d0"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaGiay = "G1",
                             TenGiay = "Giày 1",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("dd6e4975-9a0b-4efb-8836-e0dbf492d33e"),
+=======
+                            Id = new Guid("91f5adf8-6cd8-4668-8b59-c2f33f15110f"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaGiay = "G2",
                             TenGiay = "Giày 2",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("ffaeb614-9fa6-49cf-91da-9f70b6ee1699"),
+=======
+                            Id = new Guid("66bea5f9-7f43-4285-8c7b-fbe7c6f2855b"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaGiay = "G3",
                             TenGiay = "Giày 3",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("62602898-2f58-4215-84a6-69cc7dc88673"),
+=======
+                            Id = new Guid("5bb51ecd-f2ac-4fb0-92bd-b0a6db35b76a"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaGiay = "G4",
                             TenGiay = "Giày 4",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("a72c231d-0818-4e87-99a7-b30ff7cce5b6"),
+=======
+                            Id = new Guid("9f18b560-c64f-49ab-a2d8-6fb9f91e2172"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaGiay = "G5",
                             TenGiay = "Giày 5",
                             TrangThai = 0
@@ -603,35 +771,55 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("df415f0c-0a0e-4c20-8a3f-b8cac6d95f69"),
+=======
+                            Id = new Guid("a5803c83-ec47-49dd-9a97-ef02737d50d2"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaHangGiay = "HG1",
                             TenHangGiay = "Hãng giày 1",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("237a838f-b8c3-4e1b-9473-0bc3914fd901"),
+=======
+                            Id = new Guid("a1fda181-7e3e-48a1-90a4-6ed2edaa8d18"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaHangGiay = "HG2",
                             TenHangGiay = "Hãng giày 2",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("176f1d26-d62e-43a1-831b-782fee5a5625"),
+=======
+                            Id = new Guid("99188928-b0a5-4d05-9941-e412345a8890"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaHangGiay = "HG3",
                             TenHangGiay = "Hãng giày 3",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("c2731e15-224e-4abe-8c03-b81e03104354"),
+=======
+                            Id = new Guid("428195b4-dbba-4fcf-8108-8c83b746244b"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaHangGiay = "HG4",
                             TenHangGiay = "Hãng giày 4",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("ed9a3578-bb35-429b-813f-8333a920d98b"),
+=======
+                            Id = new Guid("48aaffe5-4e2a-4a2a-81e2-8711d737ee94"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaHangGiay = "HG5",
                             TenHangGiay = "Hãng giày 5",
                             TrangThai = 0
@@ -760,10 +948,17 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("dda9e8c4-688c-41ca-96bc-e6dcfd33c486"),
                             DiaChi = "Hà Nội",
                             MaKhachHang = "KH1",
                             NgaySinh = new DateTime(2022, 11, 18, 7, 50, 0, 104, DateTimeKind.Local).AddTicks(6815),
+=======
+                            Id = new Guid("40abf73a-46e3-40ad-a95d-89d9a841bfa1"),
+                            DiaChi = "Hà Nội",
+                            MaKhachHang = "KH1",
+                            NgaySinh = new DateTime(2022, 11, 17, 22, 15, 26, 385, DateTimeKind.Local).AddTicks(2710),
+>>>>>>> parent of 5be5ccb (Thieu)
                             Sdt = "0385922775",
                             SoCCCD = "12345",
                             TenKhachHang = "Khách hàng 1",
@@ -771,10 +966,17 @@ namespace ADAL.Migrations
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("a72fa274-5ceb-4f8d-bffc-a64a817e552e"),
                             DiaChi = "Hà Nội",
                             MaKhachHang = "KH2",
                             NgaySinh = new DateTime(2022, 11, 18, 7, 50, 0, 104, DateTimeKind.Local).AddTicks(6835),
+=======
+                            Id = new Guid("486fd89a-4f87-4da0-a896-7f6d39dd1ec0"),
+                            DiaChi = "Hà Nội",
+                            MaKhachHang = "KH2",
+                            NgaySinh = new DateTime(2022, 11, 17, 22, 15, 26, 385, DateTimeKind.Local).AddTicks(2720),
+>>>>>>> parent of 5be5ccb (Thieu)
                             Sdt = "0385922775",
                             SoCCCD = "01234",
                             TenKhachHang = "Khách hàng 2",
@@ -842,35 +1044,55 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("77ed823f-8806-41b7-9c18-6944bbd1cff1"),
+=======
+                            Id = new Guid("ec741ba2-76c8-495c-ba1e-9a54411ef5eb"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaMauSac = "MS1",
                             TenMauSac = "Màu sắc 1",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("46a2def5-0250-4d51-92fd-59041dc78691"),
+=======
+                            Id = new Guid("da89e225-48d2-4383-8087-6e8e5dde0e6c"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaMauSac = "MS2",
                             TenMauSac = "Màu sắc 2",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("02dabd87-7211-4ae9-9531-c139ce84beec"),
+=======
+                            Id = new Guid("5c13d8a8-4147-4eb0-8898-f848feeb5965"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaMauSac = "MS3",
                             TenMauSac = "Màu sắc 3",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("7b883e9c-18c4-4aec-902d-9ca619b2e088"),
+=======
+                            Id = new Guid("a15e3fca-7d33-4802-8c2f-a9d45e2f36b1"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaMauSac = "MS4",
                             TenMauSac = "Màu sắc 4",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("6713ae1f-9b60-4de4-a38e-d56049e0c5e0"),
+=======
+                            Id = new Guid("48f99aaa-769d-46e6-97ac-fb9b500581aa"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaMauSac = "MS5",
                             TenMauSac = "Màu sắc 5",
                             TrangThai = 0
@@ -935,6 +1157,7 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("cffe5808-8c26-44d1-b0a9-f65edfcd91bd"),
                             DiaChi = "Hà Nội",
                             GioiTinh = 0,
@@ -943,12 +1166,23 @@ namespace ADAL.Migrations
                             MaNhanVien = "NV1",
                             MatKhau = "00000",
                             NgaySinh = new DateTime(2022, 11, 18, 7, 50, 0, 104, DateTimeKind.Local).AddTicks(6687),
+=======
+                            Id = new Guid("d08987c8-37f6-4944-871b-2f50b9bf0013"),
+                            DiaChi = "Hà Nội",
+                            GioiTinh = 0,
+                            IdChucVu = new Guid("56ea1170-73fc-4601-9f8d-e32c52975405"),
+                            IdCuaHang = new Guid("6ab16c00-0ae0-460a-989f-94f121ca9397"),
+                            MaNhanVien = "NV1",
+                            MatKhau = "00000",
+                            NgaySinh = new DateTime(2022, 11, 17, 22, 15, 26, 385, DateTimeKind.Local).AddTicks(2677),
+>>>>>>> parent of 5be5ccb (Thieu)
                             Sdt = "0385922775",
                             TenNhanVien = "Nhân viên 1",
                             TrangThai = 0
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("1bff5f02-1f08-48e9-959e-5f20f24824fd"),
                             DiaChi = "Hà Nội",
                             GioiTinh = 1,
@@ -957,6 +1191,16 @@ namespace ADAL.Migrations
                             MaNhanVien = "NV2",
                             MatKhau = "00000",
                             NgaySinh = new DateTime(2022, 11, 18, 7, 50, 0, 104, DateTimeKind.Local).AddTicks(6777),
+=======
+                            Id = new Guid("3155e436-30e3-4b02-82bb-48b5614ebaf5"),
+                            DiaChi = "Hà Nội",
+                            GioiTinh = 1,
+                            IdChucVu = new Guid("56ea1170-73fc-4601-9f8d-e32c52975405"),
+                            IdCuaHang = new Guid("6ab16c00-0ae0-460a-989f-94f121ca9397"),
+                            MaNhanVien = "NV2",
+                            MatKhau = "00000",
+                            NgaySinh = new DateTime(2022, 11, 17, 22, 15, 26, 385, DateTimeKind.Local).AddTicks(2696),
+>>>>>>> parent of 5be5ccb (Thieu)
                             Sdt = "0385922775",
                             TenNhanVien = "Nhân viên 2",
                             TrangThai = 0
@@ -991,35 +1235,55 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("1e26b99a-2d8e-4e24-9dc7-47047e44ddd6"),
+=======
+                            Id = new Guid("f5d5bd4d-bbca-415b-8705-2e2aca2cbb78"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX1",
                             TenNsx = "Nhà sản xuất 1"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("940d39f3-695e-4bf1-8d53-ecb1fc65c446"),
+=======
+                            Id = new Guid("cc88956d-abdd-4833-83b0-c0cff71e1ddc"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX2",
                             TenNsx = "Nhà sản xuất 2"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("c8979339-5688-4c6a-b234-ee1f1ee9d9ff"),
+=======
+                            Id = new Guid("1c9186ac-ff5e-42f1-b21b-ecb3ca99fd92"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX3",
                             TenNsx = "Nhà sản xuất 3"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("c46a9983-2ccd-48dc-93c2-d2fbb9d07ed1"),
+=======
+                            Id = new Guid("dd36a20a-11be-4878-94ec-d3ef267a4b46"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX4",
                             TenNsx = "Nhà sản xuất 4"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("92a2c832-eff4-43f2-a6e6-780dd113ae38"),
+=======
+                            Id = new Guid("20828b67-1b06-4710-934a-ee450269f533"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX5",
                             TenNsx = "Nhà sản xuất 5"
@@ -1133,7 +1397,11 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("80b654e3-fc5c-4bd3-ab7e-4f5f34dc6465"),
+=======
+                            Id = new Guid("704535ae-859e-4afa-9b11-daa07b4c0594"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaSize = "SZ1",
                             SoSize = 30,
                             TenSize = "Size 1",
@@ -1141,7 +1409,11 @@ namespace ADAL.Migrations
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("b043b7f2-2ac4-45b2-9598-e525805e78a3"),
+=======
+                            Id = new Guid("ef7d26f3-402f-4730-adb1-7182f3ebe412"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaSize = "SZ2",
                             SoSize = 31,
                             TenSize = "Size 2",
@@ -1149,7 +1421,11 @@ namespace ADAL.Migrations
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("72dccb49-2740-4afc-a805-9d902663b1ab"),
+=======
+                            Id = new Guid("eab29cf7-d544-4d98-82ae-d0151decb33f"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaSize = "SZ3",
                             SoSize = 32,
                             TenSize = "Size 3",
@@ -1157,7 +1433,11 @@ namespace ADAL.Migrations
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("ad592169-d26b-4699-b31b-059ca4b502e4"),
+=======
+                            Id = new Guid("9b34810e-4300-44e8-a555-b8414c9ffc42"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaSize = "SZ4",
                             SoSize = 33,
                             TenSize = "Size 4",
@@ -1165,7 +1445,11 @@ namespace ADAL.Migrations
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = new Guid("1169d9cc-6f9e-426a-9271-d3f5bbc7bdb2"),
+=======
+                            Id = new Guid("359f86fb-1de3-4b74-80e2-5d9830b234e0"),
+>>>>>>> parent of 5be5ccb (Thieu)
                             MaSize = "SZ5",
                             SoSize = 34,
                             TenSize = "Size 5",

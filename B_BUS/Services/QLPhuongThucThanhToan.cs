@@ -42,5 +42,10 @@ namespace B_BUS.Services
                                                  }).ToList();
             return lst;
         }
+
+        public List<PhuongThucThanhToan> GetAll()
+        {
+            return igPhuongthucThanhtoan.GetAll().ToList();
+        }
     }
 }

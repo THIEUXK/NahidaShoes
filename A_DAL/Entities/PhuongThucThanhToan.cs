@@ -7,8 +7,8 @@
             ChiTietThanhToans = new HashSet<ChiTietThanhToan>();
         }
         public Guid Id { get; set; }
-        public string MaNsx { get; set; } = null!;
-        public string TenNsx { get; set; } = null!;
+        public string MaPhuongThucThanhToan { get; set; } = null!;
+        public string TenPhuongThucThanhToan { get; set; } = null!;
         public ICollection<ChiTietThanhToan> ChiTietThanhToans { get; set; }
     }
 }

@@ -2,15 +2,15 @@
 using B_BUS.IServices;
 using B_BUS.Services;
 
-namespace C_GUI.Views
+namespace C_GUI.QLForm
 {
-    public partial class FormChucVu : Form
+    public partial class FormMauSac : Form
     {
-        public IQLChucVu _IQlChucVu;
+        public IQLMauSac _IQlMauSac;
         private Guid _ID;
-        public FormChucVu()
+        public FormMauSac()
         {
-            _IQlChucVu = new QLChucVu();
+            _IQlMauSac = new QLMauSac();
             InitializeComponent();
             LoadData();
         }
@@ -25,19 +25,19 @@ namespace C_GUI.Views
             dgrid_show.Columns[4].Name = "trang thai";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (B_BUS.View_Models.ChucVuView a in _IQlChucVu.GetAllView())
+            foreach (B_BUS.View_Models.MauSacView a in _IQlMauSac.GetAllView())
             {
-                _ = dgrid_show.Rows.Add(stt++, a.ChucVu.Id, a.ChucVu.MaChucVu, a.ChucVu.TenChucVu, a.ChucVu.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
+                _ = dgrid_show.Rows.Add(stt++, a.MauSac.Id, a.MauSac.MaMauSac, a.MauSac.TenMauSac, a.MauSac.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
             }
 
         }
 
-        public ChucVu GetvaluaContro()
+        public MauSac GetvaluaContro()
         {
-            return new ChucVu()
+            return new MauSac()
             {
-                MaChucVu = txt_ma.Texts,
-                TenChucVu = txt_ten.Texts,
+                MaMauSac = txt_ma.Texts,
+                TenMauSac = txt_ten.Texts,
                 TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0,
             };
         }
@@ -60,13 +60,13 @@ namespace C_GUI.Views
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _ = _IQlChucVu.Add(GetvaluaContro());
+            _ = _IQlMauSac.Add(GetvaluaContro());
             LoadData();
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            bool thongBao = _IQlChucVu.Update(new A_DAL.Entities.ChucVu() { Id = _ID, MaChucVu = txt_ma.Texts, TenChucVu = txt_ten.Texts, TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0 });
+            bool thongBao = _IQlMauSac.Update(new A_DAL.Entities.MauSac() { Id = _ID, MaMauSac = txt_ma.Texts, TenMauSac = txt_ten.Texts, TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0 });
             if (thongBao)
             {
                 _ = MessageBox.Show("Sửa thành công");
@@ -76,7 +76,7 @@ namespace C_GUI.Views
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            bool thongBao = _IQlChucVu.Delete(_IQlChucVu.GetAll().Find(c => c.Id == _ID));
+            bool thongBao = _IQlMauSac.Delete(_IQlMauSac.GetAll().Find(c => c.Id == _ID));
             if (thongBao)
             {
                 _ = MessageBox.Show("Xóa thành công");

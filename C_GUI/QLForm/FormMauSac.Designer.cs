@@ -1,6 +1,6 @@
 ﻿namespace C_GUI.QLForm
 {
-    partial class FormCuaHang
+    partial class FormMauSac
     {
         /// <summary>
         /// Required designer variable.
@@ -41,8 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgrid_show = new System.Windows.Forms.DataGridView();
-            this.txt_diachi = new C_GUI.RJControls.RJTextBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.SuspendLayout();
@@ -96,8 +94,8 @@
             // rbtn_khonghoatdong
             // 
             this.rbtn_khonghoatdong.AutoSize = true;
-            this.rbtn_khonghoatdong.CheckedColor = System.Drawing.Color.Black;
-            this.rbtn_khonghoatdong.Location = new System.Drawing.Point(207, 253);
+            this.rbtn_khonghoatdong.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtn_khonghoatdong.Location = new System.Drawing.Point(207, 203);
             this.rbtn_khonghoatdong.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtn_khonghoatdong.Name = "rbtn_khonghoatdong";
             this.rbtn_khonghoatdong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -111,8 +109,8 @@
             // rbtn_hoatdong
             // 
             this.rbtn_hoatdong.AutoSize = true;
-            this.rbtn_hoatdong.CheckedColor = System.Drawing.Color.Black;
-            this.rbtn_hoatdong.Location = new System.Drawing.Point(207, 214);
+            this.rbtn_hoatdong.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtn_hoatdong.Location = new System.Drawing.Point(207, 164);
             this.rbtn_hoatdong.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtn_hoatdong.Name = "rbtn_hoatdong";
             this.rbtn_hoatdong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -133,7 +131,7 @@
             this.btn_xoa.FlatAppearance.BorderSize = 0;
             this.btn_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoa.ForeColor = System.Drawing.Color.Black;
-            this.btn_xoa.Location = new System.Drawing.Point(295, 299);
+            this.btn_xoa.Location = new System.Drawing.Point(295, 249);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(132, 39);
             this.btn_xoa.SizeImage = new System.Drawing.Size(20, 20);
@@ -153,7 +151,7 @@
             this.btn_sua.FlatAppearance.BorderSize = 0;
             this.btn_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sua.ForeColor = System.Drawing.Color.Black;
-            this.btn_sua.Location = new System.Drawing.Point(157, 299);
+            this.btn_sua.Location = new System.Drawing.Point(157, 249);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(132, 39);
             this.btn_sua.SizeImage = new System.Drawing.Size(20, 20);
@@ -173,7 +171,7 @@
             this.btn_them.FlatAppearance.BorderSize = 0;
             this.btn_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_them.ForeColor = System.Drawing.Color.Black;
-            this.btn_them.Location = new System.Drawing.Point(12, 299);
+            this.btn_them.Location = new System.Drawing.Point(12, 249);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(132, 39);
             this.btn_them.SizeImage = new System.Drawing.Size(20, 20);
@@ -186,9 +184,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::C_GUI.Properties.Resources.z3847898028975_5ee7ff05f8092486aaff7b938d3a1083;
-            this.pictureBox1.Location = new System.Drawing.Point(478, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(455, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(299, 332);
+            this.pictureBox1.Size = new System.Drawing.Size(261, 272);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
@@ -197,7 +195,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(66, 207);
+            this.label4.Location = new System.Drawing.Point(66, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 31);
             this.label4.TabIndex = 24;
@@ -209,9 +207,9 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(207, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 31);
+            this.label3.Size = new System.Drawing.Size(104, 31);
             this.label3.TabIndex = 23;
-            this.label3.Text = "Cửa hàng";
+            this.label3.Text = "Màu Sắc";
             // 
             // label2
             // 
@@ -238,56 +236,20 @@
             this.dgrid_show.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrid_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_show.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgrid_show.Location = new System.Drawing.Point(0, 386);
+            this.dgrid_show.Location = new System.Drawing.Point(0, 312);
             this.dgrid_show.Name = "dgrid_show";
             this.dgrid_show.RowHeadersWidth = 51;
             this.dgrid_show.RowTemplate.Height = 29;
-            this.dgrid_show.Size = new System.Drawing.Size(789, 190);
+            this.dgrid_show.Size = new System.Drawing.Size(800, 190);
             this.dgrid_show.TabIndex = 20;
-            this.dgrid_show.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellClick);
             this.dgrid_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellContentClick);
             // 
-            // txt_diachi
-            // 
-            this.txt_diachi.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_diachi.BorderColor = System.Drawing.Color.Black;
-            this.txt_diachi.BorderFocusColor = System.Drawing.Color.Red;
-            this.txt_diachi.BorderRadius = 15;
-            this.txt_diachi.BorderSize = 2;
-            this.txt_diachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_diachi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_diachi.Location = new System.Drawing.Point(121, 156);
-            this.txt_diachi.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_diachi.MaxLength = 20;
-            this.txt_diachi.Multiline = false;
-            this.txt_diachi.Name = "txt_diachi";
-            this.txt_diachi.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_diachi.PasswordChar = false;
-            this.txt_diachi.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_diachi.PlaceholderText = "";
-            this.txt_diachi.Size = new System.Drawing.Size(312, 35);
-            this.txt_diachi.TabIndex = 34;
-            this.txt_diachi.Texts = "";
-            this.txt_diachi.UnderlinedStyle = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(26, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 31);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Địa Chỉ";
-            // 
-            // FormCuaHang
+            // FormMauSac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(789, 576);
-            this.Controls.Add(this.txt_diachi);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(800, 502);
             this.Controls.Add(this.txt_ten);
             this.Controls.Add(this.txt_ma);
             this.Controls.Add(this.rbtn_khonghoatdong);
@@ -301,9 +263,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgrid_show);
-            this.Name = "FormCuaHang";
-            this.Text = "FormCuaHang";
-            this.Load += new System.EventHandler(this.FormCuaHang_Load);
+            this.Name = "FormMauSac";
+            this.Text = "FormMauSac";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).EndInit();
             this.ResumeLayout(false);
@@ -326,7 +287,5 @@
         private Label label2;
         private Label label1;
         private DataGridView dgrid_show;
-        private RJControls.RJTextBox txt_diachi;
-        private Label label5;
     }
 }

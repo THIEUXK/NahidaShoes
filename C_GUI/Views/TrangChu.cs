@@ -104,7 +104,6 @@
         private void _rjbtndong_Click_1(object sender, EventArgs e)
         {
             activeForm?.Close();
-
             Reset();
         }
 

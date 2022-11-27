@@ -1,4 +1,6 @@
-﻿namespace C_GUI.Views
+﻿using C_GUI.QLForm;
+
+namespace C_GUI.Views
 {
     public partial class TrangChu : Form
     {
@@ -12,8 +14,35 @@
             InitializeComponent();
             random = new Random();
             _rjbtndong.Visible = false;
+            Customdesign(); 
         }
 
+        private void Customdesign()
+        {
+            panelplaylizt.Visible=false;
+        }
+
+        private void Hidesubmenu()
+        {
+            if (panelplaylizt.Visible == true)
+            {
+                panelplaylizt.Visible =false;
+            }
+        }
+
+        private void showsubmenu(Panel submenu)
+        {
+            if (submenu.Visible== false)
+            {
+                Hidesubmenu();
+                submenu.Visible= true;
+
+            }
+            else
+            {
+                submenu.Visible= false;
+            }
+        }
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
@@ -117,6 +146,53 @@
         private void _btnBanhang_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new FormBanHang(), sender);
+        }
+
+        private void btn_sanpham_Click(object sender, EventArgs e)
+        {
+            showsubmenu(panelplaylizt);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormMauSac(), sender);
+            Hidesubmenu();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormNsx(), sender);
+            Hidesubmenu();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormChieuCaoDeGiay(), sender);
+            Hidesubmenu();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormTheLoai(), sender);
+            Hidesubmenu();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormHangGiay(), sender);
+            Hidesubmenu();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormChiTietGiay(), sender);
+            Hidesubmenu();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormSanPham(), sender);
+            Hidesubmenu();
         }
     }
 }

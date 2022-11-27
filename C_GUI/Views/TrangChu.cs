@@ -71,6 +71,23 @@ namespace C_GUI.Views
                 }
             }
         }
+        private void ActivateButtons(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                   
+                    currentButton = (Button)btnSender;
+                   
+                    currentButton.ForeColor = Color.White;
+         
+                   
+                    _rjbtndong.Visible = true;
+                }
+            }
+        }
         private void DisableButton()
         {
             foreach (Control previousBtn in _pnlmenu.Controls)
@@ -88,6 +105,21 @@ namespace C_GUI.Views
             activeForm?.Close();
 
             ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            _pnlDesktoppanel.Controls.Add(childForm);
+            _pnlDesktoppanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            _lbltitle.Text = childForm.Text;
+        }
+        private void OpenChildForms(Form childForm, object btnSender)
+        {
+            activeForm?.Close();
+
+            ActivateButtons(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -148,43 +180,43 @@ namespace C_GUI.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormMauSac(), sender);
+            OpenChildForms(new FormMauSac(), sender);
             Hidesubmenu();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormNsx(), sender);
+            OpenChildForms(new FormNsx(), sender);
             Hidesubmenu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormChieuCaoDeGiay(), sender);
+            OpenChildForms(new FormChieuCaoDeGiay(), sender);
             Hidesubmenu();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormTheLoai(), sender);
+            OpenChildForms(new FormTheLoai(), sender);
             Hidesubmenu();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormHangGiay(), sender);
+            OpenChildForms(new FormHangGiay(), sender);
             Hidesubmenu();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormChiTietGiay(), sender);
+            OpenChildForms(new FormChiTietGiay(), sender);
             Hidesubmenu();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormSanPham(), sender);
+            OpenChildForms(new FormSanPham(), sender);
             Hidesubmenu();
         }
     }

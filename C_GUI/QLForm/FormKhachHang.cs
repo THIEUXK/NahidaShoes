@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace C_GUI.QLForm
 {
-    public partial class FormKhachHang : Form
+    public partial class FormKhachHang : Form 
     {
         public IQLKhachHang _IQLKhachHang;
         private Guid _ID;

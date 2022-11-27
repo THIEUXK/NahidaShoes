@@ -88,6 +88,7 @@ namespace C_GUI.Views
             {
                 idHoaDon = new Guid(_lsvHoaDon.Items[0].Text);
             }
+            LoadData(idHoaDon);
         }
 
         private void LoadComboBox()

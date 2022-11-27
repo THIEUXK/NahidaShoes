@@ -441,7 +441,7 @@
             // 
             this.MoTaHoaDon.Text = "Mô tả";
             this.MoTaHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MoTaHoaDon.Width = 660;
+            this.MoTaHoaDon.Width = 650;
             // 
             // label2
             // 

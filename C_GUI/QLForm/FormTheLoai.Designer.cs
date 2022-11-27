@@ -139,6 +139,7 @@
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.TextColor = System.Drawing.Color.Black;
             this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 
@@ -158,6 +159,7 @@
             this.btn_sua.Text = "Sửa";
             this.btn_sua.TextColor = System.Drawing.Color.Black;
             this.btn_sua.UseVisualStyleBackColor = false;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_them
             // 
@@ -177,6 +179,7 @@
             this.btn_them.Text = "Thêm";
             this.btn_them.TextColor = System.Drawing.Color.Black;
             this.btn_them.UseVisualStyleBackColor = false;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // pictureBox1
             // 
@@ -239,6 +242,7 @@
             this.dgrid_show.RowTemplate.Height = 29;
             this.dgrid_show.Size = new System.Drawing.Size(796, 190);
             this.dgrid_show.TabIndex = 20;
+            this.dgrid_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellContentClick);
             // 
             // FormTheLoai
             // 

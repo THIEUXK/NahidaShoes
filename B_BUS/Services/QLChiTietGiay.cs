@@ -44,6 +44,16 @@ namespace B_BUS.Services
             return igchiTietGiay.Delete(obj);
         }
 
+        public List<ChiTietGiay> GetAll()
+        {
+            return igchiTietGiay.GetAll();
+        }
+
+        public bool CheckMa(Guid idSize, Guid idNsx, Guid idMauSac, Guid idHangGiay, Guid idGiay, Guid idChieuCaoDeGiay)
+        {
+            return !igchiTietGiay.GetAll().Any(c => c.IdSize == idSize && c.IdGiay == idGiay && c.IdNsx == idNsx && c.IdChieuCaoDeGiay == idChieuCaoDeGiay && c.IdHangGiay == idHangGiay && c.IdMauSac == idMauSac);
+        }
+
         public List<ChiTietGiayView> GetAllView()
         {
             // getall

@@ -8,6 +8,10 @@ namespace B_BUS.IServices
         bool Add(Sale obj);
         bool Update(Sale obj);
         bool Delete(Sale obj);
+        List<Sale> GetAll();
+        Sale? GetByMa(string? ma);
+
+        bool CheckMa(string ma);
         List<SaleView> GetAllView();
     }
 }

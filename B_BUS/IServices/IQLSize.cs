@@ -8,6 +8,9 @@ namespace B_BUS.IServices
         bool Add(Size obj);
         bool Update(Size obj);
         bool Delete(Size obj);
+        List<Size> GetAll();
+        Size? GetByMa(string? ma);
+        bool CheckMa(string ma);
         List<SizeView> GetAllView();
     }
 }

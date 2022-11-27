@@ -56,10 +56,7 @@
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
+            activeForm?.Close();
 
             ActivateButton(btnSender);
             activeForm = childForm;
@@ -86,15 +83,13 @@
 
         private void TrangChu_Load(object sender, EventArgs e)
         {
-
+            Refresh();
         }
 
         private void _btnSanPham_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new FormSanPham(), sender);
         }
-
-
 
         private void _btn_GiaoCa_Click(object sender, EventArgs e)
         {
@@ -108,11 +103,7 @@
 
         private void _rjbtndong_Click_1(object sender, EventArgs e)
         {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-
+            activeForm?.Close();
             Reset();
         }
 

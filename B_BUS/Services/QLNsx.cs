@@ -33,6 +33,21 @@ namespace B_BUS.Services
             return ignsxview.Delete(obj);
         }
 
+        public List<Nsx> GetAll()
+        {
+            return ignsxview.GetAll();
+        }
+
+        public Nsx? GetByMa(string? ma)
+        {
+            return ignsxview.GetAll().Find(c => c.MaNsx == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            return !ignsxview.GetAll().Any(c => c.MaNsx == ma);
+        }
+
         public List<NsxView> GetAllView()
         {
             // getall

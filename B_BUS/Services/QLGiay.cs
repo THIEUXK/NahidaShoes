@@ -32,6 +32,21 @@ namespace B_BUS.Services
             return igiay.Delete(obj);
         }
 
+        public List<Giay> GetAll()
+        {
+            return igiay.GetAll();
+        }
+
+        public Giay? GetByMa(string? ma)
+        {
+            return igiay.GetAll().Find(c => c.MaGiay == ma);
+        }
+
+        public bool CheckMa(string ma)
+        {
+            return !igiay.GetAll().Any(c => c.MaGiay == ma);
+        }
+
         public List<GiayView> GetAllView()
         {
             // getall

@@ -32,13 +32,23 @@ namespace B_BUS.Services
             return igCKhachhang.Delete(obj);
         }
 
+        public List<KhachHang> GetAll()
+        {
+            return igCKhachhang.GetAll();
+        }
+
+        public KhachHang? GetByMa(string? ma)
+        {
+            return igCKhachhang.GetAll().Find(c => c.MaKhachHang == ma);
+        }
+
         public List<KhachHangView> GetAllView()
         {
             // getall
             List<KhachHangView> lst = (from a in igCKhachhang.GetAll()
                                        select new KhachHangView()
                                        {
-                                           Khach = a,
+                                           Khach = a
                                        }).ToList();
             return lst;
         }

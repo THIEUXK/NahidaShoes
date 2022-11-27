@@ -96,7 +96,7 @@
             // rbtn_khonghoatdong
             // 
             this.rbtn_khonghoatdong.AutoSize = true;
-            this.rbtn_khonghoatdong.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtn_khonghoatdong.CheckedColor = System.Drawing.Color.Black;
             this.rbtn_khonghoatdong.Location = new System.Drawing.Point(207, 253);
             this.rbtn_khonghoatdong.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtn_khonghoatdong.Name = "rbtn_khonghoatdong";
@@ -111,7 +111,7 @@
             // rbtn_hoatdong
             // 
             this.rbtn_hoatdong.AutoSize = true;
-            this.rbtn_hoatdong.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtn_hoatdong.CheckedColor = System.Drawing.Color.Black;
             this.rbtn_hoatdong.Location = new System.Drawing.Point(207, 214);
             this.rbtn_hoatdong.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtn_hoatdong.Name = "rbtn_hoatdong";
@@ -141,6 +141,7 @@
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.TextColor = System.Drawing.Color.Black;
             this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 
@@ -160,6 +161,7 @@
             this.btn_sua.Text = "Sửa";
             this.btn_sua.TextColor = System.Drawing.Color.Black;
             this.btn_sua.UseVisualStyleBackColor = false;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_them
             // 
@@ -179,6 +181,7 @@
             this.btn_them.Text = "Thêm";
             this.btn_them.TextColor = System.Drawing.Color.Black;
             this.btn_them.UseVisualStyleBackColor = false;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // pictureBox1
             // 
@@ -241,6 +244,8 @@
             this.dgrid_show.RowTemplate.Height = 29;
             this.dgrid_show.Size = new System.Drawing.Size(789, 190);
             this.dgrid_show.TabIndex = 20;
+            this.dgrid_show.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellClick);
+            this.dgrid_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellContentClick);
             // 
             // txt_diachi
             // 

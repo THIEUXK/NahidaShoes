@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Drawing.Drawing2D;
-using System.Text.RegularExpressions;
 
 namespace C_GUI.RJControls
 {
@@ -34,13 +33,6 @@ namespace C_GUI.RJControls
         }
 
         #region -> Properties
-        public bool IsNumberDouble { get; private set; } = false;
-
-        public bool IsNotUnicode { get; private set; } = true;
-
-        public bool IsNumberInt { get; private set; } = false;
-
-        public bool IsName { get; private set; } = true;
 
         [Category("RJ Code Advance")]
         public int MaxLength
@@ -354,30 +346,7 @@ namespace C_GUI.RJControls
         #region -> TextBox events
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (_TextChanged != null)
-            {
-                _TextChanged.Invoke(sender, e);
-            }
-            try
-            {
-                int number = Convert.ToInt32(textBox1.Text);
-                IsNumberInt = true;
-            }
-            catch (Exception)
-            {
-                IsNumberInt = false;
-            }
-            try
-            {
-                double number = Convert.ToDouble(textBox1.Text);
-                IsNumberDouble = true;
-            }
-            catch (Exception)
-            {
-                IsNumberDouble = false;
-            }
-            IsNotUnicode = Regex.IsMatch(textBox1.Text, @"^[A-Za-z0-9\s]+$");
-            IsName = Regex.IsMatch(textBox1.Text, @"^[^0-9]+$");
+            _TextChanged?.Invoke(sender, e);
         }
         private void textBox1_Click(object sender, EventArgs e)
         {

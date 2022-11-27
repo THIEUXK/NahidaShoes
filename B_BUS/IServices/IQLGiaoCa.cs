@@ -8,6 +8,9 @@ namespace B_BUS.IServices
         bool Add(GiaoCa obj);
         bool Update(GiaoCa obj);
         bool Delete(GiaoCa obj);
+        List<GiaoCa> GetAll();
+        GiaoCa? GetByMa(string? ma);
+        bool CheckMa(string ma);
         List<GiaoCaView> GetAllView();
     }
 }

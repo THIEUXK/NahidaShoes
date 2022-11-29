@@ -30,17 +30,17 @@
         {
             this._pnlmenu = new System.Windows.Forms.Panel();
             this.panelplaylizt = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_sanpham = new System.Windows.Forms.Button();
-            this._btnBanhang = new System.Windows.Forms.Button();
-            this._btnThongKe = new System.Windows.Forms.Button();
-            this._btn_GiaoCa = new System.Windows.Forms.Button();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btn_sanpham = new FontAwesome.Sharp.IconButton();
+            this.btn_banHang = new FontAwesome.Sharp.IconButton();
+            this.btn_thongke = new FontAwesome.Sharp.IconButton();
             this._pnllogo = new System.Windows.Forms.Panel();
             this.pnl = new System.Windows.Forms.Label();
             this._pnltitleBar = new System.Windows.Forms.Panel();
@@ -58,149 +58,175 @@
             this._pnlmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this._pnlmenu.Controls.Add(this.panelplaylizt);
             this._pnlmenu.Controls.Add(this.btn_sanpham);
-            this._pnlmenu.Controls.Add(this._btnBanhang);
-            this._pnlmenu.Controls.Add(this._btnThongKe);
-            this._pnlmenu.Controls.Add(this._btn_GiaoCa);
+            this._pnlmenu.Controls.Add(this.btn_banHang);
+            this._pnlmenu.Controls.Add(this.btn_thongke);
             this._pnlmenu.Controls.Add(this._pnllogo);
             this._pnlmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this._pnlmenu.Location = new System.Drawing.Point(0, 0);
             this._pnlmenu.Name = "_pnlmenu";
             this._pnlmenu.Size = new System.Drawing.Size(250, 1033);
             this._pnlmenu.TabIndex = 0;
+            this._pnlmenu.Paint += new System.Windows.Forms.PaintEventHandler(this._pnlmenu_Paint);
             // 
             // panelplaylizt
             // 
-            this.panelplaylizt.Controls.Add(this.button8);
-            this.panelplaylizt.Controls.Add(this.button7);
-            this.panelplaylizt.Controls.Add(this.button6);
-            this.panelplaylizt.Controls.Add(this.button5);
-            this.panelplaylizt.Controls.Add(this.button4);
-            this.panelplaylizt.Controls.Add(this.button3);
-            this.panelplaylizt.Controls.Add(this.button2);
+            this.panelplaylizt.Controls.Add(this.iconButton8);
+            this.panelplaylizt.Controls.Add(this.iconButton7);
+            this.panelplaylizt.Controls.Add(this.iconButton6);
+            this.panelplaylizt.Controls.Add(this.iconButton5);
+            this.panelplaylizt.Controls.Add(this.iconButton4);
+            this.panelplaylizt.Controls.Add(this.iconButton3);
+            this.panelplaylizt.Controls.Add(this.iconButton2);
+            this.panelplaylizt.Controls.Add(this.iconButton1);
             this.panelplaylizt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelplaylizt.Location = new System.Drawing.Point(0, 403);
+            this.panelplaylizt.Location = new System.Drawing.Point(0, 341);
             this.panelplaylizt.Name = "panelplaylizt";
-            this.panelplaylizt.Size = new System.Drawing.Size(250, 305);
-            this.panelplaylizt.TabIndex = 8;
+            this.panelplaylizt.Size = new System.Drawing.Size(250, 417);
+            this.panelplaylizt.TabIndex = 4;
             // 
-            // button8
+            // iconButton8
             // 
-            this.button8.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(0, 246);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(250, 41);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Chi Tiết Sản Phẩm";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.iconButton8.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton8.IconColor = System.Drawing.Color.Black;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.Location = new System.Drawing.Point(0, 315);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Size = new System.Drawing.Size(250, 45);
+            this.iconButton8.TabIndex = 7;
+            this.iconButton8.Text = "Sản Phẩm";
+            this.iconButton8.UseVisualStyleBackColor = false;
+            this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
             // 
-            // button7
+            // iconButton7
             // 
-            this.button7.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(0, 205);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(250, 41);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Sản Phẩm";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.iconButton7.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton7.FlatAppearance.BorderSize = 0;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton7.IconColor = System.Drawing.Color.Black;
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.Location = new System.Drawing.Point(0, 270);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Size = new System.Drawing.Size(250, 45);
+            this.iconButton7.TabIndex = 6;
+            this.iconButton7.Text = "Thể loại";
+            this.iconButton7.UseVisualStyleBackColor = false;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
-            // button6
+            // iconButton6
             // 
-            this.button6.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(0, 164);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(250, 41);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Hãng Giày";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.iconButton6.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton6.IconColor = System.Drawing.Color.Black;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.Location = new System.Drawing.Point(0, 225);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Size = new System.Drawing.Size(250, 45);
+            this.iconButton6.TabIndex = 5;
+            this.iconButton6.Text = "Chieu Cao Đế Giày";
+            this.iconButton6.UseVisualStyleBackColor = false;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
-            // button5
+            // iconButton5
             // 
-            this.button5.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(0, 123);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(250, 41);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Thể Loại";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.iconButton5.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton5.IconColor = System.Drawing.Color.Black;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.Location = new System.Drawing.Point(0, 180);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(250, 45);
+            this.iconButton5.TabIndex = 4;
+            this.iconButton5.Text = "Giày";
+            this.iconButton5.UseVisualStyleBackColor = false;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
-            // button4
+            // iconButton4
             // 
-            this.button4.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(0, 82);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(250, 41);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Chiều Cao Đế Giày";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.iconButton4.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.Location = new System.Drawing.Point(0, 135);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(250, 45);
+            this.iconButton4.TabIndex = 3;
+            this.iconButton4.Text = "Size";
+            this.iconButton4.UseVisualStyleBackColor = false;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
-            // button3
+            // iconButton3
             // 
-            this.button3.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(0, 41);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 41);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Nhà Sản Xuất";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.iconButton3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(0, 90);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(250, 45);
+            this.iconButton3.TabIndex = 2;
+            this.iconButton3.Text = "Hãng Giày";
+            this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
-            // button2
+            // iconButton2
             // 
-            this.button2.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 41);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Màu Sắc";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.iconButton2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(0, 45);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(250, 45);
+            this.iconButton2.TabIndex = 1;
+            this.iconButton2.Text = "Nhà Sản Xuất";
+            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(0, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(250, 45);
+            this.iconButton1.TabIndex = 0;
+            this.iconButton1.Text = "Màu Sắc";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btn_sanpham
             // 
@@ -208,55 +234,53 @@
             this.btn_sanpham.FlatAppearance.BorderSize = 0;
             this.btn_sanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sanpham.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_sanpham.Location = new System.Drawing.Point(0, 341);
+            this.btn_sanpham.IconChar = FontAwesome.Sharp.IconChar.ShoePrints;
+            this.btn_sanpham.IconColor = System.Drawing.Color.White;
+            this.btn_sanpham.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_sanpham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sanpham.Location = new System.Drawing.Point(0, 269);
             this.btn_sanpham.Name = "btn_sanpham";
-            this.btn_sanpham.Size = new System.Drawing.Size(250, 62);
-            this.btn_sanpham.TabIndex = 7;
+            this.btn_sanpham.Size = new System.Drawing.Size(250, 72);
+            this.btn_sanpham.TabIndex = 3;
             this.btn_sanpham.Text = "Sản Phẩm";
             this.btn_sanpham.UseVisualStyleBackColor = true;
-            this.btn_sanpham.Click += new System.EventHandler(this.btn_sanpham_Click);
+            this.btn_sanpham.Click += new System.EventHandler(this.btn_sanpham_Click_1);
             // 
-            // _btnBanhang
+            // btn_banHang
             // 
-            this._btnBanhang.Dock = System.Windows.Forms.DockStyle.Top;
-            this._btnBanhang.FlatAppearance.BorderSize = 0;
-            this._btnBanhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._btnBanhang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this._btnBanhang.Location = new System.Drawing.Point(0, 273);
-            this._btnBanhang.Name = "_btnBanhang";
-            this._btnBanhang.Size = new System.Drawing.Size(250, 68);
-            this._btnBanhang.TabIndex = 5;
-            this._btnBanhang.Text = "Bán Hàng";
-            this._btnBanhang.UseVisualStyleBackColor = true;
-            this._btnBanhang.Click += new System.EventHandler(this._btnBanhang_Click_1);
+            this.btn_banHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_banHang.FlatAppearance.BorderSize = 0;
+            this.btn_banHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_banHang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_banHang.IconChar = FontAwesome.Sharp.IconChar.StoreAlt;
+            this.btn_banHang.IconColor = System.Drawing.Color.White;
+            this.btn_banHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_banHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_banHang.Location = new System.Drawing.Point(0, 197);
+            this.btn_banHang.Name = "btn_banHang";
+            this.btn_banHang.Size = new System.Drawing.Size(250, 72);
+            this.btn_banHang.TabIndex = 2;
+            this.btn_banHang.Text = "Bán Hàng ";
+            this.btn_banHang.UseVisualStyleBackColor = true;
+            this.btn_banHang.Click += new System.EventHandler(this.btn_banHang_Click);
             // 
-            // _btnThongKe
+            // btn_thongke
             // 
-            this._btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this._btnThongKe.FlatAppearance.BorderSize = 0;
-            this._btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this._btnThongKe.Location = new System.Drawing.Point(0, 204);
-            this._btnThongKe.Name = "_btnThongKe";
-            this._btnThongKe.Size = new System.Drawing.Size(250, 69);
-            this._btnThongKe.TabIndex = 4;
-            this._btnThongKe.Text = "Thống Kê";
-            this._btnThongKe.UseVisualStyleBackColor = true;
-            this._btnThongKe.Click += new System.EventHandler(this._btnThongKe_Click_1);
-            // 
-            // _btn_GiaoCa
-            // 
-            this._btn_GiaoCa.Dock = System.Windows.Forms.DockStyle.Top;
-            this._btn_GiaoCa.FlatAppearance.BorderSize = 0;
-            this._btn_GiaoCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._btn_GiaoCa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this._btn_GiaoCa.Location = new System.Drawing.Point(0, 125);
-            this._btn_GiaoCa.Name = "_btn_GiaoCa";
-            this._btn_GiaoCa.Size = new System.Drawing.Size(250, 79);
-            this._btn_GiaoCa.TabIndex = 3;
-            this._btn_GiaoCa.Text = "Giao Ca";
-            this._btn_GiaoCa.UseVisualStyleBackColor = true;
-            this._btn_GiaoCa.Click += new System.EventHandler(this._btn_GiaoCa_Click);
+            this.btn_thongke.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_thongke.FlatAppearance.BorderSize = 0;
+            this.btn_thongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_thongke.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_thongke.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
+            this.btn_thongke.IconColor = System.Drawing.Color.White;
+            this.btn_thongke.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_thongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thongke.Location = new System.Drawing.Point(0, 125);
+            this.btn_thongke.Name = "btn_thongke";
+            this.btn_thongke.Size = new System.Drawing.Size(250, 72);
+            this.btn_thongke.TabIndex = 1;
+            this.btn_thongke.Text = "Thống Kê";
+            this.btn_thongke.UseVisualStyleBackColor = true;
+            this.btn_thongke.Click += new System.EventHandler(this.btn_thongke_Click);
             // 
             // _pnllogo
             // 
@@ -353,23 +377,23 @@
         #endregion
 
         private Panel _pnlmenu;
-        private Button _btnThongKe;
-        private Button _btn_GiaoCa;
         private Panel _pnllogo;
         private Panel _pnltitleBar;
         private Label _lbltitle;
         private Label pnl;
         private Panel _pnlDesktoppanel;
         private RJControls.RJButton _rjbtndong;
-        private Button _btnBanhang;
+        private FontAwesome.Sharp.IconButton btn_sanpham;
+        private FontAwesome.Sharp.IconButton btn_banHang;
+        private FontAwesome.Sharp.IconButton btn_thongke;
         private Panel panelplaylizt;
-        private Button button3;
-        private Button button2;
-        private Button btn_sanpham;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button8;
+        private FontAwesome.Sharp.IconButton iconButton8;
+        private FontAwesome.Sharp.IconButton iconButton7;
+        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

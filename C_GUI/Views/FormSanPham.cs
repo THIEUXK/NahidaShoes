@@ -1,10 +1,17 @@
 ﻿using B_BUS.IServices;
 using B_BUS.Services;
+using C_GUI.QLForm;
 
 namespace C_GUI.Views
 {
     public partial class FormSanPham : Form
     {
+        
+        private FormNsx c;
+        private FormSize size;
+        private FormHangGiay HangGiay;
+        FormChieuCaoDeGiay ChieuCaoDeGiay;
+        private FormMauSac MauSac;
         private IQLChiTietGiay _ChiTietGiay;
         private IQLMauSac _MauSac;
         IQLNsx _Nsx;
@@ -14,6 +21,8 @@ namespace C_GUI.Views
         private IQLGiay _Giay;
         private IQLChiTietTheLoai _ChiTietTheLoai;
         private IQLTheLoai _theloai;
+        private FormTheLoai TheLoai;
+        private FormGiay Giay;
         public FormSanPham()
         {
             InitializeComponent();
@@ -26,6 +35,15 @@ namespace C_GUI.Views
             _Giay = new QLGiay();
             _ChiTietTheLoai = new QLChiTietTheLoai();
             _theloai = new QLTheLoai();
+            c = new FormNsx();
+            size = new FormSize();
+            HangGiay = new FormHangGiay();
+            ChieuCaoDeGiay = new FormChieuCaoDeGiay();
+            MauSac = new FormMauSac();
+            TheLoai = new FormTheLoai();
+            Giay = new FormGiay();
+            
+                
             LoadData();
             LoadComBo();
         }
@@ -94,5 +112,47 @@ namespace C_GUI.Views
                 
             }
         }
+
+        private void btn_nsx_Click(object sender, EventArgs e)
+        {
+            
+            c.ShowDialog();
+           
         }
+
+        private void btn_size_Click(object sender, EventArgs e)
+        {
+            size.ShowDialog();
+        }
+
+        private void Btn_hanggiay_Click(object sender, EventArgs e)
+        {
+            HangGiay.ShowDialog();
+        }
+
+        private void btn_chieuCaodegiay_Click(object sender, EventArgs e)
+        {
+            ChieuCaoDeGiay.ShowDialog();
+        }
+
+        private void btn_mausac_Click(object sender, EventArgs e)
+        {
+            MauSac = new FormMauSac();
+        }
+
+        private void btn_theloai_Click(object sender, EventArgs e)
+        {
+            TheLoai = new FormTheLoai();
+        }
+
+        private void btn_giay_Click(object sender, EventArgs e)
+        {
+            Giay = new FormGiay();
+        }
+
+        private void _rjbtnRemove_Click(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }

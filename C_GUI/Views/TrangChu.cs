@@ -1,4 +1,3 @@
-
 ﻿using C_GUI.QLForm;
 
 namespace C_GUI.Views
@@ -8,8 +7,7 @@ namespace C_GUI.Views
         private Button? currentButton;
         private readonly Random random;
         private int tempIndex;
-        private Form? activeForm;
-        public static NhanVien NhanVienLogin;
+        private Form activeForm;
 
         public TrangChu()
         {
@@ -289,6 +287,7 @@ namespace C_GUI.Views
             OpenChildForms(new FormSanPham(), sender);
             Hidesubmenu();
         }
+<<<<<<< HEAD
 
         private void TrangChu_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -301,5 +300,7 @@ namespace C_GUI.Views
         }
 =======
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
     }
 }

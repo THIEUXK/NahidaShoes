@@ -58,14 +58,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this._btnTaoHoaDon = new C_GUI.RJControls.RJButton();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             this.label3 = new System.Windows.Forms.Label();
             this._tbxMaHoaDon = new C_GUI.RJControls.RJTextBox();
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+            this.label3 = new System.Windows.Forms.Label();
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             this._cbxKhachHang = new C_GUI.RJControls.RJComboBox();
+            this._cbxNhanVien = new C_GUI.RJControls.RJComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this._btnHuyHoaDon = new C_GUI.RJControls.RJButton();
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             this._tbxMaHoaDon = new C_GUI.RJControls.RJTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this._tbxTienThua = new C_GUI.RJControls.RJTextBox();
@@ -322,8 +330,7 @@
             "Tất cả hóa đơn",
             "Hóa đơn chờ",
             "Hóa đơn đã ship",
-            "Hóa đơn đã thanh toán",
-            "Hóa đơn đã hủy"});
+            "Hóa đơn đã kết thúc"});
             this._cbxTimKiemHoaDon.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._cbxTimKiemHoaDon.ListTextColor = System.Drawing.Color.DimGray;
             this._cbxTimKiemHoaDon.Location = new System.Drawing.Point(7, 28);
@@ -411,7 +418,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 21);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Khách Hàng";
+            this.label2.Text = "Mã Khách Hàng";
             // 
             // _btnTaoHoaDon
             // 
@@ -508,7 +515,10 @@
             // groupBox3
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.groupBox3.Controls.Add(this._btnHuyHoaDon);
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             this.groupBox3.Controls.Add(this._tbxMaHoaDon);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this._tbxTienThua);
@@ -527,12 +537,17 @@
             this.groupBox3.Controls.Add(this._cbxPhuongThucMua);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this._btnThanhToan);
+            this.groupBox3.Controls.Add(this._cbxNhanVien);
             this.groupBox3.Controls.Add(this._cbxKhachHang);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
             this.groupBox3.Controls.Add(this._tbxMaHoaDon);
             this.groupBox3.Controls.Add(this.label3);
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+            this.groupBox3.Controls.Add(this.label3);
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             this.groupBox3.Controls.Add(this._btnTaoHoaDon);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
@@ -545,6 +560,7 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin";
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
             // _btnHuyHoaDon
             // 
@@ -567,6 +583,8 @@
             this._btnHuyHoaDon.UseVisualStyleBackColor = false;
             this._btnHuyHoaDon.Click += new System.EventHandler(this._btnHuyHoaDon_Click);
             // 
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             // _tbxMaHoaDon
             // 
             this._tbxMaHoaDon.BackColor = System.Drawing.SystemColors.Window;
@@ -968,11 +986,16 @@
         private Label label2;
         private RJControls.RJButton _btnTaoHoaDon;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         private Label label3;
         private RJControls.RJTextBox _tbxMaHoaDon;
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+        private Label label3;
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
         private RJControls.RJComboBox _cbxKhachHang;
+        private RJControls.RJComboBox _cbxNhanVien;
         private GroupBox groupBox3;
         private RJControls.RJButton _btnThanhToan;
         private RJControls.RJTextBox _tbxTimKiemThongTinSanPham;
@@ -1004,6 +1027,7 @@
         private ColumnHeader TrangThai;
         private ColumnHeader MoTaHoaDon;
         private RJControls.RJButton _btnBoLoc;
+<<<<<<< HEAD
         private RJControls.RJButton _btnHuyHoaDon;
 =======
         private GroupBox groupBox5;
@@ -1013,5 +1037,7 @@
         private ColumnHeader _MaHoaDon_;
         private ColumnHeader _PhuongThucMua_;
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
     }
 }

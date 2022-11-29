@@ -1,7 +1,6 @@
 ﻿using A_DAL.Entities;
 using B_BUS.IServices;
 using B_BUS.Services;
-using B_BUS.View_Models;
 
 namespace C_GUI.QLForm
 {
@@ -13,9 +12,9 @@ namespace C_GUI.QLForm
         {
             _IQlMauSac = new QLMauSac();
             InitializeComponent();
-            LoadData(_IQlMauSac.GetAllView());
+            LoadData();
         }
-        public void LoadData(List<MauSacView> lstMausacView)
+        public void LoadData()
         {
             int stt = 1;
             dgrid_show.ColumnCount = 5;
@@ -26,7 +25,7 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[4].Name = "trang thai";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = true;
-            foreach (B_BUS.View_Models.MauSacView a in lstMausacView)
+            foreach (B_BUS.View_Models.MauSacView a in _IQlMauSac.GetAllView())
             {
                 _ = dgrid_show.Rows.Add(stt++, a.MauSac.Id, a.MauSac.MaMauSac, a.MauSac.TenMauSac, a.MauSac.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
             }
@@ -62,7 +61,7 @@ namespace C_GUI.QLForm
         private void btn_them_Click(object sender, EventArgs e)
         {
             _ = _IQlMauSac.Add(GetvaluaContro());
-            LoadData(_IQlMauSac.GetAllView());
+            LoadData();
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -71,7 +70,7 @@ namespace C_GUI.QLForm
             if (thongBao)
             {
                 _ = MessageBox.Show("Sửa thành công");
-                LoadData(_IQlMauSac.GetAllView());
+                LoadData();
             }
         }
 
@@ -81,13 +80,8 @@ namespace C_GUI.QLForm
             if (thongBao)
             {
                 _ = MessageBox.Show("Xóa thành công");
-                LoadData(_IQlMauSac.GetAllView());
+                LoadData();
             }
-        }
-
-        private void _tbxTimKiem__TextChanged(object sender, EventArgs e)
-        {
-            LoadData(_IQlMauSac.GetAllView().Where(c => c.MauSac.TenMauSac.Contains(_tbxTimKiem.Texts)).ToList());
         }
     }
 }

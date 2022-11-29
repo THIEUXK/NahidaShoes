@@ -16,7 +16,6 @@ namespace C_GUI.Views
         public static Guid idHoaDon;
         private readonly Guid idHoaDonDefaut;
         private readonly ListViewColumnSorter lvwColumnSorter;
-        private HoaDon? hoaDon;
 
         public FormBanHang()
         {
@@ -51,9 +50,12 @@ namespace C_GUI.Views
             _cbxTimKiemTenGiay.SelectedItem = "Tất cả tên giày";
             _cbxTimKiemMauSac.SelectedItem = "Tất cả màu sắc";
             _cbxTimKiemHangGiay.SelectedItem = "Tất cả hãng giày";
+<<<<<<< HEAD
             hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
 =======
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
         }
 
         private void LoadChiTietGiay(List<ChiTietGiayView> lstChiTietGiayView)
@@ -84,10 +86,14 @@ namespace C_GUI.Views
             foreach (B_BUS.View_Models.HoaDonView item in lstHoaDonView)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 string[] row = { item.HoaDon.Id.ToString(), item.HoaDon.MaHoaDon, item.HoaDon.PhuongThucMua == 0 ? "Mua tại cửa hàng" : "Đặt hàng online", item.HoaDon.TrangThai == 0 ? "Hóa đơn chờ" : item.HoaDon.TrangThai == 1 ? "Hóa đơn đã thanh toán" : item.HoaDon.TrangThai == 2 ? "Hóa đơn đã ship" : "Hóa đơn đã hủy", item.HoaDon.GhiChu };
 =======
                 string[] row = { item.HoaDon.Id.ToString(), item.HoaDon.MaHoaDon, item.HoaDon.PhuongThucMua == 0 ? "Mua tại cửa hàng" : "Đặt hàng online" };
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+                string[] row = { item.HoaDon.Id.ToString(), item.HoaDon.MaHoaDon, item.HoaDon.PhuongThucMua == 0 ? "Mua tại cửa hàng" : "Đặt hàng online", item.HoaDon.TrangThai == 0 ? "Hóa đơn chờ" : item.HoaDon.TrangThai == 1 ? "Hóa đơn đã kết thúc" : "Hóa đơn đã ship", item.HoaDon.GhiChu };
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
                 ListViewItem listViewItem = new(row);
                 _ = _lsvHoaDonCho.Items.Add(listViewItem);
             }
@@ -95,6 +101,7 @@ namespace C_GUI.Views
             {
                 idHoaDon = new Guid(_lsvHoaDonCho.Items[0].Text);
             }
+<<<<<<< HEAD
         }
 
         private void LoadHoaDonChuaThanhToan(List<HoaDonView> lstHoaDonView)
@@ -112,6 +119,8 @@ namespace C_GUI.Views
             }
 <<<<<<< HEAD
             hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             LoadData(idHoaDon);
 =======
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
@@ -121,20 +130,29 @@ namespace C_GUI.Views
         {
             foreach (KhachHang item in _qlKhachHang.GetAll())
             {
-                _ = _cbxKhachHang.Items.Add(item.SoCCCD);
+                _ = _cbxKhachHang.Items.Add(item.MaKhachHang);
+            }
+            foreach (NhanVien item in _qlNhanVien.GetAll())
+            {
+                _ = _cbxNhanVien.Items.Add(item.MaNhanVien);
             }
         }
 
         private void _btnTaoHoaDon_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (_cbxKhachHang.SelectedItem != null)
+=======
+            if (_cbxNhanVien.SelectedItem != null && _cbxKhachHang.SelectedItem != null)
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             {
                 string maHoaDon = "HD0";
                 if (_qlHoaDon.GetAll().Count > 0)
                 {
                     maHoaDon = "HD" + _qlHoaDon.GetAll().Max(c => Convert.ToInt32(c.MaHoaDon[2..]) + 1);
                 }
+<<<<<<< HEAD
                 Guid idKhachHang = _qlKhachHang.GetAll().FirstOrDefault(c => c.SoCCCD == _cbxKhachHang.SelectedItem.ToString()).Id;
                 Guid idNhanVien = TrangChu.NhanVienLogin.Id;
 =======
@@ -144,6 +162,10 @@ namespace C_GUI.Views
                 Guid idKhachHang = _qlKhachHang.GetByMa(_cbxKhachHang.SelectedItem.ToString()).Id;
                 Guid idNhanVien = _qlNhanVien.GetByMa(_cbxNhanVien.SelectedItem.ToString()).Id;
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+                Guid idKhachHang = _qlKhachHang.GetByMa(_cbxKhachHang.SelectedItem.ToString()).Id;
+                Guid idNhanVien = _qlNhanVien.GetByMa(_cbxNhanVien.SelectedItem.ToString()).Id;
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
                 int phuongThucMua = _cbxPhuongThucMua.SelectedItem.ToString() == "Đặt hàng online" ? 1 : 0;
                 if (_qlHoaDon.CheckMa(maHoaDon))
                 {
@@ -186,7 +208,6 @@ namespace C_GUI.Views
                             LoadChiTietGiay(_qlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.SoLuongTon > 0).ToList());
                         }
                         LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
-                        LoadData(idHoaDon);
                     }
                 }
             }
@@ -198,10 +219,13 @@ namespace C_GUI.Views
             {
 <<<<<<< HEAD
                 idHoaDon = new Guid(_lsvHoaDon.SelectedItems[0].Text);
+<<<<<<< HEAD
                 hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
 =======
                 idHoaDon = new Guid(_lsvHoaDonCho.SelectedItems[0].Text);
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
                 LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
                 LoadData(idHoaDon);
             }
@@ -231,11 +255,14 @@ namespace C_GUI.Views
                 _ = _qlChiTietGiay.Update(chiTietGiay);
                 LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
                 LoadChiTietGiay(_qlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.SoLuongTon > 0).ToList());
+<<<<<<< HEAD
                 LoadData(idHoaDon);
 =======
                 hoaDonChiTiet.SoLuong--;
                 _ = _qlHoaDonChiTiet.Update(hoaDonChiTiet);
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
+=======
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             }
             else
             {
@@ -252,11 +279,15 @@ namespace C_GUI.Views
             if (idHoaDon != idHoaDonDefaut)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (_qlHoaDon.GetAll().Find(c => c.Id == idHoaDon).TrangThai is not 1 and not (-1))
+=======
+                if (_qlHoaDon.GetAll().Find(c => c.Id == idHoaDon).TrangThai != 1)
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
                 {
                     if (Convert.ToSingle(_tbxTienThua.Texts) >= 0)
                     {
-
+                        HoaDon hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
                         if (hoaDon.PhuongThucMua == 1 && hoaDon.TrangThai != 2)
                         {
                             DialogResult result = MessageBox.Show("Đây là hóa đơn đặt hàng online khi thanh toán sẽ thực hiện ship cho khách. Hãy chắc chắn rằng khách hàng đã đồng ý với các điều khoản của cửa hàng về sản phẩm và đồng ý với phí ship đã định", "Thông báo", MessageBoxButtons.OKCancel);
@@ -291,10 +322,15 @@ namespace C_GUI.Views
         private void LoadData(Guid? idHoaDon)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             _tbxMaHoaDon.Texts = hoaDon.MaHoaDon;
+=======
+            HoaDonView hoaDon = _qlHoaDon.GetAllView().Find(c => c.HoaDon.Id == idHoaDon);
+            _tbxMaHoaDon.Texts = hoaDon.HoaDon.MaHoaDon;
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
             float tongTien = 0;
-            foreach (HoaDonChiTiet? item in _qlHoaDonChiTiet.GetAll().Where(c => c.IdHoaDon == idHoaDon))
+            foreach (HoaDonChiTiet? item in _qlHoaDonChiTiet.GetAll().Where(c => c.IdHoaDon == FormBanHang.idHoaDon))
             {
                 tongTien += item.SoLuong * item.DonGia;
             }
@@ -408,6 +444,10 @@ namespace C_GUI.Views
             if (idHoaDon != idHoaDonDefaut)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                HoaDon hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
+>>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
                 if (hoaDon.TrangThai == 0)
 =======
                 HoaDon hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
@@ -478,8 +518,8 @@ namespace C_GUI.Views
 
         private void _cbxTimKiemHoaDon_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            int trangThai = _cbxTimKiemHoaDon.SelectedItem == "Tất cả hóa đơn" ? -2 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn chờ" ? 0 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn đã ship" ? 2 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn đã thanh toán" ? 1 : -1;
-            if (trangThai == -2)
+            int trangThai = _cbxTimKiemHoaDon.SelectedItem == "Tất cả hóa đơn" ? -1 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn chờ" ? 0 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn đã ship" ? 2 : 1;
+            if (trangThai == -1)
             {
                 LoadHoaDon(_qlHoaDon.GetAllView().ToList());
 =======
@@ -518,17 +558,6 @@ namespace C_GUI.Views
                 idHoaDon = new Guid(_lsvHoaDonChuaThanhToan.SelectedItems[0].Text);
                 LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
                 LoadData(idHoaDon);
-            }
-        }
-
-        private void _btnHuyHoaDon_Click(object sender, EventArgs e)
-        {
-            if (hoaDon.TrangThai is not 1 and not (-1))
-            {
-                hoaDon.TrangThai = -1;
-                _ = _qlHoaDon.Update(hoaDon);
-                _ = MessageBox.Show("Đã hủy hóa đơn");
-                LoadHoaDon(_qlHoaDon.GetAllView().ToList());
             }
         }
     }

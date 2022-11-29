@@ -274,5 +274,10 @@ namespace C_GUI.Views
             OpenChildForms(new FormSanPham(), sender);
             Hidesubmenu();
         }
+
+        private void TrangChu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.Login.Close();
+        }
     }
 }

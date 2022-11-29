@@ -65,6 +65,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this._rjtbxTimKiem = new C_GUI.RJControls.RJTextBox();
             this._dgrvThongTinSanPham = new System.Windows.Forms.DataGridView();
+            this.btn_link = new C_GUI.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrvThongTinSanPham)).BeginInit();
@@ -529,9 +530,9 @@
             this._rjbtnRemove.FlatAppearance.BorderSize = 0;
             this._rjbtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtnRemove.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.Location = new System.Drawing.Point(1018, 142);
+            this._rjbtnRemove.Location = new System.Drawing.Point(1018, 133);
             this._rjbtnRemove.Name = "_rjbtnRemove";
-            this._rjbtnRemove.Size = new System.Drawing.Size(173, 39);
+            this._rjbtnRemove.Size = new System.Drawing.Size(162, 39);
             this._rjbtnRemove.SizeImage = new System.Drawing.Size(20, 20);
             this._rjbtnRemove.TabIndex = 23;
             this._rjbtnRemove.Text = "Remove";
@@ -549,14 +550,15 @@
             this._rjbtnEdit.FlatAppearance.BorderSize = 0;
             this._rjbtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtnEdit.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.Location = new System.Drawing.Point(1018, 81);
+            this._rjbtnEdit.Location = new System.Drawing.Point(1018, 77);
             this._rjbtnEdit.Name = "_rjbtnEdit";
-            this._rjbtnEdit.Size = new System.Drawing.Size(173, 39);
+            this._rjbtnEdit.Size = new System.Drawing.Size(162, 39);
             this._rjbtnEdit.SizeImage = new System.Drawing.Size(20, 20);
             this._rjbtnEdit.TabIndex = 22;
             this._rjbtnEdit.Text = "Edit";
             this._rjbtnEdit.TextColor = System.Drawing.Color.Black;
             this._rjbtnEdit.UseVisualStyleBackColor = false;
+            this._rjbtnEdit.Click += new System.EventHandler(this._rjbtnEdit_Click);
             // 
             // _rjbtnAdd
             // 
@@ -570,21 +572,22 @@
             this._rjbtnAdd.ForeColor = System.Drawing.Color.Black;
             this._rjbtnAdd.Location = new System.Drawing.Point(1018, 21);
             this._rjbtnAdd.Name = "_rjbtnAdd";
-            this._rjbtnAdd.Size = new System.Drawing.Size(173, 39);
+            this._rjbtnAdd.Size = new System.Drawing.Size(162, 39);
             this._rjbtnAdd.SizeImage = new System.Drawing.Size(20, 20);
             this._rjbtnAdd.TabIndex = 21;
             this._rjbtnAdd.Text = "Add";
             this._rjbtnAdd.TextColor = System.Drawing.Color.Black;
             this._rjbtnAdd.UseVisualStyleBackColor = false;
+            this._rjbtnAdd.Click += new System.EventHandler(this._rjbtnAdd_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this._rjtbxTimKiem);
             this.groupBox2.Controls.Add(this._dgrvThongTinSanPham);
-            this.groupBox2.Location = new System.Drawing.Point(25, 398);
+            this.groupBox2.Location = new System.Drawing.Point(19, 408);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1107, 662);
+            this.groupBox2.Size = new System.Drawing.Size(1107, 341);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Sản Phẩm";
@@ -626,18 +629,40 @@
             // _dgrvThongTinSanPham
             // 
             this._dgrvThongTinSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._dgrvThongTinSanPham.Location = new System.Drawing.Point(15, 88);
+            this._dgrvThongTinSanPham.Location = new System.Drawing.Point(18, 86);
             this._dgrvThongTinSanPham.Name = "_dgrvThongTinSanPham";
             this._dgrvThongTinSanPham.RowHeadersWidth = 51;
             this._dgrvThongTinSanPham.RowTemplate.Height = 29;
-            this._dgrvThongTinSanPham.Size = new System.Drawing.Size(1034, 568);
+            this._dgrvThongTinSanPham.Size = new System.Drawing.Size(1034, 216);
             this._dgrvThongTinSanPham.TabIndex = 0;
+            this._dgrvThongTinSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._dgrvThongTinSanPham_CellContentClick);
+            // 
+            // btn_link
+            // 
+            this.btn_link.BackColor = System.Drawing.Color.Turquoise;
+            this.btn_link.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.btn_link.BorderColor = System.Drawing.Color.Black;
+            this.btn_link.BorderRadius = 15;
+            this.btn_link.BorderSize = 2;
+            this.btn_link.FlatAppearance.BorderSize = 0;
+            this.btn_link.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_link.ForeColor = System.Drawing.Color.Black;
+            this.btn_link.Location = new System.Drawing.Point(1018, 189);
+            this.btn_link.Name = "btn_link";
+            this.btn_link.Size = new System.Drawing.Size(162, 39);
+            this.btn_link.SizeImage = new System.Drawing.Size(20, 20);
+            this.btn_link.TabIndex = 24;
+            this.btn_link.Text = "LinkExcel";
+            this.btn_link.TextColor = System.Drawing.Color.Black;
+            this.btn_link.UseVisualStyleBackColor = false;
+            this.btn_link.Click += new System.EventHandler(this.btn_link_Click);
             // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 750);
+            this.Controls.Add(this.btn_link);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this._rjbtnEdit);
@@ -694,5 +719,6 @@
         private FontAwesome.Sharp.IconButton Btn_hanggiay;
         private FontAwesome.Sharp.IconButton btn_size;
         private FontAwesome.Sharp.IconButton btn_nsx;
+        private RJControls.RJButton btn_link;
     }
 }

@@ -62,10 +62,9 @@
             this.MoTaHoaDon = new System.Windows.Forms.ColumnHeader();
             this.label2 = new System.Windows.Forms.Label();
             this._btnTaoHoaDon = new C_GUI.RJControls.RJButton();
-            this.label3 = new System.Windows.Forms.Label();
             this._cbxKhachHang = new C_GUI.RJControls.RJComboBox();
-            this._cbxNhanVien = new C_GUI.RJControls.RJComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this._btnHuyHoaDon = new C_GUI.RJControls.RJButton();
             this._tbxMaHoaDon = new C_GUI.RJControls.RJTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this._tbxTienThua = new C_GUI.RJControls.RJTextBox();
@@ -378,7 +377,8 @@
             "Tất cả hóa đơn",
             "Hóa đơn chờ",
             "Hóa đơn đã ship",
-            "Hóa đơn đã kết thúc"});
+            "Hóa đơn đã thanh toán",
+            "Hóa đơn đã hủy"});
             this._cbxTimKiemHoaDon.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._cbxTimKiemHoaDon.ListTextColor = System.Drawing.Color.DimGray;
             this._cbxTimKiemHoaDon.Location = new System.Drawing.Point(7, 28);
@@ -446,7 +446,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 28);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Mã Khách Hàng";
+            this.label2.Text = "Khách Hàng";
             // 
             // _btnTaoHoaDon
             // 
@@ -520,6 +520,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this._btnHuyHoaDon);
             this.groupBox3.Controls.Add(this._tbxMaHoaDon);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this._tbxTienThua);
@@ -536,9 +537,7 @@
             this.groupBox3.Controls.Add(this._cbxPhuongThucMua);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this._btnThanhToan);
-            this.groupBox3.Controls.Add(this._cbxNhanVien);
             this.groupBox3.Controls.Add(this._cbxKhachHang);
-            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this._btnTaoHoaDon);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(1159, 12);
@@ -547,6 +546,27 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin";
+            // 
+            // _btnHuyHoaDon
+            // 
+            this._btnHuyHoaDon.BackColor = System.Drawing.Color.Turquoise;
+            this._btnHuyHoaDon.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._btnHuyHoaDon.BorderColor = System.Drawing.Color.Black;
+            this._btnHuyHoaDon.BorderRadius = 15;
+            this._btnHuyHoaDon.BorderSize = 2;
+            this._btnHuyHoaDon.FlatAppearance.BorderSize = 0;
+            this._btnHuyHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._btnHuyHoaDon.ForeColor = System.Drawing.Color.Black;
+            this._btnHuyHoaDon.Location = new System.Drawing.Point(7, 501);
+            this._btnHuyHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._btnHuyHoaDon.Name = "_btnHuyHoaDon";
+            this._btnHuyHoaDon.Size = new System.Drawing.Size(396, 29);
+            this._btnHuyHoaDon.SizeImage = new System.Drawing.Size(20, 20);
+            this._btnHuyHoaDon.TabIndex = 57;
+            this._btnHuyHoaDon.Text = "Hủy hóa đơn";
+            this._btnHuyHoaDon.TextColor = System.Drawing.Color.Black;
+            this._btnHuyHoaDon.UseVisualStyleBackColor = false;
+            this._btnHuyHoaDon.Click += new System.EventHandler(this._btnHuyHoaDon_Click);
             // 
             // _tbxMaHoaDon
             // 
@@ -870,9 +890,7 @@
         private ColumnHeader MaHoaDon;
         private Label label2;
         private RJControls.RJButton _btnTaoHoaDon;
-        private Label label3;
         private RJControls.RJComboBox _cbxKhachHang;
-        private RJControls.RJComboBox _cbxNhanVien;
         private GroupBox groupBox3;
         private RJControls.RJButton _btnThanhToan;
         private RJControls.RJComboBox _cbxPhuongThucMua;
@@ -900,5 +918,6 @@
         private ColumnHeader TrangThai;
         private ColumnHeader MoTaHoaDon;
         private RJControls.RJButton _btnBoLoc;
+        private RJControls.RJButton _btnHuyHoaDon;
     }
 }

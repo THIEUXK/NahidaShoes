@@ -43,6 +43,8 @@
             this.btn_thongke = new FontAwesome.Sharp.IconButton();
             this._pnllogo = new System.Windows.Forms.Panel();
             this.pnl = new System.Windows.Forms.Label();
+            this._lblMaNhanVien = new System.Windows.Forms.Label();
+            this._btnDangXuat = new C_GUI.RJControls.RJButton();
             this._pnltitleBar = new System.Windows.Forms.Panel();
             this._rjbtndong = new C_GUI.RJControls.RJButton();
             this._lbltitle = new System.Windows.Forms.Label();
@@ -303,10 +305,44 @@
             this.pnl.TabIndex = 0;
             this.pnl.Text = "NaHiDaShoe";
             // 
+            // _lblMaNhanVien
+            // 
+            this._lblMaNhanVien.AutoSize = true;
+            this._lblMaNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._lblMaNhanVien.ForeColor = System.Drawing.Color.White;
+            this._lblMaNhanVien.Location = new System.Drawing.Point(6, 36);
+            this._lblMaNhanVien.Name = "_lblMaNhanVien";
+            this._lblMaNhanVien.Size = new System.Drawing.Size(104, 21);
+            this._lblMaNhanVien.TabIndex = 2;
+            this._lblMaNhanVien.Text = "Mã nhân viên";
+            // 
+            // _btnDangXuat
+            // 
+            this._btnDangXuat.BackColor = System.Drawing.Color.Turquoise;
+            this._btnDangXuat.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._btnDangXuat.BorderColor = System.Drawing.Color.Black;
+            this._btnDangXuat.BorderRadius = 15;
+            this._btnDangXuat.BorderSize = 2;
+            this._btnDangXuat.FlatAppearance.BorderSize = 0;
+            this._btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._btnDangXuat.ForeColor = System.Drawing.Color.Black;
+            this._btnDangXuat.Location = new System.Drawing.Point(3, 61);
+            this._btnDangXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._btnDangXuat.Name = "_btnDangXuat";
+            this._btnDangXuat.Size = new System.Drawing.Size(164, 29);
+            this._btnDangXuat.SizeImage = new System.Drawing.Size(20, 20);
+            this._btnDangXuat.TabIndex = 3;
+            this._btnDangXuat.Text = "Đăng xuất";
+            this._btnDangXuat.TextColor = System.Drawing.Color.Black;
+            this._btnDangXuat.UseVisualStyleBackColor = false;
+            this._btnDangXuat.Click += new System.EventHandler(this._btnDangXuat_Click);
+            // 
             // _pnltitleBar
             // 
             this._pnltitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this._pnltitleBar.Controls.Add(this._lblMaNhanVien);
             this._pnltitleBar.Controls.Add(this._rjbtndong);
+            this._pnltitleBar.Controls.Add(this._btnDangXuat);
             this._pnltitleBar.Controls.Add(this._lbltitle);
             this._pnltitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this._pnltitleBar.Location = new System.Drawing.Point(250, 0);
@@ -364,6 +400,7 @@
             this.Controls.Add(this._pnlmenu);
             this.Name = "TrangChu";
             this.Text = "TrangChu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrangChu_FormClosed);
             this._pnlmenu.ResumeLayout(false);
             this.panelplaylizt.ResumeLayout(false);
             this._pnllogo.ResumeLayout(false);

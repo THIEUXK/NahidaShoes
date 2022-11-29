@@ -1,3 +1,4 @@
+
 ﻿using C_GUI.QLForm;
 
 namespace C_GUI.Views
@@ -7,7 +8,8 @@ namespace C_GUI.Views
         private Button? currentButton;
         private readonly Random random;
         private int tempIndex;
-        private Form activeForm;
+        private Form? activeForm;
+        public static NhanVien NhanVienLogin;
 
         public TrangChu()
         {
@@ -271,6 +273,16 @@ namespace C_GUI.Views
         {
             OpenChildForms(new FormSanPham(), sender);
             Hidesubmenu();
+        }
+
+        private void TrangChu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.Login.Close();
+        }
+
+        private void _btnDangXuat_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

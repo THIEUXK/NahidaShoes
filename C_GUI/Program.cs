@@ -1,4 +1,3 @@
-using C_GUI.QLForm;
 using C_GUI.Views;
 
 namespace C_GUI
@@ -27,6 +26,4 @@ namespace C_GUI
 >>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
         }
     }
-    
 }
-

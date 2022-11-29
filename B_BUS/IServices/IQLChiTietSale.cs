@@ -8,7 +8,6 @@ namespace B_BUS.IServices
         bool Add(ChiTietSale obj);
         bool Update(ChiTietSale obj);
         bool Delete(ChiTietSale obj);
-        List<ChiTietSale> Getall();
         List<ChiTietSaleView> GetAllView();
     }
 }

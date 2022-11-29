@@ -1,4 +1,3 @@
-using C_GUI.QLForm;
 using C_GUI.Views;
 
 namespace C_GUI
@@ -19,6 +18,4 @@ namespace C_GUI
             Application.Run(Login);
         }
     }
-    
 }
-

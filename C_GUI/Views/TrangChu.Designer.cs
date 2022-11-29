@@ -300,7 +300,12 @@
             this._rjbtndong.FlatAppearance.BorderSize = 0;
             this._rjbtndong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtndong.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this._rjbtndong.Location = new System.Drawing.Point(6, 80);
+=======
+            this._rjbtndong.Location = new System.Drawing.Point(5, 60);
+            this._rjbtndong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._rjbtndong.Name = "_rjbtndong";
             this._rjbtndong.Size = new System.Drawing.Size(187, 39);
             this._rjbtndong.SizeImage = new System.Drawing.Size(20, 20);
@@ -362,6 +367,7 @@
         private Panel _pnlDesktoppanel;
         private RJControls.RJButton _rjbtndong;
         private Button _btnBanhang;
+<<<<<<< HEAD
         private Panel panelplaylizt;
         private Button button3;
         private Button button2;
@@ -371,5 +377,7 @@
         private Button button5;
         private Button button4;
         private Button button8;
+=======
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
     }
 }

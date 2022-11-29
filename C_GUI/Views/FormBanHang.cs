@@ -133,6 +133,13 @@ namespace C_GUI.Views
                 _ = _cbxKhachHang.Items.Add(item.MaKhachHang);
             }
             foreach (NhanVien item in _qlNhanVien.GetAll())
+<<<<<<< HEAD
+=======
+            {
+                _ = _cbxNhanVien.Items.Add(item.MaNhanVien);
+            }
+            foreach (Giay item in _qlGiay.GetAll())
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             {
                 _ = _cbxNhanVien.Items.Add(item.MaNhanVien);
             }
@@ -142,10 +149,14 @@ namespace C_GUI.Views
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (_cbxKhachHang.SelectedItem != null)
 =======
             if (_cbxNhanVien.SelectedItem != null && _cbxKhachHang.SelectedItem != null)
 >>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
+=======
+            if (_cbxNhanVien.SelectedItem != null && _cbxKhachHang.SelectedItem != null)
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             {
                 string maHoaDon = "HD0";
                 if (_qlHoaDon.GetAll().Count > 0)
@@ -154,6 +165,7 @@ namespace C_GUI.Views
                 }
 <<<<<<< HEAD
                 Guid idKhachHang = _qlKhachHang.GetAll().FirstOrDefault(c => c.SoCCCD == _cbxKhachHang.SelectedItem.ToString()).Id;
+<<<<<<< HEAD
                 Guid idNhanVien = TrangChu.NhanVienLogin.Id;
 =======
             if (_cbxNhanVien.SelectedItem != null && _cbxKhachHang.SelectedItem != null && _tbxMaHoaDon.Texts.Trim() != "")
@@ -166,6 +178,9 @@ namespace C_GUI.Views
                 Guid idKhachHang = _qlKhachHang.GetByMa(_cbxKhachHang.SelectedItem.ToString()).Id;
                 Guid idNhanVien = _qlNhanVien.GetByMa(_cbxNhanVien.SelectedItem.ToString()).Id;
 >>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
+=======
+                Guid idNhanVien = _qlNhanVien.GetByMa(_cbxNhanVien.SelectedItem.ToString()).Id;
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
                 int phuongThucMua = _cbxPhuongThucMua.SelectedItem.ToString() == "Đặt hàng online" ? 1 : 0;
                 if (_qlHoaDon.CheckMa(maHoaDon))
                 {

@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿using C_GUI.QLForm;
 
 namespace C_GUI.Views
+=======
+﻿namespace C_GUI.Views
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
 {
     public partial class TrangChu : Form
     {
@@ -14,7 +18,10 @@ namespace C_GUI.Views
             InitializeComponent();
             random = new Random();
             _rjbtndong.Visible = false;
+<<<<<<< HEAD
             Customdesign(); 
+=======
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
         }
 
         private void Customdesign()
@@ -172,6 +179,7 @@ namespace C_GUI.Views
         {
             OpenChildForm(new FormBanHang(), sender);
         }
+<<<<<<< HEAD
 
         private void btn_sanpham_Click(object sender, EventArgs e)
         {
@@ -302,5 +310,7 @@ namespace C_GUI.Views
 >>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
 =======
 >>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
+=======
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
     }
 }

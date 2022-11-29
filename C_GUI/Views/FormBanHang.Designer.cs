@@ -59,6 +59,7 @@
             this._btnTaoHoaDon = new C_GUI.RJControls.RJButton();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             this.label3 = new System.Windows.Forms.Label();
             this._tbxMaHoaDon = new C_GUI.RJControls.RJTextBox();
@@ -66,6 +67,9 @@
 =======
             this.label3 = new System.Windows.Forms.Label();
 >>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
+=======
+            this.label3 = new System.Windows.Forms.Label();
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._cbxKhachHang = new C_GUI.RJControls.RJComboBox();
             this._cbxNhanVien = new C_GUI.RJControls.RJComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -430,7 +434,11 @@
             this._btnTaoHoaDon.FlatAppearance.BorderSize = 0;
             this._btnTaoHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnTaoHoaDon.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this._btnTaoHoaDon.Location = new System.Drawing.Point(21, 172);
+=======
+            this._btnTaoHoaDon.Location = new System.Drawing.Point(15, 131);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._btnTaoHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._btnTaoHoaDon.Name = "_btnTaoHoaDon";
             this._btnTaoHoaDon.Size = new System.Drawing.Size(388, 29);
@@ -445,6 +453,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(15, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 21);
@@ -473,6 +482,13 @@
             this._tbxMaHoaDon.TabIndex = 20;
             this._tbxMaHoaDon.Texts = "";
             this._tbxMaHoaDon.UnderlinedStyle = false;
+=======
+            this.label3.Location = new System.Drawing.Point(14, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 21);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Nhân Viên";
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             // 
             // _cbxKhachHang
             // 
@@ -504,11 +520,19 @@
             this._cbxNhanVien.IconColor = System.Drawing.Color.MediumSlateBlue;
             this._cbxNhanVien.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._cbxNhanVien.ListTextColor = System.Drawing.Color.DimGray;
+<<<<<<< HEAD
             this._cbxNhanVien.Location = new System.Drawing.Point(169, 101);
             this._cbxNhanVien.MinimumSize = new System.Drawing.Size(200, 30);
             this._cbxNhanVien.Name = "_cbxNhanVien";
             this._cbxNhanVien.Padding = new System.Windows.Forms.Padding(1);
             this._cbxNhanVien.Size = new System.Drawing.Size(552, 30);
+=======
+            this._cbxNhanVien.Location = new System.Drawing.Point(168, 60);
+            this._cbxNhanVien.MinimumSize = new System.Drawing.Size(200, 30);
+            this._cbxNhanVien.Name = "_cbxNhanVien";
+            this._cbxNhanVien.Padding = new System.Windows.Forms.Padding(1);
+            this._cbxNhanVien.Size = new System.Drawing.Size(235, 30);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._cbxNhanVien.TabIndex = 22;
             this._cbxNhanVien.Texts = "";
             // 
@@ -541,6 +565,7 @@
             this.groupBox3.Controls.Add(this._cbxKhachHang);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             this.groupBox3.Controls.Add(this._tbxMaHoaDon);
             this.groupBox3.Controls.Add(this.label3);
@@ -548,6 +573,9 @@
 =======
             this.groupBox3.Controls.Add(this.label3);
 >>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
+=======
+            this.groupBox3.Controls.Add(this.label3);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this.groupBox3.Controls.Add(this._btnTaoHoaDon);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
@@ -595,8 +623,13 @@
             this._tbxMaHoaDon.Enabled = false;
             this._tbxMaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._tbxMaHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+<<<<<<< HEAD
             this._tbxMaHoaDon.Location = new System.Drawing.Point(192, 221);
             this._tbxMaHoaDon.Margin = new System.Windows.Forms.Padding(5);
+=======
+            this._tbxMaHoaDon.Location = new System.Drawing.Point(168, 166);
+            this._tbxMaHoaDon.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._tbxMaHoaDon.MaxLength = 20;
             this._tbxMaHoaDon.Multiline = false;
             this._tbxMaHoaDon.Name = "_tbxMaHoaDon";
@@ -613,7 +646,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.label9.Location = new System.Drawing.Point(16, 235);
+=======
+            this.label9.Location = new System.Drawing.Point(14, 176);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 28);
             this.label9.TabIndex = 55;
@@ -730,8 +767,13 @@
             this._tbxGhiChu.BorderSize = 2;
             this._tbxGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._tbxGhiChu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+<<<<<<< HEAD
             this._tbxGhiChu.Location = new System.Drawing.Point(192, 325);
             this._tbxGhiChu.Margin = new System.Windows.Forms.Padding(5);
+=======
+            this._tbxGhiChu.Location = new System.Drawing.Point(168, 244);
+            this._tbxGhiChu.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._tbxGhiChu.MaxLength = 20;
             this._tbxGhiChu.Multiline = true;
             this._tbxGhiChu.Name = "_tbxGhiChu";
@@ -739,7 +781,11 @@
             this._tbxGhiChu.PasswordChar = false;
             this._tbxGhiChu.PlaceholderColor = System.Drawing.Color.DarkGray;
             this._tbxGhiChu.PlaceholderText = "";
+<<<<<<< HEAD
             this._tbxGhiChu.Size = new System.Drawing.Size(267, 42);
+=======
+            this._tbxGhiChu.Size = new System.Drawing.Size(234, 89);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._tbxGhiChu.TabIndex = 48;
             this._tbxGhiChu.Texts = "";
             this._tbxGhiChu.UnderlinedStyle = false;
@@ -748,7 +794,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(16, 339);
+=======
+            this.label5.Location = new System.Drawing.Point(15, 256);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 28);
             this.label5.TabIndex = 47;
@@ -763,8 +813,13 @@
             this._tbxGiamGia.BorderSize = 2;
             this._tbxGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._tbxGiamGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+<<<<<<< HEAD
             this._tbxGiamGia.Location = new System.Drawing.Point(192, 273);
             this._tbxGiamGia.Margin = new System.Windows.Forms.Padding(5);
+=======
+            this._tbxGiamGia.Location = new System.Drawing.Point(168, 205);
+            this._tbxGiamGia.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._tbxGiamGia.MaxLength = 20;
             this._tbxGiamGia.Multiline = false;
             this._tbxGiamGia.Name = "_tbxGiamGia";
@@ -782,7 +837,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(16, 287);
+=======
+            this.label1.Location = new System.Drawing.Point(14, 215);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 28);
             this.label1.TabIndex = 45;
@@ -825,7 +884,11 @@
             "Đặt hàng online"});
             this._cbxPhuongThucMua.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._cbxPhuongThucMua.ListTextColor = System.Drawing.Color.DimGray;
+<<<<<<< HEAD
             this._cbxPhuongThucMua.Location = new System.Drawing.Point(169, 137);
+=======
+            this._cbxPhuongThucMua.Location = new System.Drawing.Point(168, 96);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this._cbxPhuongThucMua.MinimumSize = new System.Drawing.Size(200, 30);
             this._cbxPhuongThucMua.Name = "_cbxPhuongThucMua";
             this._cbxPhuongThucMua.Padding = new System.Windows.Forms.Padding(1);
@@ -837,7 +900,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.label4.Location = new System.Drawing.Point(15, 146);
+=======
+            this.label4.Location = new System.Drawing.Point(14, 105);
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 21);
             this.label4.TabIndex = 42;
@@ -987,6 +1054,7 @@
         private RJControls.RJButton _btnTaoHoaDon;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         private Label label3;
         private RJControls.RJTextBox _tbxMaHoaDon;
@@ -994,6 +1062,9 @@
 =======
         private Label label3;
 >>>>>>> parent of 3150208 (Merge branch 'main' into PH20260)
+=======
+        private Label label3;
+>>>>>>> parent of 784c824 (Merge pull request #44 from CuongDeveloper/PH26084)
         private RJControls.RJComboBox _cbxKhachHang;
         private RJControls.RJComboBox _cbxNhanVien;
         private GroupBox groupBox3;

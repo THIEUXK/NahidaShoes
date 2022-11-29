@@ -9,15 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
     <PackageReference Include="EPPlus" Version="6.1.1" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.1.1" />
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
   </ItemGroup>
 
   <ItemGroup>
-=======
->>>>>>> parent of 460c461 (Merge pull request #42 from Phongtxph2301/PH20260)
     <ProjectReference Include="..\B_BUS\B_BUS.csproj" />
   </ItemGroup>
 

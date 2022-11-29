@@ -100,10 +100,6 @@ namespace C_GUI.Views
             {
                 _ = _cbxKhachHang.Items.Add(item.SoCCCD);
             }
-            foreach (NhanVien item in _qlNhanVien.GetAll())
-            {
-                _ = _cbxNhanVien.Items.Add(item.MaNhanVien);
-            }
             foreach (Giay item in _qlGiay.GetAll())
             {
                 _ = _cbxTimKiemGioHang.Items.Add(item.MaGiay);
@@ -124,7 +120,7 @@ namespace C_GUI.Views
 
         private void _btnTaoHoaDon_Click(object sender, EventArgs e)
         {
-            if (_cbxNhanVien.SelectedItem != null && _cbxKhachHang.SelectedItem != null)
+            if (_cbxKhachHang.SelectedItem != null)
             {
                 string maHoaDon = "HD0";
                 if (_qlHoaDon.GetAll().Count > 0)
@@ -132,7 +128,7 @@ namespace C_GUI.Views
                     maHoaDon = "HD" + _qlHoaDon.GetAll().Max(c => Convert.ToInt32(c.MaHoaDon[2..]) + 1);
                 }
                 Guid idKhachHang = _qlKhachHang.GetAll().FirstOrDefault(c => c.SoCCCD == _cbxKhachHang.SelectedItem.ToString()).Id;
-                Guid idNhanVien = _qlNhanVien.GetByMa(_cbxNhanVien.SelectedItem.ToString()).Id;
+                Guid idNhanVien = TrangChu.NhanVienLogin.Id;
                 int phuongThucMua = _cbxPhuongThucMua.SelectedItem.ToString() == "Đặt hàng online" ? 1 : 0;
                 bool thongBao = _qlHoaDon.Add(new HoaDon() { MaHoaDon = maHoaDon, IdKhachHang = idKhachHang, IdNhanVien = idNhanVien, PhuongThucMua = phuongThucMua });
                 if (thongBao)

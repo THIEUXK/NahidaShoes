@@ -182,25 +182,28 @@ namespace C_GUI.Views
 
         private void _lsvGioHang_DoubleClick(object sender, EventArgs e)
         {
-            if (_qlHoaDon.GetAll().Find(c => c.Id == idHoaDon).TrangThai == 0)
+            if (idHoaDon != idHoaDonDefaut)
             {
-                Guid idHoaDonChiTiet = new(_lsvGioHang.SelectedItems[0].Text);
-                HoaDonChiTiet hoaDonChiTiet = _qlHoaDonChiTiet.GetAll().Find(c => c.Id == idHoaDonChiTiet);
-                ChiTietGiay? chiTietGiay = _qlChiTietGiay.GetAll().FirstOrDefault(c => c.Id == hoaDonChiTiet.IdChiTietGiay);
-                if (hoaDonChiTiet.SoLuong > 1)
+                if (_qlHoaDon.GetAll().Find(c => c.Id == idHoaDon).TrangThai == 0)
                 {
-                    hoaDonChiTiet.SoLuong--;
-                    _ = _qlHoaDonChiTiet.Update(hoaDonChiTiet);
+                    Guid idHoaDonChiTiet = new(_lsvGioHang.SelectedItems[0].Text);
+                    HoaDonChiTiet hoaDonChiTiet = _qlHoaDonChiTiet.GetAll().Find(c => c.Id == idHoaDonChiTiet);
+                    ChiTietGiay? chiTietGiay = _qlChiTietGiay.GetAll().FirstOrDefault(c => c.Id == hoaDonChiTiet.IdChiTietGiay);
+                    if (hoaDonChiTiet.SoLuong > 1)
+                    {
+                        hoaDonChiTiet.SoLuong--;
+                        _ = _qlHoaDonChiTiet.Update(hoaDonChiTiet);
+                    }
+                    else
+                    {
+                        _ = _qlHoaDonChiTiet.Delete(hoaDonChiTiet);
+                    }
+                    chiTietGiay.SoLuongTon++;
+                    _ = _qlChiTietGiay.Update(chiTietGiay);
+                    LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
+                    LoadChiTietGiay(_qlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.SoLuongTon > 0).ToList());
+                    LoadData(idHoaDon);
                 }
-                else
-                {
-                    _ = _qlHoaDonChiTiet.Delete(hoaDonChiTiet);
-                }
-                chiTietGiay.SoLuongTon++;
-                _ = _qlChiTietGiay.Update(chiTietGiay);
-                LoadChiTietHoaDon(_qlHoaDonChiTiet.GetAllView().Where(c => c.HoaDonChiTiet.IdHoaDon == idHoaDon).ToList());
-                LoadChiTietGiay(_qlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.SoLuongTon > 0).ToList());
-                LoadData(idHoaDon);
             }
         }
 
@@ -252,16 +255,18 @@ namespace C_GUI.Views
 
         private void LoadData(Guid? idHoaDon)
         {
-
-            _tbxMaHoaDon.Texts = hoaDon.MaHoaDon;
-            float tongTien = 0;
-            foreach (HoaDonChiTiet? item in _qlHoaDonChiTiet.GetAll().Where(c => c.IdHoaDon == idHoaDon))
+            if (idHoaDon != idHoaDonDefaut)
             {
-                tongTien += item.SoLuong * item.DonGia;
+                _tbxMaHoaDon.Texts = hoaDon.MaHoaDon;
+                float tongTien = 0;
+                foreach (HoaDonChiTiet? item in _qlHoaDonChiTiet.GetAll().Where(c => c.IdHoaDon == idHoaDon))
+                {
+                    tongTien += item.SoLuong * item.DonGia;
+                }
+                _tbxTongTien.Texts = tongTien.ToString();
+                _tbxTienKhachDua.Texts = "0";
+                _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts) - Convert.ToSingle(_tbxTongTien.Texts)).ToString();
             }
-            _tbxTongTien.Texts = tongTien.ToString();
-            _tbxTienKhachDua.Texts = "0";
-            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts) - Convert.ToSingle(_tbxTongTien.Texts)).ToString();
         }
 
         private void _lsvShowSanPham_ColumnClick(object sender, ColumnClickEventArgs e)

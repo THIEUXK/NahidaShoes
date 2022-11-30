@@ -255,7 +255,6 @@
             this.Controls.Add(this.dgrid_show);
             this.Name = "FormNsx";
             this.Text = "FormNsx";
-
             this.Load += new System.EventHandler(this.FormNsx_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

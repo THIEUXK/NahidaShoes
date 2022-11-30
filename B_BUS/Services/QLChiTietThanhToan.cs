@@ -53,10 +53,5 @@ namespace B_BUS.Services
                                               }).ToList();
             return lst;
         }
-
-        public List<ChiTietThanhToan> GetAll()
-        {
-            return igChTiet.GetAll();
-        }
     }
 }

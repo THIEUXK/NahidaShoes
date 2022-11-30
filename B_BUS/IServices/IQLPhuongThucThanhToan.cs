@@ -9,6 +9,5 @@ namespace B_BUS.IServices
         bool Update(PhuongThucThanhToan obj);
         bool Delete(PhuongThucThanhToan obj);
         List<PhuongThucThanhToanView> GetAllView();
-        List<PhuongThucThanhToan> GetAll();
     }
 }

@@ -65,7 +65,7 @@
             this._pnlmenu.Location = new System.Drawing.Point(0, 0);
             this._pnlmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._pnlmenu.Name = "_pnlmenu";
-            this._pnlmenu.Size = new System.Drawing.Size(219, 775);
+            this._pnlmenu.Size = new System.Drawing.Size(219, 1041);
             this._pnlmenu.TabIndex = 0;
             this._pnlmenu.Paint += new System.Windows.Forms.PaintEventHandler(this._pnlmenu_Paint);
             // 
@@ -326,7 +326,7 @@
             this._pnltitleBar.Location = new System.Drawing.Point(219, 0);
             this._pnltitleBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._pnltitleBar.Name = "_pnltitleBar";
-            this._pnltitleBar.Size = new System.Drawing.Size(1445, 94);
+            this._pnltitleBar.Size = new System.Drawing.Size(1685, 94);
             this._pnltitleBar.TabIndex = 1;
             // 
             // _rjbtndong
@@ -356,7 +356,7 @@
             this._lbltitle.AutoSize = true;
             this._lbltitle.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._lbltitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this._lbltitle.Location = new System.Drawing.Point(613, 40);
+            this._lbltitle.Location = new System.Drawing.Point(733, 40);
             this._lbltitle.Name = "_lbltitle";
             this._lbltitle.Size = new System.Drawing.Size(74, 30);
             this._lbltitle.TabIndex = 0;
@@ -368,14 +368,14 @@
             this._pnlDesktoppanel.Location = new System.Drawing.Point(219, 94);
             this._pnlDesktoppanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._pnlDesktoppanel.Name = "_pnlDesktoppanel";
-            this._pnlDesktoppanel.Size = new System.Drawing.Size(1445, 681);
+            this._pnlDesktoppanel.Size = new System.Drawing.Size(1685, 947);
             this._pnlDesktoppanel.TabIndex = 2;
             // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1664, 775);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this._pnlDesktoppanel);
             this.Controls.Add(this._pnltitleBar);
             this.Controls.Add(this._pnlmenu);

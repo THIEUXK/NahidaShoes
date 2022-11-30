@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this._rjbtnAddtobill = new C_GUI.RJControls.RJButton();
-            this._rjbtnRemove = new C_GUI.RJControls.RJButton();
-            this._rjbtnEdit = new C_GUI.RJControls.RJButton();
-            this._rjbtnAdd = new C_GUI.RJControls.RJButton();
             this._lblTheLoaiTang2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this._lblTheloaiTang1 = new System.Windows.Forms.Label();
@@ -58,11 +54,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this._rjtbxTimKiem = new C_GUI.RJControls.RJTextBox();
             this._dgrvThongTinSanPham = new System.Windows.Forms.DataGridView();
-            this.rjButton1 = new C_GUI.RJControls.RJButton();
-            this.rjButton2 = new C_GUI.RJControls.RJButton();
-            this.rjButton3 = new C_GUI.RJControls.RJButton();
-            this.rjButton4 = new C_GUI.RJControls.RJButton();
-            this.rjButton5 = new C_GUI.RJControls.RJButton();
+            this._rjbtnAdd = new C_GUI.RJControls.RJButton();
+            this._rjbtnEdit = new C_GUI.RJControls.RJButton();
+            this._rjbtnRemove = new C_GUI.RJControls.RJButton();
+            this._rjbtnAddtobill = new C_GUI.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrvThongTinSanPham)).BeginInit();
@@ -70,11 +65,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rjButton5);
-            this.groupBox1.Controls.Add(this.rjButton4);
-            this.groupBox1.Controls.Add(this.rjButton3);
-            this.groupBox1.Controls.Add(this.rjButton2);
-            this.groupBox1.Controls.Add(this.rjButton1);
             this.groupBox1.Controls.Add(this._rjbtnAddtobill);
             this.groupBox1.Controls.Add(this._rjbtnRemove);
             this.groupBox1.Controls.Add(this._rjbtnEdit);
@@ -102,86 +92,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(608, 794);
+            this.groupBox1.Size = new System.Drawing.Size(608, 662);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi TIết";
-            // 
-            // _rjbtnAddtobill
-            // 
-            this._rjbtnAddtobill.BackColor = System.Drawing.Color.Turquoise;
-            this._rjbtnAddtobill.BackgroundColor = System.Drawing.Color.Turquoise;
-            this._rjbtnAddtobill.BorderColor = System.Drawing.Color.Black;
-            this._rjbtnAddtobill.BorderRadius = 15;
-            this._rjbtnAddtobill.BorderSize = 2;
-            this._rjbtnAddtobill.FlatAppearance.BorderSize = 0;
-            this._rjbtnAddtobill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._rjbtnAddtobill.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnAddtobill.Location = new System.Drawing.Point(50, 749);
-            this._rjbtnAddtobill.Name = "_rjbtnAddtobill";
-            this._rjbtnAddtobill.Size = new System.Drawing.Size(173, 39);
-            this._rjbtnAddtobill.SizeImage = new System.Drawing.Size(20, 20);
-            this._rjbtnAddtobill.TabIndex = 24;
-            this._rjbtnAddtobill.Text = "Add to bill";
-            this._rjbtnAddtobill.TextColor = System.Drawing.Color.Black;
-            this._rjbtnAddtobill.UseVisualStyleBackColor = false;
-            // 
-            // _rjbtnRemove
-            // 
-            this._rjbtnRemove.BackColor = System.Drawing.Color.Turquoise;
-            this._rjbtnRemove.BackgroundColor = System.Drawing.Color.Turquoise;
-            this._rjbtnRemove.BorderColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.BorderRadius = 15;
-            this._rjbtnRemove.BorderSize = 2;
-            this._rjbtnRemove.FlatAppearance.BorderSize = 0;
-            this._rjbtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._rjbtnRemove.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.Location = new System.Drawing.Point(411, 672);
-            this._rjbtnRemove.Name = "_rjbtnRemove";
-            this._rjbtnRemove.Size = new System.Drawing.Size(173, 39);
-            this._rjbtnRemove.SizeImage = new System.Drawing.Size(20, 20);
-            this._rjbtnRemove.TabIndex = 23;
-            this._rjbtnRemove.Text = "Remove";
-            this._rjbtnRemove.TextColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.UseVisualStyleBackColor = false;
-            // 
-            // _rjbtnEdit
-            // 
-            this._rjbtnEdit.BackColor = System.Drawing.Color.Turquoise;
-            this._rjbtnEdit.BackgroundColor = System.Drawing.Color.Turquoise;
-            this._rjbtnEdit.BorderColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.BorderRadius = 15;
-            this._rjbtnEdit.BorderSize = 2;
-            this._rjbtnEdit.FlatAppearance.BorderSize = 0;
-            this._rjbtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._rjbtnEdit.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.Location = new System.Drawing.Point(232, 672);
-            this._rjbtnEdit.Name = "_rjbtnEdit";
-            this._rjbtnEdit.Size = new System.Drawing.Size(173, 39);
-            this._rjbtnEdit.SizeImage = new System.Drawing.Size(20, 20);
-            this._rjbtnEdit.TabIndex = 22;
-            this._rjbtnEdit.Text = "Edit";
-            this._rjbtnEdit.TextColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.UseVisualStyleBackColor = false;
-            // 
-            // _rjbtnAdd
-            // 
-            this._rjbtnAdd.BackColor = System.Drawing.Color.Turquoise;
-            this._rjbtnAdd.BackgroundColor = System.Drawing.Color.Turquoise;
-            this._rjbtnAdd.BorderColor = System.Drawing.Color.Black;
-            this._rjbtnAdd.BorderRadius = 15;
-            this._rjbtnAdd.BorderSize = 2;
-            this._rjbtnAdd.FlatAppearance.BorderSize = 0;
-            this._rjbtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._rjbtnAdd.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnAdd.Location = new System.Drawing.Point(50, 672);
-            this._rjbtnAdd.Name = "_rjbtnAdd";
-            this._rjbtnAdd.Size = new System.Drawing.Size(173, 39);
-            this._rjbtnAdd.SizeImage = new System.Drawing.Size(20, 20);
-            this._rjbtnAdd.TabIndex = 21;
-            this._rjbtnAdd.Text = "Add";
-            this._rjbtnAdd.TextColor = System.Drawing.Color.Black;
-            this._rjbtnAdd.UseVisualStyleBackColor = false;
             // 
             // _lblTheLoaiTang2
             // 
@@ -482,7 +396,7 @@
             this.groupBox2.Controls.Add(this._dgrvThongTinSanPham);
             this.groupBox2.Location = new System.Drawing.Point(673, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(590, 762);
+            this.groupBox2.Size = new System.Drawing.Size(590, 662);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Sản Phẩm";
@@ -528,109 +442,90 @@
             this._dgrvThongTinSanPham.Name = "_dgrvThongTinSanPham";
             this._dgrvThongTinSanPham.RowHeadersWidth = 51;
             this._dgrvThongTinSanPham.RowTemplate.Height = 29;
-            this._dgrvThongTinSanPham.Size = new System.Drawing.Size(558, 655);
+            this._dgrvThongTinSanPham.Size = new System.Drawing.Size(558, 568);
             this._dgrvThongTinSanPham.TabIndex = 0;
             // 
-            // rjButton1
+            // _rjbtnAdd
             // 
-            this.rjButton1.BackColor = System.Drawing.Color.Turquoise;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.Turquoise;
-            this.rjButton1.BorderColor = System.Drawing.Color.Black;
-            this.rjButton1.BorderRadius = 15;
-            this.rjButton1.BorderSize = 2;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.ForeColor = System.Drawing.Color.Black;
-            this.rjButton1.Location = new System.Drawing.Point(411, 105);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(173, 39);
-            this.rjButton1.SizeImage = new System.Drawing.Size(20, 20);
-            this.rjButton1.TabIndex = 25;
-            this.rjButton1.Text = "+";
-            this.rjButton1.TextColor = System.Drawing.Color.Black;
-            this.rjButton1.UseVisualStyleBackColor = false;
+            this._rjbtnAdd.BackColor = System.Drawing.Color.Turquoise;
+            this._rjbtnAdd.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._rjbtnAdd.BorderColor = System.Drawing.Color.Black;
+            this._rjbtnAdd.BorderRadius = 15;
+            this._rjbtnAdd.BorderSize = 2;
+            this._rjbtnAdd.FlatAppearance.BorderSize = 0;
+            this._rjbtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._rjbtnAdd.ForeColor = System.Drawing.Color.Black;
+            this._rjbtnAdd.Location = new System.Drawing.Point(429, 417);
+            this._rjbtnAdd.Name = "_rjbtnAdd";
+            this._rjbtnAdd.Size = new System.Drawing.Size(173, 39);
+            this._rjbtnAdd.SizeImage = new System.Drawing.Size(20, 20);
+            this._rjbtnAdd.TabIndex = 21;
+            this._rjbtnAdd.Text = "Add";
+            this._rjbtnAdd.TextColor = System.Drawing.Color.Black;
+            this._rjbtnAdd.UseVisualStyleBackColor = false;
             // 
-            // rjButton2
+            // _rjbtnEdit
             // 
-            this.rjButton2.BackColor = System.Drawing.Color.Turquoise;
-            this.rjButton2.BackgroundColor = System.Drawing.Color.Turquoise;
-            this.rjButton2.BorderColor = System.Drawing.Color.Black;
-            this.rjButton2.BorderRadius = 15;
-            this.rjButton2.BorderSize = 2;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.ForeColor = System.Drawing.Color.Black;
-            this.rjButton2.Location = new System.Drawing.Point(411, 157);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(173, 39);
-            this.rjButton2.SizeImage = new System.Drawing.Size(20, 20);
-            this.rjButton2.TabIndex = 26;
-            this.rjButton2.Text = "+";
-            this.rjButton2.TextColor = System.Drawing.Color.Black;
-            this.rjButton2.UseVisualStyleBackColor = false;
+            this._rjbtnEdit.BackColor = System.Drawing.Color.Turquoise;
+            this._rjbtnEdit.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._rjbtnEdit.BorderColor = System.Drawing.Color.Black;
+            this._rjbtnEdit.BorderRadius = 15;
+            this._rjbtnEdit.BorderSize = 2;
+            this._rjbtnEdit.FlatAppearance.BorderSize = 0;
+            this._rjbtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._rjbtnEdit.ForeColor = System.Drawing.Color.Black;
+            this._rjbtnEdit.Location = new System.Drawing.Point(429, 469);
+            this._rjbtnEdit.Name = "_rjbtnEdit";
+            this._rjbtnEdit.Size = new System.Drawing.Size(173, 39);
+            this._rjbtnEdit.SizeImage = new System.Drawing.Size(20, 20);
+            this._rjbtnEdit.TabIndex = 22;
+            this._rjbtnEdit.Text = "Edit";
+            this._rjbtnEdit.TextColor = System.Drawing.Color.Black;
+            this._rjbtnEdit.UseVisualStyleBackColor = false;
             // 
-            // rjButton3
+            // _rjbtnRemove
             // 
-            this.rjButton3.BackColor = System.Drawing.Color.Turquoise;
-            this.rjButton3.BackgroundColor = System.Drawing.Color.Turquoise;
-            this.rjButton3.BorderColor = System.Drawing.Color.Black;
-            this.rjButton3.BorderRadius = 15;
-            this.rjButton3.BorderSize = 2;
-            this.rjButton3.FlatAppearance.BorderSize = 0;
-            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton3.ForeColor = System.Drawing.Color.Black;
-            this.rjButton3.Location = new System.Drawing.Point(411, 209);
-            this.rjButton3.Name = "rjButton3";
-            this.rjButton3.Size = new System.Drawing.Size(173, 39);
-            this.rjButton3.SizeImage = new System.Drawing.Size(20, 20);
-            this.rjButton3.TabIndex = 27;
-            this.rjButton3.Text = "+";
-            this.rjButton3.TextColor = System.Drawing.Color.Black;
-            this.rjButton3.UseVisualStyleBackColor = false;
+            this._rjbtnRemove.BackColor = System.Drawing.Color.Turquoise;
+            this._rjbtnRemove.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._rjbtnRemove.BorderColor = System.Drawing.Color.Black;
+            this._rjbtnRemove.BorderRadius = 15;
+            this._rjbtnRemove.BorderSize = 2;
+            this._rjbtnRemove.FlatAppearance.BorderSize = 0;
+            this._rjbtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._rjbtnRemove.ForeColor = System.Drawing.Color.Black;
+            this._rjbtnRemove.Location = new System.Drawing.Point(429, 529);
+            this._rjbtnRemove.Name = "_rjbtnRemove";
+            this._rjbtnRemove.Size = new System.Drawing.Size(173, 39);
+            this._rjbtnRemove.SizeImage = new System.Drawing.Size(20, 20);
+            this._rjbtnRemove.TabIndex = 23;
+            this._rjbtnRemove.Text = "Remove";
+            this._rjbtnRemove.TextColor = System.Drawing.Color.Black;
+            this._rjbtnRemove.UseVisualStyleBackColor = false;
             // 
-            // rjButton4
+            // _rjbtnAddtobill
             // 
-            this.rjButton4.BackColor = System.Drawing.Color.Turquoise;
-            this.rjButton4.BackgroundColor = System.Drawing.Color.Turquoise;
-            this.rjButton4.BorderColor = System.Drawing.Color.Black;
-            this.rjButton4.BorderRadius = 15;
-            this.rjButton4.BorderSize = 2;
-            this.rjButton4.FlatAppearance.BorderSize = 0;
-            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton4.ForeColor = System.Drawing.Color.Black;
-            this.rjButton4.Location = new System.Drawing.Point(411, 261);
-            this.rjButton4.Name = "rjButton4";
-            this.rjButton4.Size = new System.Drawing.Size(173, 39);
-            this.rjButton4.SizeImage = new System.Drawing.Size(20, 20);
-            this.rjButton4.TabIndex = 28;
-            this.rjButton4.Text = "+";
-            this.rjButton4.TextColor = System.Drawing.Color.Black;
-            this.rjButton4.UseVisualStyleBackColor = false;
-            // 
-            // rjButton5
-            // 
-            this.rjButton5.BackColor = System.Drawing.Color.Turquoise;
-            this.rjButton5.BackgroundColor = System.Drawing.Color.Turquoise;
-            this.rjButton5.BorderColor = System.Drawing.Color.Black;
-            this.rjButton5.BorderRadius = 15;
-            this.rjButton5.BorderSize = 2;
-            this.rjButton5.FlatAppearance.BorderSize = 0;
-            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton5.ForeColor = System.Drawing.Color.Black;
-            this.rjButton5.Location = new System.Drawing.Point(411, 462);
-            this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(173, 39);
-            this.rjButton5.SizeImage = new System.Drawing.Size(20, 20);
-            this.rjButton5.TabIndex = 29;
-            this.rjButton5.Text = "+";
-            this.rjButton5.TextColor = System.Drawing.Color.Black;
-            this.rjButton5.UseVisualStyleBackColor = false;
+            this._rjbtnAddtobill.BackColor = System.Drawing.Color.Turquoise;
+            this._rjbtnAddtobill.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._rjbtnAddtobill.BorderColor = System.Drawing.Color.Black;
+            this._rjbtnAddtobill.BorderRadius = 15;
+            this._rjbtnAddtobill.BorderSize = 2;
+            this._rjbtnAddtobill.FlatAppearance.BorderSize = 0;
+            this._rjbtnAddtobill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._rjbtnAddtobill.ForeColor = System.Drawing.Color.Black;
+            this._rjbtnAddtobill.Location = new System.Drawing.Point(429, 584);
+            this._rjbtnAddtobill.Name = "_rjbtnAddtobill";
+            this._rjbtnAddtobill.Size = new System.Drawing.Size(173, 39);
+            this._rjbtnAddtobill.SizeImage = new System.Drawing.Size(20, 20);
+            this._rjbtnAddtobill.TabIndex = 24;
+            this._rjbtnAddtobill.Text = "Add to bill";
+            this._rjbtnAddtobill.TextColor = System.Drawing.Color.Black;
+            this._rjbtnAddtobill.UseVisualStyleBackColor = false;
             // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1336, 827);
+            this.ClientSize = new System.Drawing.Size(1336, 750);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -677,10 +572,5 @@
         private RJControls.RJButton _rjbtnRemove;
         private RJControls.RJButton _rjbtnEdit;
         private RJControls.RJButton _rjbtnAdd;
-        private RJControls.RJButton rjButton5;
-        private RJControls.RJButton rjButton4;
-        private RJControls.RJButton rjButton3;
-        private RJControls.RJButton rjButton2;
-        private RJControls.RJButton rjButton1;
     }
 }

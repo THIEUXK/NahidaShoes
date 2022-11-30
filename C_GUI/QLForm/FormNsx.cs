@@ -2,13 +2,11 @@
 using B_BUS.IServices;
 using B_BUS.Services;
 using B_BUS.View_Models;
-using C_GUI.Views;
 
 namespace C_GUI.QLForm
 {
     public partial class FormNsx : Form
     {
-       
         public IQLNsx _iQLNsx;
         private Guid _ID;
         public FormNsx()
@@ -16,7 +14,6 @@ namespace C_GUI.QLForm
             _iQLNsx = new QLNsx();
             InitializeComponent();
             LoadData();
-          
         }
         public void LoadData()
         {
@@ -83,7 +80,5 @@ namespace C_GUI.QLForm
                 LoadData();
             }
         }
-
-  
     }
 }

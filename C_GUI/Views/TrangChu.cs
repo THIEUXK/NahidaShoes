@@ -1,5 +1,5 @@
-
-﻿using C_GUI.QLForm;
+﻿using A_DAL.Entities;
+using C_GUI.QLForm;
 
 namespace C_GUI.Views
 {
@@ -9,40 +9,40 @@ namespace C_GUI.Views
         private readonly Random random;
         private int tempIndex;
         private Form? activeForm;
-        public static NhanVien NhanVienLogin;
+        public static NhanVien? NhanVienLogin;
 
         public TrangChu()
         {
             InitializeComponent();
             random = new Random();
             _rjbtndong.Visible = false;
-            Customdesign(); 
+            Customdesign();
         }
 
         private void Customdesign()
         {
-            panelplaylizt.Visible=false;
+            panelplaylizt.Visible = false;
         }
 
         private void Hidesubmenu()
         {
             if (panelplaylizt.Visible == true)
             {
-                panelplaylizt.Visible =false;
+                panelplaylizt.Visible = false;
             }
         }
 
         private void showsubmenu(Panel submenu)
         {
-            if (submenu.Visible== false)
+            if (submenu.Visible == false)
             {
                 Hidesubmenu();
-                submenu.Visible= true;
+                submenu.Visible = true;
 
             }
             else
             {
-                submenu.Visible= false;
+                submenu.Visible = false;
             }
         }
         private Color SelectThemeColor()
@@ -80,12 +80,12 @@ namespace C_GUI.Views
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
-                   
+
                     currentButton = (Button)btnSender;
-                   
+
                     currentButton.ForeColor = Color.White;
-         
-                   
+
+
                     _rjbtndong.Visible = true;
                 }
             }
@@ -278,11 +278,6 @@ namespace C_GUI.Views
         private void TrangChu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.Login.Close();
-        }
-
-        private void _btnDangXuat_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
         }
     }
 }

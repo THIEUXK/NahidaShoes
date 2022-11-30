@@ -16,33 +16,33 @@ namespace C_GUI.Views
             InitializeComponent();
             random = new Random();
             _rjbtndong.Visible = false;
-            Customdesign(); 
+            Customdesign();
         }
 
         private void Customdesign()
         {
-            panelplaylizt.Visible=false;
+            panelplaylizt.Visible = false;
         }
 
         private void Hidesubmenu()
         {
             if (panelplaylizt.Visible == true)
             {
-                panelplaylizt.Visible =false;
+                panelplaylizt.Visible = false;
             }
         }
 
         private void showsubmenu(Panel submenu)
         {
-            if (submenu.Visible== false)
+            if (submenu.Visible == false)
             {
                 Hidesubmenu();
-                submenu.Visible= true;
+                submenu.Visible = true;
 
             }
             else
             {
-                submenu.Visible= false;
+                submenu.Visible = false;
             }
         }
         private Color SelectThemeColor()
@@ -80,12 +80,12 @@ namespace C_GUI.Views
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
-                   
+
                     currentButton = (Button)btnSender;
-                   
+
                     currentButton.ForeColor = Color.White;
-         
-                   
+
+
                     _rjbtndong.Visible = true;
                 }
             }

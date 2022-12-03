@@ -10,7 +10,8 @@ namespace C_GUI.Views
         private readonly IQLChiTietGiay _qlChiTietGiay;
         private readonly IQLHoaDonChiTiet _qlHoaDonChiTiet;
         private readonly IQLKhachHang _qlKhachHang;
-        private readonly IQLNhanVien _qlNhanVien;
+        private readonly IQLChiTietSale _qlChiTietSale;
+        private readonly IQLSale _qlSale;
         private readonly IQLHoaDon _qlHoaDon;
         private readonly IQLGiay _qlGiay;
         private readonly IQLMauSac _qlMauSac;
@@ -26,7 +27,8 @@ namespace C_GUI.Views
             _qlChiTietGiay = new QLChiTietGiay();
             _qlHoaDonChiTiet = new QLHoaDonChiTiet();
             _qlKhachHang = new QLKhachHang();
-            _qlNhanVien = new QLNhanVien();
+            _qlChiTietSale = new QLChiTietSale();
+            _qlSale = new QLSale();
             _qlHoaDon = new QLHoaDon();
             _qlGiay = new QLGiay();
             _qlMauSac = new QLMauSac();
@@ -137,7 +139,7 @@ namespace C_GUI.Views
                 }
                 else
                 {
-                    _ = MessageBox.Show("Khách hàng mới. Khách hàng xe được thêm");
+                    _ = MessageBox.Show("Khách hàng mới. Khách hàng sẽ được thêm");
                     string maKhachHang = "KH0";
                     if (_qlKhachHang.GetAll().Count > 0)
                     {
@@ -173,9 +175,27 @@ namespace C_GUI.Views
                         Guid idGiay = new(_lsvShowSanPham.SelectedItems[0].Text);
                         ChiTietGiay? chiTietGiay = _qlChiTietGiay.GetAll().FirstOrDefault(c => c.Id == idGiay);
                         HoaDonChiTiet? hoaDonChiTiet = _qlHoaDonChiTiet.GetAll().FirstOrDefault(c => c.IdHoaDon == idHoaDon && c.IdChiTietGiay == idGiay);
+                        List<ChiTietSale> lstChiTietSale = _qlChiTietSale.GetAll().Where(c => c.IdChiTietGiay == idGiay).ToList();
+                        float phanTramGiam = 0;
+                        float soTienGiam = 0;
+                        foreach (ChiTietSale item in lstChiTietSale)
+                        {
+                            Sale sale = _qlSale.GetAll().FirstOrDefault(c => c.Id == item.IdSale);
+                            if (sale.NgayKetThuc > DateTime.Now && sale.NgayBatDau < DateTime.Now)
+                            {
+                                phanTramGiam += sale.PhanTramGiamGia;
+                                soTienGiam += sale.SoTiemGiamGia;
+                            }
+                        }
+                        float donGia = (chiTietGiay.GiaBan * (1 - phanTramGiam)) - soTienGiam;
+                        if (donGia < 0)
+                        {
+                            donGia = 0;
+                        }
+
                         if (hoaDonChiTiet == null)
                         {
-                            _ = _qlHoaDonChiTiet.Add(new HoaDonChiTiet() { IdHoaDon = idHoaDon, IdChiTietGiay = idGiay, SoLuong = 1, DonGia = Convert.ToSingle(_lsvShowSanPham.SelectedItems[0].SubItems[7].Text) });
+                            _ = _qlHoaDonChiTiet.Add(new HoaDonChiTiet() { IdHoaDon = idHoaDon, IdChiTietGiay = idGiay, SoLuong = 1, DonGia = donGia });
                         }
                         else
                         {

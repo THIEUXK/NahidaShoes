@@ -10,7 +10,8 @@ namespace C_GUI.Views
         private readonly IQLChiTietGiay _qlChiTietGiay;
         private readonly IQLHoaDonChiTiet _qlHoaDonChiTiet;
         private readonly IQLKhachHang _qlKhachHang;
-        private readonly IQLNhanVien _qlNhanVien;
+        private readonly IQLChiTietSale _qlChiTietSale;
+        private readonly IQLSale _qlSale;
         private readonly IQLHoaDon _qlHoaDon;
         private readonly IQLGiay _qlGiay;
         private readonly IQLMauSac _qlMauSac;
@@ -26,7 +27,8 @@ namespace C_GUI.Views
             _qlChiTietGiay = new QLChiTietGiay();
             _qlHoaDonChiTiet = new QLHoaDonChiTiet();
             _qlKhachHang = new QLKhachHang();
-            _qlNhanVien = new QLNhanVien();
+            _qlChiTietSale = new QLChiTietSale();
+            _qlSale = new QLSale();
             _qlHoaDon = new QLHoaDon();
             _qlGiay = new QLGiay();
             _qlMauSac = new QLMauSac();
@@ -82,7 +84,7 @@ namespace C_GUI.Views
             _lsvHoaDon.Items.Clear();
             foreach (B_BUS.View_Models.HoaDonView item in lstHoaDonView)
             {
-                string[] row = { item.HoaDon.Id.ToString(), item.HoaDon.MaHoaDon, item.HoaDon.PhuongThucMua == 0 ? "Mua tại cửa hàng" : "Đặt hàng online", item.HoaDon.TrangThai == 0 ? "Hóa đơn chờ" : item.HoaDon.TrangThai == 1 ? "Hóa đơn đã thanh toán" : item.HoaDon.TrangThai == 2 ? "Hóa đơn đã ship" : "Hóa đơn đã hủy", item.HoaDon.GhiChu };
+                string[] row = { item.HoaDon.Id.ToString(), item.HoaDon.MaHoaDon, item.HoaDon.PhuongThucMua == 0 ? "Mua tại cửa hàng" : "Đặt hàng online", item.HoaDon.TrangThai == 0 ? "Hóa đơn chờ" : item.HoaDon.TrangThai == 1 ? "Hóa đơn đã thanh toán" : item.HoaDon.TrangThai == 2 ? "Hóa đơn đã ship" : "Hóa đơn đã hủy", item.HoaDon.GhiChu, item.KhachHang.SoCCCD };
                 ListViewItem listViewItem = new(row);
                 _ = _lsvHoaDon.Items.Add(listViewItem);
             }
@@ -96,10 +98,6 @@ namespace C_GUI.Views
 
         private void LoadComboBox()
         {
-            foreach (KhachHang item in _qlKhachHang.GetAll())
-            {
-                _ = _cbxKhachHang.Items.Add(item.SoCCCD);
-            }
             foreach (Giay item in _qlGiay.GetAll())
             {
                 _ = _cbxTimKiemGioHang.Items.Add(item.MaGiay);
@@ -120,22 +118,49 @@ namespace C_GUI.Views
 
         private void _btnTaoHoaDon_Click(object sender, EventArgs e)
         {
-            if (_cbxKhachHang.SelectedItem != null)
+            if (_tbxTenKhachHang.Texts.Trim() != "" && _tbxDiaChi.Texts.Trim() != "" && _tbxSoDienThoai.Texts.Trim() != "" && _tbxCMND.Texts.Trim() != "")
             {
-                string maHoaDon = "HD0";
-                if (_qlHoaDon.GetAll().Count > 0)
+                string tenKhachHang = _tbxTenKhachHang.Texts.Trim();
+                DateTime ngaySinh = _dtpNgaySinh.Value;
+                string diaChi = _tbxDiaChi.Texts.Trim();
+                string soDienThoai = _tbxSoDienThoai.Texts.Trim();
+                string cmnd = _tbxCMND.Texts.Trim();
+                string? email = _tbxEmail.Text.Trim() == "" ? null : _tbxEmail.Text.Trim();
+                if (_qlKhachHang.GetAll().Any(c => c.SoCCCD == cmnd))
                 {
-                    maHoaDon = "HD" + _qlHoaDon.GetAll().Max(c => Convert.ToInt32(c.MaHoaDon[2..]) + 1);
+                    _ = MessageBox.Show("Khách hàng cũ. Thông tin khách hàng sẽ được chỉnh sửa");
+                    KhachHang khachHang = _qlKhachHang.GetAll().FirstOrDefault(c => c.SoCCCD == cmnd);
+                    khachHang.TenKhachHang = tenKhachHang;
+                    khachHang.DiaChi = diaChi;
+                    khachHang.Sdt = soDienThoai;
+                    khachHang.Email = email;
+                    khachHang.NgaySinh = ngaySinh;
+                    _ = _qlKhachHang.Update(khachHang);
                 }
-                Guid idKhachHang = _qlKhachHang.GetAll().FirstOrDefault(c => c.SoCCCD == _cbxKhachHang.SelectedItem.ToString()).Id;
-                Guid idNhanVien = TrangChu.NhanVienLogin.Id;
-                int phuongThucMua = _cbxPhuongThucMua.SelectedItem.ToString() == "Đặt hàng online" ? 1 : 0;
-                bool thongBao = _qlHoaDon.Add(new HoaDon() { MaHoaDon = maHoaDon, IdKhachHang = idKhachHang, IdNhanVien = idNhanVien, PhuongThucMua = phuongThucMua });
-                if (thongBao)
+                else
                 {
-                    _ = MessageBox.Show("Thêm thành công");
-                    LoadHoaDon(_qlHoaDon.GetAllView().ToList());
+                    _ = MessageBox.Show("Khách hàng mới. Khách hàng sẽ được thêm");
+                    string maKhachHang = "KH0";
+                    if (_qlKhachHang.GetAll().Count > 0)
+                    {
+                        maKhachHang = "KH" + _qlKhachHang.GetAll().Max(c => Convert.ToInt32(c.MaKhachHang[2..]) + 1);
+                    }
+                    _ = _qlKhachHang.Add(new KhachHang() { MaKhachHang = maKhachHang, TenKhachHang = tenKhachHang, NgaySinh = ngaySinh, DiaChi = diaChi, Sdt = soDienThoai, SoCCCD = cmnd, Email = email });
                 }
+            }
+            string maHoaDon = "HD0";
+            if (_qlHoaDon.GetAll().Count > 0)
+            {
+                maHoaDon = "HD" + _qlHoaDon.GetAll().Max(c => Convert.ToInt32(c.MaHoaDon[2..]) + 1);
+            }
+            Guid idKhachHang = _qlKhachHang.GetAll().FirstOrDefault(c => c.SoCCCD == _tbxCMND.Texts.Trim().ToString()).Id;
+            Guid idNhanVien = TrangChu.NhanVienLogin.Id;
+            int phuongThucMua = _cbxPhuongThucMua.SelectedItem.ToString() == "Đặt hàng online" ? 1 : 0;
+            bool thongBao = _qlHoaDon.Add(new HoaDon() { MaHoaDon = maHoaDon, IdKhachHang = idKhachHang, IdNhanVien = idNhanVien, PhuongThucMua = phuongThucMua });
+            if (thongBao)
+            {
+                _ = MessageBox.Show("Thêm thành công");
+                LoadHoaDon(_qlHoaDon.GetAllView().ToList());
             }
         }
 
@@ -150,9 +175,27 @@ namespace C_GUI.Views
                         Guid idGiay = new(_lsvShowSanPham.SelectedItems[0].Text);
                         ChiTietGiay? chiTietGiay = _qlChiTietGiay.GetAll().FirstOrDefault(c => c.Id == idGiay);
                         HoaDonChiTiet? hoaDonChiTiet = _qlHoaDonChiTiet.GetAll().FirstOrDefault(c => c.IdHoaDon == idHoaDon && c.IdChiTietGiay == idGiay);
+                        List<ChiTietSale> lstChiTietSale = _qlChiTietSale.GetAll().Where(c => c.IdChiTietGiay == idGiay).ToList();
+                        float phanTramGiam = 0;
+                        float soTienGiam = 0;
+                        foreach (ChiTietSale item in lstChiTietSale)
+                        {
+                            Sale sale = _qlSale.GetAll().FirstOrDefault(c => c.Id == item.IdSale);
+                            if (sale.NgayKetThuc > DateTime.Now && sale.NgayBatDau < DateTime.Now)
+                            {
+                                phanTramGiam += sale.PhanTramGiamGia;
+                                soTienGiam += sale.SoTiemGiamGia;
+                            }
+                        }
+                        float donGia = (chiTietGiay.GiaBan * (1 - phanTramGiam)) - soTienGiam;
+                        if (donGia < 0)
+                        {
+                            donGia = 0;
+                        }
+
                         if (hoaDonChiTiet == null)
                         {
-                            _ = _qlHoaDonChiTiet.Add(new HoaDonChiTiet() { IdHoaDon = idHoaDon, IdChiTietGiay = idGiay, SoLuong = 1, DonGia = Convert.ToSingle(_lsvShowSanPham.SelectedItems[0].SubItems[7].Text) });
+                            _ = _qlHoaDonChiTiet.Add(new HoaDonChiTiet() { IdHoaDon = idHoaDon, IdChiTietGiay = idGiay, SoLuong = 1, DonGia = donGia });
                         }
                         else
                         {
@@ -211,8 +254,8 @@ namespace C_GUI.Views
         {
             try
             {
-                float giamGia = Convert.ToSingle(_tbxGiamGia.Texts);
-                float tienKhachDua = Convert.ToSingle(_tbxTienKhachDua.Texts);
+                float giamGia = Convert.ToSingle(_tbxGiamGia.Texts.Trim());
+                float tienKhachDua = Convert.ToSingle(_tbxTienKhachDua.Texts.Trim());
             }
             catch (Exception)
             {
@@ -223,7 +266,7 @@ namespace C_GUI.Views
             {
                 if (_qlHoaDon.GetAll().Find(c => c.Id == idHoaDon).TrangThai is not 1 and not (-1))
                 {
-                    if (Convert.ToSingle(_tbxTienThua.Texts) >= 0)
+                    if (Convert.ToSingle(_tbxTienThua.Texts.Trim()) >= 0)
                     {
 
                         if (hoaDon.PhuongThucMua == 1 && hoaDon.TrangThai != 2)
@@ -233,8 +276,8 @@ namespace C_GUI.Views
                             {
                                 hoaDon.TrangThai = 1;
                                 hoaDon.ThoiGianThanhToan = DateTime.Now;
-                                hoaDon.GiamGia = Convert.ToSingle(_tbxGiamGia.Texts);
-                                hoaDon.GhiChu = _tbxGhiChu.Texts;
+                                hoaDon.GiamGia = Convert.ToSingle(_tbxGiamGia.Texts.Trim());
+                                hoaDon.GhiChu = _tbxGhiChu.Texts.Trim();
                                 _ = _qlHoaDon.Update(hoaDon);
                                 _ = MessageBox.Show("Thanh toán thành công");
                                 LoadHoaDon(_qlHoaDon.GetAllView().ToList());
@@ -243,8 +286,8 @@ namespace C_GUI.Views
                         }
                         hoaDon.TrangThai = 1;
                         hoaDon.ThoiGianThanhToan = DateTime.Now;
-                        hoaDon.GiamGia = Convert.ToSingle(_tbxGiamGia.Texts);
-                        hoaDon.GhiChu = _tbxGhiChu.Texts;
+                        hoaDon.GiamGia = Convert.ToSingle(_tbxGiamGia.Texts.Trim());
+                        hoaDon.GhiChu = _tbxGhiChu.Texts.Trim();
                         _ = _qlHoaDon.Update(hoaDon);
                         _ = MessageBox.Show("Thanh toán thành công");
                         LoadHoaDon(_qlHoaDon.GetAllView().ToList());
@@ -265,7 +308,7 @@ namespace C_GUI.Views
                 }
                 _tbxTongTien.Texts = tongTien.ToString();
                 _tbxTienKhachDua.Texts = "0";
-                _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts) - Convert.ToSingle(_tbxTongTien.Texts)).ToString();
+                _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
             }
         }
 
@@ -360,20 +403,20 @@ namespace C_GUI.Views
         {
             try
             {
-                float tienKhachDua = Convert.ToSingle(_tbxTienKhachDua.Texts);
+                float tienKhachDua = Convert.ToSingle(_tbxTienKhachDua.Texts.Trim());
             }
             catch (Exception)
             {
                 return;
             }
-            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts) - Convert.ToSingle(_tbxTongTien.Texts)).ToString();
+            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
         }
 
         private void _tbxGiamGia__TextChanged(object sender, EventArgs e)
         {
             try
             {
-                float giamGia = Convert.ToSingle(_tbxGiamGia.Texts);
+                float giamGia = Convert.ToSingle(_tbxGiamGia.Texts.Trim());
             }
             catch (Exception)
             {
@@ -384,26 +427,33 @@ namespace C_GUI.Views
             {
                 tongTien += item.SoLuong * item.DonGia;
             }
-            tongTien -= Convert.ToSingle(_tbxGiamGia.Texts);
+            tongTien -= Convert.ToSingle(_tbxGiamGia.Texts.Trim());
             if (tongTien < 0)
             {
                 tongTien = 0;
             }
             _tbxTongTien.Texts = tongTien.ToString();
-            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts) - Convert.ToSingle(_tbxTongTien.Texts)).ToString();
+            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
+        }
+
+        private void LocHoaDon()
+        {
+            int trangThai = _cbxTimKiemHoaDon.SelectedItem == "Tất cả hóa đơn" ? -2 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn chờ" ? 0 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn đã ship" ? 2 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn đã thanh toán" ? 1 : -1;
+            List<HoaDonView> lstHoaDonView = _qlHoaDon.GetAllView();
+            if (trangThai != -2)
+            {
+                lstHoaDonView = lstHoaDonView.Where(c => c.HoaDon.TrangThai == trangThai).ToList();
+            }
+            if (_tbxKhachHnag.Texts.Trim() != "")
+            {
+                lstHoaDonView = lstHoaDonView.Where(c => c.KhachHang.SoCCCD.ToUpper().Contains(_tbxKhachHnag.Texts.Trim().ToUpper())).ToList();
+            }
+            LoadHoaDon(lstHoaDonView);
         }
 
         private void _cbxTimKiemHoaDon_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            int trangThai = _cbxTimKiemHoaDon.SelectedItem == "Tất cả hóa đơn" ? -2 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn chờ" ? 0 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn đã ship" ? 2 : _cbxTimKiemHoaDon.SelectedItem == "Hóa đơn đã thanh toán" ? 1 : -1;
-            if (trangThai == -2)
-            {
-                LoadHoaDon(_qlHoaDon.GetAllView().ToList());
-            }
-            else
-            {
-                LoadHoaDon(_qlHoaDon.GetAllView().Where(c => c.HoaDon.TrangThai == trangThai).ToList());
-            }
+            LocHoaDon();
         }
 
         private void _cbxTimKiemGioHang_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -425,7 +475,6 @@ namespace C_GUI.Views
             {
                 return;
             }
-
             List<ChiTietGiayView> lstChiTietGiayView = _qlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.SoLuongTon > 0).ToList();
             string tenGiay = _cbxTimKiemTenGiay.SelectedItem == "Tất cả tên giày" ? "-1" : _cbxTimKiemTenGiay.SelectedItem.ToString();
             if (tenGiay != "-1")
@@ -476,6 +525,11 @@ namespace C_GUI.Views
                 _ = MessageBox.Show("Đã hủy hóa đơn");
                 LoadHoaDon(_qlHoaDon.GetAllView().ToList());
             }
+        }
+
+        private void _tbxKhachHnag__TextChanged(object sender, EventArgs e)
+        {
+            LocHoaDon();
         }
     }
 }

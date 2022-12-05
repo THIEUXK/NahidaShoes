@@ -17,9 +17,9 @@ namespace C_GUI.QLForm
         {
             _IQLSize = new QLSize();
             InitializeComponent();
-            LoadData();
+            LoadData(_IQLSize.GetAllView());
         }
-        public void LoadData()
+        public void LoadData(List<SizeView> sizeViews)
         {
             int stt = 1;
             dgrid_showSize.ColumnCount = 4;
@@ -28,7 +28,7 @@ namespace C_GUI.QLForm
             dgrid_showSize.Columns[2].Name = "ma";
             dgrid_showSize.Columns[3].Name = "ten";
             dgrid_showSize.Columns[1].Visible = true;
-            foreach (SizeView a in _IQLSize.GetAllView())
+            foreach (SizeView a in sizeViews)
             {
 
                 _ = dgrid_showSize.Rows.Add(stt++, a.Size.MaSize, a.Size.TenSize, a.Size.TrangThai == 1 ? "hoạt động" : "Không hoạt động");
@@ -63,30 +63,49 @@ namespace C_GUI.QLForm
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            _ = _IQLSize.Add(GetvaluaContro());
-            LoadData();
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                _ = _IQLSize.Add(GetvaluaContro());
+                LoadData(_IQLSize.GetAllView());
+            }
+            
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            bool thongBao = _IQLSize.Update(new A_DAL.Entities.Size() { Id = _ID, MaSize = txt_ma.Text, TenSize = txt_ten.Text, TrangThai = cbx_hoatdong.Checked == true ? 1 : 0 });
-            if (thongBao)
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                _ = MessageBox.Show("Sửa thành công");
-                LoadData();
+                bool thongBao = _IQLSize.Update(new A_DAL.Entities.Size() { Id = _ID, MaSize = txt_ma.Text, TenSize = txt_ten.Text, TrangThai = cbx_hoatdong.Checked == true ? 1 : 0 });
+                if (thongBao)
+                {
+                    _ = MessageBox.Show("Sửa thành công");
+                    LoadData(_IQLSize.GetAllView());
+                }
             }
+            
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            bool thongBao = _IQLSize.Delete(_IQLSize.GetAll().Find(c => c.Id == _ID));
-            if (thongBao)
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                _ = MessageBox.Show("Xóa thành công");
-                LoadData();
+                bool thongBao = _IQLSize.Delete(_IQLSize.GetAll().Find(c => c.Id == _ID));
+                if (thongBao)
+                {
+                    _ = MessageBox.Show("Xóa thành công");
+                    LoadData(_IQLSize.GetAllView());
+                }
             }
+           
         }
 
+        private void txt_timkiem__TextChanged(object sender, EventArgs e)
+        {
+            LoadData(_IQLSize.GetAllView().Where(c => (c.Size.MaSize.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Size.TenSize.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
+        }
     }
 }
 

@@ -42,7 +42,7 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[1].Visible = false;
             foreach (var a in saleViews)
             {
-                _ = dgrid_show.Rows.Add(stt++,a.Sale.Id,a.Sale.MaGiamGia,a.Sale.TenChuongTrinh,a.Sale.PhanTramGiamGia,a.Sale.SoTiemGiamGia,a.Sale.NgayBatDau,a.Sale.NgayKetThuc, a.Sale.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
+                _ = dgrid_show.Rows.Add(stt++,a.Sale.Id,a.Sale.MaGiamGia,a.Sale.TenChuongTrinh,a.Sale.PhanTramGiamGia,a.Sale.SoTiemGiamGia,a.Sale.NgayBatDau,a.Sale.NgayKetThuc,  a.Sale.TrangThai == 1 ? "hoat dong" : "khong hoat dong");
             }
         }
         public Sale GetvaluaContro()
@@ -55,7 +55,7 @@ namespace C_GUI.QLForm
                 SoTiemGiamGia = float.Parse(txt_sotiengiam.Texts),
                 NgayBatDau = dtp_ngaybatdau.Value,
                 NgayKetThuc = dtp_ngayketthuc.Value,
-                TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0,
+                TrangThai =  0,
             };
         }
 
@@ -91,7 +91,7 @@ namespace C_GUI.QLForm
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa", "Thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                bool thongBao = _IQlSale.Update(new A_DAL.Entities.Sale() { Id = _ID, MaGiamGia = txt_ma.Texts, TenChuongTrinh = txt_ten.Texts,PhanTramGiamGia = float.Parse(txt_ptgiam.Texts),SoTiemGiamGia = float.Parse(txt_sotiengiam.Texts),NgayBatDau = dtp_ngaybatdau.Value,NgayKetThuc = dtp_ngayketthuc.Value, TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0 });
+                bool thongBao = _IQlSale.Update(new A_DAL.Entities.Sale() { Id = _ID, MaGiamGia = txt_ma.Texts, TenChuongTrinh = txt_ten.Texts,PhanTramGiamGia = float.Parse(txt_ptgiam.Texts),SoTiemGiamGia = float.Parse(txt_sotiengiam.Texts),NgayBatDau = dtp_ngaybatdau.Value,NgayKetThuc = dtp_ngayketthuc.Value });
                 if (thongBao)
                 {
                     _ = MessageBox.Show("Sửa thành công");
@@ -105,8 +105,9 @@ namespace C_GUI.QLForm
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa", "Thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                bool thongBao = _IQlSale.Update(new A_DAL.Entities.Sale() { Id = _ID, MaGiamGia = txt_ma.Texts, TenChuongTrinh = txt_ten.Texts, PhanTramGiamGia = float.Parse(txt_ptgiam.Texts), SoTiemGiamGia = float.Parse(txt_sotiengiam.Texts), NgayBatDau = dtp_ngaybatdau.Value, NgayKetThuc = dtp_ngayketthuc.Value, TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0 });
-                if (thongBao)
+                bool thongBao = _IQlSale.Delete(_IQlSale.GetAll().Find(c => c.Id == _ID));
+                
+                    if (thongBao)
                 {
                     _ = MessageBox.Show("Xóa thành công");
                     LoadData(_IQlSale.GetAllView());
@@ -124,14 +125,7 @@ namespace C_GUI.QLForm
             txt_sotiengiam.Texts = dgrid_show.Rows[index].Cells[5].Value.ToString();
             dtp_ngaybatdau.Value = DateTime.Parse(dgrid_show.Rows[index].Cells[6].Value.ToString());
             dtp_ngayketthuc.Value = DateTime.Parse(dgrid_show.Rows[index].Cells[7].Value.ToString());
-            if (dgrid_show.Rows[index].Cells[8].Value.ToString() == "hoat dong")
-            {
-                rbtn_hoatdong.Checked = true;
-            }
-            if (dgrid_show.Rows[index].Cells[8].Value.ToString() == "khong hoat dong")
-            {
-                rbtn_khonghoatdong.Checked = true;
-            }
+            
         }
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)

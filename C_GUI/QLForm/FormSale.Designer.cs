@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.rbtn_hoatdong = new C_GUI.RJControls.RJRadioButton();
-            this.rbtn_khonghoatdong = new C_GUI.RJControls.RJRadioButton();
             this.btn_them = new C_GUI.RJControls.RJButton();
             this.btn_sua = new C_GUI.RJControls.RJButton();
             this.btn_xoa = new C_GUI.RJControls.RJButton();
@@ -40,7 +38,6 @@
             this.txt_ptgiam = new C_GUI.RJControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_sotiengiam = new C_GUI.RJControls.RJTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +46,7 @@
             this.dtp_ngayketthuc = new C_GUI.RJControls.RJDatePicker();
             this.a = new System.Windows.Forms.GroupBox();
             this.txt_timkiem = new C_GUI.RJControls.RJTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.a.SuspendLayout();
             this.SuspendLayout();
@@ -63,38 +61,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Giảm Giá";
             // 
-            // rbtn_hoatdong
-            // 
-            this.rbtn_hoatdong.AutoSize = true;
-            this.rbtn_hoatdong.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rbtn_hoatdong.Location = new System.Drawing.Point(202, 207);
-            this.rbtn_hoatdong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbtn_hoatdong.MinimumSize = new System.Drawing.Size(0, 16);
-            this.rbtn_hoatdong.Name = "rbtn_hoatdong";
-            this.rbtn_hoatdong.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.rbtn_hoatdong.Size = new System.Drawing.Size(92, 19);
-            this.rbtn_hoatdong.TabIndex = 17;
-            this.rbtn_hoatdong.TabStop = true;
-            this.rbtn_hoatdong.Text = "Hoạt Động";
-            this.rbtn_hoatdong.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtn_hoatdong.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_khonghoatdong
-            // 
-            this.rbtn_khonghoatdong.AutoSize = true;
-            this.rbtn_khonghoatdong.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rbtn_khonghoatdong.Location = new System.Drawing.Point(202, 254);
-            this.rbtn_khonghoatdong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbtn_khonghoatdong.MinimumSize = new System.Drawing.Size(0, 16);
-            this.rbtn_khonghoatdong.Name = "rbtn_khonghoatdong";
-            this.rbtn_khonghoatdong.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.rbtn_khonghoatdong.Size = new System.Drawing.Size(130, 19);
-            this.rbtn_khonghoatdong.TabIndex = 18;
-            this.rbtn_khonghoatdong.TabStop = true;
-            this.rbtn_khonghoatdong.Text = "Không Hoạt Động";
-            this.rbtn_khonghoatdong.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtn_khonghoatdong.UseVisualStyleBackColor = true;
-            // 
             // btn_them
             // 
             this.btn_them.BackColor = System.Drawing.Color.Turquoise;
@@ -105,7 +71,7 @@
             this.btn_them.FlatAppearance.BorderSize = 0;
             this.btn_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_them.ForeColor = System.Drawing.Color.Black;
-            this.btn_them.Location = new System.Drawing.Point(83, 286);
+            this.btn_them.Location = new System.Drawing.Point(34, 454);
             this.btn_them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(116, 29);
@@ -126,7 +92,7 @@
             this.btn_sua.FlatAppearance.BorderSize = 0;
             this.btn_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sua.ForeColor = System.Drawing.Color.Black;
-            this.btn_sua.Location = new System.Drawing.Point(263, 286);
+            this.btn_sua.Location = new System.Drawing.Point(166, 454);
             this.btn_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(116, 29);
@@ -147,7 +113,7 @@
             this.btn_xoa.FlatAppearance.BorderSize = 0;
             this.btn_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoa.ForeColor = System.Drawing.Color.Black;
-            this.btn_xoa.Location = new System.Drawing.Point(442, 286);
+            this.btn_xoa.Location = new System.Drawing.Point(309, 454);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(116, 29);
@@ -162,13 +128,12 @@
             // 
             this.dgrid_show.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrid_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_show.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgrid_show.Location = new System.Drawing.Point(3, 372);
+            this.dgrid_show.Location = new System.Drawing.Point(22, 552);
             this.dgrid_show.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgrid_show.Name = "dgrid_show";
             this.dgrid_show.RowHeadersWidth = 51;
             this.dgrid_show.RowTemplate.Height = 29;
-            this.dgrid_show.Size = new System.Drawing.Size(932, 230);
+            this.dgrid_show.Size = new System.Drawing.Size(571, 252);
             this.dgrid_show.TabIndex = 22;
             this.dgrid_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_show_CellContentClick);
             // 
@@ -181,7 +146,7 @@
             this.txt_ma.BorderSize = 2;
             this.txt_ma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_ma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_ma.Location = new System.Drawing.Point(202, 34);
+            this.txt_ma.Location = new System.Drawing.Point(202, 44);
             this.txt_ma.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_ma.MaxLength = 20;
             this.txt_ma.Multiline = false;
@@ -204,7 +169,7 @@
             this.txt_ten.BorderSize = 2;
             this.txt_ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_ten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_ten.Location = new System.Drawing.Point(202, 86);
+            this.txt_ten.Location = new System.Drawing.Point(202, 98);
             this.txt_ten.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_ten.MaxLength = 20;
             this.txt_ten.Multiline = false;
@@ -227,7 +192,7 @@
             this.txt_ptgiam.BorderSize = 2;
             this.txt_ptgiam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_ptgiam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_ptgiam.Location = new System.Drawing.Point(202, 140);
+            this.txt_ptgiam.Location = new System.Drawing.Point(202, 152);
             this.txt_ptgiam.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_ptgiam.MaxLength = 20;
             this.txt_ptgiam.Multiline = false;
@@ -261,21 +226,11 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "% Giảm Giá";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(22, 207);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 15);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Mã Giảm Giá";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(504, 46);
+            this.label5.Location = new System.Drawing.Point(27, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 15);
             this.label5.TabIndex = 29;
@@ -290,7 +245,7 @@
             this.txt_sotiengiam.BorderSize = 2;
             this.txt_sotiengiam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_sotiengiam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_sotiengiam.Location = new System.Drawing.Point(610, 34);
+            this.txt_sotiengiam.Location = new System.Drawing.Point(202, 195);
             this.txt_sotiengiam.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_sotiengiam.MaxLength = 20;
             this.txt_sotiengiam.Multiline = false;
@@ -308,7 +263,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(522, 98);
+            this.label7.Location = new System.Drawing.Point(45, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 15);
             this.label7.TabIndex = 33;
@@ -319,7 +274,7 @@
             this.dtp_ngaybatdau.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.dtp_ngaybatdau.BorderSize = 2;
             this.dtp_ngaybatdau.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtp_ngaybatdau.Location = new System.Drawing.Point(610, 86);
+            this.dtp_ngaybatdau.Location = new System.Drawing.Point(202, 246);
             this.dtp_ngaybatdau.MinimumSize = new System.Drawing.Size(0, 35);
             this.dtp_ngaybatdau.Name = "dtp_ngaybatdau";
             this.dtp_ngaybatdau.Size = new System.Drawing.Size(200, 35);
@@ -331,7 +286,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(522, 149);
+            this.label8.Location = new System.Drawing.Point(45, 310);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 15);
             this.label8.TabIndex = 35;
@@ -342,7 +297,7 @@
             this.dtp_ngayketthuc.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.dtp_ngayketthuc.BorderSize = 2;
             this.dtp_ngayketthuc.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtp_ngayketthuc.Location = new System.Drawing.Point(610, 137);
+            this.dtp_ngayketthuc.Location = new System.Drawing.Point(202, 297);
             this.dtp_ngayketthuc.MinimumSize = new System.Drawing.Size(0, 35);
             this.dtp_ngayketthuc.Name = "dtp_ngayketthuc";
             this.dtp_ngayketthuc.Size = new System.Drawing.Size(200, 35);
@@ -353,6 +308,7 @@
             // a
             // 
             this.a.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.a.Controls.Add(this.label6);
             this.a.Controls.Add(this.txt_timkiem);
             this.a.Controls.Add(this.dtp_ngayketthuc);
             this.a.Controls.Add(this.label8);
@@ -360,7 +316,6 @@
             this.a.Controls.Add(this.label7);
             this.a.Controls.Add(this.txt_sotiengiam);
             this.a.Controls.Add(this.label5);
-            this.a.Controls.Add(this.label4);
             this.a.Controls.Add(this.label3);
             this.a.Controls.Add(this.label2);
             this.a.Controls.Add(this.txt_ptgiam);
@@ -370,14 +325,12 @@
             this.a.Controls.Add(this.btn_xoa);
             this.a.Controls.Add(this.btn_sua);
             this.a.Controls.Add(this.btn_them);
-            this.a.Controls.Add(this.rbtn_khonghoatdong);
-            this.a.Controls.Add(this.rbtn_hoatdong);
             this.a.Controls.Add(this.label1);
             this.a.Location = new System.Drawing.Point(-22, -35);
             this.a.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.a.Name = "a";
             this.a.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.a.Size = new System.Drawing.Size(938, 604);
+            this.a.Size = new System.Drawing.Size(1283, 808);
             this.a.TabIndex = 1;
             this.a.TabStop = false;
             this.a.Text = "THÔNG TIN SIZE";
@@ -392,7 +345,7 @@
             this.txt_timkiem.BorderSize = 2;
             this.txt_timkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_timkiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_timkiem.Location = new System.Drawing.Point(35, 340);
+            this.txt_timkiem.Location = new System.Drawing.Point(142, 506);
             this.txt_timkiem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_timkiem.MaxLength = 20;
             this.txt_timkiem.Multiline = false;
@@ -407,11 +360,21 @@
             this.txt_timkiem.UnderlinedStyle = false;
             this.txt_timkiem._TextChanged += new System.EventHandler(this.txt_timkiem__TextChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(54, 518);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 15);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "tìm kiếm sale";
+            // 
             // FormSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 518);
+            this.ClientSize = new System.Drawing.Size(1259, 766);
             this.Controls.Add(this.a);
             this.Name = "FormSale";
             this.Text = "FormSale";
@@ -425,8 +388,6 @@
         #endregion
 
         private Label label1;
-        private RJControls.RJRadioButton rbtn_hoatdong;
-        private RJControls.RJRadioButton rbtn_khonghoatdong;
         private RJControls.RJButton btn_them;
         private RJControls.RJButton btn_sua;
         private RJControls.RJButton btn_xoa;
@@ -436,7 +397,6 @@
         private RJControls.RJTextBox txt_ptgiam;
         private Label label2;
         private Label label3;
-        private Label label4;
         private Label label5;
         private RJControls.RJTextBox txt_sotiengiam;
         private Label label7;
@@ -445,5 +405,6 @@
         private RJControls.RJDatePicker dtp_ngayketthuc;
         private GroupBox a;
         private RJControls.RJTextBox txt_timkiem;
+        private Label label6;
     }
 }

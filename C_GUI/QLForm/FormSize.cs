@@ -87,6 +87,11 @@ namespace C_GUI.QLForm
             }
         }
 
+        private void btn_them_Click_1(object sender, EventArgs e)
+        {
+            _ = _IQLSize.Add(GetvaluaContro());
+            LoadData();
+        }
     }
 }
 

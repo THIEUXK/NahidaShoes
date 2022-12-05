@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this._rtbxMota = new C_GUI.RJControls.RJTextBox();
             this.btn_giay = new FontAwesome.Sharp.IconButton();
             this.btn_theloai = new FontAwesome.Sharp.IconButton();
             this.btn_mausac = new FontAwesome.Sharp.IconButton();
@@ -41,7 +42,6 @@
             this.cmb_theloai = new C_GUI.RJControls.RJComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this._rtbxMota = new System.Windows.Forms.RichTextBox();
             this._rjtbxSoLuongTon = new C_GUI.RJControls.RJTextBox();
             this._rjtbxGiaBan = new C_GUI.RJControls.RJTextBox();
             this._rjtbxGiaNhap = new C_GUI.RJControls.RJTextBox();
@@ -66,6 +66,7 @@
             this._rjtbxTimKiem = new C_GUI.RJControls.RJTextBox();
             this._dgrvThongTinSanPham = new System.Windows.Forms.DataGridView();
             this.btn_link = new C_GUI.RJControls.RJButton();
+            this.btn_save = new C_GUI.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrvThongTinSanPham)).BeginInit();
@@ -73,6 +74,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this._rtbxMota);
             this.groupBox1.Controls.Add(this.btn_giay);
             this.groupBox1.Controls.Add(this.btn_theloai);
             this.groupBox1.Controls.Add(this.btn_mausac);
@@ -85,7 +87,6 @@
             this.groupBox1.Controls.Add(this.cmb_theloai);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this._rtbxMota);
             this.groupBox1.Controls.Add(this._rjtbxSoLuongTon);
             this.groupBox1.Controls.Add(this._rjtbxGiaBan);
             this.groupBox1.Controls.Add(this._rjtbxGiaNhap);
@@ -108,6 +109,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi TIết";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // _rtbxMota
+            // 
+            this._rtbxMota.BackColor = System.Drawing.SystemColors.Window;
+            this._rtbxMota.BorderColor = System.Drawing.Color.Black;
+            this._rtbxMota.BorderFocusColor = System.Drawing.Color.Red;
+            this._rtbxMota.BorderRadius = 15;
+            this._rtbxMota.BorderSize = 2;
+            this._rtbxMota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._rtbxMota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this._rtbxMota.Location = new System.Drawing.Point(692, 235);
+            this._rtbxMota.Margin = new System.Windows.Forms.Padding(4);
+            this._rtbxMota.MaxLength = 20;
+            this._rtbxMota.Multiline = false;
+            this._rtbxMota.Name = "_rtbxMota";
+            this._rtbxMota.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this._rtbxMota.PasswordChar = false;
+            this._rtbxMota.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this._rtbxMota.PlaceholderText = "";
+            this._rtbxMota.Size = new System.Drawing.Size(215, 35);
+            this._rtbxMota.TabIndex = 36;
+            this._rtbxMota.Texts = "";
+            this._rtbxMota.UnderlinedStyle = false;
             // 
             // btn_giay
             // 
@@ -267,14 +292,6 @@
             this.label9.Size = new System.Drawing.Size(55, 23);
             this.label9.TabIndex = 17;
             this.label9.Text = "Mô tả";
-            // 
-            // _rtbxMota
-            // 
-            this._rtbxMota.Location = new System.Drawing.Point(692, 231);
-            this._rtbxMota.Name = "_rtbxMota";
-            this._rtbxMota.Size = new System.Drawing.Size(215, 82);
-            this._rtbxMota.TabIndex = 16;
-            this._rtbxMota.Text = "";
             // 
             // _rjtbxSoLuongTon
             // 
@@ -596,7 +613,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(113, 35);
+            this.label11.Location = new System.Drawing.Point(18, 35);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(119, 35);
             this.label11.TabIndex = 21;
@@ -611,7 +628,7 @@
             this._rjtbxTimKiem.BorderSize = 2;
             this._rjtbxTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rjtbxTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxTimKiem.Location = new System.Drawing.Point(249, 35);
+            this._rjtbxTimKiem.Location = new System.Drawing.Point(155, 35);
             this._rjtbxTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this._rjtbxTimKiem.MaxLength = 20;
             this._rjtbxTimKiem.Multiline = false;
@@ -657,11 +674,32 @@
             this.btn_link.UseVisualStyleBackColor = false;
             this.btn_link.Click += new System.EventHandler(this.btn_link_Click);
             // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.Turquoise;
+            this.btn_save.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.btn_save.BorderColor = System.Drawing.Color.Black;
+            this.btn_save.BorderRadius = 15;
+            this.btn_save.BorderSize = 2;
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.ForeColor = System.Drawing.Color.Black;
+            this.btn_save.Location = new System.Drawing.Point(1018, 246);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(162, 39);
+            this.btn_save.SizeImage = new System.Drawing.Size(20, 20);
+            this.btn_save.TabIndex = 26;
+            this.btn_save.Text = "Save";
+            this.btn_save.TextColor = System.Drawing.Color.Black;
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 750);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_link);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -684,7 +722,6 @@
 
         private GroupBox groupBox1;
         private Label label9;
-        private RichTextBox _rtbxMota;
         private RJControls.RJTextBox _rjtbxSoLuongTon;
         private RJControls.RJTextBox _rjtbxGiaBan;
         private RJControls.RJTextBox _rjtbxGiaNhap;
@@ -720,5 +757,7 @@
         private FontAwesome.Sharp.IconButton btn_size;
         private FontAwesome.Sharp.IconButton btn_nsx;
         private RJControls.RJButton btn_link;
+        private RJControls.RJTextBox _rtbxMota;
+        private RJControls.RJButton btn_save;
     }
 }

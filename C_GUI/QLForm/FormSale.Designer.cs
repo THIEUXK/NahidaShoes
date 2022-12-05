@@ -45,15 +45,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dtp_ngayketthuc = new C_GUI.RJControls.RJDatePicker();
             this.a = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.dgrid_showsanpham = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbb_trangthai = new C_GUI.RJControls.RJComboBox();
             this.cbb_giay = new C_GUI.RJControls.RJComboBox();
             this.cbb_sale = new C_GUI.RJControls.RJComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_timkiemsale = new C_GUI.RJControls.RJTextBox();
-            this.rjComboBox1 = new C_GUI.RJControls.RJComboBox();
+            this.cbb_trangthai = new C_GUI.RJControls.RJComboBox();
             this.dgrid_SALE = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_timkiem = new C_GUI.RJControls.RJTextBox();
@@ -69,6 +68,7 @@
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.a.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_showsanpham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_SALE)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -331,15 +331,14 @@
             // a
             // 
             this.a.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.a.Controls.Add(this.label15);
+            this.a.Controls.Add(this.dgrid_showsanpham);
             this.a.Controls.Add(this.label14);
             this.a.Controls.Add(this.label13);
-            this.a.Controls.Add(this.cbb_trangthai);
             this.a.Controls.Add(this.cbb_giay);
             this.a.Controls.Add(this.cbb_sale);
             this.a.Controls.Add(this.label12);
             this.a.Controls.Add(this.txt_timkiemsale);
-            this.a.Controls.Add(this.rjComboBox1);
+            this.a.Controls.Add(this.cbb_trangthai);
             this.a.Controls.Add(this.dgrid_show);
             this.a.Controls.Add(this.dgrid_SALE);
             this.a.Controls.Add(this.label6);
@@ -356,21 +355,24 @@
             this.a.Text = "THÔNG TIN SIZE";
             this.a.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label15
+            // dgrid_showsanpham
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(1069, 351);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(117, 21);
-            this.label15.TabIndex = 55;
-            this.label15.Text = "Lọc Trạng thái";
+            this.dgrid_showsanpham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgrid_showsanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_showsanpham.Location = new System.Drawing.Point(326, 587);
+            this.dgrid_showsanpham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgrid_showsanpham.Name = "dgrid_showsanpham";
+            this.dgrid_showsanpham.RowHeadersWidth = 51;
+            this.dgrid_showsanpham.RowTemplate.Height = 29;
+            this.dgrid_showsanpham.Size = new System.Drawing.Size(943, 192);
+            this.dgrid_showsanpham.TabIndex = 56;
+            this.dgrid_showsanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_showsanpham_CellContentClick);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(851, 351);
+            this.label14.Location = new System.Drawing.Point(988, 351);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(141, 21);
             this.label14.TabIndex = 54;
@@ -380,30 +382,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(632, 351);
+            this.label13.Location = new System.Drawing.Point(769, 351);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(138, 21);
             this.label13.TabIndex = 53;
             this.label13.Text = "Lọc theo tên sale";
-            // 
-            // cbb_trangthai
-            // 
-            this.cbb_trangthai.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbb_trangthai.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbb_trangthai.BorderSize = 1;
-            this.cbb_trangthai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbb_trangthai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbb_trangthai.ForeColor = System.Drawing.Color.DimGray;
-            this.cbb_trangthai.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbb_trangthai.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbb_trangthai.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbb_trangthai.Location = new System.Drawing.Point(1069, 375);
-            this.cbb_trangthai.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbb_trangthai.Name = "cbb_trangthai";
-            this.cbb_trangthai.Padding = new System.Windows.Forms.Padding(1);
-            this.cbb_trangthai.Size = new System.Drawing.Size(200, 30);
-            this.cbb_trangthai.TabIndex = 52;
-            this.cbb_trangthai.Texts = "";
             // 
             // cbb_giay
             // 
@@ -416,7 +399,7 @@
             this.cbb_giay.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbb_giay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbb_giay.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbb_giay.Location = new System.Drawing.Point(851, 375);
+            this.cbb_giay.Location = new System.Drawing.Point(988, 375);
             this.cbb_giay.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbb_giay.Name = "cbb_giay";
             this.cbb_giay.Padding = new System.Windows.Forms.Padding(1);
@@ -435,7 +418,7 @@
             this.cbb_sale.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbb_sale.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbb_sale.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbb_sale.Location = new System.Drawing.Point(632, 375);
+            this.cbb_sale.Location = new System.Drawing.Point(769, 375);
             this.cbb_sale.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbb_sale.Name = "cbb_sale";
             this.cbb_sale.Padding = new System.Windows.Forms.Padding(1);
@@ -471,30 +454,31 @@
             this.txt_timkiemsale.PasswordChar = false;
             this.txt_timkiemsale.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_timkiemsale.PlaceholderText = "";
-            this.txt_timkiemsale.Size = new System.Drawing.Size(211, 27);
+            this.txt_timkiemsale.Size = new System.Drawing.Size(348, 27);
             this.txt_timkiemsale.TabIndex = 48;
             this.txt_timkiemsale.Texts = "";
             this.txt_timkiemsale.UnderlinedStyle = false;
+            this.txt_timkiemsale._TextChanged += new System.EventHandler(this.txt_timkiemsale__TextChanged);
             // 
-            // rjComboBox1
+            // cbb_trangthai
             // 
-            this.rjComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox1.BorderSize = 1;
-            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(1069, 43);
-            this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox1.Name = "rjComboBox1";
-            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox1.Size = new System.Drawing.Size(200, 30);
-            this.rjComboBox1.TabIndex = 47;
-            this.rjComboBox1.Texts = "";
-            this.rjComboBox1.OnSelectedIndexChanged += new System.EventHandler(this.rjComboBox1_OnSelectedIndexChanged);
+            this.cbb_trangthai.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbb_trangthai.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbb_trangthai.BorderSize = 1;
+            this.cbb_trangthai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbb_trangthai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbb_trangthai.ForeColor = System.Drawing.Color.DimGray;
+            this.cbb_trangthai.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbb_trangthai.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbb_trangthai.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbb_trangthai.Location = new System.Drawing.Point(1069, 43);
+            this.cbb_trangthai.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbb_trangthai.Name = "cbb_trangthai";
+            this.cbb_trangthai.Padding = new System.Windows.Forms.Padding(1);
+            this.cbb_trangthai.Size = new System.Drawing.Size(200, 30);
+            this.cbb_trangthai.TabIndex = 47;
+            this.cbb_trangthai.Texts = "";
+            this.cbb_trangthai.OnSelectedIndexChanged += new System.EventHandler(this.rjComboBox1_OnSelectedIndexChanged);
             // 
             // dgrid_SALE
             // 
@@ -505,7 +489,7 @@
             this.dgrid_SALE.Name = "dgrid_SALE";
             this.dgrid_SALE.RowHeadersWidth = 51;
             this.dgrid_SALE.RowTemplate.Height = 29;
-            this.dgrid_SALE.Size = new System.Drawing.Size(943, 377);
+            this.dgrid_SALE.Size = new System.Drawing.Size(943, 160);
             this.dgrid_SALE.TabIndex = 39;
             this.dgrid_SALE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_SALE_CellContentClick);
             // 
@@ -726,6 +710,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).EndInit();
             this.a.ResumeLayout(false);
             this.a.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_showsanpham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_SALE)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -764,17 +749,16 @@
         private RJControls.RJComboBox cmb_giay;
         private RJControls.RJComboBox cmb_sale;
         private Panel panel2;
-        private Label label15;
         private Label label14;
         private Label label13;
-        private RJControls.RJComboBox cbb_trangthai;
         private RJControls.RJComboBox cbb_giay;
         private RJControls.RJComboBox cbb_sale;
         private Label label12;
         private RJControls.RJTextBox txt_timkiemsale;
-        private RJControls.RJComboBox rjComboBox1;
         private RJControls.RJButton btn_suasale;
         private RJControls.RJButton btn_themsale;
         private RJControls.RJButton btn_xoasale;
+        private DataGridView dgrid_showsanpham;
+        private RJControls.RJComboBox cbb_trangthai;
     }
 }

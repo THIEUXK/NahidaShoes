@@ -38,6 +38,7 @@ namespace C_GUI.Views
         private FormTheLoai TheLoai;
         private FormGiay Giay;
         private Guid Idwhenclick;
+        private IQLChiTietTheLoai _Ichotiett;
         public FormSanPham()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace C_GUI.Views
             MauSac = new FormMauSac();
             TheLoai = new FormTheLoai();
             Giay = new FormGiay();
-            
+            _Ichotiett = new QLChiTietTheLoai();
                 
           //LoadData();
             LoadComBo();
@@ -103,7 +104,7 @@ namespace C_GUI.Views
             cmb_theloai.Items.Clear();
             foreach (var a in _theloai.GetAll())
             {
-                cmb_theloai.Items.Add(a.TenTheLoai);
+                cmb_theloai.Items.Add(a.MaTheLoai);
             }
             
         }
@@ -242,7 +243,7 @@ namespace C_GUI.Views
             _rjcmbHangGiay.SelectedItem = _dgrvThongTinSanPham.CurrentRow.Cells[4].Value.ToString();
             _rjcmbCCDeGiay.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[5].Value.ToString();
             _rjcmbTenGiay.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[6].Value.ToString();
-          //  _rtbxMota.Text = _dgrvThongTinSanPham.CurrentRow.Cells[7].Value.ToString();
+            _rtbxMota.Text = _dgrvThongTinSanPham.CurrentRow.Cells[7].Value.ToString();
             _rjtbxGiaBan.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[8].Value.ToString();
             _rjtbxGiaNhap.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[9].Value.ToString();
             _rjtbxSoLuongTon.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[10].Value.ToString();
@@ -613,6 +614,18 @@ namespace C_GUI.Views
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+        
+        private void btn_themtheloai_Click(object sender, EventArgs e)
+        {
+            var idtheloais = _theloai.GetAll().FirstOrDefault(c => c.MaTheLoai == cmb_theloai.Texts);
+            Guid Idchitietgiay = Idwhenclick;
+            Guid idtheloai = idtheloais.Id;
+            _Ichotiett.Add(new ChiTietTheLoai()
+            {
+                IdChiTietGiay = Idwhenclick,
+                IdTheLoai = idtheloai,
+            });
         }
     }
 }

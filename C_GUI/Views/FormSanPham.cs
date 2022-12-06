@@ -4,6 +4,7 @@ using B_BUS.Services;
 using C_GUI.QLForm;
 using OfficeOpenXml;
 using System.Data;
+using System.Runtime.InteropServices.ObjectiveC;
 using Excel =Microsoft.Office.Interop.Excel;
 
 
@@ -38,6 +39,7 @@ namespace C_GUI.Views
         private FormTheLoai TheLoai;
         private FormGiay Giay;
         private Guid Idwhenclick;
+        private IQLChiTietTheLoai _Ichotiett;
         public FormSanPham()
         {
             InitializeComponent();
@@ -57,9 +59,9 @@ namespace C_GUI.Views
             MauSac = new FormMauSac();
             TheLoai = new FormTheLoai();
             Giay = new FormGiay();
-            
-                
-          //LoadData();
+            _Ichotiett = new QLChiTietTheLoai();
+            btn_save.Visible = false;   
+            LoadData();
             LoadComBo();
         }
 
@@ -103,7 +105,7 @@ namespace C_GUI.Views
             cmb_theloai.Items.Clear();
             foreach (var a in _theloai.GetAll())
             {
-                cmb_theloai.Items.Add(a.TenTheLoai);
+                cmb_theloai.Items.Add(a.MaTheLoai);
             }
             
         }
@@ -242,7 +244,7 @@ namespace C_GUI.Views
             _rjcmbHangGiay.SelectedItem = _dgrvThongTinSanPham.CurrentRow.Cells[4].Value.ToString();
             _rjcmbCCDeGiay.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[5].Value.ToString();
             _rjcmbTenGiay.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[6].Value.ToString();
-          //  _rtbxMota.Text = _dgrvThongTinSanPham.CurrentRow.Cells[7].Value.ToString();
+            _rtbxMota.Text = _dgrvThongTinSanPham.CurrentRow.Cells[7].Value.ToString();
             _rjtbxGiaBan.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[8].Value.ToString();
             _rjtbxGiaNhap.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[9].Value.ToString();
             _rjtbxSoLuongTon.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[10].Value.ToString();
@@ -288,109 +290,119 @@ namespace C_GUI.Views
 
         private void btn_link_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.FileName = btn_link.Text;
-            openFileDialog.Filter = "Excel Spreadsheet (*.XLSX;*.XLSM)|*.XLSX;*.XLSM";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                btn_link.Text = openFileDialog.FileName;
-            }
-            DataTable dt = new DataTable();
-            
-            dt.Columns.Add("Tên Màu Sắc");
-            dt.Columns.Add("Tên NSX");
-            dt.Columns.Add("Tên Size");
-            dt.Columns.Add("Hãng Giày");
-            dt.Columns.Add("Kích Cỡ");
-            dt.Columns.Add("Tên Giày");
-            dt.Columns.Add("Mô Tả");
-            dt.Columns.Add("Giá Nhập");
-            dt.Columns.Add("Giá bán");
-            dt.Columns.Add("Số Lượng tồn");
-            dt.Rows.Clear();
-            try
-            {
-                // mo file excel
-                var package = new ExcelPackage(new FileInfo(btn_link.Text));
-                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-                ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
-                for (int i = worksheet.Dimension.Start.Row + 1; i <= worksheet.Dimension.End.Row; i++)
-                {
-                    try
-                    {
-                        int j = 1;
-                        var tenmausac = worksheet.Cells[i, j++].Value;
-                        var tennsx = worksheet.Cells[i, j++].Value;
-                        var  namsize = worksheet.Cells[i, j++].Value;
-                        var hanggiay = worksheet.Cells[i, j++].Value;
-                        var kichco = worksheet.Cells[i, j++].Value;
-                        var tengiay = worksheet.Cells[i, j++].Value;
-                        var mota = worksheet.Cells[i, j++].Value;
-                        var gianhap = worksheet.Cells[i, j++].Value;
-                        var giaban = worksheet.Cells[i, j++].Value;
-                        var soluongton = worksheet.Cells[i, j++].Value;
-                        
-                        dt.Rows.Add(tenmausac, tennsx, namsize, hanggiay, kichco, tengiay, mota, gianhap, giaban, soluongton);
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Error");
-                        throw;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
-                throw;
-            }
-            _dgrvThongTinSanPham.DataSource = dt.DefaultView;
-        }
+            FormImport vn = new FormImport();
+            vn.ShowDialog();
+            //    var a = MessageBox.Show("Bạn có muốn chọn Nguồn Excel Ko", "Thông Báo", MessageBoxButtons.YesNo);
+            //    if (a ==DialogResult.Yes)
+            //    {
 
-        //private void btn_excel_Click(object sender, EventArgs e)
-        //{
 
-        //    DataTable dataTable = new DataTable();
-        //    DataColumn col1= new DataColumn("Tên Màu Sắc");
-        //    DataColumn col2 = new DataColumn("Tên Nhà Sản Xuất");
-        //    DataColumn col3 = new DataColumn("Tên Size");
-        //    DataColumn col4 = new DataColumn("Tên Hãng Giày");
-        //    DataColumn col5 = new DataColumn("Kích Cỡ");
-        //    DataColumn col6 = new DataColumn("Tên Giày");
-        //    DataColumn col7 = new DataColumn("Mô tả");
-        //    DataColumn col8 = new DataColumn("Giá Bán");
-        //    DataColumn col9 = new DataColumn("Giá Nhập");
-        //    DataColumn col10 = new DataColumn("Số Lượng Tồn");
-        //   dataTable.Columns.Add(col1);
-        //   dataTable.Columns.Add(col2);
-        //   dataTable.Columns.Add(col3);
-        //   dataTable.Columns.Add(col4);
-        //   dataTable.Columns.Add(col5);
-        //   dataTable.Columns.Add(col6);
-        //   dataTable.Columns.Add(col7);
-        //   dataTable.Columns.Add(col8);
-        //   dataTable.Columns.Add(col9);
-        //   dataTable.Columns.Add(col10);
-        //   foreach (DataGridViewRow dataGridViewRow in _dgrvThongTinSanPham.Rows)
-        //   {
-        //       DataRow dtrow = dataTable.NewRow();
-        //       dtrow[0] = dataGridViewRow.Cells[0].Value;
-        //        dtrow[1] = dataGridViewRow.Cells[1].Value;
-        //       dtrow[2] = dataGridViewRow.Cells[2].Value;
-        //       dtrow[3] = dataGridViewRow.Cells[3].Value;
-        //       dtrow[4] = dataGridViewRow.Cells[4].Value;
-        //       dtrow[5] = dataGridViewRow.Cells[5].Value;
-        //       dtrow[6] = dataGridViewRow.Cells[6].Value;
-        //       dtrow[7] = dataGridViewRow.Cells[7].Value;
-        //       dtrow[8] = dataGridViewRow.Cells[8].Value;
-        //       dtrow[9] = dataGridViewRow.Cells[9].Value;
-        //       dataTable.Rows.Add(dtrow);
-        //   }
-        //   Export(dataTable,"Danh Sách","Danh Sách Sản Phẩm");  
-        //}
+            //        OpenFileDialog openFileDialog = new OpenFileDialog();
+            //        openFileDialog.FileName = btn_link.Text;
+            //        openFileDialog.Filter = "Excel Spreadsheet (*.XLSX;*.XLSM)|*.XLSX;*.XLSM";
+            //        if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //        {
+            //            btn_link.Text = openFileDialog.FileName;
+            //        }
 
-        //private void Export(DataTable dataTable, string sheetName, string title)
-        //{
+            //        DataTable dt = new DataTable();
+
+            //        dt.Columns.Add("Tên Màu Sắc");
+            //        dt.Columns.Add("Tên NSX");
+            //        dt.Columns.Add("Tên Size");
+            //        dt.Columns.Add("Hãng Giày");
+            //        dt.Columns.Add("Kích Cỡ");
+            //        dt.Columns.Add("Tên Giày");
+            //        dt.Columns.Add("Mô Tả");
+            //        dt.Columns.Add("Giá Nhập");
+            //        dt.Columns.Add("Giá bán");
+            //        dt.Columns.Add("Số Lượng tồn");
+            //        dt.Rows.Clear();
+            //        try
+            //        {
+            //            // mo file excel
+            //            var package = new ExcelPackage(new FileInfo(btn_link.Text));
+            //            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            //            ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+            //            for (int i = worksheet.Dimension.Start.Row + 1; i <= worksheet.Dimension.End.Row; i++)
+            //            {
+            //                try
+            //                {
+            //                    int j = 1;
+            //                    var tenmausac = worksheet.Cells[i, j++].Value;
+            //                    var tennsx = worksheet.Cells[i, j++].Value;
+            //                    var namsize = worksheet.Cells[i, j++].Value;
+            //                    var hanggiay = worksheet.Cells[i, j++].Value;
+            //                    var kichco = worksheet.Cells[i, j++].Value;
+            //                    var tengiay = worksheet.Cells[i, j++].Value;
+            //                    var mota = worksheet.Cells[i, j++].Value;
+            //                    var gianhap = worksheet.Cells[i, j++].Value;
+            //                    var giaban = worksheet.Cells[i, j++].Value;
+            //                    var soluongton = worksheet.Cells[i, j++].Value;
+
+            //                    dt.Rows.Add(tenmausac, tennsx, namsize, hanggiay, kichco, tengiay, mota, gianhap, giaban,
+            //                        soluongton);
+            //                }
+            //                catch (Exception)
+            //                {
+            //                    MessageBox.Show("Error");
+            //                    throw;
+            //                }
+            //            }
+            //        }
+            //        catch (Exception)
+            //        {
+            //            MessageBox.Show("Error");
+            //            throw;
+            //        }
+
+            //        _dgrvThongTinSanPham.DataSource = dt.DefaultView;
+            //    }
+            //}
+            //private void btn_excel_Click(object sender, EventArgs e)
+            //{
+
+            //    DataTable dataTable = new DataTable();
+            //    DataColumn col1= new DataColumn("Tên Màu Sắc");
+            //    DataColumn col2 = new DataColumn("Tên Nhà Sản Xuất");
+            //    DataColumn col3 = new DataColumn("Tên Size");
+            //    DataColumn col4 = new DataColumn("Tên Hãng Giày");
+            //    DataColumn col5 = new DataColumn("Kích Cỡ");
+            //    DataColumn col6 = new DataColumn("Tên Giày");
+            //    DataColumn col7 = new DataColumn("Mô tả");
+            //    DataColumn col8 = new DataColumn("Giá Bán");
+            //    DataColumn col9 = new DataColumn("Giá Nhập");
+            //    DataColumn col10 = new DataColumn("Số Lượng Tồn");
+            //   dataTable.Columns.Add(col1);
+            //   dataTable.Columns.Add(col2);
+            //   dataTable.Columns.Add(col3);
+            //   dataTable.Columns.Add(col4);
+            //   dataTable.Columns.Add(col5);
+            //   dataTable.Columns.Add(col6);
+            //   dataTable.Columns.Add(col7);
+            //   dataTable.Columns.Add(col8);
+            //   dataTable.Columns.Add(col9);
+            //   dataTable.Columns.Add(col10);
+            //   foreach (DataGridViewRow dataGridViewRow in _dgrvThongTinSanPham.Rows)
+            //   {
+            //       DataRow dtrow = dataTable.NewRow();
+            //       dtrow[0] = dataGridViewRow.Cells[0].Value;
+            //        dtrow[1] = dataGridViewRow.Cells[1].Value;
+            //       dtrow[2] = dataGridViewRow.Cells[2].Value;
+            //       dtrow[3] = dataGridViewRow.Cells[3].Value;
+            //       dtrow[4] = dataGridViewRow.Cells[4].Value;
+            //       dtrow[5] = dataGridViewRow.Cells[5].Value;
+            //       dtrow[6] = dataGridViewRow.Cells[6].Value;
+            //       dtrow[7] = dataGridViewRow.Cells[7].Value;
+            //       dtrow[8] = dataGridViewRow.Cells[8].Value;
+            //       dtrow[9] = dataGridViewRow.Cells[9].Value;
+            //       dataTable.Rows.Add(dtrow);
+            //   }
+            //   Export(dataTable,"Danh Sách","Danh Sách Sản Phẩm");  
+            //}
+
+            //private void Export(DataTable dataTable, string sheetName, string title)
+            //{
             ////Tạo các đối tượng Excel
 
             //Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
@@ -490,7 +502,7 @@ namespace C_GUI.Views
             //cl10.Value2 = "Số Lượng Tồn";
 
             //cl10.ColumnWidth = 13.5;
-         
+
             //Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "J3");
 
             //rowHead.Font.Bold = true;
@@ -559,8 +571,9 @@ namespace C_GUI.Views
 
             ////Căn giữa cả bảng 
             //oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-           
-        //}
+
+            //}
+        }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
@@ -613,6 +626,18 @@ namespace C_GUI.Views
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+        
+        private void btn_themtheloai_Click(object sender, EventArgs e)
+        {
+            var idtheloais = _theloai.GetAll().FirstOrDefault(c => c.MaTheLoai == cmb_theloai.Texts);
+            Guid Idchitietgiay = Idwhenclick;
+            Guid idtheloai = idtheloais.Id;
+            _Ichotiett.Add(new ChiTietTheLoai()
+            {
+                IdChiTietGiay = Idwhenclick,
+                IdTheLoai = idtheloai,
+            });
         }
     }
 }

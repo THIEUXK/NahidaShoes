@@ -67,6 +67,7 @@
             this._dgrvThongTinSanPham = new System.Windows.Forms.DataGridView();
             this.btn_link = new C_GUI.RJControls.RJButton();
             this.btn_save = new C_GUI.RJControls.RJButton();
+            this.btn_themtheloai = new C_GUI.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrvThongTinSanPham)).BeginInit();
@@ -74,6 +75,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_themtheloai);
             this.groupBox1.Controls.Add(this._rtbxMota);
             this.groupBox1.Controls.Add(this.btn_giay);
             this.groupBox1.Controls.Add(this.btn_theloai);
@@ -166,7 +168,7 @@
             this.btn_mausac.IconColor = System.Drawing.Color.Black;
             this.btn_mausac.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_mausac.IconSize = 30;
-            this.btn_mausac.Location = new System.Drawing.Point(399, 241);
+            this.btn_mausac.Location = new System.Drawing.Point(399, 237);
             this.btn_mausac.Name = "btn_mausac";
             this.btn_mausac.Size = new System.Drawing.Size(32, 33);
             this.btn_mausac.TabIndex = 33;
@@ -179,7 +181,7 @@
             this.btn_chieuCaodegiay.IconColor = System.Drawing.Color.Black;
             this.btn_chieuCaodegiay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_chieuCaodegiay.IconSize = 30;
-            this.btn_chieuCaodegiay.Location = new System.Drawing.Point(399, 192);
+            this.btn_chieuCaodegiay.Location = new System.Drawing.Point(399, 189);
             this.btn_chieuCaodegiay.Name = "btn_chieuCaodegiay";
             this.btn_chieuCaodegiay.Size = new System.Drawing.Size(32, 33);
             this.btn_chieuCaodegiay.TabIndex = 32;
@@ -192,7 +194,7 @@
             this.Btn_hanggiay.IconColor = System.Drawing.Color.Black;
             this.Btn_hanggiay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_hanggiay.IconSize = 30;
-            this.Btn_hanggiay.Location = new System.Drawing.Point(399, 143);
+            this.Btn_hanggiay.Location = new System.Drawing.Point(399, 141);
             this.Btn_hanggiay.Name = "Btn_hanggiay";
             this.Btn_hanggiay.Size = new System.Drawing.Size(32, 33);
             this.Btn_hanggiay.TabIndex = 31;
@@ -205,7 +207,7 @@
             this.btn_size.IconColor = System.Drawing.Color.Black;
             this.btn_size.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_size.IconSize = 30;
-            this.btn_size.Location = new System.Drawing.Point(399, 94);
+            this.btn_size.Location = new System.Drawing.Point(399, 93);
             this.btn_size.Name = "btn_size";
             this.btn_size.Size = new System.Drawing.Size(32, 33);
             this.btn_size.TabIndex = 30;
@@ -694,6 +696,26 @@
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // btn_themtheloai
+            // 
+            this.btn_themtheloai.BackColor = System.Drawing.Color.Turquoise;
+            this.btn_themtheloai.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.btn_themtheloai.BorderColor = System.Drawing.Color.Black;
+            this.btn_themtheloai.BorderRadius = 15;
+            this.btn_themtheloai.BorderSize = 2;
+            this.btn_themtheloai.FlatAppearance.BorderSize = 0;
+            this.btn_themtheloai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_themtheloai.ForeColor = System.Drawing.Color.Black;
+            this.btn_themtheloai.Location = new System.Drawing.Point(441, 274);
+            this.btn_themtheloai.Name = "btn_themtheloai";
+            this.btn_themtheloai.Size = new System.Drawing.Size(162, 39);
+            this.btn_themtheloai.SizeImage = new System.Drawing.Size(20, 20);
+            this.btn_themtheloai.TabIndex = 27;
+            this.btn_themtheloai.Text = "Thêm Thể Loại";
+            this.btn_themtheloai.TextColor = System.Drawing.Color.Black;
+            this.btn_themtheloai.UseVisualStyleBackColor = false;
+            this.btn_themtheloai.Click += new System.EventHandler(this.btn_themtheloai_Click);
+            // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -759,5 +781,6 @@
         private RJControls.RJButton btn_link;
         private RJControls.RJTextBox _rtbxMota;
         private RJControls.RJButton btn_save;
+        private RJControls.RJButton btn_themtheloai;
     }
 }

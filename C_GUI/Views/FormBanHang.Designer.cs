@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this._cbxCheDoXem = new C_GUI.RJControls.RJComboBox();
             this._btnBoLoc = new C_GUI.RJControls.RJButton();
             this._cbxTimKiemHangGiay = new C_GUI.RJControls.RJComboBox();
             this._cbxTimKiemMauSac = new C_GUI.RJControls.RJComboBox();
@@ -103,6 +104,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this._cbxCheDoXem);
             this.groupBox1.Controls.Add(this._btnBoLoc);
             this.groupBox1.Controls.Add(this._cbxTimKiemHangGiay);
             this.groupBox1.Controls.Add(this._cbxTimKiemMauSac);
@@ -117,6 +119,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
             // 
+            // _cbxCheDoXem
+            // 
+            this._cbxCheDoXem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this._cbxCheDoXem.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this._cbxCheDoXem.BorderSize = 1;
+            this._cbxCheDoXem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this._cbxCheDoXem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cbxCheDoXem.ForeColor = System.Drawing.Color.DimGray;
+            this._cbxCheDoXem.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this._cbxCheDoXem.Items.AddRange(new object[] {
+            "Tile",
+            "List",
+            "SmallIcon",
+            "Details",
+            "LargeIcon"});
+            this._cbxCheDoXem.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this._cbxCheDoXem.ListTextColor = System.Drawing.Color.DimGray;
+            this._cbxCheDoXem.Location = new System.Drawing.Point(624, 24);
+            this._cbxCheDoXem.MinimumSize = new System.Drawing.Size(200, 30);
+            this._cbxCheDoXem.Name = "_cbxCheDoXem";
+            this._cbxCheDoXem.Padding = new System.Windows.Forms.Padding(1);
+            this._cbxCheDoXem.Size = new System.Drawing.Size(233, 30);
+            this._cbxCheDoXem.TabIndex = 58;
+            this._cbxCheDoXem.Texts = "";
+            this._cbxCheDoXem.OnSelectedIndexChanged += new System.EventHandler(this._cbxCheDoXem_OnSelectedIndexChanged);
+            // 
             // _btnBoLoc
             // 
             this._btnBoLoc.BackColor = System.Drawing.Color.Turquoise;
@@ -127,10 +155,10 @@
             this._btnBoLoc.FlatAppearance.BorderSize = 0;
             this._btnBoLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnBoLoc.ForeColor = System.Drawing.Color.Black;
-            this._btnBoLoc.Location = new System.Drawing.Point(624, 25);
+            this._btnBoLoc.Location = new System.Drawing.Point(863, 25);
             this._btnBoLoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._btnBoLoc.Name = "_btnBoLoc";
-            this._btnBoLoc.Size = new System.Drawing.Size(612, 29);
+            this._btnBoLoc.Size = new System.Drawing.Size(373, 29);
             this._btnBoLoc.SizeImage = new System.Drawing.Size(20, 20);
             this._btnBoLoc.TabIndex = 57;
             this._btnBoLoc.Text = "Bỏ lọc";
@@ -208,7 +236,6 @@
             // 
             this._lsvShowSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this._lsvShowSanPham.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Id,
             this.TenGiay,
             this.MauSac,
             this.HangGiay,
@@ -217,7 +244,8 @@
             this.ChieuCaoDeGiay,
             this.GiaBan,
             this.SoLuongTon,
-            this.MoTa});
+            this.MoTa,
+            this.Id});
             this._lsvShowSanPham.FullRowSelect = true;
             this._lsvShowSanPham.Location = new System.Drawing.Point(5, 59);
             this._lsvShowSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1167,5 +1195,6 @@
         private RJControls.RJTextBox _tbxKhachHnag;
         private RJControls.RJTextBox _tbxThanhToanOnline;
         private Label label14;
+        private RJControls.RJComboBox _cbxCheDoXem;
     }
 }

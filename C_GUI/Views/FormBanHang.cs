@@ -53,6 +53,7 @@ namespace C_GUI.Views
             _cbxTimKiemMauSac.SelectedItem = "Tất cả màu sắc";
             _cbxTimKiemHangGiay.SelectedItem = "Tất cả hãng giày";
             hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
+            _cbxCheDoXem.SelectedItem = "Tile";
         }
 
         private void LoadChiTietGiay(List<ChiTietGiayView> lstChiTietGiayView)
@@ -66,7 +67,7 @@ namespace C_GUI.Views
             _lsvShowSanPham.LargeImageList = img;
             foreach (B_BUS.View_Models.ChiTietGiayView item in lstChiTietGiayView)
             {
-                string[] row = { item.ChiTietGiay.Id.ToString(), item.Giay.TenGiay, item.MauSac.TenMauSac, item.HangGiay.TenHangGiay, item.Nsx.TenNsx, item.Size.TenSize, item.ChieuCaoDeGiay.MaKichCo, item.ChiTietGiay.GiaBan.ToString(), item.ChiTietGiay.SoLuongTon.ToString(), item.ChiTietGiay.MoTa };
+                string[] row = { item.Giay.TenGiay, item.MauSac.TenMauSac, item.HangGiay.TenHangGiay, item.Nsx.TenNsx, item.Size.TenSize, item.ChieuCaoDeGiay.MaKichCo, item.ChiTietGiay.GiaBan.ToString(), item.ChiTietGiay.SoLuongTon.ToString(), item.ChiTietGiay.MoTa, item.ChiTietGiay.Id.ToString()};
                 ListViewItem listViewItem = new(row)
                 {
                     ImageIndex = 0
@@ -178,7 +179,7 @@ namespace C_GUI.Views
                 {
                     if (_lsvShowSanPham.SelectedItems.Count > 0)
                     {
-                        Guid idGiay = new(_lsvShowSanPham.SelectedItems[0].Text);
+                        Guid idGiay = new(_lsvShowSanPham.SelectedItems[0].SubItems[9].Text);
                         ChiTietGiay? chiTietGiay = _qlChiTietGiay.GetAll().FirstOrDefault(c => c.Id == idGiay);
                         HoaDonChiTiet? hoaDonChiTiet = _qlHoaDonChiTiet.GetAll().FirstOrDefault(c => c.IdHoaDon == idHoaDon && c.IdChiTietGiay == idGiay);
                         List<ChiTietSale> lstChiTietSale = _qlChiTietSale.GetAll().Where(c => c.IdChiTietGiay == idGiay).ToList();
@@ -553,6 +554,30 @@ namespace C_GUI.Views
             }
             _tbxTienKhachDua.Texts = (Convert.ToSingle(_tbxTongTien.Texts.Trim()) - Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim())).ToString();
             _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) + Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
+        }
+
+        private void _cbxCheDoXem_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_cbxCheDoXem.SelectedItem.ToString() == "Tile")
+            {
+                _lsvShowSanPham.View = View.Tile;
+            }
+            else if (_cbxCheDoXem.SelectedItem.ToString() == "List")
+            {
+                _lsvShowSanPham.View = View.List;
+            }
+            else if (_cbxCheDoXem.SelectedItem.ToString() == "SmallIcon")
+            {
+                _lsvShowSanPham.View = View.SmallIcon;
+            }
+            else if (_cbxCheDoXem.SelectedItem.ToString() == "Details")
+            {
+                _lsvShowSanPham.View = View.Details;
+            }
+            else if (_cbxCheDoXem.SelectedItem.ToString() == "LargeIcon")
+            {
+                _lsvShowSanPham.View = View.LargeIcon;
+            }
         }
     }
 }

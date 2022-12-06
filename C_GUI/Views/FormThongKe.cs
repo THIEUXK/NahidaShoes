@@ -177,7 +177,7 @@ namespace C_GUI.Views
             {
                 loaddataforlocngay(cmb_ngay.Text);
                 return;
-            }8
+            }
             else
             {
                 loaddoanhthuforlocall(cmb_ngay.Text, cmb_loc.Text, cmb_nam.Text);

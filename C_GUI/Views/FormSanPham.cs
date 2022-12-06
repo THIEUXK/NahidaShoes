@@ -639,5 +639,59 @@ namespace C_GUI.Views
                 IdTheLoai = idtheloai,
             });
         }
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Export Excel";
+            saveFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    xuatExcel(saveFileDialog.FileName,_dgrvThongTinSanPham);
+                    MessageBox.Show("Xuất file thành công");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xuất file không thành công \n " + ex.Message);
+                }
+            }
+        }
+        public void xuatExcel(string path, DataGridView _dgrvthongtin)
+        {
+
+            try
+            {
+                if (_dgrvthongtin.Rows.Count > 0)
+                {
+                    Excel.Application application = new Excel.Application();
+                    application.Application.Workbooks.Add(Type.Missing);
+                    for (int i = 1; i < _dgrvthongtin.Columns.Count + 1; i++)
+                    {
+                        application.Cells[1, i] = _dgrvthongtin.Columns[i - 1].HeaderText;
+                    }
+                    for (int i = 0; i < _dgrvthongtin.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < _dgrvthongtin.Columns.Count; j++)
+                        {
+                            application.Cells[i + 2, j + 1] = _dgrvthongtin.Rows[i].Cells[j].Value;
+                        }
+                    }
+
+                    application.Columns.AutoFit();
+                    application.Visible = true;
+                    application.ActiveWorkbook.SaveCopyAs(path);
+                    application.ActiveWorkbook.Saved = true;
+                }
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.Message);
+            }
+
+        }
+
     }
 }

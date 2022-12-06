@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_themtheloai = new C_GUI.RJControls.RJButton();
             this._rtbxMota = new C_GUI.RJControls.RJTextBox();
             this.btn_giay = new FontAwesome.Sharp.IconButton();
             this.btn_theloai = new FontAwesome.Sharp.IconButton();
@@ -67,7 +68,7 @@
             this._dgrvThongTinSanPham = new System.Windows.Forms.DataGridView();
             this.btn_link = new C_GUI.RJControls.RJButton();
             this.btn_save = new C_GUI.RJControls.RJButton();
-            this.btn_themtheloai = new C_GUI.RJControls.RJButton();
+            this.btn_export = new C_GUI.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrvThongTinSanPham)).BeginInit();
@@ -112,6 +113,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi TIết";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btn_themtheloai
+            // 
+            this.btn_themtheloai.BackColor = System.Drawing.Color.Turquoise;
+            this.btn_themtheloai.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.btn_themtheloai.BorderColor = System.Drawing.Color.Black;
+            this.btn_themtheloai.BorderRadius = 15;
+            this.btn_themtheloai.BorderSize = 2;
+            this.btn_themtheloai.FlatAppearance.BorderSize = 0;
+            this.btn_themtheloai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_themtheloai.ForeColor = System.Drawing.Color.Black;
+            this.btn_themtheloai.Location = new System.Drawing.Point(441, 274);
+            this.btn_themtheloai.Name = "btn_themtheloai";
+            this.btn_themtheloai.Size = new System.Drawing.Size(162, 39);
+            this.btn_themtheloai.SizeImage = new System.Drawing.Size(20, 20);
+            this.btn_themtheloai.TabIndex = 27;
+            this.btn_themtheloai.Text = "Thêm Thể Loại";
+            this.btn_themtheloai.TextColor = System.Drawing.Color.Black;
+            this.btn_themtheloai.UseVisualStyleBackColor = false;
+            this.btn_themtheloai.Click += new System.EventHandler(this.btn_themtheloai_Click);
             // 
             // _rtbxMota
             // 
@@ -549,7 +570,7 @@
             this._rjbtnRemove.FlatAppearance.BorderSize = 0;
             this._rjbtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtnRemove.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.Location = new System.Drawing.Point(1018, 133);
+            this._rjbtnRemove.Location = new System.Drawing.Point(1029, 137);
             this._rjbtnRemove.Name = "_rjbtnRemove";
             this._rjbtnRemove.Size = new System.Drawing.Size(162, 39);
             this._rjbtnRemove.SizeImage = new System.Drawing.Size(20, 20);
@@ -569,7 +590,7 @@
             this._rjbtnEdit.FlatAppearance.BorderSize = 0;
             this._rjbtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtnEdit.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.Location = new System.Drawing.Point(1018, 77);
+            this._rjbtnEdit.Location = new System.Drawing.Point(1029, 79);
             this._rjbtnEdit.Name = "_rjbtnEdit";
             this._rjbtnEdit.Size = new System.Drawing.Size(162, 39);
             this._rjbtnEdit.SizeImage = new System.Drawing.Size(20, 20);
@@ -589,7 +610,7 @@
             this._rjbtnAdd.FlatAppearance.BorderSize = 0;
             this._rjbtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtnAdd.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnAdd.Location = new System.Drawing.Point(1018, 21);
+            this._rjbtnAdd.Location = new System.Drawing.Point(1029, 21);
             this._rjbtnAdd.Name = "_rjbtnAdd";
             this._rjbtnAdd.Size = new System.Drawing.Size(162, 39);
             this._rjbtnAdd.SizeImage = new System.Drawing.Size(20, 20);
@@ -666,7 +687,7 @@
             this.btn_link.FlatAppearance.BorderSize = 0;
             this.btn_link.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_link.ForeColor = System.Drawing.Color.Black;
-            this.btn_link.Location = new System.Drawing.Point(1018, 189);
+            this.btn_link.Location = new System.Drawing.Point(1029, 195);
             this.btn_link.Name = "btn_link";
             this.btn_link.Size = new System.Drawing.Size(162, 39);
             this.btn_link.SizeImage = new System.Drawing.Size(20, 20);
@@ -686,7 +707,7 @@
             this.btn_save.FlatAppearance.BorderSize = 0;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.ForeColor = System.Drawing.Color.Black;
-            this.btn_save.Location = new System.Drawing.Point(1018, 246);
+            this.btn_save.Location = new System.Drawing.Point(1029, 311);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(162, 39);
             this.btn_save.SizeImage = new System.Drawing.Size(20, 20);
@@ -696,31 +717,32 @@
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // btn_themtheloai
+            // btn_export
             // 
-            this.btn_themtheloai.BackColor = System.Drawing.Color.Turquoise;
-            this.btn_themtheloai.BackgroundColor = System.Drawing.Color.Turquoise;
-            this.btn_themtheloai.BorderColor = System.Drawing.Color.Black;
-            this.btn_themtheloai.BorderRadius = 15;
-            this.btn_themtheloai.BorderSize = 2;
-            this.btn_themtheloai.FlatAppearance.BorderSize = 0;
-            this.btn_themtheloai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_themtheloai.ForeColor = System.Drawing.Color.Black;
-            this.btn_themtheloai.Location = new System.Drawing.Point(441, 274);
-            this.btn_themtheloai.Name = "btn_themtheloai";
-            this.btn_themtheloai.Size = new System.Drawing.Size(162, 39);
-            this.btn_themtheloai.SizeImage = new System.Drawing.Size(20, 20);
-            this.btn_themtheloai.TabIndex = 27;
-            this.btn_themtheloai.Text = "Thêm Thể Loại";
-            this.btn_themtheloai.TextColor = System.Drawing.Color.Black;
-            this.btn_themtheloai.UseVisualStyleBackColor = false;
-            this.btn_themtheloai.Click += new System.EventHandler(this.btn_themtheloai_Click);
+            this.btn_export.BackColor = System.Drawing.Color.Turquoise;
+            this.btn_export.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.btn_export.BorderColor = System.Drawing.Color.Black;
+            this.btn_export.BorderRadius = 15;
+            this.btn_export.BorderSize = 2;
+            this.btn_export.FlatAppearance.BorderSize = 0;
+            this.btn_export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_export.ForeColor = System.Drawing.Color.Black;
+            this.btn_export.Location = new System.Drawing.Point(1029, 253);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(162, 39);
+            this.btn_export.SizeImage = new System.Drawing.Size(20, 20);
+            this.btn_export.TabIndex = 27;
+            this.btn_export.Text = "Export";
+            this.btn_export.TextColor = System.Drawing.Color.Black;
+            this.btn_export.UseVisualStyleBackColor = false;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 750);
+            this.Controls.Add(this.btn_export);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_link);
             this.Controls.Add(this.groupBox2);
@@ -782,5 +804,6 @@
         private RJControls.RJTextBox _rtbxMota;
         private RJControls.RJButton btn_save;
         private RJControls.RJButton btn_themtheloai;
+        private RJControls.RJButton btn_export;
     }
 }

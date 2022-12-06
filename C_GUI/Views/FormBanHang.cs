@@ -16,8 +16,7 @@ namespace C_GUI.Views
         private readonly IQLGiay _qlGiay;
         private readonly IQLMauSac _qlMauSac;
         private readonly IQLHangGiay _qlHangGiay;
-        public static Guid idHoaDon;
-        private readonly Guid idHoaDonDefaut;
+        private Guid idHoaDon;
         private readonly ListViewColumnSorter lvwColumnSorter;
         private HoaDon? hoaDon;
 
@@ -36,8 +35,7 @@ namespace C_GUI.Views
             LoadChiTietGiay(_qlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.SoLuongTon > 0).ToList());
             LoadComboBox();
             LoadHoaDon(_qlHoaDon.GetAllView().ToList());
-            idHoaDonDefaut = Guid.NewGuid();
-            idHoaDon = idHoaDonDefaut;
+            idHoaDon = Guid.NewGuid();
             if (_lsvHoaDon.Items.Count > 0)
             {
                 idHoaDon = new Guid(_lsvHoaDon.Items[0].Text);
@@ -55,15 +53,25 @@ namespace C_GUI.Views
             _cbxTimKiemMauSac.SelectedItem = "Tất cả màu sắc";
             _cbxTimKiemHangGiay.SelectedItem = "Tất cả hãng giày";
             hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
+            _cbxCheDoXem.SelectedItem = "Tile";
         }
 
         private void LoadChiTietGiay(List<ChiTietGiayView> lstChiTietGiayView)
         {
             _lsvShowSanPham.Items.Clear();
+            ImageList img = new()
+            {
+                ImageSize = new System.Drawing.Size(75, 75)
+            };
+            img.Images.Add(Image.FromFile("O:\\Git\\NahidaShoes\\C_GUI\\Resources\\calendarDark.png"));
+            _lsvShowSanPham.LargeImageList = img;
             foreach (B_BUS.View_Models.ChiTietGiayView item in lstChiTietGiayView)
             {
-                string[] row = { item.ChiTietGiay.Id.ToString(), item.Giay.TenGiay, item.MauSac.TenMauSac, item.HangGiay.TenHangGiay, item.Nsx.TenNsx, item.Size.TenSize, item.ChieuCaoDeGiay.MaKichCo, item.ChiTietGiay.GiaBan.ToString(), item.ChiTietGiay.SoLuongTon.ToString(), item.ChiTietGiay.MoTa };
-                ListViewItem listViewItem = new(row);
+                string[] row = { item.Giay.TenGiay, item.MauSac.TenMauSac, item.HangGiay.TenHangGiay, item.Nsx.TenNsx, item.Size.TenSize, item.ChieuCaoDeGiay.MaKichCo, item.ChiTietGiay.GiaBan.ToString(), item.ChiTietGiay.SoLuongTon.ToString(), item.ChiTietGiay.MoTa, item.ChiTietGiay.Id.ToString()};
+                ListViewItem listViewItem = new(row)
+                {
+                    ImageIndex = 0
+                };
                 _ = _lsvShowSanPham.Items.Add(listViewItem);
             }
         }
@@ -93,7 +101,6 @@ namespace C_GUI.Views
                 idHoaDon = new Guid(_lsvHoaDon.Items[0].Text);
             }
             hoaDon = _qlHoaDon.GetAll().Find(c => c.Id == idHoaDon);
-            LoadData(idHoaDon);
         }
 
         private void LoadComboBox()
@@ -166,13 +173,13 @@ namespace C_GUI.Views
 
         private void _lsvShowSanPham_DoubleClick(object sender, EventArgs e)
         {
-            if (idHoaDon != idHoaDonDefaut)
+            if (hoaDon != null)
             {
-                if (_qlHoaDon.GetAll().Find(c => c.Id == idHoaDon).TrangThai == 0)
+                if (hoaDon.TrangThai == 0)
                 {
                     if (_lsvShowSanPham.SelectedItems.Count > 0)
                     {
-                        Guid idGiay = new(_lsvShowSanPham.SelectedItems[0].Text);
+                        Guid idGiay = new(_lsvShowSanPham.SelectedItems[0].SubItems[9].Text);
                         ChiTietGiay? chiTietGiay = _qlChiTietGiay.GetAll().FirstOrDefault(c => c.Id == idGiay);
                         HoaDonChiTiet? hoaDonChiTiet = _qlHoaDonChiTiet.GetAll().FirstOrDefault(c => c.IdHoaDon == idHoaDon && c.IdChiTietGiay == idGiay);
                         List<ChiTietSale> lstChiTietSale = _qlChiTietSale.GetAll().Where(c => c.IdChiTietGiay == idGiay).ToList();
@@ -225,9 +232,9 @@ namespace C_GUI.Views
 
         private void _lsvGioHang_DoubleClick(object sender, EventArgs e)
         {
-            if (idHoaDon != idHoaDonDefaut)
+            if (hoaDon != null)
             {
-                if (_qlHoaDon.GetAll().Find(c => c.Id == idHoaDon).TrangThai == 0)
+                if (hoaDon.TrangThai == 0)
                 {
                     Guid idHoaDonChiTiet = new(_lsvGioHang.SelectedItems[0].Text);
                     HoaDonChiTiet hoaDonChiTiet = _qlHoaDonChiTiet.GetAll().Find(c => c.Id == idHoaDonChiTiet);
@@ -264,9 +271,9 @@ namespace C_GUI.Views
                 _ = MessageBox.Show("Kiểm tra lại các giá trị đầu vào");
                 return;
             }
-            if (idHoaDon != idHoaDonDefaut)
+            if (hoaDon != null)
             {
-                if (_qlHoaDon.GetAll().Find(c => c.Id == idHoaDon).TrangThai is not 1 and not (-1))
+                if (hoaDon.TrangThai is not 1 and not (-1))
                 {
                     if (Convert.ToSingle(_tbxTienThua.Texts.Trim()) >= 0)
                     {
@@ -300,7 +307,7 @@ namespace C_GUI.Views
 
         private void LoadData(Guid? idHoaDon)
         {
-            if (idHoaDon != idHoaDonDefaut)
+            if (hoaDon != null)
             {
                 _tbxMaHoaDon.Texts = hoaDon.MaHoaDon;
                 float tongTien = 0;
@@ -373,7 +380,7 @@ namespace C_GUI.Views
 
         private void _btnShipHang_Click(object sender, EventArgs e)
         {
-            if (idHoaDon != idHoaDonDefaut)
+            if (hoaDon != null)
             {
                 if (hoaDon.TrangThai == 0)
                 {
@@ -518,12 +525,15 @@ namespace C_GUI.Views
 
         private void _btnHuyHoaDon_Click(object sender, EventArgs e)
         {
-            if (hoaDon.TrangThai is not 1 and not (-1))
+            if (hoaDon != null)
             {
-                hoaDon.TrangThai = -1;
-                _ = _qlHoaDon.Update(hoaDon);
-                _ = MessageBox.Show("Đã hủy hóa đơn");
-                LoadHoaDon(_qlHoaDon.GetAllView().ToList());
+                if (hoaDon.TrangThai is not 1 and not (-1))
+                {
+                    hoaDon.TrangThai = -1;
+                    _ = _qlHoaDon.Update(hoaDon);
+                    _ = MessageBox.Show("Đã hủy hóa đơn");
+                    LoadHoaDon(_qlHoaDon.GetAllView().ToList());
+                }
             }
         }
 
@@ -544,6 +554,30 @@ namespace C_GUI.Views
             }
             _tbxTienKhachDua.Texts = (Convert.ToSingle(_tbxTongTien.Texts.Trim()) - Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim())).ToString();
             _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) + Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
+        }
+
+        private void _cbxCheDoXem_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_cbxCheDoXem.SelectedItem.ToString() == "Tile")
+            {
+                _lsvShowSanPham.View = View.Tile;
+            }
+            else if (_cbxCheDoXem.SelectedItem.ToString() == "List")
+            {
+                _lsvShowSanPham.View = View.List;
+            }
+            else if (_cbxCheDoXem.SelectedItem.ToString() == "SmallIcon")
+            {
+                _lsvShowSanPham.View = View.SmallIcon;
+            }
+            else if (_cbxCheDoXem.SelectedItem.ToString() == "Details")
+            {
+                _lsvShowSanPham.View = View.Details;
+            }
+            else if (_cbxCheDoXem.SelectedItem.ToString() == "LargeIcon")
+            {
+                _lsvShowSanPham.View = View.LargeIcon;
+            }
         }
     }
 }

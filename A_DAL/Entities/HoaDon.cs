@@ -18,6 +18,7 @@
         public Guid IdNhanVien { get; set; }
         public float GiamGia { get; set; } = 0!;
         public string? GhiChu { get; set; }
+        public float TongSoTien { get; set; } = 0!;
         public int TrangThai { get; set; } = 0!;
         public KhachHang IdKhachHangNavigation { get; set; } = null!;
         public NhanVien IdNhanVienNavigation { get; set; } = null!;

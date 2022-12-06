@@ -38,24 +38,17 @@ namespace C_GUI.QLForm
         }
         public void Loadcmb()
         {
-            foreach (var a in _IQlSale.GetAll())
-            {
-                _ = cbb_sale.Items.Add(a.TenChuongTrinh);
-            }
+           cmb_giay.Items.Clear();
+           cmb_sale.Items.Clear();
             foreach (var a in _IQlSale.GetAll())
             {
                 _ = cmb_sale.Items.Add(a.TenChuongTrinh);
             }
-            foreach (var a in _IQlGiay.GetAll())
-            {
-                _ = cbb_giay.Items.Add(a.TenGiay);
-            }
+            
             foreach (var a in _IQlGiay.GetAll())
             {
                 _ = cmb_giay.Items.Add(a.TenGiay);
             }
-            _ = cbb_trangthai.Items.Add("hoat dong");
-                _ = cbb_trangthai.Items.Add("khong hoat dong");
 
         }
         public void LoadData(List<SaleView> saleViews)
@@ -100,23 +93,20 @@ namespace C_GUI.QLForm
         {
             int stt = 1;
             dgrid_showsanpham.ColumnCount = 10;
-            dgrid_showsanpham.Columns[0].Name = "Giá Nhập";
+            dgrid_showsanpham.Columns[0].Name = "stt";
             dgrid_showsanpham.Columns[1].Name = "Giá bán";
             dgrid_showsanpham.Columns[2].Name = "Giá KM";
-            dgrid_showsanpham.Columns[3].Name = "Giày";
-            dgrid_showsanpham.Columns[4].Name = "Nsx";
-            dgrid_showsanpham.Columns[5].Name = "Size";
-            dgrid_showsanpham.Columns[6].Name = "Hãng Giày";
-            dgrid_showsanpham.Columns[7].Name = "Chiều cao đế giày";
-            dgrid_showsanpham.Columns[8].Name = "Màu sắc";
-            dgrid_showsanpham.Columns[9].Name = "Số lượng tồn";
+            dgrid_showsanpham.Columns[3].Name = "Tên giày";
+            dgrid_showsanpham.Columns[4].Name = "Giá nhập";
+            dgrid_showsanpham.Columns[5].Name = "Số lượng tồn";
 
             dgrid_SALE.Rows.Clear();
-            foreach (var a in _IQlChiTietGiay.GetAll())
+            foreach (var a in _IQlChiTietSale.GetAllView())
             {
-                var b = _IQlChiTietSale.GetAllView().Find(c => c.ChiTietSale.IdChiTietGiay == a.Id);
+                var b = _IQlGiay.GetAllView().Find(c => c.Giay.Id == a.ChiTietGiay.IdGiay);
+                var c = _IQlSale.GetAllView().Find(c => c.Sale.Id == a.ChiTietSale.IdSale);
                 //var c = _IQlChiTietSale.GetAllView().Find(c => c.ChiTietSale.IdSale == b.Sale.Id);
-                _ = dgrid_showsanpham.Rows.Add(stt++, a.GiaNhap, ((a.GiaBan)) /** ((c.Sale.PhanTramGiamGia) / 100) - (c.Sale.SoTiemGiamGia))*/);
+                _ = dgrid_showsanpham.Rows.Add(stt++,a.ChiTietGiay.GiaBan,(a.ChiTietGiay.GiaBan-(a.ChiTietGiay.GiaBan*((c.Sale.PhanTramGiamGia)/100))-c.Sale.SoTiemGiamGia),b.Giay.TenGiay,a.ChiTietGiay.GiaNhap,a.ChiTietGiay.SoLuongTon);
             }
         }
         public Sale GetvaluaContro()
@@ -179,6 +169,9 @@ namespace C_GUI.QLForm
 
                 _ = _IQlSale.Add(GetvaluaContro());
                 LoadData(_IQlSale.GetAllView());
+                LoadDataSP();
+                LoadDataSale(_IQlChiTietSale.GetAllView());
+                Loadcmb();
             }
         }
 
@@ -202,6 +195,9 @@ namespace C_GUI.QLForm
                 {
                     _ = MessageBox.Show("Sửa thành công");
                     LoadData(_IQlSale.GetAllView());
+                    LoadDataSP();
+                    LoadDataSale(_IQlChiTietSale.GetAllView());
+                    Loadcmb();
                 }
             }
         }
@@ -216,7 +212,9 @@ namespace C_GUI.QLForm
                     if (thongBao)
                 {
                     _ = MessageBox.Show("Xóa thành công");
-                    LoadData(_IQlSale.GetAllView());
+                    LoadData(_IQlSale.GetAllView());LoadDataSP();
+                    LoadDataSale(_IQlChiTietSale.GetAllView());
+                    Loadcmb();
                 }
             }
         }
@@ -261,6 +259,7 @@ namespace C_GUI.QLForm
             if (dialogResult == DialogResult.Yes)
             {
                 _ = _IQlChiTietSale.Add(GetvaluaControSALE());
+                LoadDataSP();
                 LoadDataSale(_IQlChiTietSale.GetAllView());
             }
         }
@@ -286,6 +285,7 @@ namespace C_GUI.QLForm
                 if (thongBao)
                 {
                     _ = MessageBox.Show("Sửa thành công");
+                    LoadDataSP();
                     LoadDataSale(_IQlChiTietSale.GetAllView());
                 }
             }
@@ -301,6 +301,7 @@ namespace C_GUI.QLForm
                 if (thongBao)
                 {
                     _ = MessageBox.Show("Xóa thành công");
+                    LoadDataSP();
                     LoadDataSale(_IQlChiTietSale.GetAllView());
                 }
             }

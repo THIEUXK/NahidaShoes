@@ -46,19 +46,15 @@
             this.dtp_ngayketthuc = new C_GUI.RJControls.RJDatePicker();
             this.a = new System.Windows.Forms.GroupBox();
             this.dgrid_showsanpham = new System.Windows.Forms.DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cbb_giay = new C_GUI.RJControls.RJComboBox();
-            this.cbb_sale = new C_GUI.RJControls.RJComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_timkiemsale = new C_GUI.RJControls.RJTextBox();
-            this.cbb_trangthai = new C_GUI.RJControls.RJComboBox();
             this.dgrid_SALE = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_timkiem = new C_GUI.RJControls.RJTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_giay = new FontAwesome.Sharp.IconButton();
             this.btn_suasale = new C_GUI.RJControls.RJButton();
             this.btn_themsale = new C_GUI.RJControls.RJButton();
             this.btn_xoasale = new C_GUI.RJControls.RJButton();
@@ -66,7 +62,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_giay = new C_GUI.RJControls.RJComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btn_giay = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.a.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_showsanpham)).BeginInit();
@@ -333,13 +328,8 @@
             // 
             this.a.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.a.Controls.Add(this.dgrid_showsanpham);
-            this.a.Controls.Add(this.label14);
-            this.a.Controls.Add(this.label13);
-            this.a.Controls.Add(this.cbb_giay);
-            this.a.Controls.Add(this.cbb_sale);
             this.a.Controls.Add(this.label12);
             this.a.Controls.Add(this.txt_timkiemsale);
-            this.a.Controls.Add(this.cbb_trangthai);
             this.a.Controls.Add(this.dgrid_show);
             this.a.Controls.Add(this.dgrid_SALE);
             this.a.Controls.Add(this.label6);
@@ -369,69 +359,11 @@
             this.dgrid_showsanpham.TabIndex = 56;
             this.dgrid_showsanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_showsanpham_CellContentClick);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(988, 351);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(141, 21);
-            this.label14.TabIndex = 54;
-            this.label14.Text = "Lọc theo tên giày";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(769, 351);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(138, 21);
-            this.label13.TabIndex = 53;
-            this.label13.Text = "Lọc theo tên sale";
-            // 
-            // cbb_giay
-            // 
-            this.cbb_giay.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbb_giay.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbb_giay.BorderSize = 1;
-            this.cbb_giay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbb_giay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbb_giay.ForeColor = System.Drawing.Color.DimGray;
-            this.cbb_giay.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbb_giay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbb_giay.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbb_giay.Location = new System.Drawing.Point(988, 375);
-            this.cbb_giay.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbb_giay.Name = "cbb_giay";
-            this.cbb_giay.Padding = new System.Windows.Forms.Padding(1);
-            this.cbb_giay.Size = new System.Drawing.Size(200, 30);
-            this.cbb_giay.TabIndex = 51;
-            this.cbb_giay.Texts = "";
-            // 
-            // cbb_sale
-            // 
-            this.cbb_sale.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbb_sale.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbb_sale.BorderSize = 1;
-            this.cbb_sale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbb_sale.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbb_sale.ForeColor = System.Drawing.Color.DimGray;
-            this.cbb_sale.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbb_sale.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbb_sale.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbb_sale.Location = new System.Drawing.Point(769, 375);
-            this.cbb_sale.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbb_sale.Name = "cbb_sale";
-            this.cbb_sale.Padding = new System.Windows.Forms.Padding(1);
-            this.cbb_sale.Size = new System.Drawing.Size(200, 30);
-            this.cbb_sale.TabIndex = 50;
-            this.cbb_sale.Texts = "";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(326, 381);
+            this.label12.Location = new System.Drawing.Point(375, 381);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 21);
             this.label12.TabIndex = 49;
@@ -446,7 +378,7 @@
             this.txt_timkiemsale.BorderSize = 2;
             this.txt_timkiemsale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_timkiemsale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_timkiemsale.Location = new System.Drawing.Point(414, 375);
+            this.txt_timkiemsale.Location = new System.Drawing.Point(464, 375);
             this.txt_timkiemsale.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_timkiemsale.MaxLength = 20;
             this.txt_timkiemsale.Multiline = false;
@@ -460,26 +392,6 @@
             this.txt_timkiemsale.Texts = "";
             this.txt_timkiemsale.UnderlinedStyle = false;
             this.txt_timkiemsale._TextChanged += new System.EventHandler(this.txt_timkiemsale__TextChanged);
-            // 
-            // cbb_trangthai
-            // 
-            this.cbb_trangthai.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbb_trangthai.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbb_trangthai.BorderSize = 1;
-            this.cbb_trangthai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbb_trangthai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbb_trangthai.ForeColor = System.Drawing.Color.DimGray;
-            this.cbb_trangthai.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbb_trangthai.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbb_trangthai.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbb_trangthai.Location = new System.Drawing.Point(1069, 43);
-            this.cbb_trangthai.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbb_trangthai.Name = "cbb_trangthai";
-            this.cbb_trangthai.Padding = new System.Windows.Forms.Padding(1);
-            this.cbb_trangthai.Size = new System.Drawing.Size(200, 30);
-            this.cbb_trangthai.TabIndex = 47;
-            this.cbb_trangthai.Texts = "";
-            this.cbb_trangthai.OnSelectedIndexChanged += new System.EventHandler(this.rjComboBox1_OnSelectedIndexChanged);
             // 
             // dgrid_SALE
             // 
@@ -576,6 +488,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(323, 376);
             this.panel2.TabIndex = 47;
+            // 
+            // btn_giay
+            // 
+            this.btn_giay.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_giay.IconColor = System.Drawing.Color.Black;
+            this.btn_giay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_giay.IconSize = 30;
+            this.btn_giay.Location = new System.Drawing.Point(287, 92);
+            this.btn_giay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_giay.Name = "btn_giay";
+            this.btn_giay.Size = new System.Drawing.Size(28, 25);
+            this.btn_giay.TabIndex = 57;
+            this.btn_giay.UseVisualStyleBackColor = true;
+            this.btn_giay.Click += new System.EventHandler(this.btn_giay_Click);
             // 
             // btn_suasale
             // 
@@ -701,20 +627,6 @@
             this.label9.TabIndex = 42;
             this.label9.Text = "Tên Sale";
             // 
-            // btn_giay
-            // 
-            this.btn_giay.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btn_giay.IconColor = System.Drawing.Color.Black;
-            this.btn_giay.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_giay.IconSize = 30;
-            this.btn_giay.Location = new System.Drawing.Point(287, 92);
-            this.btn_giay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_giay.Name = "btn_giay";
-            this.btn_giay.Size = new System.Drawing.Size(28, 25);
-            this.btn_giay.TabIndex = 57;
-            this.btn_giay.UseVisualStyleBackColor = true;
-            this.btn_giay.Click += new System.EventHandler(this.btn_giay_Click);
-            // 
             // FormSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -765,17 +677,12 @@
         private RJControls.RJComboBox cmb_giay;
         private RJControls.RJComboBox cmb_sale;
         private Panel panel2;
-        private Label label14;
-        private Label label13;
-        private RJControls.RJComboBox cbb_giay;
-        private RJControls.RJComboBox cbb_sale;
         private Label label12;
         private RJControls.RJTextBox txt_timkiemsale;
         private RJControls.RJButton btn_suasale;
         private RJControls.RJButton btn_themsale;
         private RJControls.RJButton btn_xoasale;
         private DataGridView dgrid_showsanpham;
-        private RJControls.RJComboBox cbb_trangthai;
         private FontAwesome.Sharp.IconButton btn_giay;
     }
 }

@@ -81,141 +81,141 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("816f4e4c-d2c5-47c0-bebb-437c45c5fd26"),
+                            Id = new Guid("ff620e92-b6a2-41b3-9374-9085bf88e6dd"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("bdd35499-b5ff-44b2-a179-aa5fcddb369d"),
-                            IdGiay = new Guid("ccd009ad-0bfd-4c51-8790-1d9f38d46503"),
-                            IdHangGiay = new Guid("1c9173c6-32ec-422e-8408-119460321e87"),
-                            IdMauSac = new Guid("15c7731c-6c6c-4051-a6b5-25b54c9e02ef"),
-                            IdNsx = new Guid("753d3b82-0536-448f-925c-23fe61a28f48"),
-                            IdSize = new Guid("7f148d49-d649-4bde-86d0-5ba2a80cf164"),
+                            IdChieuCaoDeGiay = new Guid("973733f9-c8e9-4d90-8448-5ca17e939a45"),
+                            IdGiay = new Guid("45ef2a38-f02b-44a0-9b86-d24520fb84cc"),
+                            IdHangGiay = new Guid("bb4043e3-a9dd-49f9-8505-3bca158a53a4"),
+                            IdMauSac = new Guid("7a0fac7a-fc89-44f5-8c46-b06cc4b48647"),
+                            IdNsx = new Guid("4c7d8767-7e18-47a3-9fff-b5997ff3e5be"),
+                            IdSize = new Guid("169d9f45-d004-40c4-a6fe-343a9900512e"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("919b2e51-0e45-4671-bae2-b37f44c21dae"),
+                            Id = new Guid("bb8c4f9c-c36d-4d11-81fd-1c52965ac21d"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("b7e0f2d6-603b-4a17-8cb6-a0bf5b923312"),
-                            IdGiay = new Guid("d1d1d7db-b53a-4e48-90fe-8f5fd9fade48"),
-                            IdHangGiay = new Guid("607a40f4-1371-4c91-aaaf-0551c1718db3"),
-                            IdMauSac = new Guid("96d8e3cc-9fec-43a0-92f0-c84b7aa8cd44"),
-                            IdNsx = new Guid("753d3b82-0536-448f-925c-23fe61a28f48"),
-                            IdSize = new Guid("ea5e9d46-0884-457a-8975-abb573519a66"),
+                            IdChieuCaoDeGiay = new Guid("0d548fd1-40fc-4e27-b6c3-f48cf7bc657f"),
+                            IdGiay = new Guid("223ad7f3-ee40-4ae9-9586-f0ddf26c70e7"),
+                            IdHangGiay = new Guid("731f6d32-d225-4db2-9b64-cfe5967c9108"),
+                            IdMauSac = new Guid("acee02d9-d3c8-4bb0-aaa9-e3ae277db037"),
+                            IdNsx = new Guid("19acae90-4243-4894-b922-43c3f7f99dec"),
+                            IdSize = new Guid("af33d3b1-c45c-4997-b072-81fa7a385b1f"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("eeb69f5b-32fb-405e-9a80-31c4295d1749"),
+                            Id = new Guid("678f667d-b867-486f-a37a-99dfd89adc40"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("b7e0f2d6-603b-4a17-8cb6-a0bf5b923312"),
-                            IdGiay = new Guid("d1d1d7db-b53a-4e48-90fe-8f5fd9fade48"),
-                            IdHangGiay = new Guid("f59c2f3b-9352-43e8-8b08-2832f2214629"),
-                            IdMauSac = new Guid("f021145b-2fa2-4d69-a119-1f4422cd3e2f"),
-                            IdNsx = new Guid("3d2f021f-8d57-42b6-8bc2-b0ea606efa14"),
-                            IdSize = new Guid("b9f2f7aa-630e-4d47-9fc9-108c34e428cf"),
+                            IdChieuCaoDeGiay = new Guid("f4ec5e1e-da12-4536-9068-87b13de74e39"),
+                            IdGiay = new Guid("c79b2195-301c-4912-af2b-24518cf4423c"),
+                            IdHangGiay = new Guid("bc06b810-3c3a-4bca-be9a-22203a408744"),
+                            IdMauSac = new Guid("e134c67a-a012-4e38-ba9e-450848fafd01"),
+                            IdNsx = new Guid("12a9a5cb-e17a-49be-88f4-7fef915113ac"),
+                            IdSize = new Guid("169d9f45-d004-40c4-a6fe-343a9900512e"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("3e97316b-35ca-4f06-9bbe-794d4f2629f6"),
+                            Id = new Guid("8695c64d-739b-4ba7-ba84-66e4c88ed013"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("bdd35499-b5ff-44b2-a179-aa5fcddb369d"),
-                            IdGiay = new Guid("9ede00fd-26b0-492b-a20d-39639e3c4168"),
-                            IdHangGiay = new Guid("607a40f4-1371-4c91-aaaf-0551c1718db3"),
-                            IdMauSac = new Guid("c11be303-9efd-46c5-9eda-8a3c56c4a89c"),
-                            IdNsx = new Guid("d8afc43d-101d-4256-ac72-ecdce059d8aa"),
-                            IdSize = new Guid("0ab5f54b-fd91-4c76-8630-14b9222afeb9"),
+                            IdChieuCaoDeGiay = new Guid("973733f9-c8e9-4d90-8448-5ca17e939a45"),
+                            IdGiay = new Guid("223ad7f3-ee40-4ae9-9586-f0ddf26c70e7"),
+                            IdHangGiay = new Guid("bb4043e3-a9dd-49f9-8505-3bca158a53a4"),
+                            IdMauSac = new Guid("7a0fac7a-fc89-44f5-8c46-b06cc4b48647"),
+                            IdNsx = new Guid("1e5bcbdb-ec1a-48c1-8d9a-ebc3a0ecad3d"),
+                            IdSize = new Guid("6586e8f4-bbb6-4820-a4be-194e3187675f"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("95aae7cd-3d3c-4d90-8574-59e934b157a8"),
+                            Id = new Guid("4d817253-a614-4659-994f-cf6ac27bb653"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("438381c3-1c37-45b6-8310-9b3f195d77ab"),
-                            IdGiay = new Guid("d1d1d7db-b53a-4e48-90fe-8f5fd9fade48"),
-                            IdHangGiay = new Guid("a55d2385-e17b-485d-bb99-a9ec6a8e62ff"),
-                            IdMauSac = new Guid("15c7731c-6c6c-4051-a6b5-25b54c9e02ef"),
-                            IdNsx = new Guid("d8afc43d-101d-4256-ac72-ecdce059d8aa"),
-                            IdSize = new Guid("b9f2f7aa-630e-4d47-9fc9-108c34e428cf"),
+                            IdChieuCaoDeGiay = new Guid("6065d83d-98fc-431f-b909-d076be69e93e"),
+                            IdGiay = new Guid("c79b2195-301c-4912-af2b-24518cf4423c"),
+                            IdHangGiay = new Guid("731f6d32-d225-4db2-9b64-cfe5967c9108"),
+                            IdMauSac = new Guid("83c46a10-a321-4813-a5ae-10ef687051b0"),
+                            IdNsx = new Guid("8de80f01-5a50-42e2-a99b-cae74bd72afc"),
+                            IdSize = new Guid("1482cc57-38ab-45f1-b5b8-4301187411fc"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("217be5dc-5510-4472-b229-0cc85bfc22dc"),
+                            Id = new Guid("e8ec012f-7e53-4f71-b178-33b0356780a8"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("5bf07fcc-5c4c-4265-9b1a-d770df116318"),
-                            IdGiay = new Guid("d1d1d7db-b53a-4e48-90fe-8f5fd9fade48"),
-                            IdHangGiay = new Guid("607a40f4-1371-4c91-aaaf-0551c1718db3"),
-                            IdMauSac = new Guid("96d8e3cc-9fec-43a0-92f0-c84b7aa8cd44"),
-                            IdNsx = new Guid("d8afc43d-101d-4256-ac72-ecdce059d8aa"),
-                            IdSize = new Guid("c2a8e62c-d6d5-4edf-abff-90f91ccb9072"),
+                            IdChieuCaoDeGiay = new Guid("dd857c77-ba0d-400b-9148-d4f1f6898932"),
+                            IdGiay = new Guid("d4d23b58-75d7-434e-8121-489f0cd6a3b3"),
+                            IdHangGiay = new Guid("bc06b810-3c3a-4bca-be9a-22203a408744"),
+                            IdMauSac = new Guid("7a0fac7a-fc89-44f5-8c46-b06cc4b48647"),
+                            IdNsx = new Guid("8de80f01-5a50-42e2-a99b-cae74bd72afc"),
+                            IdSize = new Guid("169d9f45-d004-40c4-a6fe-343a9900512e"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("c7999197-270b-42d1-8683-0f0f7e983bef"),
+                            Id = new Guid("dfe0a97f-0f79-42ea-8dae-3d5829709a7f"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("438381c3-1c37-45b6-8310-9b3f195d77ab"),
-                            IdGiay = new Guid("ccd009ad-0bfd-4c51-8790-1d9f38d46503"),
-                            IdHangGiay = new Guid("a55d2385-e17b-485d-bb99-a9ec6a8e62ff"),
-                            IdMauSac = new Guid("3256d62f-4be3-425c-8766-3e41c3f86328"),
-                            IdNsx = new Guid("d8afc43d-101d-4256-ac72-ecdce059d8aa"),
-                            IdSize = new Guid("b9f2f7aa-630e-4d47-9fc9-108c34e428cf"),
+                            IdChieuCaoDeGiay = new Guid("dd857c77-ba0d-400b-9148-d4f1f6898932"),
+                            IdGiay = new Guid("45ef2a38-f02b-44a0-9b86-d24520fb84cc"),
+                            IdHangGiay = new Guid("de2a10a9-b114-4464-9251-474c400b2908"),
+                            IdMauSac = new Guid("7a0fac7a-fc89-44f5-8c46-b06cc4b48647"),
+                            IdNsx = new Guid("4c7d8767-7e18-47a3-9fff-b5997ff3e5be"),
+                            IdSize = new Guid("0f1c0981-7007-45ab-b93c-605679b17954"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("4d1c5e66-8c43-4b50-82ad-09b63d21d89e"),
+                            Id = new Guid("70c7127e-491d-47b4-8a38-c6121328bb55"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("96024567-9c77-4537-b149-c143efb09ab9"),
-                            IdGiay = new Guid("b7e3131a-8396-478a-b4a1-16bda85e5f60"),
-                            IdHangGiay = new Guid("f59c2f3b-9352-43e8-8b08-2832f2214629"),
-                            IdMauSac = new Guid("15c7731c-6c6c-4051-a6b5-25b54c9e02ef"),
-                            IdNsx = new Guid("753d3b82-0536-448f-925c-23fe61a28f48"),
-                            IdSize = new Guid("b9f2f7aa-630e-4d47-9fc9-108c34e428cf"),
+                            IdChieuCaoDeGiay = new Guid("6065d83d-98fc-431f-b909-d076be69e93e"),
+                            IdGiay = new Guid("d4d23b58-75d7-434e-8121-489f0cd6a3b3"),
+                            IdHangGiay = new Guid("731f6d32-d225-4db2-9b64-cfe5967c9108"),
+                            IdMauSac = new Guid("e134c67a-a012-4e38-ba9e-450848fafd01"),
+                            IdNsx = new Guid("19acae90-4243-4894-b922-43c3f7f99dec"),
+                            IdSize = new Guid("6586e8f4-bbb6-4820-a4be-194e3187675f"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("8d8f0c67-8e3b-4e39-ac92-b51c627f8a40"),
+                            Id = new Guid("659b2e60-136e-44aa-8429-0cab1bdb9c66"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("5bf07fcc-5c4c-4265-9b1a-d770df116318"),
-                            IdGiay = new Guid("ccd009ad-0bfd-4c51-8790-1d9f38d46503"),
-                            IdHangGiay = new Guid("607a40f4-1371-4c91-aaaf-0551c1718db3"),
-                            IdMauSac = new Guid("c11be303-9efd-46c5-9eda-8a3c56c4a89c"),
-                            IdNsx = new Guid("d8afc43d-101d-4256-ac72-ecdce059d8aa"),
-                            IdSize = new Guid("7f148d49-d649-4bde-86d0-5ba2a80cf164"),
+                            IdChieuCaoDeGiay = new Guid("973733f9-c8e9-4d90-8448-5ca17e939a45"),
+                            IdGiay = new Guid("45ef2a38-f02b-44a0-9b86-d24520fb84cc"),
+                            IdHangGiay = new Guid("731f6d32-d225-4db2-9b64-cfe5967c9108"),
+                            IdMauSac = new Guid("acee02d9-d3c8-4bb0-aaa9-e3ae277db037"),
+                            IdNsx = new Guid("8de80f01-5a50-42e2-a99b-cae74bd72afc"),
+                            IdSize = new Guid("6586e8f4-bbb6-4820-a4be-194e3187675f"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("f6e5a881-dbc4-4e7d-8c48-952af8f3684e"),
+                            Id = new Guid("111a2d16-b0db-4f1f-add1-00ebe0d9a408"),
                             GiaBan = 10000f,
                             GiaNhap = 7000f,
-                            IdChieuCaoDeGiay = new Guid("5bf07fcc-5c4c-4265-9b1a-d770df116318"),
-                            IdGiay = new Guid("d1d1d7db-b53a-4e48-90fe-8f5fd9fade48"),
-                            IdHangGiay = new Guid("607a40f4-1371-4c91-aaaf-0551c1718db3"),
-                            IdMauSac = new Guid("f021145b-2fa2-4d69-a119-1f4422cd3e2f"),
-                            IdNsx = new Guid("753d3b82-0536-448f-925c-23fe61a28f48"),
-                            IdSize = new Guid("ea5e9d46-0884-457a-8975-abb573519a66"),
+                            IdChieuCaoDeGiay = new Guid("dd857c77-ba0d-400b-9148-d4f1f6898932"),
+                            IdGiay = new Guid("d4d23b58-75d7-434e-8121-489f0cd6a3b3"),
+                            IdHangGiay = new Guid("731f6d32-d225-4db2-9b64-cfe5967c9108"),
+                            IdMauSac = new Guid("83c46a10-a321-4813-a5ae-10ef687051b0"),
+                            IdNsx = new Guid("4c7d8767-7e18-47a3-9fff-b5997ff3e5be"),
+                            IdSize = new Guid("0f1c0981-7007-45ab-b93c-605679b17954"),
                             SoLuongTon = 100,
                             TrangThai = 0
                         });
@@ -327,35 +327,35 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5bf07fcc-5c4c-4265-9b1a-d770df116318"),
+                            Id = new Guid("0d548fd1-40fc-4e27-b6c3-f48cf7bc657f"),
                             KichCo = 1,
                             MaKichCo = "KC1",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("bdd35499-b5ff-44b2-a179-aa5fcddb369d"),
+                            Id = new Guid("f4ec5e1e-da12-4536-9068-87b13de74e39"),
                             KichCo = 2,
                             MaKichCo = "KC2",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("96024567-9c77-4537-b149-c143efb09ab9"),
+                            Id = new Guid("973733f9-c8e9-4d90-8448-5ca17e939a45"),
                             KichCo = 3,
                             MaKichCo = "KC3",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("438381c3-1c37-45b6-8310-9b3f195d77ab"),
+                            Id = new Guid("dd857c77-ba0d-400b-9148-d4f1f6898932"),
                             KichCo = 4,
                             MaKichCo = "KC4",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("b7e0f2d6-603b-4a17-8cb6-a0bf5b923312"),
+                            Id = new Guid("6065d83d-98fc-431f-b909-d076be69e93e"),
                             KichCo = 5,
                             MaKichCo = "KC5",
                             TrangThai = 0
@@ -389,7 +389,7 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("82bd906c-da4f-4660-b931-04ff5aa64c43"),
+                            Id = new Guid("801f1548-99d1-477f-9ded-750a7c567852"),
                             MaChucVu = "CV1",
                             TenChucVu = "Nhân viên",
                             TrangThai = 0
@@ -427,7 +427,7 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("daaf278e-b2fd-4260-83d6-0bbee59d68e6"),
+                            Id = new Guid("36583c55-a3b6-470d-82f6-2dcc329055b6"),
                             DiaChi = "Hà Nội",
                             MaCuaHang = "CH1",
                             TenCuaHang = "Cửa hàng 1",
@@ -541,35 +541,35 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ccd009ad-0bfd-4c51-8790-1d9f38d46503"),
+                            Id = new Guid("45ef2a38-f02b-44a0-9b86-d24520fb84cc"),
                             MaGiay = "G1",
                             TenGiay = "Giày 1",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("3aa6684a-0281-4073-8917-a4f4a98d752c"),
+                            Id = new Guid("223ad7f3-ee40-4ae9-9586-f0ddf26c70e7"),
                             MaGiay = "G2",
                             TenGiay = "Giày 2",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("b7e3131a-8396-478a-b4a1-16bda85e5f60"),
+                            Id = new Guid("d4d23b58-75d7-434e-8121-489f0cd6a3b3"),
                             MaGiay = "G3",
                             TenGiay = "Giày 3",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("d1d1d7db-b53a-4e48-90fe-8f5fd9fade48"),
+                            Id = new Guid("c79b2195-301c-4912-af2b-24518cf4423c"),
                             MaGiay = "G4",
                             TenGiay = "Giày 4",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("9ede00fd-26b0-492b-a20d-39639e3c4168"),
+                            Id = new Guid("0231446a-606e-4af6-9fa5-063dda97454d"),
                             MaGiay = "G5",
                             TenGiay = "Giày 5",
                             TrangThai = 0
@@ -603,35 +603,35 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("607a40f4-1371-4c91-aaaf-0551c1718db3"),
+                            Id = new Guid("bb4043e3-a9dd-49f9-8505-3bca158a53a4"),
                             MaHangGiay = "HG1",
                             TenHangGiay = "Hãng giày 1",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("1c9173c6-32ec-422e-8408-119460321e87"),
+                            Id = new Guid("731f6d32-d225-4db2-9b64-cfe5967c9108"),
                             MaHangGiay = "HG2",
                             TenHangGiay = "Hãng giày 2",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("f59c2f3b-9352-43e8-8b08-2832f2214629"),
+                            Id = new Guid("de2a10a9-b114-4464-9251-474c400b2908"),
                             MaHangGiay = "HG3",
                             TenHangGiay = "Hãng giày 3",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("5af62c24-be17-4254-b6a8-c4c87bfe441a"),
+                            Id = new Guid("87ecbfd0-4163-4f50-af17-a8b86b9d5d65"),
                             MaHangGiay = "HG4",
                             TenHangGiay = "Hãng giày 4",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("a55d2385-e17b-485d-bb99-a9ec6a8e62ff"),
+                            Id = new Guid("bc06b810-3c3a-4bca-be9a-22203a408744"),
                             MaHangGiay = "HG5",
                             TenHangGiay = "Hãng giày 5",
                             TrangThai = 0
@@ -671,6 +671,9 @@ namespace ADAL.Migrations
 
                     b.Property<DateTime?>("ThoiGianThanhToan")
                         .HasColumnType("datetime2");
+
+                    b.Property<float>("TongSoTien")
+                        .HasColumnType("real");
 
                     b.Property<int>("TrangThai")
                         .HasColumnType("int");
@@ -766,10 +769,10 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f9bf7ddd-0b3f-43ee-8112-9b1fbde91504"),
+                            Id = new Guid("86199b98-34d2-465b-89c1-e47765c42086"),
                             DiaChi = "Hà Nội",
                             MaKhachHang = "KH1",
-                            NgaySinh = new DateTime(2022, 12, 2, 16, 22, 34, 198, DateTimeKind.Local).AddTicks(9426),
+                            NgaySinh = new DateTime(2022, 12, 6, 17, 20, 48, 357, DateTimeKind.Local).AddTicks(2649),
                             Sdt = "0385922775",
                             SoCCCD = "12345",
                             TenKhachHang = "Khách hàng 1",
@@ -777,10 +780,10 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("67d7bcd9-8f92-4fd0-a5bf-e8d5fb20105f"),
+                            Id = new Guid("0d5d94b5-85c3-4bc9-99af-bc3461efe359"),
                             DiaChi = "Hà Nội",
                             MaKhachHang = "KH2",
-                            NgaySinh = new DateTime(2022, 12, 2, 16, 22, 34, 198, DateTimeKind.Local).AddTicks(9442),
+                            NgaySinh = new DateTime(2022, 12, 6, 17, 20, 48, 357, DateTimeKind.Local).AddTicks(2678),
                             Sdt = "0385922775",
                             SoCCCD = "01234",
                             TenKhachHang = "Khách hàng 2",
@@ -848,35 +851,35 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f021145b-2fa2-4d69-a119-1f4422cd3e2f"),
+                            Id = new Guid("92e89c8a-099d-4e29-90e2-47bf6895adf0"),
                             MaMauSac = "MS1",
                             TenMauSac = "Màu sắc 1",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("96d8e3cc-9fec-43a0-92f0-c84b7aa8cd44"),
+                            Id = new Guid("e134c67a-a012-4e38-ba9e-450848fafd01"),
                             MaMauSac = "MS2",
                             TenMauSac = "Màu sắc 2",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("c11be303-9efd-46c5-9eda-8a3c56c4a89c"),
+                            Id = new Guid("acee02d9-d3c8-4bb0-aaa9-e3ae277db037"),
                             MaMauSac = "MS3",
                             TenMauSac = "Màu sắc 3",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("3256d62f-4be3-425c-8766-3e41c3f86328"),
+                            Id = new Guid("83c46a10-a321-4813-a5ae-10ef687051b0"),
                             MaMauSac = "MS4",
                             TenMauSac = "Màu sắc 4",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("15c7731c-6c6c-4051-a6b5-25b54c9e02ef"),
+                            Id = new Guid("7a0fac7a-fc89-44f5-8c46-b06cc4b48647"),
                             MaMauSac = "MS5",
                             TenMauSac = "Màu sắc 5",
                             TrangThai = 0
@@ -941,28 +944,28 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0382a8a1-16ac-4520-a5a7-fbbebef606b5"),
+                            Id = new Guid("9068e374-39fe-4143-89c1-29dfac492e23"),
                             DiaChi = "Hà Nội",
                             GioiTinh = 0,
-                            IdChucVu = new Guid("82bd906c-da4f-4660-b931-04ff5aa64c43"),
-                            IdCuaHang = new Guid("daaf278e-b2fd-4260-83d6-0bbee59d68e6"),
+                            IdChucVu = new Guid("801f1548-99d1-477f-9ded-750a7c567852"),
+                            IdCuaHang = new Guid("36583c55-a3b6-470d-82f6-2dcc329055b6"),
                             MaNhanVien = "NV1",
                             MatKhau = "00000",
-                            NgaySinh = new DateTime(2022, 12, 2, 16, 22, 34, 198, DateTimeKind.Local).AddTicks(9308),
+                            NgaySinh = new DateTime(2022, 12, 6, 17, 20, 48, 357, DateTimeKind.Local).AddTicks(2520),
                             Sdt = "0385922775",
                             TenNhanVien = "Nhân viên 1",
                             TrangThai = 0
                         },
                         new
                         {
-                            Id = new Guid("d2ae92b5-7472-4dd9-8d56-66d58750bada"),
+                            Id = new Guid("f7b0a637-5982-488a-aa5e-42f8f6c82a4c"),
                             DiaChi = "Hà Nội",
                             GioiTinh = 1,
-                            IdChucVu = new Guid("82bd906c-da4f-4660-b931-04ff5aa64c43"),
-                            IdCuaHang = new Guid("daaf278e-b2fd-4260-83d6-0bbee59d68e6"),
+                            IdChucVu = new Guid("801f1548-99d1-477f-9ded-750a7c567852"),
+                            IdCuaHang = new Guid("36583c55-a3b6-470d-82f6-2dcc329055b6"),
                             MaNhanVien = "NV2",
                             MatKhau = "00000",
-                            NgaySinh = new DateTime(2022, 12, 2, 16, 22, 34, 198, DateTimeKind.Local).AddTicks(9364),
+                            NgaySinh = new DateTime(2022, 12, 6, 17, 20, 48, 357, DateTimeKind.Local).AddTicks(2595),
                             Sdt = "0385922775",
                             TenNhanVien = "Nhân viên 2",
                             TrangThai = 0
@@ -1000,7 +1003,7 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("753d3b82-0536-448f-925c-23fe61a28f48"),
+                            Id = new Guid("4c7d8767-7e18-47a3-9fff-b5997ff3e5be"),
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX1",
                             TenNsx = "Nhà sản xuất 1",
@@ -1008,7 +1011,7 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3d2f021f-8d57-42b6-8bc2-b0ea606efa14"),
+                            Id = new Guid("19acae90-4243-4894-b922-43c3f7f99dec"),
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX2",
                             TenNsx = "Nhà sản xuất 2",
@@ -1016,7 +1019,7 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d8afc43d-101d-4256-ac72-ecdce059d8aa"),
+                            Id = new Guid("1e5bcbdb-ec1a-48c1-8d9a-ebc3a0ecad3d"),
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX3",
                             TenNsx = "Nhà sản xuất 3",
@@ -1024,7 +1027,7 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("736c7433-6b94-47af-b73c-1ffbef8767d8"),
+                            Id = new Guid("12a9a5cb-e17a-49be-88f4-7fef915113ac"),
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX4",
                             TenNsx = "Nhà sản xuất 4",
@@ -1032,7 +1035,7 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d18fea81-2043-4cac-9652-ab0fab4d3abc"),
+                            Id = new Guid("8de80f01-5a50-42e2-a99b-cae74bd72afc"),
                             DiaChi = "Hà Nội",
                             MaNsx = "NSX5",
                             TenNsx = "Nhà sản xuất 5",
@@ -1153,7 +1156,7 @@ namespace ADAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7f148d49-d649-4bde-86d0-5ba2a80cf164"),
+                            Id = new Guid("0f1c0981-7007-45ab-b93c-605679b17954"),
                             MaSize = "SZ1",
                             SoSize = 30,
                             TenSize = "Size 1",
@@ -1161,7 +1164,7 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b9f2f7aa-630e-4d47-9fc9-108c34e428cf"),
+                            Id = new Guid("1482cc57-38ab-45f1-b5b8-4301187411fc"),
                             MaSize = "SZ2",
                             SoSize = 31,
                             TenSize = "Size 2",
@@ -1169,7 +1172,7 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ea5e9d46-0884-457a-8975-abb573519a66"),
+                            Id = new Guid("af33d3b1-c45c-4997-b072-81fa7a385b1f"),
                             MaSize = "SZ3",
                             SoSize = 32,
                             TenSize = "Size 3",
@@ -1177,7 +1180,7 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0ab5f54b-fd91-4c76-8630-14b9222afeb9"),
+                            Id = new Guid("169d9f45-d004-40c4-a6fe-343a9900512e"),
                             MaSize = "SZ4",
                             SoSize = 33,
                             TenSize = "Size 4",
@@ -1185,7 +1188,7 @@ namespace ADAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c2a8e62c-d6d5-4edf-abff-90f91ccb9072"),
+                            Id = new Guid("6586e8f4-bbb6-4820-a4be-194e3187675f"),
                             MaSize = "SZ5",
                             SoSize = 34,
                             TenSize = "Size 5",

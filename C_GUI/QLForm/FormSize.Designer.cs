@@ -214,6 +214,7 @@
             this.btn_them.Text = "Thêm";
             this.btn_them.TextColor = System.Drawing.Color.Black;
             this.btn_them.UseVisualStyleBackColor = false;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click_1);
             // 
             // cbx_khonghoatdong
             // 

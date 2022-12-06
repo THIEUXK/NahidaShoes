@@ -225,7 +225,7 @@
             this._lsvShowSanPham.Size = new System.Drawing.Size(1231, 471);
             this._lsvShowSanPham.TabIndex = 1;
             this._lsvShowSanPham.UseCompatibleStateImageBehavior = false;
-            this._lsvShowSanPham.View = System.Windows.Forms.View.Details;
+            this._lsvShowSanPham.View = System.Windows.Forms.View.Tile;
             this._lsvShowSanPham.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this._lsvShowSanPham_ColumnClick);
             this._lsvShowSanPham.DoubleClick += new System.EventHandler(this._lsvShowSanPham_DoubleClick);
             // 

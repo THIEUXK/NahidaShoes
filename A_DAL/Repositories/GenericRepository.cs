@@ -51,7 +51,7 @@ namespace A_DAL.Repositories
         }
         public void Save()
         {
-               _ = _context.SaveChanges();
+            _ = _context.SaveChanges();
         }
     }
 }

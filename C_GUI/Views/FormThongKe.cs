@@ -5,7 +5,7 @@ namespace C_GUI.Views
 {
     public partial class FormThongKe : Form
     {
-        private IQlDoanhThuServices _qldoanthu;
+        private readonly IQlDoanhThuServices _qldoanthu;
 
         public FormThongKe()
         {
@@ -15,8 +15,8 @@ namespace C_GUI.Views
             loadcbo();
             loadnam();
             loadngay();
-            cmb_ngay.Visible=false;
-            cmb_loc.Visible=false;
+            cmb_ngay.Visible = false;
+            cmb_loc.Visible = false;
         }
 
         public string[] Getnam()
@@ -41,25 +41,25 @@ namespace C_GUI.Views
             return TempNs;
         }
 
-        void loadngay()
+        private void loadngay()
         {
-            foreach (var x in Getngay())
+            foreach (string x in Getngay())
             {
-                cmb_ngay.Items.Add(x);
+                _ = cmb_ngay.Items.Add(x);
             }
 
         }
 
-        void loadnam()
+        private void loadnam()
         {
-            foreach (var x in Getnam())
+            foreach (string x in Getnam())
             {
-                cmb_nam.Items.Add(x);
+                _ = cmb_nam.Items.Add(x);
             }
 
         }
 
-        void loadcbo()
+        private void loadcbo()
         {
 
             string[] lstmon = new string[12];
@@ -76,84 +76,84 @@ namespace C_GUI.Views
             lstmon[10] = "11";
             lstmon[11] = "12";
 
-            foreach (var x in lstmon)
+            foreach (string x in lstmon)
             {
-                cmb_loc.Items.Add(x);
+                _ = cmb_loc.Items.Add(x);
             }
 
         }
 
-        void loaddoanhthu()
+        private void loaddoanhthu()
         {
             _dgrv_doanhthu.ColumnCount = 3;
             _dgrv_doanhthu.Columns[0].Name = "Mã Nhân Viên";
             _dgrv_doanhthu.Columns[1].Name = "Tên Nhân Viên";
             _dgrv_doanhthu.Columns[2].Name = "Tổng Doanh Thu";
             _dgrv_doanhthu.Rows.Clear();
-            foreach (var x in _qldoanthu.Getlistviewdoanhthu().OrderByDescending(c => c.TongSoTien))
+            foreach (B_BUS.View_Models.ViewDoanhThuNhanVien? x in _qldoanthu.Getlistviewdoanhthu().OrderByDescending(c => c.TongSoTien))
             {
-                _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
+                _ = _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
             }
         }
 
-        void loaddoanhthuforlocall(string ngay, string thang, string nam)
+        private void loaddoanhthuforlocall(string ngay, string thang, string nam)
         {
             _dgrv_doanhthu.ColumnCount = 3;
             _dgrv_doanhthu.Columns[0].Name = "Mã Nhân Viên";
             _dgrv_doanhthu.Columns[1].Name = "Tên Nhân Viên";
             _dgrv_doanhthu.Columns[2].Name = "Tổng Doanh Thu";
             _dgrv_doanhthu.Rows.Clear();
-            foreach (var x in _qldoanthu.Getlistviewdoanhthu()
+            foreach (B_BUS.View_Models.ViewDoanhThuNhanVien? x in _qldoanthu.Getlistviewdoanhthu()
                          .Where(c => c.NgayLap.Value.Day.ToString() == ngay &&
                                      c.NgayLap.Value.Month.ToString() == thang &&
                                      c.NgayLap.Value.Year.ToString() == nam).OrderByDescending(c => c.TongSoTien))
             {
-                _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
+                _ = _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
             }
         }
 
         //ngày
-        void loaddataforlocngay(string ngay)
+        private void loaddataforlocngay(string ngay)
         {
             _dgrv_doanhthu.ColumnCount = 3;
             _dgrv_doanhthu.Columns[0].Name = "Mã Nhân Viên";
             _dgrv_doanhthu.Columns[1].Name = "Tên Nhân Viên";
             _dgrv_doanhthu.Columns[2].Name = "Tổng Doanh Thu";
             _dgrv_doanhthu.Rows.Clear();
-            foreach (var x in _qldoanthu.Getlistviewdoanhthu().Where(c => c.NgayLap.Value.Day.ToString() == ngay)
+            foreach (B_BUS.View_Models.ViewDoanhThuNhanVien? x in _qldoanthu.Getlistviewdoanhthu().Where(c => c.NgayLap.Value.Day.ToString() == ngay)
                          .OrderByDescending(c => c.TongSoTien))
             {
-                _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
+                _ = _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
             }
         }
 
         //tháng
-        void loaddataforlocthang(string thang)
+        private void loaddataforlocthang(string thang)
         {
             _dgrv_doanhthu.ColumnCount = 3;
             _dgrv_doanhthu.Columns[0].Name = "Mã Nhân Viên";
             _dgrv_doanhthu.Columns[1].Name = "Tên Nhân Viên";
             _dgrv_doanhthu.Columns[2].Name = "Tổng Doanh Thu";
             _dgrv_doanhthu.Rows.Clear();
-            foreach (var x in _qldoanthu.Getlistviewdoanhthu().Where(c => c.NgayLap.Value.Month.ToString() == thang)
+            foreach (B_BUS.View_Models.ViewDoanhThuNhanVien? x in _qldoanthu.Getlistviewdoanhthu().Where(c => c.NgayLap.Value.Month.ToString() == thang)
                          .OrderByDescending(c => c.TongSoTien))
             {
-                _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
+                _ = _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
             }
         }
 
         //năm   
-        void loaddataforlocnam(string nam)
+        private void loaddataforlocnam(string nam)
         {
             _dgrv_doanhthu.ColumnCount = 3;
             _dgrv_doanhthu.Columns[0].Name = "Mã Nhân Viên";
             _dgrv_doanhthu.Columns[1].Name = "Tên Nhân Viên";
             _dgrv_doanhthu.Columns[2].Name = "Tổng Doanh Thu";
             _dgrv_doanhthu.Rows.Clear();
-            foreach (var x in _qldoanthu.Getlistviewdoanhthu().Where(c => c.NgayLap.Value.Year.ToString() == nam)
+            foreach (B_BUS.View_Models.ViewDoanhThuNhanVien? x in _qldoanthu.Getlistviewdoanhthu().Where(c => c.NgayLap.Value.Year.ToString() == nam)
                          .OrderByDescending(c => c.TongSoTien))
             {
-                _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
+                _ = _dgrv_doanhthu.Rows.Add(x.MaNhanVien, x.TenNhanVien, x.TongSoTien);
             }
         }
 
@@ -200,7 +200,7 @@ namespace C_GUI.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cmb_nam.SelectedIndex = 0;                             
+            cmb_nam.SelectedIndex = 0;
         }
     }
 }

@@ -63,6 +63,13 @@ namespace C_GUI.Views
             btn_save.Visible = false;   
             LoadData();
             LoadComBo();
+            cmb_mausac.SelectedItem="Màu Sắc 1";
+            _rjcmbNSX.SelectedItem=1;
+            _rjcmbSize.SelectedItem = 1;
+            _rjcmbHangGiay.SelectedItem = 1;
+            _rjcmbCCDeGiay.SelectedItem = 1;
+            _rjcmbTenGiay.SelectedItem = 1;
+            cmb_theloai.SelectedItem = 1;
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
@@ -199,40 +206,51 @@ namespace C_GUI.Views
 
         private void _rjbtnAdd_Click(object sender, EventArgs e)
         {
-            var mausac = _MauSac.GetAll().FirstOrDefault(c => c.TenMauSac == cmb_mausac.Texts);
-            var nsx = _Nsx.GetAll().FirstOrDefault(c => c.TenNsx == _rjcmbNSX.Texts);
-            var hanggiay = _hangGiay.GetAll().FirstOrDefault(c => c.TenHangGiay == _rjcmbHangGiay.Texts);
-            var size = _Size.GetAll().FirstOrDefault(c => c.TenSize == _rjcmbSize.Texts);
-            var giay = _Giay.GetAll().FirstOrDefault(c => c.TenGiay == _rjcmbTenGiay.Texts);
-            var ccDeGiay = _ChieuCaoDeGiay.GetAll().FirstOrDefault(c => c.KichCo == int.Parse(_rjcmbCCDeGiay.Texts));
-            bool thongbao = _ChiTietGiay.Add(new ChiTietGiay()
+
+            var hoi = MessageBox.Show(" Thông Báo", "Bạn có Muốn thêm ko", MessageBoxButtons.YesNo);
+            if (_rjcmbHangGiay.Texts == "" || _rjcmbCCDeGiay.Texts == "" || _rjcmbNSX.Texts == "" ||
+                _rjcmbSize.Texts == "" || _rjcmbSize.Texts == "" || _rjtbxSoLuongTon.Texts == "" ||
+                _rjtbxGiaNhap.Texts == "" || _rjtbxGiaBan.Texts == "" || _rjtbxSoLuongTon.Texts == "")
             {
-                Id = Guid.NewGuid(),
-                IdMauSac = mausac.Id,
-                IdNsx = nsx.Id,
-                IdSize = size.Id,
-                IdHangGiay = hanggiay.Id,
-                IdChieuCaoDeGiay = ccDeGiay.Id,
-                IdGiay = giay.Id,
-                MoTa = _rtbxMota.Text,
-                GiaBan = int.Parse(_rjtbxGiaBan.Texts),
-                GiaNhap = int.Parse(_rjtbxGiaNhap.Texts),
-                SoLuongTon = int.Parse(_rjtbxSoLuongTon.Texts),
-                TrangThai = 1
-            });
-          var hoi = MessageBox.Show(" Thông Báo", "Bạn có Muốn thêm ko", MessageBoxButtons.YesNo);
-          if (hoi == DialogResult.Yes)
-          {
-              if (thongbao)
-              {
-                  MessageBox.Show("Thêm Thành Công");
-                  LoadData();
-              }
-              else
-              {
-                  MessageBox.Show("Thêm Thất Bại");
-              }
-          }
+                MessageBox.Show("bạn Đang điền thiếu vui lòng điền lại");
+            }
+            else
+            {
+                var mausac = _MauSac.GetAll().FirstOrDefault(c => c.TenMauSac == cmb_mausac.Texts);
+                var nsx = _Nsx.GetAll().FirstOrDefault(c => c.TenNsx == _rjcmbNSX.Texts);
+                var hanggiay = _hangGiay.GetAll().FirstOrDefault(c => c.TenHangGiay == _rjcmbHangGiay.Texts);
+                var size = _Size.GetAll().FirstOrDefault(c => c.TenSize == _rjcmbSize.Texts);
+                var giay = _Giay.GetAll().FirstOrDefault(c => c.TenGiay == _rjcmbTenGiay.Texts);
+                var ccDeGiay = _ChieuCaoDeGiay.GetAll().FirstOrDefault(c => c.KichCo == int.Parse(_rjcmbCCDeGiay.Texts));
+                bool thongbao = _ChiTietGiay.Add(new ChiTietGiay()
+                {
+                    Id = Guid.NewGuid(),
+                    IdMauSac = mausac.Id,
+                    IdNsx = nsx.Id,
+                    IdSize = size.Id,
+                    IdHangGiay = hanggiay.Id,
+                    IdChieuCaoDeGiay = ccDeGiay.Id,
+                    IdGiay = giay.Id,
+                    MoTa = _rtbxMota.Text,
+                    GiaBan = int.Parse(_rjtbxGiaBan.Texts),
+                    GiaNhap = int.Parse(_rjtbxGiaNhap.Texts),
+                    SoLuongTon = int.Parse(_rjtbxSoLuongTon.Texts),
+                    TrangThai = 1
+                });
+
+                if (hoi == DialogResult.Yes)
+                {
+                    if (thongbao)
+                    {
+                        MessageBox.Show("Thêm Thành Công");
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm Thất Bại");
+                    }
+                }
+            }
         }
 
         private void _dgrvThongTinSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -644,7 +662,7 @@ namespace C_GUI.Views
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Export Excel";
-            saveFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            saveFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003(*.xls)|*.xls";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -693,5 +711,12 @@ namespace C_GUI.Views
 
         }
 
+        private void _rjtbxGiaNhap__TextChanged(object sender, EventArgs e)
+        {
+            if (_rjtbxGiaNhap==null)
+            {
+                MessageBox.Show("Không Được Để Trống");
+            }
+        }
     }
 }

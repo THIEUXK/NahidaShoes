@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using A_DAL.Entities;
+﻿using A_DAL.Entities;
 using A_DAL.IRepositories;
 using A_DAL.Repositories;
 using B_BUS.IServices;
@@ -13,12 +8,12 @@ namespace B_BUS.Services
 {
     public class QLDoanhThuNhanVien : IQlDoanhThuServices
     {
-        private IGenericRepository<NhanVien> _nhanvienrp;
-        private IGenericRepository<HoaDon> _HoaDonrp;
-        private List<ViewDoanhThuNhanVien> _lstdoanhthu;
-        private string manv;
+        private readonly IGenericRepository<NhanVien> _nhanvienrp;
+        private readonly IGenericRepository<HoaDon> _HoaDonrp;
+        private readonly List<ViewDoanhThuNhanVien> _lstdoanhthu;
+        private readonly string manv;
         private double tong;
-        private NhanVien _nv;
+        private readonly NhanVien _nv;
         private ViewDoanhThuNhanVien _viewdoanhthu;
         private DateTime? day;
         private DateTime? nam;
@@ -32,14 +27,14 @@ namespace B_BUS.Services
             _nv = new NhanVien();
 
             _lstdoanhthu = new List<ViewDoanhThuNhanVien>();
-            Getlistviewdoanhthu();
+            _ = Getlistviewdoanhthu();
         }
 
         public List<ViewDoanhThuNhanVien> Getlistviewdoanhthu()
         {
             var listcommit = (from a in _nhanvienrp.GetAll()
-                join b in _HoaDonrp.GetAll() on a.Id equals b.IdNhanVien
-                select new { a.MaNhanVien, a.TenNhanVien, b.TongSoTien, b.ThoiGianTao }).ToList();
+                              join b in _HoaDonrp.GetAll() on a.Id equals b.IdNhanVien
+                              select new { a.MaNhanVien, a.TenNhanVien, b.TongSoTien, b.ThoiGianTao }).ToList();
             // Gán giá trị
             foreach (var x in listcommit)
             {
@@ -51,8 +46,8 @@ namespace B_BUS.Services
                 _viewdoanhthu = new ViewDoanhThuNhanVien(manv, x.TenNhanVien, tong, mon, year, x.ThoiGianTao);
                 _lstdoanhthu.Add(_viewdoanhthu);
             }
-            var lisfinal = listcommit.OrderBy(c => c.TongSoTien).GroupBy(c => c.MaNhanVien)
-                .Select(g => new ViewDoanhThuNhanVien(g.Key, g.Where(c => c.MaNhanVien == g.Key).Select(c => c.TenNhanVien).FirstOrDefault(), g.Sum(c => c.TongSoTien), mon, year, g.Where(c => c.MaNhanVien == g.Key).Select(c => c.ThoiGianTao).FirstOrDefault())).ToList();          
+            List<ViewDoanhThuNhanVien> lisfinal = listcommit.OrderBy(c => c.TongSoTien).GroupBy(c => c.MaNhanVien)
+                .Select(g => new ViewDoanhThuNhanVien(g.Key, g.Where(c => c.MaNhanVien == g.Key).Select(c => c.TenNhanVien).FirstOrDefault(), g.Sum(c => c.TongSoTien), mon, year, g.Where(c => c.MaNhanVien == g.Key).Select(c => c.ThoiGianTao).FirstOrDefault())).ToList();
             return lisfinal;
         }
     }

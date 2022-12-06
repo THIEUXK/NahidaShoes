@@ -15,6 +15,8 @@ namespace C_GUI.Views
             loadcbo();
             loadnam();
             loadngay();
+            cmb_ngay.Visible=false;
+            cmb_loc.Visible=false;
         }
 
         public string[] Getnam()
@@ -140,7 +142,7 @@ namespace C_GUI.Views
             }
         }
 
-        //năm
+        //năm   
         void loaddataforlocnam(string nam)
         {
             _dgrv_doanhthu.ColumnCount = 3;
@@ -194,6 +196,11 @@ namespace C_GUI.Views
                 loaddoanhthuforlocall(cmb_ngay.Text, cmb_loc.Text, cmb_nam.Text);
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cmb_nam.SelectedIndex = 0;                             
         }
     }
 }

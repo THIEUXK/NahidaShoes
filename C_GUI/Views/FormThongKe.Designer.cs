@@ -36,6 +36,7 @@
             this.cmb_ngay = new System.Windows.Forms.ComboBox();
             this.cmb_loc = new System.Windows.Forms.ComboBox();
             this.cmb_nam = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrv_doanhthu)).BeginInit();
             this.SuspendLayout();
@@ -117,11 +118,22 @@
             this.cmb_nam.SelectedIndexChanged += new System.EventHandler(this.cmb_nam_OnSelectedIndexChanged);
             this.cmb_nam.RightToLeftChanged += new System.EventHandler(this.cmb_nam_OnSelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(986, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cmb_nam);
             this.Controls.Add(this.cmb_loc);
             this.Controls.Add(this.cmb_ngay);
@@ -147,5 +159,6 @@
         private ComboBox cmb_ngay;
         private ComboBox cmb_loc;
         private ComboBox cmb_nam;
+        private Button button1;
     }
 }

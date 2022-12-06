@@ -256,6 +256,8 @@ namespace C_GUI.Views
             {
                 float giamGia = Convert.ToSingle(_tbxGiamGia.Texts.Trim());
                 float tienKhachDua = Convert.ToSingle(_tbxTienKhachDua.Texts.Trim());
+                float thanhToanOnline = Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim());
+
             }
             catch (Exception)
             {
@@ -407,9 +409,10 @@ namespace C_GUI.Views
             }
             catch (Exception)
             {
-                return;
+                _tbxTienKhachDua.Texts = "0";
             }
-            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
+            _tbxThanhToanOnline.Texts = (Convert.ToSingle(_tbxTongTien.Texts.Trim()) - Convert.ToSingle(_tbxTienKhachDua.Texts.Trim())).ToString();
+            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) + Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
         }
 
         private void _tbxGiamGia__TextChanged(object sender, EventArgs e)
@@ -420,20 +423,17 @@ namespace C_GUI.Views
             }
             catch (Exception)
             {
-                return;
+                _tbxGiamGia.Texts = "0";
             }
             float tongTien = 0;
             foreach (HoaDonChiTiet? item in _qlHoaDonChiTiet.GetAll().Where(c => c.IdHoaDon == idHoaDon))
             {
                 tongTien += item.SoLuong * item.DonGia;
             }
-            tongTien -= Convert.ToSingle(_tbxGiamGia.Texts.Trim());
-            if (tongTien < 0)
-            {
-                tongTien = 0;
-            }
             _tbxTongTien.Texts = tongTien.ToString();
-            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
+            _tbxTongTien.Texts = (Convert.ToSingle(_tbxTongTien.Texts.Trim()) - Convert.ToSingle(_tbxGiamGia.Texts.Trim())).ToString();
+            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) + Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
+            _tbxThanhToanOnline.Texts = (Convert.ToSingle(_tbxTongTien.Texts.Trim()) - Convert.ToSingle(_tbxTienKhachDua.Texts.Trim())).ToString();
         }
 
         private void LocHoaDon()
@@ -530,6 +530,20 @@ namespace C_GUI.Views
         private void _tbxKhachHnag__TextChanged(object sender, EventArgs e)
         {
             LocHoaDon();
+        }
+
+        private void _tbxThanhToanOnline__TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                float thanhToanOnline = Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim());
+            }
+            catch (Exception)
+            {
+                _tbxThanhToanOnline.Texts = "0";
+            }
+            _tbxTienKhachDua.Texts = (Convert.ToSingle(_tbxTongTien.Texts.Trim()) - Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim())).ToString();
+            _tbxTienThua.Texts = (Convert.ToSingle(_tbxTienKhachDua.Texts.Trim()) + Convert.ToSingle(_tbxThanhToanOnline.Texts.Trim()) - Convert.ToSingle(_tbxTongTien.Texts.Trim())).ToString();
         }
     }
 }

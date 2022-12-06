@@ -29,11 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this._lblTheLoaiTang2 = new System.Windows.Forms.Label();
+            this._rtbxMota = new C_GUI.RJControls.RJTextBox();
+            this.btn_giay = new FontAwesome.Sharp.IconButton();
+            this.btn_theloai = new FontAwesome.Sharp.IconButton();
+            this.btn_mausac = new FontAwesome.Sharp.IconButton();
+            this.btn_chieuCaodegiay = new FontAwesome.Sharp.IconButton();
+            this.Btn_hanggiay = new FontAwesome.Sharp.IconButton();
+            this.btn_size = new FontAwesome.Sharp.IconButton();
+            this.btn_nsx = new FontAwesome.Sharp.IconButton();
+            this.sadasd = new System.Windows.Forms.Label();
+            this.cmb_mausac = new C_GUI.RJControls.RJComboBox();
+            this.cmb_theloai = new C_GUI.RJControls.RJComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this._lblTheloaiTang1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this._rtbxMota = new System.Windows.Forms.RichTextBox();
             this._rjtbxSoLuongTon = new C_GUI.RJControls.RJTextBox();
             this._rjtbxGiaBan = new C_GUI.RJControls.RJTextBox();
             this._rjtbxGiaNhap = new C_GUI.RJControls.RJTextBox();
@@ -50,14 +58,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this._rjbtnRemove = new C_GUI.RJControls.RJButton();
+            this._rjbtnEdit = new C_GUI.RJControls.RJButton();
+            this._rjbtnAdd = new C_GUI.RJControls.RJButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this._rjtbxTimKiem = new C_GUI.RJControls.RJTextBox();
             this._dgrvThongTinSanPham = new System.Windows.Forms.DataGridView();
-            this._rjbtnAdd = new C_GUI.RJControls.RJButton();
-            this._rjbtnEdit = new C_GUI.RJControls.RJButton();
-            this._rjbtnRemove = new C_GUI.RJControls.RJButton();
-            this._rjbtnAddtobill = new C_GUI.RJControls.RJButton();
+            this.btn_link = new C_GUI.RJControls.RJButton();
+            this.btn_save = new C_GUI.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrvThongTinSanPham)).BeginInit();
@@ -65,15 +74,19 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this._rjbtnAddtobill);
-            this.groupBox1.Controls.Add(this._rjbtnRemove);
-            this.groupBox1.Controls.Add(this._rjbtnEdit);
-            this.groupBox1.Controls.Add(this._rjbtnAdd);
-            this.groupBox1.Controls.Add(this._lblTheLoaiTang2);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this._lblTheloaiTang1);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this._rtbxMota);
+            this.groupBox1.Controls.Add(this.btn_giay);
+            this.groupBox1.Controls.Add(this.btn_theloai);
+            this.groupBox1.Controls.Add(this.btn_mausac);
+            this.groupBox1.Controls.Add(this.btn_chieuCaodegiay);
+            this.groupBox1.Controls.Add(this.Btn_hanggiay);
+            this.groupBox1.Controls.Add(this.btn_size);
+            this.groupBox1.Controls.Add(this.btn_nsx);
+            this.groupBox1.Controls.Add(this.sadasd);
+            this.groupBox1.Controls.Add(this.cmb_mausac);
+            this.groupBox1.Controls.Add(this.cmb_theloai);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this._rjtbxSoLuongTon);
             this.groupBox1.Controls.Add(this._rjtbxGiaBan);
             this.groupBox1.Controls.Add(this._rjtbxGiaNhap);
@@ -92,58 +105,193 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(608, 662);
+            this.groupBox1.Size = new System.Drawing.Size(981, 356);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi TIết";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // _lblTheLoaiTang2
+            // _rtbxMota
             // 
-            this._lblTheLoaiTang2.AutoSize = true;
-            this._lblTheLoaiTang2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._lblTheLoaiTang2.Location = new System.Drawing.Point(102, 23);
-            this._lblTheLoaiTang2.Name = "_lblTheLoaiTang2";
-            this._lblTheLoaiTang2.Size = new System.Drawing.Size(57, 23);
-            this._lblTheLoaiTang2.TabIndex = 20;
-            this._lblTheLoaiTang2.Text = "Tầng2";
+            this._rtbxMota.BackColor = System.Drawing.SystemColors.Window;
+            this._rtbxMota.BorderColor = System.Drawing.Color.Black;
+            this._rtbxMota.BorderFocusColor = System.Drawing.Color.Red;
+            this._rtbxMota.BorderRadius = 15;
+            this._rtbxMota.BorderSize = 2;
+            this._rtbxMota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._rtbxMota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this._rtbxMota.Location = new System.Drawing.Point(692, 235);
+            this._rtbxMota.Margin = new System.Windows.Forms.Padding(4);
+            this._rtbxMota.MaxLength = 20;
+            this._rtbxMota.Multiline = false;
+            this._rtbxMota.Name = "_rtbxMota";
+            this._rtbxMota.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this._rtbxMota.PasswordChar = false;
+            this._rtbxMota.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this._rtbxMota.PlaceholderText = "";
+            this._rtbxMota.Size = new System.Drawing.Size(215, 35);
+            this._rtbxMota.TabIndex = 36;
+            this._rtbxMota.Texts = "";
+            this._rtbxMota.UnderlinedStyle = false;
+            // 
+            // btn_giay
+            // 
+            this.btn_giay.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_giay.IconColor = System.Drawing.Color.Black;
+            this.btn_giay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_giay.IconSize = 30;
+            this.btn_giay.Location = new System.Drawing.Point(923, 183);
+            this.btn_giay.Name = "btn_giay";
+            this.btn_giay.Size = new System.Drawing.Size(32, 33);
+            this.btn_giay.TabIndex = 35;
+            this.btn_giay.UseVisualStyleBackColor = true;
+            this.btn_giay.Click += new System.EventHandler(this.btn_giay_Click);
+            // 
+            // btn_theloai
+            // 
+            this.btn_theloai.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_theloai.IconColor = System.Drawing.Color.Black;
+            this.btn_theloai.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_theloai.IconSize = 30;
+            this.btn_theloai.Location = new System.Drawing.Point(399, 285);
+            this.btn_theloai.Name = "btn_theloai";
+            this.btn_theloai.Size = new System.Drawing.Size(32, 33);
+            this.btn_theloai.TabIndex = 34;
+            this.btn_theloai.UseVisualStyleBackColor = true;
+            this.btn_theloai.Click += new System.EventHandler(this.btn_theloai_Click);
+            // 
+            // btn_mausac
+            // 
+            this.btn_mausac.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_mausac.IconColor = System.Drawing.Color.Black;
+            this.btn_mausac.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_mausac.IconSize = 30;
+            this.btn_mausac.Location = new System.Drawing.Point(399, 241);
+            this.btn_mausac.Name = "btn_mausac";
+            this.btn_mausac.Size = new System.Drawing.Size(32, 33);
+            this.btn_mausac.TabIndex = 33;
+            this.btn_mausac.UseVisualStyleBackColor = true;
+            this.btn_mausac.Click += new System.EventHandler(this.btn_mausac_Click);
+            // 
+            // btn_chieuCaodegiay
+            // 
+            this.btn_chieuCaodegiay.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_chieuCaodegiay.IconColor = System.Drawing.Color.Black;
+            this.btn_chieuCaodegiay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_chieuCaodegiay.IconSize = 30;
+            this.btn_chieuCaodegiay.Location = new System.Drawing.Point(399, 192);
+            this.btn_chieuCaodegiay.Name = "btn_chieuCaodegiay";
+            this.btn_chieuCaodegiay.Size = new System.Drawing.Size(32, 33);
+            this.btn_chieuCaodegiay.TabIndex = 32;
+            this.btn_chieuCaodegiay.UseVisualStyleBackColor = true;
+            this.btn_chieuCaodegiay.Click += new System.EventHandler(this.btn_chieuCaodegiay_Click);
+            // 
+            // Btn_hanggiay
+            // 
+            this.Btn_hanggiay.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.Btn_hanggiay.IconColor = System.Drawing.Color.Black;
+            this.Btn_hanggiay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_hanggiay.IconSize = 30;
+            this.Btn_hanggiay.Location = new System.Drawing.Point(399, 143);
+            this.Btn_hanggiay.Name = "Btn_hanggiay";
+            this.Btn_hanggiay.Size = new System.Drawing.Size(32, 33);
+            this.Btn_hanggiay.TabIndex = 31;
+            this.Btn_hanggiay.UseVisualStyleBackColor = true;
+            this.Btn_hanggiay.Click += new System.EventHandler(this.Btn_hanggiay_Click);
+            // 
+            // btn_size
+            // 
+            this.btn_size.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_size.IconColor = System.Drawing.Color.Black;
+            this.btn_size.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_size.IconSize = 30;
+            this.btn_size.Location = new System.Drawing.Point(399, 94);
+            this.btn_size.Name = "btn_size";
+            this.btn_size.Size = new System.Drawing.Size(32, 33);
+            this.btn_size.TabIndex = 30;
+            this.btn_size.UseVisualStyleBackColor = true;
+            this.btn_size.Click += new System.EventHandler(this.btn_size_Click);
+            // 
+            // btn_nsx
+            // 
+            this.btn_nsx.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_nsx.IconColor = System.Drawing.Color.Black;
+            this.btn_nsx.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_nsx.IconSize = 30;
+            this.btn_nsx.Location = new System.Drawing.Point(399, 45);
+            this.btn_nsx.Name = "btn_nsx";
+            this.btn_nsx.Size = new System.Drawing.Size(32, 33);
+            this.btn_nsx.TabIndex = 29;
+            this.btn_nsx.UseVisualStyleBackColor = true;
+            this.btn_nsx.Click += new System.EventHandler(this.btn_nsx_Click);
+            // 
+            // sadasd
+            // 
+            this.sadasd.AutoSize = true;
+            this.sadasd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sadasd.Location = new System.Drawing.Point(7, 241);
+            this.sadasd.Name = "sadasd";
+            this.sadasd.Size = new System.Drawing.Size(75, 23);
+            this.sadasd.TabIndex = 28;
+            this.sadasd.Text = "Màu Sắc";
+            // 
+            // cmb_mausac
+            // 
+            this.cmb_mausac.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmb_mausac.BorderColor = System.Drawing.SystemColors.Desktop;
+            this.cmb_mausac.BorderSize = 1;
+            this.cmb_mausac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmb_mausac.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_mausac.ForeColor = System.Drawing.Color.DimGray;
+            this.cmb_mausac.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmb_mausac.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmb_mausac.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmb_mausac.Location = new System.Drawing.Point(178, 237);
+            this.cmb_mausac.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmb_mausac.Name = "cmb_mausac";
+            this.cmb_mausac.Padding = new System.Windows.Forms.Padding(1);
+            this.cmb_mausac.Size = new System.Drawing.Size(215, 33);
+            this.cmb_mausac.TabIndex = 27;
+            this.cmb_mausac.Texts = "";
+            // 
+            // cmb_theloai
+            // 
+            this.cmb_theloai.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmb_theloai.BorderColor = System.Drawing.SystemColors.Desktop;
+            this.cmb_theloai.BorderSize = 1;
+            this.cmb_theloai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmb_theloai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_theloai.ForeColor = System.Drawing.Color.DimGray;
+            this.cmb_theloai.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmb_theloai.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmb_theloai.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmb_theloai.Location = new System.Drawing.Point(178, 285);
+            this.cmb_theloai.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmb_theloai.Name = "cmb_theloai";
+            this.cmb_theloai.Padding = new System.Windows.Forms.Padding(1);
+            this.cmb_theloai.Size = new System.Drawing.Size(215, 33);
+            this.cmb_theloai.TabIndex = 26;
+            this.cmb_theloai.Texts = "";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(73, 23);
+            this.label10.Location = new System.Drawing.Point(7, 290);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(22, 23);
-            this.label10.TabIndex = 19;
-            this.label10.Text = ">";
-            // 
-            // _lblTheloaiTang1
-            // 
-            this._lblTheloaiTang1.AutoSize = true;
-            this._lblTheloaiTang1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._lblTheloaiTang1.Location = new System.Drawing.Point(10, 23);
-            this._lblTheloaiTang1.Name = "_lblTheloaiTang1";
-            this._lblTheloaiTang1.Size = new System.Drawing.Size(57, 23);
-            this._lblTheloaiTang1.TabIndex = 18;
-            this._lblTheloaiTang1.Text = "Tầng1";
+            this.label10.Size = new System.Drawing.Size(74, 23);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Thể Loại";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(0, 536);
+            this.label9.Location = new System.Drawing.Point(521, 235);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 23);
             this.label9.TabIndex = 17;
             this.label9.Text = "Mô tả";
-            // 
-            // _rtbxMota
-            // 
-            this._rtbxMota.Location = new System.Drawing.Point(178, 536);
-            this._rtbxMota.Name = "_rtbxMota";
-            this._rtbxMota.Size = new System.Drawing.Size(215, 120);
-            this._rtbxMota.TabIndex = 16;
-            this._rtbxMota.Text = "";
             // 
             // _rjtbxSoLuongTon
             // 
@@ -154,7 +302,7 @@
             this._rjtbxSoLuongTon.BorderSize = 2;
             this._rjtbxSoLuongTon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rjtbxSoLuongTon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxSoLuongTon.Location = new System.Drawing.Point(178, 417);
+            this._rjtbxSoLuongTon.Location = new System.Drawing.Point(692, 133);
             this._rjtbxSoLuongTon.Margin = new System.Windows.Forms.Padding(4);
             this._rjtbxSoLuongTon.MaxLength = 20;
             this._rjtbxSoLuongTon.Multiline = false;
@@ -177,7 +325,7 @@
             this._rjtbxGiaBan.BorderSize = 2;
             this._rjtbxGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rjtbxGiaBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxGiaBan.Location = new System.Drawing.Point(178, 365);
+            this._rjtbxGiaBan.Location = new System.Drawing.Point(692, 83);
             this._rjtbxGiaBan.Margin = new System.Windows.Forms.Padding(4);
             this._rjtbxGiaBan.MaxLength = 20;
             this._rjtbxGiaBan.Multiline = false;
@@ -200,7 +348,7 @@
             this._rjtbxGiaNhap.BorderSize = 2;
             this._rjtbxGiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rjtbxGiaNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxGiaNhap.Location = new System.Drawing.Point(178, 313);
+            this._rjtbxGiaNhap.Location = new System.Drawing.Point(692, 33);
             this._rjtbxGiaNhap.Margin = new System.Windows.Forms.Padding(4);
             this._rjtbxGiaNhap.MaxLength = 20;
             this._rjtbxGiaNhap.Multiline = false;
@@ -225,7 +373,7 @@
             this._rjcmbCCDeGiay.IconColor = System.Drawing.Color.MediumSlateBlue;
             this._rjcmbCCDeGiay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbCCDeGiay.ListTextColor = System.Drawing.Color.DimGray;
-            this._rjcmbCCDeGiay.Location = new System.Drawing.Point(178, 261);
+            this._rjcmbCCDeGiay.Location = new System.Drawing.Point(178, 189);
             this._rjcmbCCDeGiay.MinimumSize = new System.Drawing.Size(200, 30);
             this._rjcmbCCDeGiay.Name = "_rjcmbCCDeGiay";
             this._rjcmbCCDeGiay.Padding = new System.Windows.Forms.Padding(1);
@@ -244,7 +392,7 @@
             this._rjcmbHangGiay.IconColor = System.Drawing.Color.MediumSlateBlue;
             this._rjcmbHangGiay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbHangGiay.ListTextColor = System.Drawing.Color.DimGray;
-            this._rjcmbHangGiay.Location = new System.Drawing.Point(178, 209);
+            this._rjcmbHangGiay.Location = new System.Drawing.Point(178, 141);
             this._rjcmbHangGiay.MinimumSize = new System.Drawing.Size(200, 30);
             this._rjcmbHangGiay.Name = "_rjcmbHangGiay";
             this._rjcmbHangGiay.Padding = new System.Windows.Forms.Padding(1);
@@ -263,7 +411,7 @@
             this._rjcmbSize.IconColor = System.Drawing.Color.MediumSlateBlue;
             this._rjcmbSize.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbSize.ListTextColor = System.Drawing.Color.DimGray;
-            this._rjcmbSize.Location = new System.Drawing.Point(178, 157);
+            this._rjcmbSize.Location = new System.Drawing.Point(178, 93);
             this._rjcmbSize.MinimumSize = new System.Drawing.Size(200, 30);
             this._rjcmbSize.Name = "_rjcmbSize";
             this._rjcmbSize.Padding = new System.Windows.Forms.Padding(1);
@@ -282,7 +430,7 @@
             this._rjcmbNSX.IconColor = System.Drawing.Color.MediumSlateBlue;
             this._rjcmbNSX.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbNSX.ListTextColor = System.Drawing.Color.DimGray;
-            this._rjcmbNSX.Location = new System.Drawing.Point(178, 105);
+            this._rjcmbNSX.Location = new System.Drawing.Point(178, 45);
             this._rjcmbNSX.MinimumSize = new System.Drawing.Size(200, 30);
             this._rjcmbNSX.Name = "_rjcmbNSX";
             this._rjcmbNSX.Padding = new System.Windows.Forms.Padding(1);
@@ -301,7 +449,7 @@
             this._rjcmbTenGiay.IconColor = System.Drawing.Color.MediumSlateBlue;
             this._rjcmbTenGiay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbTenGiay.ListTextColor = System.Drawing.Color.DimGray;
-            this._rjcmbTenGiay.Location = new System.Drawing.Point(178, 469);
+            this._rjcmbTenGiay.Location = new System.Drawing.Point(692, 183);
             this._rjcmbTenGiay.MinimumSize = new System.Drawing.Size(200, 30);
             this._rjcmbTenGiay.Name = "_rjcmbTenGiay";
             this._rjcmbTenGiay.Padding = new System.Windows.Forms.Padding(1);
@@ -313,7 +461,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(6, 313);
+            this.label8.Location = new System.Drawing.Point(521, 39);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 23);
             this.label8.TabIndex = 7;
@@ -323,7 +471,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(6, 417);
+            this.label7.Location = new System.Drawing.Point(521, 137);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 23);
             this.label7.TabIndex = 6;
@@ -333,7 +481,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(6, 365);
+            this.label6.Location = new System.Drawing.Point(521, 88);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 23);
             this.label6.TabIndex = 5;
@@ -343,7 +491,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 261);
+            this.label5.Location = new System.Drawing.Point(7, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 23);
             this.label5.TabIndex = 4;
@@ -353,7 +501,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 209);
+            this.label4.Location = new System.Drawing.Point(7, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 23);
             this.label4.TabIndex = 3;
@@ -363,7 +511,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 157);
+            this.label3.Location = new System.Drawing.Point(7, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 23);
             this.label3.TabIndex = 2;
@@ -373,7 +521,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(6, 105);
+            this.label2.Location = new System.Drawing.Point(7, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 23);
             this.label2.TabIndex = 1;
@@ -383,20 +531,80 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 469);
+            this.label1.Location = new System.Drawing.Point(521, 186);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Giày";
+            // 
+            // _rjbtnRemove
+            // 
+            this._rjbtnRemove.BackColor = System.Drawing.Color.Turquoise;
+            this._rjbtnRemove.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._rjbtnRemove.BorderColor = System.Drawing.Color.Black;
+            this._rjbtnRemove.BorderRadius = 15;
+            this._rjbtnRemove.BorderSize = 2;
+            this._rjbtnRemove.FlatAppearance.BorderSize = 0;
+            this._rjbtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._rjbtnRemove.ForeColor = System.Drawing.Color.Black;
+            this._rjbtnRemove.Location = new System.Drawing.Point(1018, 133);
+            this._rjbtnRemove.Name = "_rjbtnRemove";
+            this._rjbtnRemove.Size = new System.Drawing.Size(162, 39);
+            this._rjbtnRemove.SizeImage = new System.Drawing.Size(20, 20);
+            this._rjbtnRemove.TabIndex = 23;
+            this._rjbtnRemove.Text = "Remove";
+            this._rjbtnRemove.TextColor = System.Drawing.Color.Black;
+            this._rjbtnRemove.UseVisualStyleBackColor = false;
+            this._rjbtnRemove.Click += new System.EventHandler(this._rjbtnRemove_Click);
+            // 
+            // _rjbtnEdit
+            // 
+            this._rjbtnEdit.BackColor = System.Drawing.Color.Turquoise;
+            this._rjbtnEdit.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._rjbtnEdit.BorderColor = System.Drawing.Color.Black;
+            this._rjbtnEdit.BorderRadius = 15;
+            this._rjbtnEdit.BorderSize = 2;
+            this._rjbtnEdit.FlatAppearance.BorderSize = 0;
+            this._rjbtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._rjbtnEdit.ForeColor = System.Drawing.Color.Black;
+            this._rjbtnEdit.Location = new System.Drawing.Point(1018, 77);
+            this._rjbtnEdit.Name = "_rjbtnEdit";
+            this._rjbtnEdit.Size = new System.Drawing.Size(162, 39);
+            this._rjbtnEdit.SizeImage = new System.Drawing.Size(20, 20);
+            this._rjbtnEdit.TabIndex = 22;
+            this._rjbtnEdit.Text = "Edit";
+            this._rjbtnEdit.TextColor = System.Drawing.Color.Black;
+            this._rjbtnEdit.UseVisualStyleBackColor = false;
+            this._rjbtnEdit.Click += new System.EventHandler(this._rjbtnEdit_Click);
+            // 
+            // _rjbtnAdd
+            // 
+            this._rjbtnAdd.BackColor = System.Drawing.Color.Turquoise;
+            this._rjbtnAdd.BackgroundColor = System.Drawing.Color.Turquoise;
+            this._rjbtnAdd.BorderColor = System.Drawing.Color.Black;
+            this._rjbtnAdd.BorderRadius = 15;
+            this._rjbtnAdd.BorderSize = 2;
+            this._rjbtnAdd.FlatAppearance.BorderSize = 0;
+            this._rjbtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._rjbtnAdd.ForeColor = System.Drawing.Color.Black;
+            this._rjbtnAdd.Location = new System.Drawing.Point(1018, 21);
+            this._rjbtnAdd.Name = "_rjbtnAdd";
+            this._rjbtnAdd.Size = new System.Drawing.Size(162, 39);
+            this._rjbtnAdd.SizeImage = new System.Drawing.Size(20, 20);
+            this._rjbtnAdd.TabIndex = 21;
+            this._rjbtnAdd.Text = "Add";
+            this._rjbtnAdd.TextColor = System.Drawing.Color.Black;
+            this._rjbtnAdd.UseVisualStyleBackColor = false;
+            this._rjbtnAdd.Click += new System.EventHandler(this._rjbtnAdd_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this._rjtbxTimKiem);
             this.groupBox2.Controls.Add(this._dgrvThongTinSanPham);
-            this.groupBox2.Location = new System.Drawing.Point(673, 21);
+            this.groupBox2.Location = new System.Drawing.Point(19, 408);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(590, 662);
+            this.groupBox2.Size = new System.Drawing.Size(1107, 341);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Sản Phẩm";
@@ -405,7 +613,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(113, 35);
+            this.label11.Location = new System.Drawing.Point(18, 35);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(119, 35);
             this.label11.TabIndex = 21;
@@ -420,7 +628,7 @@
             this._rjtbxTimKiem.BorderSize = 2;
             this._rjtbxTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rjtbxTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxTimKiem.Location = new System.Drawing.Point(249, 35);
+            this._rjtbxTimKiem.Location = new System.Drawing.Point(155, 35);
             this._rjtbxTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this._rjtbxTimKiem.MaxLength = 20;
             this._rjtbxTimKiem.Multiline = false;
@@ -438,96 +646,66 @@
             // _dgrvThongTinSanPham
             // 
             this._dgrvThongTinSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._dgrvThongTinSanPham.Location = new System.Drawing.Point(15, 88);
+            this._dgrvThongTinSanPham.Location = new System.Drawing.Point(18, 86);
             this._dgrvThongTinSanPham.Name = "_dgrvThongTinSanPham";
             this._dgrvThongTinSanPham.RowHeadersWidth = 51;
             this._dgrvThongTinSanPham.RowTemplate.Height = 29;
-            this._dgrvThongTinSanPham.Size = new System.Drawing.Size(558, 568);
+            this._dgrvThongTinSanPham.Size = new System.Drawing.Size(1034, 216);
             this._dgrvThongTinSanPham.TabIndex = 0;
+            this._dgrvThongTinSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._dgrvThongTinSanPham_CellContentClick);
             // 
-            // _rjbtnAdd
+            // btn_link
             // 
-            this._rjbtnAdd.BackColor = System.Drawing.Color.Turquoise;
-            this._rjbtnAdd.BackgroundColor = System.Drawing.Color.Turquoise;
-            this._rjbtnAdd.BorderColor = System.Drawing.Color.Black;
-            this._rjbtnAdd.BorderRadius = 15;
-            this._rjbtnAdd.BorderSize = 2;
-            this._rjbtnAdd.FlatAppearance.BorderSize = 0;
-            this._rjbtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._rjbtnAdd.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnAdd.Location = new System.Drawing.Point(429, 417);
-            this._rjbtnAdd.Name = "_rjbtnAdd";
-            this._rjbtnAdd.Size = new System.Drawing.Size(173, 39);
-            this._rjbtnAdd.SizeImage = new System.Drawing.Size(20, 20);
-            this._rjbtnAdd.TabIndex = 21;
-            this._rjbtnAdd.Text = "Add";
-            this._rjbtnAdd.TextColor = System.Drawing.Color.Black;
-            this._rjbtnAdd.UseVisualStyleBackColor = false;
+            this.btn_link.BackColor = System.Drawing.Color.Turquoise;
+            this.btn_link.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.btn_link.BorderColor = System.Drawing.Color.Black;
+            this.btn_link.BorderRadius = 15;
+            this.btn_link.BorderSize = 2;
+            this.btn_link.FlatAppearance.BorderSize = 0;
+            this.btn_link.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_link.ForeColor = System.Drawing.Color.Black;
+            this.btn_link.Location = new System.Drawing.Point(1018, 189);
+            this.btn_link.Name = "btn_link";
+            this.btn_link.Size = new System.Drawing.Size(162, 39);
+            this.btn_link.SizeImage = new System.Drawing.Size(20, 20);
+            this.btn_link.TabIndex = 24;
+            this.btn_link.Text = "LinkExcel";
+            this.btn_link.TextColor = System.Drawing.Color.Black;
+            this.btn_link.UseVisualStyleBackColor = false;
+            this.btn_link.Click += new System.EventHandler(this.btn_link_Click);
             // 
-            // _rjbtnEdit
+            // btn_save
             // 
-            this._rjbtnEdit.BackColor = System.Drawing.Color.Turquoise;
-            this._rjbtnEdit.BackgroundColor = System.Drawing.Color.Turquoise;
-            this._rjbtnEdit.BorderColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.BorderRadius = 15;
-            this._rjbtnEdit.BorderSize = 2;
-            this._rjbtnEdit.FlatAppearance.BorderSize = 0;
-            this._rjbtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._rjbtnEdit.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.Location = new System.Drawing.Point(429, 469);
-            this._rjbtnEdit.Name = "_rjbtnEdit";
-            this._rjbtnEdit.Size = new System.Drawing.Size(173, 39);
-            this._rjbtnEdit.SizeImage = new System.Drawing.Size(20, 20);
-            this._rjbtnEdit.TabIndex = 22;
-            this._rjbtnEdit.Text = "Edit";
-            this._rjbtnEdit.TextColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.UseVisualStyleBackColor = false;
-            // 
-            // _rjbtnRemove
-            // 
-            this._rjbtnRemove.BackColor = System.Drawing.Color.Turquoise;
-            this._rjbtnRemove.BackgroundColor = System.Drawing.Color.Turquoise;
-            this._rjbtnRemove.BorderColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.BorderRadius = 15;
-            this._rjbtnRemove.BorderSize = 2;
-            this._rjbtnRemove.FlatAppearance.BorderSize = 0;
-            this._rjbtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._rjbtnRemove.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.Location = new System.Drawing.Point(429, 529);
-            this._rjbtnRemove.Name = "_rjbtnRemove";
-            this._rjbtnRemove.Size = new System.Drawing.Size(173, 39);
-            this._rjbtnRemove.SizeImage = new System.Drawing.Size(20, 20);
-            this._rjbtnRemove.TabIndex = 23;
-            this._rjbtnRemove.Text = "Remove";
-            this._rjbtnRemove.TextColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.UseVisualStyleBackColor = false;
-            // 
-            // _rjbtnAddtobill
-            // 
-            this._rjbtnAddtobill.BackColor = System.Drawing.Color.Turquoise;
-            this._rjbtnAddtobill.BackgroundColor = System.Drawing.Color.Turquoise;
-            this._rjbtnAddtobill.BorderColor = System.Drawing.Color.Black;
-            this._rjbtnAddtobill.BorderRadius = 15;
-            this._rjbtnAddtobill.BorderSize = 2;
-            this._rjbtnAddtobill.FlatAppearance.BorderSize = 0;
-            this._rjbtnAddtobill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._rjbtnAddtobill.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnAddtobill.Location = new System.Drawing.Point(429, 584);
-            this._rjbtnAddtobill.Name = "_rjbtnAddtobill";
-            this._rjbtnAddtobill.Size = new System.Drawing.Size(173, 39);
-            this._rjbtnAddtobill.SizeImage = new System.Drawing.Size(20, 20);
-            this._rjbtnAddtobill.TabIndex = 24;
-            this._rjbtnAddtobill.Text = "Add to bill";
-            this._rjbtnAddtobill.TextColor = System.Drawing.Color.Black;
-            this._rjbtnAddtobill.UseVisualStyleBackColor = false;
+            this.btn_save.BackColor = System.Drawing.Color.Turquoise;
+            this.btn_save.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.btn_save.BorderColor = System.Drawing.Color.Black;
+            this.btn_save.BorderRadius = 15;
+            this.btn_save.BorderSize = 2;
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.ForeColor = System.Drawing.Color.Black;
+            this.btn_save.Location = new System.Drawing.Point(1018, 246);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(162, 39);
+            this.btn_save.SizeImage = new System.Drawing.Size(20, 20);
+            this.btn_save.TabIndex = 26;
+            this.btn_save.Text = "Save";
+            this.btn_save.TextColor = System.Drawing.Color.Black;
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1336, 750);
+            this.ClientSize = new System.Drawing.Size(1445, 750);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btn_link);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this._rjbtnEdit);
+            this.Controls.Add(this._rjbtnRemove);
+            this.Controls.Add(this._rjbtnAdd);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormSanPham";
             this.Text = "FormSanPham";
@@ -543,11 +721,7 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Label _lblTheLoaiTang2;
-        private Label label10;
-        private Label _lblTheloaiTang1;
         private Label label9;
-        private RichTextBox _rtbxMota;
         private RJControls.RJTextBox _rjtbxSoLuongTon;
         private RJControls.RJTextBox _rjtbxGiaBan;
         private RJControls.RJTextBox _rjtbxGiaNhap;
@@ -568,9 +742,22 @@
         private Label label11;
         private RJControls.RJTextBox _rjtbxTimKiem;
         private DataGridView _dgrvThongTinSanPham;
-        private RJControls.RJButton _rjbtnAddtobill;
         private RJControls.RJButton _rjbtnRemove;
         private RJControls.RJButton _rjbtnEdit;
         private RJControls.RJButton _rjbtnAdd;
+        private RJControls.RJComboBox cmb_theloai;
+        private Label label10;
+        private Label sadasd;
+        private RJControls.RJComboBox cmb_mausac;
+        private FontAwesome.Sharp.IconButton btn_giay;
+        private FontAwesome.Sharp.IconButton btn_theloai;
+        private FontAwesome.Sharp.IconButton btn_mausac;
+        private FontAwesome.Sharp.IconButton btn_chieuCaodegiay;
+        private FontAwesome.Sharp.IconButton Btn_hanggiay;
+        private FontAwesome.Sharp.IconButton btn_size;
+        private FontAwesome.Sharp.IconButton btn_nsx;
+        private RJControls.RJButton btn_link;
+        private RJControls.RJTextBox _rtbxMota;
+        private RJControls.RJButton btn_save;
     }
 }

@@ -79,6 +79,7 @@ namespace C_GUI.QLForm
             }
         }
        
+
         public void LoadDataSale(List<ChiTietSaleView> chiTietSaleViews)
         {
             int stt = 1;
@@ -235,7 +236,7 @@ namespace C_GUI.QLForm
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_IQlSale.GetAllView().Where(c => (c.Sale.TenChuongTrinh.ToLower().Contains(txt_timkiem.Texts.ToLower())  || c.Sale.MaGiamGia.ToLower().Contains(txt_timkiem.Texts.ToLower()) || string.Format(c.Sale.PhanTramGiamGia.ToString()) == (txt_ptgiam.Texts) || string.Format(c.Sale.SoTiemGiamGia.ToString()) == (txt_sotiengiam.Texts))).ToList());
+            LoadData(_IQlSale.GetAllView().Where(c => (c.Sale.TenChuongTrinh.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Sale.MaGiamGia.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
         }
         public ChiTietSale GetvaluaControSALE()
         {
@@ -318,7 +319,7 @@ namespace C_GUI.QLForm
 
         private void rjComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            //LoadDataSale2(_IQlChiTietSale.GetAllView().Where(c => (c.Sale.TenChuongTrinh.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Sale.MaGiamGia.ToLower().Contains(txt_timkiem.Texts.ToLower()) || string.Format(c.Sale.PhanTramGiamGia.ToString()) == (txt_ptgiam.Texts) || string.Format(c.Sale.SoTiemGiamGia.ToString()) == (txt_sotiengiam.Texts))).ToList());
+            LoadData(_IQlSale.GetAllView().Where(c => c.Sale.TrangThai==(txt_timkiem.Texts=="hoat dong"?0:1)).ToList());
         }
 
         private void txt_timkiemsale__TextChanged(object sender, EventArgs e)
@@ -330,6 +331,13 @@ namespace C_GUI.QLForm
         private void dgrid_showsanpham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_giay_Click(object sender, EventArgs e)
+        {
+            FormGiay formGiay = new FormGiay();
+            formGiay.Show();
+            Loadcmb();
         }
     }
 }

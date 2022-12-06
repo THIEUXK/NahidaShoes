@@ -66,6 +66,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_giay = new C_GUI.RJControls.RJComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btn_giay = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.a.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_showsanpham)).BeginInit();
@@ -359,12 +360,12 @@
             // 
             this.dgrid_showsanpham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrid_showsanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_showsanpham.Location = new System.Drawing.Point(326, 587);
+            this.dgrid_showsanpham.Location = new System.Drawing.Point(354, 587);
             this.dgrid_showsanpham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgrid_showsanpham.Name = "dgrid_showsanpham";
             this.dgrid_showsanpham.RowHeadersWidth = 51;
             this.dgrid_showsanpham.RowTemplate.Height = 29;
-            this.dgrid_showsanpham.Size = new System.Drawing.Size(943, 192);
+            this.dgrid_showsanpham.Size = new System.Drawing.Size(915, 192);
             this.dgrid_showsanpham.TabIndex = 56;
             this.dgrid_showsanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_showsanpham_CellContentClick);
             // 
@@ -484,12 +485,12 @@
             // 
             this.dgrid_SALE.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrid_SALE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_SALE.Location = new System.Drawing.Point(326, 413);
+            this.dgrid_SALE.Location = new System.Drawing.Point(354, 413);
             this.dgrid_SALE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgrid_SALE.Name = "dgrid_SALE";
             this.dgrid_SALE.RowHeadersWidth = 51;
             this.dgrid_SALE.RowTemplate.Height = 29;
-            this.dgrid_SALE.Size = new System.Drawing.Size(943, 160);
+            this.dgrid_SALE.Size = new System.Drawing.Size(915, 160);
             this.dgrid_SALE.TabIndex = 39;
             this.dgrid_SALE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_SALE_CellContentClick);
             // 
@@ -563,6 +564,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Controls.Add(this.btn_giay);
             this.panel2.Controls.Add(this.btn_suasale);
             this.panel2.Controls.Add(this.btn_themsale);
             this.panel2.Controls.Add(this.btn_xoasale);
@@ -572,7 +574,7 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Location = new System.Drawing.Point(29, 413);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(291, 376);
+            this.panel2.Size = new System.Drawing.Size(323, 376);
             this.panel2.TabIndex = 47;
             // 
             // btn_suasale
@@ -699,6 +701,20 @@
             this.label9.TabIndex = 42;
             this.label9.Text = "Tên Sale";
             // 
+            // btn_giay
+            // 
+            this.btn_giay.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_giay.IconColor = System.Drawing.Color.Black;
+            this.btn_giay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_giay.IconSize = 30;
+            this.btn_giay.Location = new System.Drawing.Point(287, 92);
+            this.btn_giay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_giay.Name = "btn_giay";
+            this.btn_giay.Size = new System.Drawing.Size(28, 25);
+            this.btn_giay.TabIndex = 57;
+            this.btn_giay.UseVisualStyleBackColor = true;
+            this.btn_giay.Click += new System.EventHandler(this.btn_giay_Click);
+            // 
             // FormSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -760,5 +776,6 @@
         private RJControls.RJButton btn_xoasale;
         private DataGridView dgrid_showsanpham;
         private RJControls.RJComboBox cbb_trangthai;
+        private FontAwesome.Sharp.IconButton btn_giay;
     }
 }

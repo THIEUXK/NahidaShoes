@@ -35,7 +35,6 @@
             this._cbxTimKiemMauSac = new C_GUI.RJControls.RJComboBox();
             this._cbxTimKiemTenGiay = new C_GUI.RJControls.RJComboBox();
             this._lsvShowSanPham = new System.Windows.Forms.ListView();
-            this.Id = new System.Windows.Forms.ColumnHeader();
             this.TenGiay = new System.Windows.Forms.ColumnHeader();
             this.MauSac = new System.Windows.Forms.ColumnHeader();
             this.HangGiay = new System.Windows.Forms.ColumnHeader();
@@ -45,6 +44,7 @@
             this.GiaBan = new System.Windows.Forms.ColumnHeader();
             this.SoLuongTon = new System.Windows.Forms.ColumnHeader();
             this.MoTa = new System.Windows.Forms.ColumnHeader();
+            this.Id = new System.Windows.Forms.ColumnHeader();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this._cbxTimKiemGioHang = new C_GUI.RJControls.RJComboBox();
             this._lsvGioHang = new System.Windows.Forms.ListView();
@@ -66,6 +66,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this._btnTaoHoaDon = new C_GUI.RJControls.RJButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this._cbxPhuongThucThanhToan = new C_GUI.RJControls.RJComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this._tbxThanhToanOnline = new C_GUI.RJControls.RJTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this._tbxCMND = new C_GUI.RJControls.RJTextBox();
@@ -257,11 +259,6 @@
             this._lsvShowSanPham.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this._lsvShowSanPham_ColumnClick);
             this._lsvShowSanPham.DoubleClick += new System.EventHandler(this._lsvShowSanPham_DoubleClick);
             // 
-            // Id
-            // 
-            this.Id.Text = "Id";
-            this.Id.Width = 0;
-            // 
             // TenGiay
             // 
             this.TenGiay.Text = "Tên Giày";
@@ -315,6 +312,11 @@
             this.MoTa.Text = "Mô Tả";
             this.MoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MoTa.Width = 365;
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            this.Id.Width = 0;
             // 
             // groupBox2
             // 
@@ -553,6 +555,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this._cbxPhuongThucThanhToan);
+            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this._tbxThanhToanOnline);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this._tbxCMND);
@@ -593,6 +597,40 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin";
+            // 
+            // _cbxPhuongThucThanhToan
+            // 
+            this._cbxPhuongThucThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this._cbxPhuongThucThanhToan.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this._cbxPhuongThucThanhToan.BorderSize = 1;
+            this._cbxPhuongThucThanhToan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this._cbxPhuongThucThanhToan.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cbxPhuongThucThanhToan.ForeColor = System.Drawing.Color.DimGray;
+            this._cbxPhuongThucThanhToan.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this._cbxPhuongThucThanhToan.Items.AddRange(new object[] {
+            "Thanh toán online và tiền mặt",
+            "Thanh toán tiền mặt",
+            "Thanh toán online"});
+            this._cbxPhuongThucThanhToan.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this._cbxPhuongThucThanhToan.ListTextColor = System.Drawing.Color.DimGray;
+            this._cbxPhuongThucThanhToan.Location = new System.Drawing.Point(165, 697);
+            this._cbxPhuongThucThanhToan.MinimumSize = new System.Drawing.Size(200, 30);
+            this._cbxPhuongThucThanhToan.Name = "_cbxPhuongThucThanhToan";
+            this._cbxPhuongThucThanhToan.Padding = new System.Windows.Forms.Padding(1);
+            this._cbxPhuongThucThanhToan.Size = new System.Drawing.Size(237, 30);
+            this._cbxPhuongThucThanhToan.TabIndex = 9;
+            this._cbxPhuongThucThanhToan.Texts = "";
+            this._cbxPhuongThucThanhToan.OnSelectedIndexChanged += new System.EventHandler(this._cbxPhuongThucThanhToan_OnSelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(6, 706);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(127, 21);
+            this.label15.TabIndex = 71;
+            this.label15.Text = "Thanh toán bằng";
             // 
             // _tbxThanhToanOnline
             // 
@@ -816,7 +854,7 @@
             this._btnHuyHoaDon.FlatAppearance.BorderSize = 0;
             this._btnHuyHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnHuyHoaDon.ForeColor = System.Drawing.Color.Black;
-            this._btnHuyHoaDon.Location = new System.Drawing.Point(6, 729);
+            this._btnHuyHoaDon.Location = new System.Drawing.Point(10, 765);
             this._btnHuyHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._btnHuyHoaDon.Name = "_btnHuyHoaDon";
             this._btnHuyHoaDon.Size = new System.Drawing.Size(396, 29);
@@ -1040,7 +1078,7 @@
             this._btnShipHang.FlatAppearance.BorderSize = 0;
             this._btnShipHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnShipHang.ForeColor = System.Drawing.Color.Black;
-            this._btnShipHang.Location = new System.Drawing.Point(249, 696);
+            this._btnShipHang.Location = new System.Drawing.Point(253, 732);
             this._btnShipHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._btnShipHang.Name = "_btnShipHang";
             this._btnShipHang.Size = new System.Drawing.Size(150, 29);
@@ -1093,7 +1131,7 @@
             this._btnThanhToan.FlatAppearance.BorderSize = 0;
             this._btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnThanhToan.ForeColor = System.Drawing.Color.Black;
-            this._btnThanhToan.Location = new System.Drawing.Point(6, 696);
+            this._btnThanhToan.Location = new System.Drawing.Point(10, 732);
             this._btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._btnThanhToan.Name = "_btnThanhToan";
             this._btnThanhToan.Size = new System.Drawing.Size(239, 29);
@@ -1196,5 +1234,7 @@
         private RJControls.RJTextBox _tbxThanhToanOnline;
         private Label label14;
         private RJControls.RJComboBox _cbxCheDoXem;
+        private RJControls.RJComboBox _cbxPhuongThucThanhToan;
+        private Label label15;
     }
 }

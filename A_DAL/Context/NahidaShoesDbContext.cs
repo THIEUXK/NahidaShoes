@@ -10,9 +10,9 @@ namespace A_DAL.Context
             base.OnConfiguring(optionsBuilder);
             //Đổi connectionString để connect với co sở dữ liệu của mình
 
-            _ = optionsBuilder.UseSqlServer("Data Source=DESKTOP-1813CVQ\\SQLEXPRESS;Initial Catalog=NahidaShoess;User ID=Ph20260;Password=123456;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            _ = optionsBuilder.UseSqlServer("Data Source=MSI\\SQLEXPRESS;Initial Catalog=NahidaShoes;User ID=thieubvph20221;Password=123456;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
-        protected override void OnModelCreating(ModelBuilder builder)   
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             _ = builder.Entity<ChieuCaoDeGiay>().HasKey(c => c.Id);
             _ = builder.Entity<ChieuCaoDeGiay>().Property(c => c.Id);

@@ -432,11 +432,8 @@
             this.dgrid_SALE.Name = "dgrid_SALE";
             this.dgrid_SALE.RowHeadersWidth = 51;
             this.dgrid_SALE.RowTemplate.Height = 29;
-<<<<<<< HEAD
             this.dgrid_SALE.Size = new System.Drawing.Size(359, 160);
-=======
             this.dgrid_SALE.Size = new System.Drawing.Size(458, 160);
->>>>>>> 0c23dbb0d347f9d24464f525bc1310fe0205095c
             this.dgrid_SALE.TabIndex = 39;
             this.dgrid_SALE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_SALE_CellContentClick);
             // 
@@ -510,7 +507,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-<<<<<<< HEAD
             this.panel2.Controls.Add(this.btn_nsx);
             this.panel2.Controls.Add(this.btn_mausac);
             this.panel2.Controls.Add(this.iconButton2);
@@ -521,11 +517,7 @@
             this.panel2.Controls.Add(this.cmb_nsx);
             this.panel2.Controls.Add(this.cmb_mausac);
             this.panel2.Controls.Add(this.cmb_hanggiay);
-=======
-            this.panel2.Controls.Add(this.rjComboBox3);
-            this.panel2.Controls.Add(this.rjComboBox2);
-            this.panel2.Controls.Add(this.rjComboBox1);
->>>>>>> 0c23dbb0d347f9d24464f525bc1310fe0205095c
+        
             this.panel2.Controls.Add(this.btn_giay);
             this.panel2.Controls.Add(this.btn_suasale);
             this.panel2.Controls.Add(this.btn_themsale);
@@ -706,17 +698,14 @@
             this.btn_suasale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_suasale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_suasale.ForeColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.btn_suasale.Location = new System.Drawing.Point(21, 315);
             this.btn_suasale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_suasale.Name = "btn_suasale";
             this.btn_suasale.Size = new System.Drawing.Size(188, 51);
-=======
             this.btn_suasale.Location = new System.Drawing.Point(5, 324);
             this.btn_suasale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_suasale.Name = "btn_suasale";
             this.btn_suasale.Size = new System.Drawing.Size(170, 42);
->>>>>>> 0c23dbb0d347f9d24464f525bc1310fe0205095c
             this.btn_suasale.SizeImage = new System.Drawing.Size(20, 20);
             this.btn_suasale.TabIndex = 43;
             this.btn_suasale.Text = "Sửa";
@@ -735,17 +724,14 @@
             this.btn_themsale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_themsale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_themsale.ForeColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.btn_themsale.Location = new System.Drawing.Point(21, 262);
             this.btn_themsale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_themsale.Name = "btn_themsale";
             this.btn_themsale.Size = new System.Drawing.Size(284, 49);
-=======
             this.btn_themsale.Location = new System.Drawing.Point(5, 267);
             this.btn_themsale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_themsale.Name = "btn_themsale";
             this.btn_themsale.Size = new System.Drawing.Size(310, 53);
->>>>>>> 0c23dbb0d347f9d24464f525bc1310fe0205095c
             this.btn_themsale.SizeImage = new System.Drawing.Size(20, 20);
             this.btn_themsale.TabIndex = 42;
             this.btn_themsale.Text = "Thêm";
@@ -758,27 +744,21 @@
             this.btn_xoasale.BackColor = System.Drawing.Color.Turquoise;
             this.btn_xoasale.BackgroundColor = System.Drawing.Color.Turquoise;
             this.btn_xoasale.BorderColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.btn_xoasale.BorderRadius = 10;
-=======
             this.btn_xoasale.BorderRadius = 13;
->>>>>>> 0c23dbb0d347f9d24464f525bc1310fe0205095c
             this.btn_xoasale.BorderSize = 2;
             this.btn_xoasale.FlatAppearance.BorderSize = 0;
             this.btn_xoasale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoasale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_xoasale.ForeColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.btn_xoasale.Location = new System.Drawing.Point(215, 315);
             this.btn_xoasale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoasale.Name = "btn_xoasale";
             this.btn_xoasale.Size = new System.Drawing.Size(90, 51);
-=======
             this.btn_xoasale.Location = new System.Drawing.Point(181, 324);
             this.btn_xoasale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoasale.Name = "btn_xoasale";
             this.btn_xoasale.Size = new System.Drawing.Size(134, 42);
->>>>>>> 0c23dbb0d347f9d24464f525bc1310fe0205095c
             this.btn_xoasale.SizeImage = new System.Drawing.Size(20, 20);
             this.btn_xoasale.TabIndex = 44;
             this.btn_xoasale.Text = "Xóa";
@@ -858,60 +838,7 @@
             // 
             // rjComboBox1
             // 
-            this.rjComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox1.BorderSize = 1;
-            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(81, 129);
-            this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox1.Name = "rjComboBox1";
-            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox1.Size = new System.Drawing.Size(200, 31);
-            this.rjComboBox1.TabIndex = 58;
-            this.rjComboBox1.Texts = "";
-            // 
-            // rjComboBox2
-            // 
-            this.rjComboBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox2.BorderSize = 1;
-            this.rjComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox2.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox2.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox2.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox2.Location = new System.Drawing.Point(81, 166);
-            this.rjComboBox2.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox2.Name = "rjComboBox2";
-            this.rjComboBox2.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox2.Size = new System.Drawing.Size(200, 31);
-            this.rjComboBox2.TabIndex = 59;
-            this.rjComboBox2.Texts = "";
-            // 
-            // rjComboBox3
-            // 
-            this.rjComboBox3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox3.BorderSize = 1;
-            this.rjComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox3.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox3.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox3.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox3.Location = new System.Drawing.Point(81, 203);
-            this.rjComboBox3.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox3.Name = "rjComboBox3";
-            this.rjComboBox3.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox3.Size = new System.Drawing.Size(200, 31);
-            this.rjComboBox3.TabIndex = 60;
-            this.rjComboBox3.Texts = "";
+           
             // 
             // FormSale
             // 
@@ -973,7 +900,6 @@
         private DataGridView dgrid_showsanpham;
         private FontAwesome.Sharp.IconButton btn_giay;
         private DataGridView dgrid_SP;
-<<<<<<< HEAD
         private FontAwesome.Sharp.IconButton btn_nsx;
         private FontAwesome.Sharp.IconButton btn_mausac;
         private FontAwesome.Sharp.IconButton iconButton2;
@@ -984,10 +910,8 @@
         private RJControls.RJComboBox cmb_nsx;
         private RJControls.RJComboBox cmb_mausac;
         private RJControls.RJComboBox cmb_hanggiay;
-=======
         private RJControls.RJComboBox rjComboBox3;
         private RJControls.RJComboBox rjComboBox2;
         private RJControls.RJComboBox rjComboBox1;
->>>>>>> 0c23dbb0d347f9d24464f525bc1310fe0205095c
     }
 }

@@ -63,7 +63,7 @@ namespace C_GUI.Views
             {
                 ImageSize = new System.Drawing.Size(75, 75)
             };
-            img.Images.Add(Image.FromFile("O:\\Git\\NahidaShoes\\C_GUI\\Resources\\calendarDark.png"));
+            //img.Images.Add(Image.FromFile("O:\\Git\\NahidaShoes\\C_GUI\\Resources\\calendarDark.png"));
             _lsvShowSanPham.LargeImageList = img;
             foreach (B_BUS.View_Models.ChiTietGiayView item in lstChiTietGiayView)
             {

@@ -223,7 +223,6 @@ namespace C_GUI.Views
                         {
                             donGia = 0;
                         }
-
                         if (hoaDonChiTiet == null)
                         {
                             _ = _qlHoaDonChiTiet.Add(new HoaDonChiTiet() { IdHoaDon = idHoaDon, IdChiTietGiay = idGiay, SoLuong = 1, DonGia = donGia });

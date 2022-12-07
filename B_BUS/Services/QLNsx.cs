@@ -47,7 +47,18 @@ namespace B_BUS.Services
         {
             return !ignsxview.GetAll().Any(c => c.MaNsx == ma);
         }
-
+        public Guid IdNsx(Nsx nsx)
+        {
+            Nsx n = new Nsx()
+            {
+                Id = nsx.Id,
+                MaNsx = nsx.MaNsx,
+                TenNsx = nsx.TenNsx,
+                TrangThai = nsx.TrangThai
+            };
+            if (ignsxview.Add(n)) return n.Id;
+            else return Guid.Empty;             
+        }
         public List<NsxView> GetAllView()
         {
             // getall

@@ -38,6 +38,19 @@ namespace B_BUS.Services
             return _igmausac.GetAll();
         }
 
+        public Guid IdMauSac(MauSac obj)
+        {
+            MauSac x = new MauSac()
+            {
+                Id = obj.Id,
+                MaMauSac = obj.MaMauSac,
+                TenMauSac = obj.TenMauSac,
+                TrangThai = obj.TrangThai
+            };
+            if (_igmausac.Add(x)) return x.Id;
+            else return Guid.Empty;
+        }
+
         public MauSac? GetByMa(string? ma)
         {
             return _igmausac.GetAll().Find(c => c.MaMauSac == ma);

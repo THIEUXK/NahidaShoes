@@ -16,6 +16,8 @@ namespace B_BUS.Services
         public IGenericRepository<HangGiay> igHangGiay;
         public IGenericRepository<ChieuCaoDeGiay> igchieucaodegiay;
         public IGenericRepository<Giay> igGiay;
+        public IGenericRepository<ChiTietSale> igchitietsale;
+        public IGenericRepository<Sale> igsale;
         public QLChiTietGiay()
         {
             igchiTietGiay = new GenericRepository<ChiTietGiay>();
@@ -25,6 +27,8 @@ namespace B_BUS.Services
             igHangGiay = new GenericRepository<HangGiay>();
             igchieucaodegiay = new GenericRepository<ChieuCaoDeGiay>();
             igGiay = new GenericRepository<Giay>();
+            igchitietsale= new GenericRepository<ChiTietSale>();
+            igsale = new GenericRepository<Sale>();
 
         }
         public bool Add(ChiTietGiay obj)
@@ -64,6 +68,8 @@ namespace B_BUS.Services
                                          join e in igHangGiay.GetAll() on a.IdHangGiay equals e.Id
                                          join f in igchieucaodegiay.GetAll() on a.IdChieuCaoDeGiay equals f.Id
                                          join g in igGiay.GetAll() on a.IdGiay equals g.Id
+                                         join i in igchitietsale.GetAll() on a.Id equals i.IdChiTietGiay
+                                         join h in igsale.GetAll() on i.IdSale equals h.Id
                                          select new ChiTietGiayView()
                                          {
                                              ChiTietGiay = a,
@@ -72,7 +78,9 @@ namespace B_BUS.Services
                                              Size = d,
                                              HangGiay = e,
                                              ChieuCaoDeGiay = f,
-                                             Giay = g
+                                             Giay = g,
+                                             ChiTietSale = i,
+                                             Sale = h,
                                          }).ToList();
             return lst;
         }

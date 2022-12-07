@@ -294,10 +294,12 @@ namespace C_GUI.QLForm
         }
         public List<ChiTietSale> GetvaluaControSALE()
         {
-            var x = _IQlSale.GetAllView().FirstOrDefault(c => c.Sale.TenChuongTrinh == cmb_sale.Texts);
+           
+                var x = _IQlSale.GetAllView().FirstOrDefault(c => c.Sale.TenChuongTrinh == cmb_sale.Texts);
 
-            var y = _IQlGiay.GetAllView().FirstOrDefault(c => c.Giay.TenGiay == cmb_giay.Texts);
+                var y = _IQlGiay.GetAllView().FirstOrDefault(c => c.Giay.TenGiay == cmb_giay.Texts);
 
+<<<<<<< HEAD
             var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id);
             List<ChiTietSale> cChiTietSales;
             cChiTietSales=new List<ChiTietSale>();
@@ -321,6 +323,17 @@ namespace C_GUI.QLForm
             //    IdChiTietGiay = z
             //    TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1,
             //};
+=======
+                var z = _IQlChiTietGiay.GetAllView().FirstOrDefault(c => c.ChiTietGiay.IdGiay == y.Giay.Id);
+                return new ChiTietSale()
+                {
+                    IdSale = x.Sale.Id,
+                    IdChiTietGiay = z.ChiTietGiay.Id,
+                    TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1,
+                };
+            
+            
+>>>>>>> 0c23dbb0d347f9d24464f525bc1310fe0205095c
         }
         
 

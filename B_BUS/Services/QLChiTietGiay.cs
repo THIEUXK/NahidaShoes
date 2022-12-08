@@ -27,7 +27,7 @@ namespace B_BUS.Services
             igHangGiay = new GenericRepository<HangGiay>();
             igchieucaodegiay = new GenericRepository<ChieuCaoDeGiay>();
             igGiay = new GenericRepository<Giay>();
-            igchitietsale= new GenericRepository<ChiTietSale>();
+            igchitietsale = new GenericRepository<ChiTietSale>();
             igsale = new GenericRepository<Sale>();
 
         }

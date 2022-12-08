@@ -4,8 +4,11 @@ using B_BUS.Services;
 using C_GUI.QLForm;
 using OfficeOpenXml;
 using System.Data;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Runtime.InteropServices.ObjectiveC;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Excel =Microsoft.Office.Interop.Excel;
 
 
@@ -99,24 +102,24 @@ namespace C_GUI.Views
                 MessageBox.Show("giá Bán không được chứa ký tự đặc biệt", "ERR");
                 return false;
             }
-            if (Regex.IsMatch(_rjtbxGiaNhap.Text, @"/^\d+(-\d+)?(,\d+(-\d+)?)*$/") == false)
-            {
+            //if (Regex.IsMatch(_rjtbxGiaNhap.Text,@"^[a-zA-Z]+$") == false)
+            //{
 
-                MessageBox.Show("Giá Nhập Không đc nhập chữ  ", "ERR");
-                return false;
-            }
-            if (Regex.IsMatch(_rjtbxGiaBan.Text, @"/^\d+(-\d+)?(,\d+(-\d+)?)*$/") == false)
-            {
+            //    MessageBox.Show("Giá Nhập Không đc nhập chữ  ", "ERR");
+            //    return false;
+            //}
+            //if (Regex.IsMatch(_rjtbxGiaBan.Text, @"^[a-zA-Z]+$") == false)
+            //{
 
-                MessageBox.Show("Giá Bán Không đc nhập chữ  ", "ERR");
-                return false;
-            }
-            if (Regex.IsMatch(_rjtbxSoLuongTon.Text, @"^\d+$") == false)
-            {
+            //    MessageBox.Show("Giá Bán Không đc nhập chữ  ", "ERR");
+            //    return false;
+            //}
+            //if (Regex.IsMatch(_rjtbxSoLuongTon.Text, @"^\d+$") == false)
+            //{
 
-                MessageBox.Show("Số Lượng Tồn Không đc viết chữ  ", "ERR");
-                return false;
-            }
+            //    MessageBox.Show("Số Lượng Tồn Không đc viết chữ  ", "ERR");
+            //    return false;
+            //}
             if (string.IsNullOrEmpty(cmb_mausac.Texts))
             {
                 MessageBox.Show("Vui Lòng Chọn Màu Sắc");
@@ -256,6 +259,7 @@ namespace C_GUI.Views
             _dgrvThongTinSanPham.Columns[8].Name = "Gia Bán";
             _dgrvThongTinSanPham.Columns[9].Name = "Giá Nhập";
             _dgrvThongTinSanPham.Columns[10].Name = "Số Lương Tồn";
+            
             _dgrvThongTinSanPham.Rows.Clear();
             
             foreach (var VARIABLE in _ChiTietGiay.GetAllView())
@@ -340,9 +344,29 @@ namespace C_GUI.Views
             //}
             //else
             //{
-                if (check()==false)
+            try
+            {
+                float giamGia = Convert.ToSingle(_rjtbxGiaNhap.Texts.Trim());
+                float tienKhachDua = Convert.ToSingle(_rjtbxGiaBan.Texts.Trim());
+                float thanhToanOnline = Convert.ToSingle(_rjtbxSoLuongTon.Texts.Trim());
+
+            }
+            catch (Exception)
+            {
+                _ = MessageBox.Show("KHông Nhập chữ");
+                return;
+            }
+
+            if (check()==false)
                 {
                    return; 
+                }
+
+                string? anh = "";
+                var bytes = converterDemo(anhsp);
+                foreach (var VARIABLE in bytes)
+                {
+                    anh+=VARIABLE.ToString();
                 }
                 var mausac = _MauSac.GetAll().FirstOrDefault(c => c.TenMauSac == cmb_mausac.Texts);
                 var nsx = _Nsx.GetAll().FirstOrDefault(c => c.TenNsx == _rjcmbNSX.Texts);
@@ -363,7 +387,7 @@ namespace C_GUI.Views
                     GiaBan = int.Parse(_rjtbxGiaBan.Texts),
                     GiaNhap = int.Parse(_rjtbxGiaNhap.Texts),
                     SoLuongTon = int.Parse(_rjtbxSoLuongTon.Texts),
-                  
+                    Anh = anh,
                     TrangThai = 1
                 });
 
@@ -396,10 +420,56 @@ namespace C_GUI.Views
             _rjtbxGiaBan.Texts = _dgrvThongTinSanPham.Rows[index].Cells[8].Value.ToString();
             _rjtbxGiaNhap.Texts = _dgrvThongTinSanPham.Rows[index].Cells[9].Value.ToString();
             _rjtbxSoLuongTon.Texts = _dgrvThongTinSanPham.Rows[index].Cells[10].Value.ToString();
+            //var chitietgiay = _ChiTietGiay.GetAll().FirstOrDefault(c => c.Id == Idwhenclick);
+            //if (chitietgiay.Anh != null)
+            //{
+            //    byte[] byteanh = new byte[chitietgiay.Anh.Length];
+            //    for (int i = 0; i < chitietgiay.Anh.Length; i++)
+            //    {
+            //        byteanh[i] = Convert.ToByte(chitietgiay.Anh[i]);
+            //    }
+
+            //    pictureBox1.Image = cellanh(byteanh);
+            //}
         }
 
+        Image cellanh(byte[] obj)
+        {
+            return  (Image)((new ImageConverter()).ConvertFrom(obj));
+            
+        }
+        public static Bitmap ResizeImage(Image image, int width, int height)
+        {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
+        }
         private void _rjbtnEdit_Click(object sender, EventArgs e)
         {
+            string? anh = "";
+            var bytes = converterDemo(anhsp);
+            foreach (var VARIABLE in bytes)
+            {
+                anh += VARIABLE.ToString();
+            }
             var mausac = _MauSac.GetAll().FirstOrDefault(c => c.TenMauSac == cmb_mausac.Texts);
             var nsx = _Nsx.GetAll().FirstOrDefault(c => c.TenNsx == _rjcmbNSX.Texts);
             var hanggiay = _hangGiay.GetAll().FirstOrDefault(c => c.TenHangGiay == _rjcmbHangGiay.Texts);
@@ -419,8 +489,10 @@ namespace C_GUI.Views
                 GiaBan = int.Parse(_rjtbxGiaBan.Texts),
                 GiaNhap = int.Parse(_rjtbxGiaNhap.Texts),
                 SoLuongTon = int.Parse(_rjtbxSoLuongTon.Texts),
+                Anh = anh,
                 TrangThai = 1
             });
+            
             var hoi = MessageBox.Show(" Thông Báo", "Bạn có Muốn Sửa ko", MessageBoxButtons.YesNo);
             if (hoi == DialogResult.Yes)
             {
@@ -849,6 +921,7 @@ namespace C_GUI.Views
             }
         }
 
+        private Image anhsp;
         private void btn_linkanh_Click(object sender, EventArgs e)
         {
             try
@@ -856,8 +929,9 @@ namespace C_GUI.Views
                 OpenFileDialog open = new OpenFileDialog();
                 if (open.ShowDialog() == DialogResult.OK)
                 {
-                    pictureBox1.Image = Image.FromFile(open.FileName);
-                    this.Text = open.FileName;
+                    var image = ResizeImage(Image.FromFile(open.FileName),pictureBox1.Width,pictureBox1.Height);
+                    pictureBox1.Image = image;
+                    anhsp= image ;
                 }
             }
             catch (Exception ex)
@@ -865,6 +939,12 @@ namespace C_GUI.Views
 
                 MessageBox.Show(Convert.ToString(ex.Message), "Liên hệ với Phong để khắc phục");
             }
+        }
+        public static byte[] converterDemo(Image x)
+        {
+            ImageConverter _imageConverter = new ImageConverter();
+            byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
+            return xByte;
         }
     }
 }

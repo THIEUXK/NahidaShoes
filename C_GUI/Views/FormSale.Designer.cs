@@ -350,12 +350,12 @@
             // 
             this.dgrid_showsanpham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrid_showsanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_showsanpham.Location = new System.Drawing.Point(354, 587);
+            this.dgrid_showsanpham.Location = new System.Drawing.Point(818, 413);
             this.dgrid_showsanpham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgrid_showsanpham.Name = "dgrid_showsanpham";
             this.dgrid_showsanpham.RowHeadersWidth = 51;
             this.dgrid_showsanpham.RowTemplate.Height = 29;
-            this.dgrid_showsanpham.Size = new System.Drawing.Size(915, 192);
+            this.dgrid_showsanpham.Size = new System.Drawing.Size(445, 158);
             this.dgrid_showsanpham.TabIndex = 56;
             this.dgrid_showsanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_showsanpham_CellContentClick);
             // 
@@ -402,7 +402,7 @@
             this.dgrid_SALE.Name = "dgrid_SALE";
             this.dgrid_SALE.RowHeadersWidth = 51;
             this.dgrid_SALE.RowTemplate.Height = 29;
-            this.dgrid_SALE.Size = new System.Drawing.Size(915, 160);
+            this.dgrid_SALE.Size = new System.Drawing.Size(458, 158);
             this.dgrid_SALE.TabIndex = 39;
             this.dgrid_SALE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_SALE_CellContentClick);
             // 

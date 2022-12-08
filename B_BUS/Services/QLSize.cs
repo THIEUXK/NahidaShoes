@@ -49,9 +49,10 @@ namespace B_BUS.Services
         {
             Size x = new Size()
             {
-                Id = obj.Id,
+                Id = Guid.NewGuid(),
                 MaSize = obj.MaSize,
                 TenSize = obj.TenSize,
+                SoSize = obj.SoSize,
                 TrangThai = obj.TrangThai
             };
             if (igSize.Add(x)) return x.Id;

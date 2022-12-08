@@ -39,7 +39,7 @@ namespace B_BUS.Services
         {
             ChieuCaoDeGiay x = new ChieuCaoDeGiay()
             {
-                Id = obj.Id,
+                Id = Guid.NewGuid(),
                 MaKichCo = obj.MaKichCo,
                 KichCo = obj.KichCo,
                 TrangThai = obj.TrangThai

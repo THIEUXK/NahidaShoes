@@ -63,13 +63,13 @@ namespace C_GUI.Views
             btn_save.Visible = false;   
             LoadData();
             LoadComBo();
-            cmb_mausac.SelectedItem="Màu Sắc 1";
-            _rjcmbNSX.SelectedItem=1;
-            _rjcmbSize.SelectedItem = 1;
-            _rjcmbHangGiay.SelectedItem = 1;
-            _rjcmbCCDeGiay.SelectedItem = 1;
-            _rjcmbTenGiay.SelectedItem = 1;
-            cmb_theloai.SelectedItem = 1;
+            //cmb_mausac.SelectedItem="Màu Sắc 1";
+            //_rjcmbNSX.SelectedItem=1;
+            //_rjcmbSize.SelectedItem = 1;
+            //_rjcmbHangGiay.SelectedItem = 1;
+            //_rjcmbCCDeGiay.SelectedItem = 1;
+            //_rjcmbTenGiay.SelectedItem = 1;
+            //cmb_theloai.SelectedItem = 1;
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)

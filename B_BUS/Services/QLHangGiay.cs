@@ -42,7 +42,7 @@ namespace B_BUS.Services
         {
             HangGiay x = new HangGiay()
             {
-                Id = obj.Id,
+                Id = Guid.NewGuid(),
                 MaHangGiay = obj.MaHangGiay,
                 TenHangGiay = obj.TenHangGiay,
                 TrangThai = obj.TrangThai

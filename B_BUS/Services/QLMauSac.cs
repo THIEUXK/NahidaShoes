@@ -42,7 +42,7 @@ namespace B_BUS.Services
         {
             MauSac x = new MauSac()
             {
-                Id = obj.Id,
+                Id = Guid.NewGuid(),
                 MaMauSac = obj.MaMauSac,
                 TenMauSac = obj.TenMauSac,
                 TrangThai = obj.TrangThai

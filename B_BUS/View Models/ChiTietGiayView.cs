@@ -18,7 +18,6 @@ namespace B_BUS.View_Models
         public HangGiay HangGiay { get; set; } = new();
         //chieu cao de giay
         public ChieuCaoDeGiay ChieuCaoDeGiay { get; set; } = new();
-
         public ChiTietSale ChiTietSale { get; set; } = new();
 
         public Sale Sale { get; set; } = new();

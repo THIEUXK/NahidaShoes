@@ -69,9 +69,12 @@
             this.btn_link = new C_GUI.RJControls.RJButton();
             this.btn_save = new C_GUI.RJControls.RJButton();
             this.btn_export = new C_GUI.RJControls.RJButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_linkanh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrvThongTinSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -571,7 +574,7 @@
             this._rjbtnRemove.FlatAppearance.BorderSize = 0;
             this._rjbtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtnRemove.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnRemove.Location = new System.Drawing.Point(1029, 137);
+            this._rjbtnRemove.Location = new System.Drawing.Point(1282, 137);
             this._rjbtnRemove.Name = "_rjbtnRemove";
             this._rjbtnRemove.Size = new System.Drawing.Size(162, 39);
             this._rjbtnRemove.SizeImage = new System.Drawing.Size(20, 20);
@@ -591,7 +594,7 @@
             this._rjbtnEdit.FlatAppearance.BorderSize = 0;
             this._rjbtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtnEdit.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnEdit.Location = new System.Drawing.Point(1029, 79);
+            this._rjbtnEdit.Location = new System.Drawing.Point(1282, 79);
             this._rjbtnEdit.Name = "_rjbtnEdit";
             this._rjbtnEdit.Size = new System.Drawing.Size(162, 39);
             this._rjbtnEdit.SizeImage = new System.Drawing.Size(20, 20);
@@ -611,7 +614,7 @@
             this._rjbtnAdd.FlatAppearance.BorderSize = 0;
             this._rjbtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._rjbtnAdd.ForeColor = System.Drawing.Color.Black;
-            this._rjbtnAdd.Location = new System.Drawing.Point(1029, 21);
+            this._rjbtnAdd.Location = new System.Drawing.Point(1282, 21);
             this._rjbtnAdd.Name = "_rjbtnAdd";
             this._rjbtnAdd.Size = new System.Drawing.Size(162, 39);
             this._rjbtnAdd.SizeImage = new System.Drawing.Size(20, 20);
@@ -688,7 +691,7 @@
             this.btn_link.FlatAppearance.BorderSize = 0;
             this.btn_link.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_link.ForeColor = System.Drawing.Color.Black;
-            this.btn_link.Location = new System.Drawing.Point(1029, 195);
+            this.btn_link.Location = new System.Drawing.Point(1282, 195);
             this.btn_link.Name = "btn_link";
             this.btn_link.Size = new System.Drawing.Size(162, 39);
             this.btn_link.SizeImage = new System.Drawing.Size(20, 20);
@@ -708,7 +711,7 @@
             this.btn_save.FlatAppearance.BorderSize = 0;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.ForeColor = System.Drawing.Color.Black;
-            this.btn_save.Location = new System.Drawing.Point(1029, 311);
+            this.btn_save.Location = new System.Drawing.Point(1282, 311);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(162, 39);
             this.btn_save.SizeImage = new System.Drawing.Size(20, 20);
@@ -728,7 +731,7 @@
             this.btn_export.FlatAppearance.BorderSize = 0;
             this.btn_export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_export.ForeColor = System.Drawing.Color.Black;
-            this.btn_export.Location = new System.Drawing.Point(1029, 253);
+            this.btn_export.Location = new System.Drawing.Point(1282, 253);
             this.btn_export.Name = "btn_export";
             this.btn_export.Size = new System.Drawing.Size(162, 39);
             this.btn_export.SizeImage = new System.Drawing.Size(20, 20);
@@ -738,11 +741,31 @@
             this.btn_export.UseVisualStyleBackColor = false;
             this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(999, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(277, 284);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_linkanh
+            // 
+            this.btn_linkanh.Location = new System.Drawing.Point(1004, 311);
+            this.btn_linkanh.Name = "btn_linkanh";
+            this.btn_linkanh.Size = new System.Drawing.Size(94, 29);
+            this.btn_linkanh.TabIndex = 29;
+            this.btn_linkanh.Text = "send";
+            this.btn_linkanh.UseVisualStyleBackColor = true;
+            this.btn_linkanh.Click += new System.EventHandler(this.btn_linkanh_Click);
+            // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 750);
+            this.Controls.Add(this.btn_linkanh);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_export);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_link);
@@ -759,6 +782,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgrvThongTinSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -806,5 +830,7 @@
         private RJControls.RJButton btn_save;
         private RJControls.RJButton btn_themtheloai;
         private RJControls.RJButton btn_export;
+        private PictureBox pictureBox1;
+        private Button btn_linkanh;
     }
 }

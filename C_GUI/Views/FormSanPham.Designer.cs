@@ -384,6 +384,7 @@
             this._rjtbxGiaNhap.TabIndex = 13;
             this._rjtbxGiaNhap.Texts = "";
             this._rjtbxGiaNhap.UnderlinedStyle = false;
+            this._rjtbxGiaNhap._TextChanged += new System.EventHandler(this._rjtbxGiaNhap__TextChanged);
             // 
             // _rjcmbCCDeGiay
             // 

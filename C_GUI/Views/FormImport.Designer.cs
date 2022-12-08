@@ -74,6 +74,7 @@
             this.rjButton2.Text = "Save";
             this.rjButton2.TextColor = System.Drawing.Color.Black;
             this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
             // groupBox1
             // 

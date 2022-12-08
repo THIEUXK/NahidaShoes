@@ -4,7 +4,11 @@ using B_BUS.Services;
 using C_GUI.QLForm;
 using OfficeOpenXml;
 using System.Data;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Runtime.InteropServices.ObjectiveC;
+using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Excel =Microsoft.Office.Interop.Excel;
 
 
@@ -63,13 +67,14 @@ namespace C_GUI.Views
             btn_save.Visible = false;   
             LoadData();
             LoadComBo();
-            cmb_mausac.SelectedItem="Màu Sắc 1";
-            _rjcmbNSX.SelectedItem=1;
-            _rjcmbSize.SelectedItem = 1;
-            _rjcmbHangGiay.SelectedItem = 1;
-            _rjcmbCCDeGiay.SelectedItem = 1;
-            _rjcmbTenGiay.SelectedItem = 1;
-            cmb_theloai.SelectedItem = 1;
+            btn_export.Visible = false;
+            //cmb_mausac.SelectedItem="Màu Sắc 1";
+            //_rjcmbNSX.SelectedItem=1;
+            //_rjcmbSize.SelectedItem = 1;
+            //_rjcmbHangGiay.SelectedItem = 1;
+            //_rjcmbCCDeGiay.SelectedItem = 1;
+            //_rjcmbTenGiay.SelectedItem = 1;
+            //cmb_theloai.SelectedItem = 1;
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
@@ -77,6 +82,128 @@ namespace C_GUI.Views
 
         }
 
+        public bool check()
+        {
+            if (Regex.IsMatch(_rjtbxSoLuongTon.Text, @"^[a-zA-Z0-9 ]*$") == false)
+            {
+
+                MessageBox.Show("Vui Lòng Không Nhập Số Lượng Tồn Không Có Ký Tự Đặc Biet", "ERR");
+                return false;
+            }
+            if (Regex.IsMatch(_rjtbxGiaNhap.Text, @"^[a-zA-Z0-9 ]*$") == false)
+            {
+
+                MessageBox.Show("Vui Lòng Không Nhập Giá Nhập Không Có Ký Tự Đặc Biet", "ERR");
+                return false;
+            }
+            if (Regex.IsMatch(_rjtbxGiaBan.Text, @"^[a-zA-Z0-9 ]*$") == false)
+            {
+
+                MessageBox.Show("giá Bán không được chứa ký tự đặc biệt", "ERR");
+                return false;
+            }
+            //if (Regex.IsMatch(_rjtbxGiaNhap.Text,@"^[a-zA-Z]+$") == false)
+            //{
+
+            //    MessageBox.Show("Giá Nhập Không đc nhập chữ  ", "ERR");
+            //    return false;
+            //}
+            //if (Regex.IsMatch(_rjtbxGiaBan.Text, @"^[a-zA-Z]+$") == false)
+            //{
+
+            //    MessageBox.Show("Giá Bán Không đc nhập chữ  ", "ERR");
+            //    return false;
+            //}
+            //if (Regex.IsMatch(_rjtbxSoLuongTon.Text, @"^\d+$") == false)
+            //{
+
+            //    MessageBox.Show("Số Lượng Tồn Không đc viết chữ  ", "ERR");
+            //    return false;
+            //}
+            if (string.IsNullOrEmpty(cmb_mausac.Texts))
+            {
+                MessageBox.Show("Vui Lòng Chọn Màu Sắc");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(_rjcmbHangGiay.Texts))
+            {
+                MessageBox.Show("Vui Lòng Chọn Hãng Giày");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(_rjcmbNSX.Texts))
+            {
+                MessageBox.Show("Vui Lòng Chọn Nhà Sản Xuất");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(_rjcmbSize.Texts))
+            {
+                MessageBox.Show("Vui Lòng chọn Size ");
+                return false;
+
+            }
+
+            if (string.IsNullOrEmpty(_rjcmbCCDeGiay.Texts))
+            {
+                MessageBox.Show("Vui Lòng Kích Cỡ");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(_rjcmbTenGiay.Texts))
+            {
+                MessageBox.Show("Vui Lòng Chọn Tên giay");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(_rjtbxGiaBan.Texts))
+            {
+                MessageBox.Show("vui Lòng Nhập số tiền bán");
+                return false;
+            }
+
+
+            if (Convert.ToInt32(_rjtbxGiaBan.Texts) < Convert.ToInt32(_rjtbxGiaNhap.Texts))
+            {
+                MessageBox.Show("Vui Lòng Nhập Giá Bán Cao Hơn giá Nhập");
+                return false;
+            }
+          
+            
+            //
+            if (string.IsNullOrEmpty(_rjtbxGiaNhap.Texts))
+            {
+                MessageBox.Show("Vui Lòng Nhập Giá Nhập");
+                return false;
+            }
+            if (Convert.ToInt32(_rjtbxGiaNhap.Texts) <= 0)
+            {
+                MessageBox.Show("Vui Lòng không nhập tiền Âm hoặc bằng ko");
+                return false;
+            }
+            if (Convert.ToInt32(_rjtbxGiaNhap.Texts) > Convert.ToInt32(_rjtbxGiaBan.Texts))
+            {
+                MessageBox.Show("Vui Lòng Nhập Giá Nhập Lớn Hơn Giá bán");
+                return false;
+            }
+          
+     
+            //
+            if (string.IsNullOrEmpty(_rjtbxSoLuongTon.Texts))
+            {
+                MessageBox.Show("Vui Lòng Nhập Số Lương");
+                return false;
+            }
+
+
+            if (Convert.ToInt32(_rjtbxGiaBan.Texts) <= 0)
+            {
+                MessageBox.Show("Vui Lòng không nhập tiền Âm hoặc bằng ko");
+                return false;
+            }
+            return true;
+        }
         public void LoadComBo()
         {
             cmb_mausac.Items.Clear();
@@ -132,6 +259,7 @@ namespace C_GUI.Views
             _dgrvThongTinSanPham.Columns[8].Name = "Gia Bán";
             _dgrvThongTinSanPham.Columns[9].Name = "Giá Nhập";
             _dgrvThongTinSanPham.Columns[10].Name = "Số Lương Tồn";
+            
             _dgrvThongTinSanPham.Rows.Clear();
             
             foreach (var VARIABLE in _ChiTietGiay.GetAllView())
@@ -208,14 +336,38 @@ namespace C_GUI.Views
         {
 
             var hoi = MessageBox.Show(" Thông Báo", "Bạn có Muốn thêm ko", MessageBoxButtons.YesNo);
-            if (_rjcmbHangGiay.Texts == "" || _rjcmbCCDeGiay.Texts == "" || _rjcmbNSX.Texts == "" ||
-                _rjcmbSize.Texts == "" || _rjcmbSize.Texts == "" || _rjtbxSoLuongTon.Texts == "" ||
-                _rjtbxGiaNhap.Texts == "" || _rjtbxGiaBan.Texts == "" || _rjtbxSoLuongTon.Texts == "")
+            //if (_rjcmbHangGiay.Texts == "" || _rjcmbCCDeGiay.Texts == "" || _rjcmbNSX.Texts == "" ||
+            //    _rjcmbSize.Texts == "" || _rjcmbSize.Texts == "" || _rjtbxSoLuongTon.Texts == "" ||
+            //    _rjtbxGiaNhap.Texts == "" || _rjtbxGiaBan.Texts == "" || _rjtbxSoLuongTon.Texts == "")
+            //{
+            //    MessageBox.Show("bạn Đang điền thiếu vui lòng điền lại");
+            //}
+            //else
+            //{
+            try
             {
-                MessageBox.Show("bạn Đang điền thiếu vui lòng điền lại");
+                float giamGia = Convert.ToSingle(_rjtbxGiaNhap.Texts.Trim());
+                float tienKhachDua = Convert.ToSingle(_rjtbxGiaBan.Texts.Trim());
+                float thanhToanOnline = Convert.ToSingle(_rjtbxSoLuongTon.Texts.Trim());
+
             }
-            else
+            catch (Exception)
             {
+                _ = MessageBox.Show("KHông Nhập chữ");
+                return;
+            }
+
+            if (check()==false)
+                {
+                   return; 
+                }
+
+                string? anh = "";
+                var bytes = converterDemo(anhsp);
+                foreach (var VARIABLE in bytes)
+                {
+                    anh+=VARIABLE.ToString();
+                }
                 var mausac = _MauSac.GetAll().FirstOrDefault(c => c.TenMauSac == cmb_mausac.Texts);
                 var nsx = _Nsx.GetAll().FirstOrDefault(c => c.TenNsx == _rjcmbNSX.Texts);
                 var hanggiay = _hangGiay.GetAll().FirstOrDefault(c => c.TenHangGiay == _rjcmbHangGiay.Texts);
@@ -235,6 +387,7 @@ namespace C_GUI.Views
                     GiaBan = int.Parse(_rjtbxGiaBan.Texts),
                     GiaNhap = int.Parse(_rjtbxGiaNhap.Texts),
                     SoLuongTon = int.Parse(_rjtbxSoLuongTon.Texts),
+                    Anh = anh,
                     TrangThai = 1
                 });
 
@@ -251,25 +404,72 @@ namespace C_GUI.Views
                     }
                 }
             }
-        }
+        //}
 
         private void _dgrvThongTinSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Idwhenclick = Guid.Parse(_dgrvThongTinSanPham.CurrentRow.Cells[0].Value.ToString());
-            cmb_mausac.SelectedItem = _dgrvThongTinSanPham.CurrentRow.Cells[1].Value.ToString();
-            _rjcmbNSX.SelectedItem = _dgrvThongTinSanPham.CurrentRow.Cells[2].Value.ToString();
-            _rjcmbSize.SelectedItem = _dgrvThongTinSanPham.CurrentRow.Cells[3].Value.ToString();
-            _rjcmbHangGiay.SelectedItem = _dgrvThongTinSanPham.CurrentRow.Cells[4].Value.ToString();
-            _rjcmbCCDeGiay.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[5].Value.ToString();
-            _rjcmbTenGiay.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[6].Value.ToString();
-            _rtbxMota.Text = _dgrvThongTinSanPham.CurrentRow.Cells[7].Value.ToString();
-            _rjtbxGiaBan.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[8].Value.ToString();
-            _rjtbxGiaNhap.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[9].Value.ToString();
-            _rjtbxSoLuongTon.Texts = _dgrvThongTinSanPham.CurrentRow.Cells[10].Value.ToString();
+            int index = e.RowIndex;
+            Idwhenclick = Guid.Parse(_dgrvThongTinSanPham.Rows[index].Cells[0].Value.ToString());
+            cmb_mausac.SelectedItem = _dgrvThongTinSanPham.Rows[index].Cells[1].Value.ToString();
+            _rjcmbNSX.SelectedItem = _dgrvThongTinSanPham.Rows[index].Cells[2].Value.ToString();
+            _rjcmbSize.SelectedItem = _dgrvThongTinSanPham.Rows[index].Cells[3].Value.ToString();
+            _rjcmbHangGiay.SelectedItem = _dgrvThongTinSanPham.Rows[index].Cells[4].Value.ToString();
+            _rjcmbCCDeGiay.Texts = _dgrvThongTinSanPham.Rows[index].Cells[5].Value.ToString();
+            _rjcmbTenGiay.Texts = _dgrvThongTinSanPham.Rows[index].Cells[6].Value.ToString();
+            _rtbxMota.Text = _dgrvThongTinSanPham.Rows[index].Cells[7].Value.ToString();
+            _rjtbxGiaBan.Texts = _dgrvThongTinSanPham.Rows[index].Cells[8].Value.ToString();
+            _rjtbxGiaNhap.Texts = _dgrvThongTinSanPham.Rows[index].Cells[9].Value.ToString();
+            _rjtbxSoLuongTon.Texts = _dgrvThongTinSanPham.Rows[index].Cells[10].Value.ToString();
+            //var chitietgiay = _ChiTietGiay.GetAll().FirstOrDefault(c => c.Id == Idwhenclick);
+            //if (chitietgiay.Anh != null)
+            //{
+            //    byte[] byteanh = new byte[chitietgiay.Anh.Length];
+            //    for (int i = 0; i < chitietgiay.Anh.Length; i++)
+            //    {
+            //        byteanh[i] = Convert.ToByte(chitietgiay.Anh[i]);
+            //    }
+
+            //    pictureBox1.Image = cellanh(byteanh);
+            //}
         }
 
+        Image cellanh(byte[] obj)
+        {
+            return  (Image)((new ImageConverter()).ConvertFrom(obj));
+            
+        }
+        public static Bitmap ResizeImage(Image image, int width, int height)
+        {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
+        }
         private void _rjbtnEdit_Click(object sender, EventArgs e)
         {
+            string? anh = "";
+            var bytes = converterDemo(anhsp);
+            foreach (var VARIABLE in bytes)
+            {
+                anh += VARIABLE.ToString();
+            }
             var mausac = _MauSac.GetAll().FirstOrDefault(c => c.TenMauSac == cmb_mausac.Texts);
             var nsx = _Nsx.GetAll().FirstOrDefault(c => c.TenNsx == _rjcmbNSX.Texts);
             var hanggiay = _hangGiay.GetAll().FirstOrDefault(c => c.TenHangGiay == _rjcmbHangGiay.Texts);
@@ -289,8 +489,10 @@ namespace C_GUI.Views
                 GiaBan = int.Parse(_rjtbxGiaBan.Texts),
                 GiaNhap = int.Parse(_rjtbxGiaNhap.Texts),
                 SoLuongTon = int.Parse(_rjtbxSoLuongTon.Texts),
+                Anh = anh,
                 TrangThai = 1
             });
+            
             var hoi = MessageBox.Show(" Thông Báo", "Bạn có Muốn Sửa ko", MessageBoxButtons.YesNo);
             if (hoi == DialogResult.Yes)
             {
@@ -717,6 +919,32 @@ namespace C_GUI.Views
             {
                 MessageBox.Show("Không Được Để Trống");
             }
+        }
+
+        private Image anhsp;
+        private void btn_linkanh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    var image = ResizeImage(Image.FromFile(open.FileName),pictureBox1.Width,pictureBox1.Height);
+                    pictureBox1.Image = image;
+                    anhsp= image ;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(Convert.ToString(ex.Message), "Liên hệ với Phong để khắc phục");
+            }
+        }
+        public static byte[] converterDemo(Image x)
+        {
+            ImageConverter _imageConverter = new ImageConverter();
+            byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
+            return xByte;
         }
     }
 }

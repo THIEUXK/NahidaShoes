@@ -1,13 +1,41 @@
-﻿using OfficeOpenXml;
+﻿        using OfficeOpenXml;
 using System.Data;
+        using A_DAL.Entities;
+        using B_BUS.IServices;
+        using B_BUS.Services;
+using Size = A_DAL.Entities.Size;
 
 namespace C_GUI.Views
 {
     public partial class FormImport : Form
     {
+        public string TenMausac;
+        public string TenNSX;
+        public string TenSize;
+        public string TenHangGiay;
+        public int KichCo;
+        public string TenGiay;
+        public string Mota;
+        public int GiaNhap;
+        public int GiaBan;
+        public int SoluongTon;
+        private IQLChiTietGiay _ChiTietGiay;
+        private IQLMauSac _MauSac;
+        IQLNsx _Nsx;
+        private IQLSize _Size;
+        private IQLHangGiay _hangGiay;
+        IQLChieuCaoDeGiay _ChieuCaoDeGiay;
+        private IQLGiay _Giay;
         public FormImport()
         {
             InitializeComponent();
+            _ChiTietGiay = new QLChiTietGiay();
+            _MauSac = new QLMauSac();
+            _Nsx = new QLNsx();
+            _Size = new QLSize();
+            _hangGiay = new QLHangGiay();
+            _ChieuCaoDeGiay = new QLChieuCaoDeGiay();
+            _Giay = new QLGiay();
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
@@ -40,6 +68,8 @@ namespace C_GUI.Views
                 _ = dt.Columns.Add("Giá bán");
                 _ = dt.Columns.Add("Số Lượng tồn");
                 dt.Rows.Clear();
+                _dgrvThongTinSanPham.AllowUserToAddRows = false;
+
                 try
                 {
                     // mo file excel
@@ -81,6 +111,115 @@ namespace C_GUI.Views
                 _dgrvThongTinSanPham.DataSource = dt.DefaultView;
             }
         }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn Muốn Lưu Dữ Liệu chứ ?", "Thông Báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                for (int i = 0; i < _dgrvThongTinSanPham.Rows.Count; i++)
+                {
+                    try
+                    {
+
+                        TenMausac = _dgrvThongTinSanPham.Rows[i].Cells[0].Value.ToString();
+                        TenNSX = _dgrvThongTinSanPham.Rows[i].Cells[1].Value.ToString();
+                        TenSize = _dgrvThongTinSanPham.Rows[i].Cells[2].Value.ToString();
+                        TenHangGiay = _dgrvThongTinSanPham.Rows[i].Cells[3].Value.ToString();
+                        KichCo = int.Parse(_dgrvThongTinSanPham.Rows[i].Cells[4].Value.ToString());
+                        TenGiay = _dgrvThongTinSanPham.Rows[i].Cells[5].Value.ToString();
+                        Mota = _dgrvThongTinSanPham.Rows[i].Cells[6].Value.ToString();
+                        GiaBan = int.Parse(_dgrvThongTinSanPham.Rows[i].Cells[7].Value.ToString());
+                        GiaNhap = int.Parse(_dgrvThongTinSanPham.Rows[i].Cells[8].Value.ToString());
+                        SoluongTon = int.Parse(_dgrvThongTinSanPham.Rows[i].Cells[9].Value.ToString());
+
+                        var n = new Nsx()
+                        {
+                            MaNsx = (_Nsx.GetAll().Count + 1).ToString(),
+                            TenNsx = TenNSX,
+                            DiaChi = "Ha Noi",
+                            TrangThai = 1
+                        };
+
+                        Guid IdNsx = _Nsx.IdNsx(n);
+                      //  MessageBox.Show(IdNsx.ToString());
+
+
+                        var m = new MauSac()
+                        {
+                            MaMauSac = (_MauSac.GetAll().Count + 1).ToString(),
+                            TenMauSac = TenMausac,
+                            TrangThai = 1
+                        };
+                        Guid idMauSac = _MauSac.IdMauSac(m);
+
+                        var s = new Size()
+                        {
+                            MaSize = (_Size.GetAll().Count + 1).ToString(),
+                            TenSize = TenSize,
+                            SoSize = 42,
+                            TrangThai = 1
+                        };
+                        Guid idSize = _Size.IdSize(s);
+
+                        var h = new HangGiay()
+                        {
+                            MaHangGiay = (_hangGiay.GetAll().Count + 1).ToString(),
+                            TenHangGiay = TenHangGiay,
+                            TrangThai = 1
+                        };
+                        Guid IdHangGiay = _hangGiay.IdHangGiay(h);
+
+                        var k = new ChieuCaoDeGiay()
+                        {
+                            MaKichCo = (_ChieuCaoDeGiay.GetAll().Count + 1).ToString(),
+                            KichCo = KichCo,
+                            TrangThai = 1
+                        };
+                        Guid IdKichCo = _ChieuCaoDeGiay.IdChieuCaoDeGiay(k);
+
+                        var l = new Giay()
+                        {
+                            MaGiay = (_Giay.GetAll().Count + 1).ToString(),
+                            TenGiay = TenGiay,
+                            TrangThai = 1,
+
+                        };
+                        Guid giay = _Giay.idGiay(l);
+                      //  MessageBox.Show(giay.ToString());
+                        var spCt = new ChiTietGiay()
+                        {
+                            Id = Guid.NewGuid(),
+                            MoTa = Mota,
+                            TrangThai = 1,
+                            SoLuongTon = SoluongTon,
+                            GiaBan = GiaBan,
+                            GiaNhap = GiaNhap,
+                            IdGiay = giay,
+                            IdHangGiay = IdHangGiay,
+                            IdNsx = IdNsx,
+                            IdMauSac = idMauSac,
+                            IdChieuCaoDeGiay = IdKichCo,
+                            IdSize = idSize,
+
+                        };
+                        _ChiTietGiay.Add(spCt);
+                       // MessageBox.Show("ID ChiTietSanPham");
+
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Lỗi");
+                    }
+                }
+                MessageBox.Show("Thêm Thanh Công");
+                
+
+
+            }
+        }
     }
-}
+    }
+
 

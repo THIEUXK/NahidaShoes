@@ -47,6 +47,8 @@
             this._rjbtndong = new C_GUI.RJControls.RJButton();
             this._lbltitle = new System.Windows.Forms.Label();
             this._pnlDesktoppanel = new System.Windows.Forms.Panel();
+            this.iconButton9 = new FontAwesome.Sharp.IconButton();
+            this.iconButton10 = new FontAwesome.Sharp.IconButton();
             this._pnlmenu.SuspendLayout();
             this.panelplaylizt.SuspendLayout();
             this._pnllogo.SuspendLayout();
@@ -56,6 +58,7 @@
             // _pnlmenu
             // 
             this._pnlmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this._pnlmenu.Controls.Add(this.iconButton10);
             this._pnlmenu.Controls.Add(this.panelplaylizt);
             this._pnlmenu.Controls.Add(this.btn_sanpham);
             this._pnlmenu.Controls.Add(this.btn_banHang);
@@ -70,6 +73,7 @@
             // 
             // panelplaylizt
             // 
+            this.panelplaylizt.Controls.Add(this.iconButton9);
             this.panelplaylizt.Controls.Add(this.iconButton8);
             this.panelplaylizt.Controls.Add(this.iconButton7);
             this.panelplaylizt.Controls.Add(this.iconButton6);
@@ -81,7 +85,7 @@
             this.panelplaylizt.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelplaylizt.Location = new System.Drawing.Point(0, 341);
             this.panelplaylizt.Name = "panelplaylizt";
-            this.panelplaylizt.Size = new System.Drawing.Size(250, 417);
+            this.panelplaylizt.Size = new System.Drawing.Size(250, 376);
             this.panelplaylizt.TabIndex = 4;
             // 
             // iconButton8
@@ -362,6 +366,41 @@
             this._pnlDesktoppanel.Size = new System.Drawing.Size(1674, 930);
             this._pnlDesktoppanel.TabIndex = 2;
             // 
+            // iconButton9
+            // 
+            this.iconButton9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton9.FlatAppearance.BorderSize = 0;
+            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.StoreAlt;
+            this.iconButton9.IconColor = System.Drawing.Color.White;
+            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton9.Location = new System.Drawing.Point(0, 360);
+            this.iconButton9.Name = "iconButton9";
+            this.iconButton9.Size = new System.Drawing.Size(250, 72);
+            this.iconButton9.TabIndex = 8;
+            this.iconButton9.Text = "Bán Hàng ";
+            this.iconButton9.UseVisualStyleBackColor = true;
+            // 
+            // iconButton10
+            // 
+            this.iconButton10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton10.FlatAppearance.BorderSize = 0;
+            this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.Tag;
+            this.iconButton10.IconColor = System.Drawing.Color.White;
+            this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton10.Location = new System.Drawing.Point(0, 717);
+            this.iconButton10.Name = "iconButton10";
+            this.iconButton10.Size = new System.Drawing.Size(250, 72);
+            this.iconButton10.TabIndex = 5;
+            this.iconButton10.Text = "Sale";
+            this.iconButton10.UseVisualStyleBackColor = true;
+            this.iconButton10.Click += new System.EventHandler(this.iconButton10_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -404,5 +443,7 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton10;
+        private FontAwesome.Sharp.IconButton iconButton9;
     }
 }

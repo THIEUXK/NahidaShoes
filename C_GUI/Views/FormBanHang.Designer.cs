@@ -677,7 +677,7 @@
             this._tbxCMND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this._tbxCMND.Location = new System.Drawing.Point(166, 223);
             this._tbxCMND.Margin = new System.Windows.Forms.Padding(4);
-            this._tbxCMND.MaxLength = 20;
+            this._tbxCMND.MaxLength = 15;
             this._tbxCMND.Multiline = false;
             this._tbxCMND.Name = "_tbxCMND";
             this._tbxCMND.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -710,7 +710,7 @@
             this._tbxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this._tbxEmail.Location = new System.Drawing.Point(166, 184);
             this._tbxEmail.Margin = new System.Windows.Forms.Padding(4);
-            this._tbxEmail.MaxLength = 20;
+            this._tbxEmail.MaxLength = 100;
             this._tbxEmail.Multiline = false;
             this._tbxEmail.Name = "_tbxEmail";
             this._tbxEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -743,7 +743,7 @@
             this._tbxSoDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this._tbxSoDienThoai.Location = new System.Drawing.Point(167, 145);
             this._tbxSoDienThoai.Margin = new System.Windows.Forms.Padding(4);
-            this._tbxSoDienThoai.MaxLength = 20;
+            this._tbxSoDienThoai.MaxLength = 10;
             this._tbxSoDienThoai.Multiline = false;
             this._tbxSoDienThoai.Name = "_tbxSoDienThoai";
             this._tbxSoDienThoai.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -776,7 +776,7 @@
             this._tbxDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this._tbxDiaChi.Location = new System.Drawing.Point(167, 106);
             this._tbxDiaChi.Margin = new System.Windows.Forms.Padding(4);
-            this._tbxDiaChi.MaxLength = 20;
+            this._tbxDiaChi.MaxLength = 100;
             this._tbxDiaChi.Multiline = false;
             this._tbxDiaChi.Name = "_tbxDiaChi";
             this._tbxDiaChi.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -832,7 +832,7 @@
             this._tbxTenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this._tbxTenKhachHang.Location = new System.Drawing.Point(167, 22);
             this._tbxTenKhachHang.Margin = new System.Windows.Forms.Padding(4);
-            this._tbxTenKhachHang.MaxLength = 20;
+            this._tbxTenKhachHang.MaxLength = 50;
             this._tbxTenKhachHang.Multiline = false;
             this._tbxTenKhachHang.Name = "_tbxTenKhachHang";
             this._tbxTenKhachHang.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);

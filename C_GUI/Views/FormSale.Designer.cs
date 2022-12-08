@@ -45,6 +45,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dtp_ngayketthuc = new C_GUI.RJControls.RJDatePicker();
             this.a = new System.Windows.Forms.GroupBox();
+            this.dgrid_SP = new System.Windows.Forms.DataGridView();
             this.dgrid_showsanpham = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_timkiemsale = new C_GUI.RJControls.RJTextBox();
@@ -54,6 +55,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_nsx = new FontAwesome.Sharp.IconButton();
+            this.btn_mausac = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btn_hanggiay = new FontAwesome.Sharp.IconButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmb_nsx = new C_GUI.RJControls.RJComboBox();
+            this.cmb_mausac = new C_GUI.RJControls.RJComboBox();
+            this.cmb_hanggiay = new C_GUI.RJControls.RJComboBox();
             this.btn_giay = new FontAwesome.Sharp.IconButton();
             this.btn_suasale = new C_GUI.RJControls.RJButton();
             this.btn_themsale = new C_GUI.RJControls.RJButton();
@@ -62,12 +73,18 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_giay = new C_GUI.RJControls.RJComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.dgrid_SP = new System.Windows.Forms.DataGridView();
+            this.rjComboBox1 = new C_GUI.RJControls.RJComboBox();
+            this.rjComboBox2 = new C_GUI.RJControls.RJComboBox();
+            this.rjComboBox3 = new C_GUI.RJControls.RJComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.a.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_SP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_showsanpham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_SALE)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_SP)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -327,6 +344,7 @@
             // a
             // 
             this.a.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.a.Controls.Add(this.dgrid_SP);
             this.a.Controls.Add(this.dgrid_showsanpham);
             this.a.Controls.Add(this.label12);
             this.a.Controls.Add(this.txt_timkiemsale);
@@ -346,16 +364,28 @@
             this.a.Text = "THÔNG TIN SIZE";
             this.a.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // dgrid_SP
+            // 
+            this.dgrid_SP.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgrid_SP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_SP.Location = new System.Drawing.Point(354, 577);
+            this.dgrid_SP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgrid_SP.Name = "dgrid_SP";
+            this.dgrid_SP.RowHeadersWidth = 51;
+            this.dgrid_SP.RowTemplate.Height = 29;
+            this.dgrid_SP.Size = new System.Drawing.Size(915, 212);
+            this.dgrid_SP.TabIndex = 57;
+            // 
             // dgrid_showsanpham
             // 
             this.dgrid_showsanpham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrid_showsanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_showsanpham.Location = new System.Drawing.Point(354, 587);
+            this.dgrid_showsanpham.Location = new System.Drawing.Point(719, 413);
             this.dgrid_showsanpham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgrid_showsanpham.Name = "dgrid_showsanpham";
             this.dgrid_showsanpham.RowHeadersWidth = 51;
             this.dgrid_showsanpham.RowTemplate.Height = 29;
-            this.dgrid_showsanpham.Size = new System.Drawing.Size(915, 192);
+            this.dgrid_showsanpham.Size = new System.Drawing.Size(554, 160);
             this.dgrid_showsanpham.TabIndex = 56;
             this.dgrid_showsanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_showsanpham_CellContentClick);
             // 
@@ -387,7 +417,7 @@
             this.txt_timkiemsale.PasswordChar = false;
             this.txt_timkiemsale.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_timkiemsale.PlaceholderText = "";
-            this.txt_timkiemsale.Size = new System.Drawing.Size(348, 27);
+            this.txt_timkiemsale.Size = new System.Drawing.Size(212, 27);
             this.txt_timkiemsale.TabIndex = 48;
             this.txt_timkiemsale.Texts = "";
             this.txt_timkiemsale.UnderlinedStyle = false;
@@ -402,7 +432,8 @@
             this.dgrid_SALE.Name = "dgrid_SALE";
             this.dgrid_SALE.RowHeadersWidth = 51;
             this.dgrid_SALE.RowTemplate.Height = 29;
-            this.dgrid_SALE.Size = new System.Drawing.Size(915, 160);
+            this.dgrid_SALE.Size = new System.Drawing.Size(359, 160);
+            this.dgrid_SALE.Size = new System.Drawing.Size(458, 160);
             this.dgrid_SALE.TabIndex = 39;
             this.dgrid_SALE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_SALE_CellContentClick);
             // 
@@ -476,6 +507,17 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Controls.Add(this.btn_nsx);
+            this.panel2.Controls.Add(this.btn_mausac);
+            this.panel2.Controls.Add(this.iconButton2);
+            this.panel2.Controls.Add(this.btn_hanggiay);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.cmb_nsx);
+            this.panel2.Controls.Add(this.cmb_mausac);
+            this.panel2.Controls.Add(this.cmb_hanggiay);
+        
             this.panel2.Controls.Add(this.btn_giay);
             this.panel2.Controls.Add(this.btn_suasale);
             this.panel2.Controls.Add(this.btn_themsale);
@@ -488,6 +530,148 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(323, 376);
             this.panel2.TabIndex = 47;
+            // 
+            // btn_nsx
+            // 
+            this.btn_nsx.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_nsx.IconColor = System.Drawing.Color.Black;
+            this.btn_nsx.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_nsx.IconSize = 30;
+            this.btn_nsx.Location = new System.Drawing.Point(287, 217);
+            this.btn_nsx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_nsx.Name = "btn_nsx";
+            this.btn_nsx.Size = new System.Drawing.Size(28, 25);
+            this.btn_nsx.TabIndex = 66;
+            this.btn_nsx.UseVisualStyleBackColor = true;
+            this.btn_nsx.Click += new System.EventHandler(this.btn_nsx_Click);
+            // 
+            // btn_mausac
+            // 
+            this.btn_mausac.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_mausac.IconColor = System.Drawing.Color.Black;
+            this.btn_mausac.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_mausac.IconSize = 30;
+            this.btn_mausac.Location = new System.Drawing.Point(287, 180);
+            this.btn_mausac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_mausac.Name = "btn_mausac";
+            this.btn_mausac.Size = new System.Drawing.Size(28, 25);
+            this.btn_mausac.TabIndex = 65;
+            this.btn_mausac.UseVisualStyleBackColor = true;
+            this.btn_mausac.Click += new System.EventHandler(this.btn_mausac_Click);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 30;
+            this.iconButton2.Location = new System.Drawing.Point(325, 145);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(28, 25);
+            this.iconButton2.TabIndex = 64;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // btn_hanggiay
+            // 
+            this.btn_hanggiay.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_hanggiay.IconColor = System.Drawing.Color.Black;
+            this.btn_hanggiay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_hanggiay.IconSize = 30;
+            this.btn_hanggiay.Location = new System.Drawing.Point(287, 135);
+            this.btn_hanggiay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_hanggiay.Name = "btn_hanggiay";
+            this.btn_hanggiay.Size = new System.Drawing.Size(28, 25);
+            this.btn_hanggiay.TabIndex = 64;
+            this.btn_hanggiay.UseVisualStyleBackColor = true;
+            this.btn_hanggiay.Click += new System.EventHandler(this.btn_hanggiay_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(13, 227);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 15);
+            this.label14.TabIndex = 63;
+            this.label14.Text = "NSX";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(13, 190);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 15);
+            this.label13.TabIndex = 62;
+            this.label13.Text = "Màu sắc";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(13, 145);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 15);
+            this.label11.TabIndex = 61;
+            this.label11.Text = "Hãng giày";
+            // 
+            // cmb_nsx
+            // 
+            this.cmb_nsx.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmb_nsx.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmb_nsx.BorderSize = 1;
+            this.cmb_nsx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmb_nsx.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_nsx.ForeColor = System.Drawing.Color.DimGray;
+            this.cmb_nsx.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmb_nsx.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmb_nsx.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmb_nsx.Location = new System.Drawing.Point(81, 211);
+            this.cmb_nsx.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmb_nsx.Name = "cmb_nsx";
+            this.cmb_nsx.Padding = new System.Windows.Forms.Padding(1);
+            this.cmb_nsx.Size = new System.Drawing.Size(200, 31);
+            this.cmb_nsx.TabIndex = 60;
+            this.cmb_nsx.Texts = "";
+            // 
+            // cmb_mausac
+            // 
+            this.cmb_mausac.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmb_mausac.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmb_mausac.BorderSize = 1;
+            this.cmb_mausac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmb_mausac.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_mausac.ForeColor = System.Drawing.Color.DimGray;
+            this.cmb_mausac.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmb_mausac.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmb_mausac.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmb_mausac.Location = new System.Drawing.Point(81, 174);
+            this.cmb_mausac.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmb_mausac.Name = "cmb_mausac";
+            this.cmb_mausac.Padding = new System.Windows.Forms.Padding(1);
+            this.cmb_mausac.Size = new System.Drawing.Size(200, 31);
+            this.cmb_mausac.TabIndex = 59;
+            this.cmb_mausac.Texts = "";
+            // 
+            // cmb_hanggiay
+            // 
+            this.cmb_hanggiay.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmb_hanggiay.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmb_hanggiay.BorderSize = 1;
+            this.cmb_hanggiay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmb_hanggiay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_hanggiay.ForeColor = System.Drawing.Color.DimGray;
+            this.cmb_hanggiay.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmb_hanggiay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmb_hanggiay.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmb_hanggiay.Location = new System.Drawing.Point(81, 129);
+            this.cmb_hanggiay.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmb_hanggiay.Name = "cmb_hanggiay";
+            this.cmb_hanggiay.Padding = new System.Windows.Forms.Padding(1);
+            this.cmb_hanggiay.Size = new System.Drawing.Size(200, 31);
+            this.cmb_hanggiay.TabIndex = 58;
+            this.cmb_hanggiay.Texts = "";
             // 
             // btn_giay
             // 
@@ -508,16 +692,20 @@
             this.btn_suasale.BackColor = System.Drawing.Color.Turquoise;
             this.btn_suasale.BackgroundColor = System.Drawing.Color.Turquoise;
             this.btn_suasale.BorderColor = System.Drawing.Color.Black;
-            this.btn_suasale.BorderRadius = 15;
+            this.btn_suasale.BorderRadius = 10;
             this.btn_suasale.BorderSize = 2;
             this.btn_suasale.FlatAppearance.BorderSize = 0;
             this.btn_suasale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_suasale.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_suasale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_suasale.ForeColor = System.Drawing.Color.Black;
-            this.btn_suasale.Location = new System.Drawing.Point(15, 227);
+            this.btn_suasale.Location = new System.Drawing.Point(21, 315);
             this.btn_suasale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_suasale.Name = "btn_suasale";
-            this.btn_suasale.Size = new System.Drawing.Size(266, 72);
+            this.btn_suasale.Size = new System.Drawing.Size(188, 51);
+            this.btn_suasale.Location = new System.Drawing.Point(5, 324);
+            this.btn_suasale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_suasale.Name = "btn_suasale";
+            this.btn_suasale.Size = new System.Drawing.Size(170, 42);
             this.btn_suasale.SizeImage = new System.Drawing.Size(20, 20);
             this.btn_suasale.TabIndex = 43;
             this.btn_suasale.Text = "Sửa";
@@ -530,16 +718,20 @@
             this.btn_themsale.BackColor = System.Drawing.Color.Turquoise;
             this.btn_themsale.BackgroundColor = System.Drawing.Color.Turquoise;
             this.btn_themsale.BorderColor = System.Drawing.Color.Black;
-            this.btn_themsale.BorderRadius = 15;
+            this.btn_themsale.BorderRadius = 10;
             this.btn_themsale.BorderSize = 2;
             this.btn_themsale.FlatAppearance.BorderSize = 0;
             this.btn_themsale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_themsale.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_themsale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_themsale.ForeColor = System.Drawing.Color.Black;
-            this.btn_themsale.Location = new System.Drawing.Point(15, 153);
+            this.btn_themsale.Location = new System.Drawing.Point(21, 262);
             this.btn_themsale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_themsale.Name = "btn_themsale";
-            this.btn_themsale.Size = new System.Drawing.Size(266, 70);
+            this.btn_themsale.Size = new System.Drawing.Size(284, 49);
+            this.btn_themsale.Location = new System.Drawing.Point(5, 267);
+            this.btn_themsale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_themsale.Name = "btn_themsale";
+            this.btn_themsale.Size = new System.Drawing.Size(310, 53);
             this.btn_themsale.SizeImage = new System.Drawing.Size(20, 20);
             this.btn_themsale.TabIndex = 42;
             this.btn_themsale.Text = "Thêm";
@@ -552,16 +744,21 @@
             this.btn_xoasale.BackColor = System.Drawing.Color.Turquoise;
             this.btn_xoasale.BackgroundColor = System.Drawing.Color.Turquoise;
             this.btn_xoasale.BorderColor = System.Drawing.Color.Black;
-            this.btn_xoasale.BorderRadius = 15;
+            this.btn_xoasale.BorderRadius = 10;
+            this.btn_xoasale.BorderRadius = 13;
             this.btn_xoasale.BorderSize = 2;
             this.btn_xoasale.FlatAppearance.BorderSize = 0;
             this.btn_xoasale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_xoasale.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_xoasale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_xoasale.ForeColor = System.Drawing.Color.Black;
-            this.btn_xoasale.Location = new System.Drawing.Point(14, 303);
+            this.btn_xoasale.Location = new System.Drawing.Point(215, 315);
             this.btn_xoasale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoasale.Name = "btn_xoasale";
-            this.btn_xoasale.Size = new System.Drawing.Size(266, 63);
+            this.btn_xoasale.Size = new System.Drawing.Size(90, 51);
+            this.btn_xoasale.Location = new System.Drawing.Point(181, 324);
+            this.btn_xoasale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_xoasale.Name = "btn_xoasale";
+            this.btn_xoasale.Size = new System.Drawing.Size(134, 42);
             this.btn_xoasale.SizeImage = new System.Drawing.Size(20, 20);
             this.btn_xoasale.TabIndex = 44;
             this.btn_xoasale.Text = "Xóa";
@@ -627,6 +824,22 @@
             this.label9.TabIndex = 42;
             this.label9.Text = "Tên Sale";
             // 
+            // dgrid_SP
+            // 
+            this.dgrid_SP.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgrid_SP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_SP.Location = new System.Drawing.Point(818, 413);
+            this.dgrid_SP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgrid_SP.Name = "dgrid_SP";
+            this.dgrid_SP.RowHeadersWidth = 51;
+            this.dgrid_SP.RowTemplate.Height = 29;
+            this.dgrid_SP.Size = new System.Drawing.Size(458, 160);
+            this.dgrid_SP.TabIndex = 57;
+            // 
+            // rjComboBox1
+            // 
+           
+            // 
             // FormSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -638,12 +851,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).EndInit();
             this.a.ResumeLayout(false);
             this.a.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_SP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_showsanpham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_SALE)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_SP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,5 +899,19 @@
         private RJControls.RJButton btn_xoasale;
         private DataGridView dgrid_showsanpham;
         private FontAwesome.Sharp.IconButton btn_giay;
+        private DataGridView dgrid_SP;
+        private FontAwesome.Sharp.IconButton btn_nsx;
+        private FontAwesome.Sharp.IconButton btn_mausac;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btn_hanggiay;
+        private Label label14;
+        private Label label13;
+        private Label label11;
+        private RJControls.RJComboBox cmb_nsx;
+        private RJControls.RJComboBox cmb_mausac;
+        private RJControls.RJComboBox cmb_hanggiay;
+        private RJControls.RJComboBox rjComboBox3;
+        private RJControls.RJComboBox rjComboBox2;
+        private RJControls.RJComboBox rjComboBox1;
     }
 }

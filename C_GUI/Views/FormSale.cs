@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using B_BUS.IServices;
 using B_BUS.Services;
 using A_DAL.Entities;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace C_GUI.QLForm
 {
@@ -141,7 +142,7 @@ namespace C_GUI.QLForm
         public void LoadDataSP2(List<ChiTietGiayView> chiTietGiayViews)
         {
             int stt = 1;
-            dgrid_SP.ColumnCount = 8;
+            dgrid_SP.ColumnCount = 9;
             dgrid_SP.Columns[0].Name = "stt";
             dgrid_SP.Columns[1].Name = "Giá bán";
             dgrid_SP.Columns[2].Name = "Màu sắc";
@@ -150,12 +151,13 @@ namespace C_GUI.QLForm
             dgrid_SP.Columns[5].Name = "Số lượng tồn";
             dgrid_SP.Columns[6].Name = "Hãng giày";
             dgrid_SP.Columns[7].Name = "NSX";
-
+            dgrid_SP.Columns[8].Name = "id";
+            dgrid_SP.Columns[8].Visible = true;
             dgrid_SP.Rows.Clear();
             foreach (var a in chiTietGiayViews)
             {
                 //var c = _IQlChiTietSale.GetAllView().Find(c => c.ChiTietSale.IdSale == b.Sale.Id);
-                _ = dgrid_SP.Rows.Add(stt++, a.ChiTietGiay.GiaBan, a.MauSac.TenMauSac, a.Giay.TenGiay, a.ChiTietGiay.GiaNhap, a.ChiTietGiay.SoLuongTon, a.HangGiay.TenHangGiay, a.Nsx.TenNsx);
+                _ = dgrid_SP.Rows.Add(stt++, a.ChiTietGiay.GiaBan, a.MauSac.TenMauSac, a.Giay.TenGiay, a.ChiTietGiay.GiaNhap, a.ChiTietGiay.SoLuongTon, a.HangGiay.TenHangGiay, a.Nsx.TenNsx,a.ChiTietGiay.Id);
             }
         }
         public Sale GetvaluaContro()
@@ -172,10 +174,7 @@ namespace C_GUI.QLForm
             };
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btn_them_Click(object sender, EventArgs e)
         {
@@ -296,39 +295,486 @@ namespace C_GUI.QLForm
         }
         public List<ChiTietSale> GetvaluaControSALE()
         {
+            List<ChiTietSale> chiTietSales;
+            chiTietSales=new List<ChiTietSale>();
             var x = _IQlSale.GetAllView().FirstOrDefault(c => c.Sale.TenChuongTrinh == cmb_sale.Texts);
 
-            var y = _IQlGiay.GetAllView().FirstOrDefault(c => c.Giay.TenGiay == cmb_giay.Texts);
+            //foreach (DataGridViewRow a in dgrid_SP.Rows)
+            //{
+            //    chiTietSales.Add(new ChiTietSale()
+            //    {
+            //          IdSale = x.Sale.Id,
+            //         IdChiTietGiay = Guid.NewGuid(a.Cells[8].Value.ToString())
+            //    });
 
-            var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id);
-            List<ChiTietSale> cChiTietSales;
-            cChiTietSales = new List<ChiTietSale>();
-            foreach (var a in z)
+            //}
+         
+            for (int i = 0; i < (dgrid_SP.Rows.Count); i++)
             {
-                Guid IdSale = x.Sale.Id;
-                Guid IdChiTietGiay = a.ChiTietGiay.Id;
-                int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
-                cChiTietSales.Add(new ChiTietSale()
+                Guid IDChitietGiay = new Guid(dgrid_SP.Rows[i].Cells[8].Value.ToString());
+                chiTietSales.Add(new ChiTietSale()
                 {
-                    IdSale = IdSale,
-                    IdChiTietGiay = IdChiTietGiay,
-                    TrangThai = TrangThai,
+                    IdSale = x.Sale.Id,
+                    IdChiTietGiay = IDChitietGiay
                 });
+
             }
 
-            return cChiTietSales;
-            //return new ChiTietSale()
+            return chiTietSales;
+
+            #region a
+
+
+
+
+            //var x = _IQlSale.GetAllView().FirstOrDefault(c => c.Sale.TenChuongTrinh == cmb_sale.Texts);
+
+            //var y = _IQlGiay.GetAllView().FirstOrDefault(c => c.Giay.TenGiay == cmb_giay.Texts);
+
+            //var hg = _IQlHangGiay.GetAllView().FirstOrDefault(c => c.HangGiay.TenHangGiay == cmb_hanggiay.Texts);
+
+            //var ms = _IQlMauSac.GetAllView().FirstOrDefault(c => c.MauSac.TenMauSac == cmb_mausac.Texts);
+
+            //var nsx = _IQlNsx.GetAllView().FirstOrDefault(c => c.Nsx.TenNsx == cmb_nsx.Texts);
+            //if (
+            //    y!=null&&
+            //    hg != null&&
+            //    ms != null&& 
+            //    nsx!=null
+            //)
             //{
-            //    IdSale = x.Sale.Id,
-            //    IdChiTietGiay = z
-            //    TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1,
-            //};
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    & c.ChiTietGiay.IdHangGiay == hg.HangGiay.Id
+            //                                                    & c.ChiTietGiay.IdMauSac == ms.MauSac.Id
+            //                                                    & c.ChiTietGiay.IdNsx == nsx.Nsx.Id);
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y != null &&
+            //    hg == null &&
+            //    ms == null &&
+            //    nsx == null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    );
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y == null &&
+            //    hg != null &&
+            //    ms == null &&
+            //    nsx == null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdHangGiay == hg.HangGiay.Id
+            //    );
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y == null &&
+            //    hg == null &&
+            //    ms != null &&
+            //    nsx == null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdMauSac == ms.MauSac.Id
+            //    );
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y == null &&
+            //    hg == null &&
+            //    ms == null &&
+            //    nsx != null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c =>  c.ChiTietGiay.IdNsx == nsx.Nsx.Id);
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y != null &&
+            //    hg != null &&
+            //    ms == null &&
+            //    nsx == null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    & c.ChiTietGiay.IdHangGiay == hg.HangGiay.Id
+            //                                                    );
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y != null &&
+            //    hg == null &&
+            //    ms != null &&
+            //    nsx == null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    & c.ChiTietGiay.IdMauSac == ms.MauSac.Id
+            //                                                    );
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y != null &&
+            //    hg == null &&
+            //    ms == null &&
+            //    nsx != null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    & c.ChiTietGiay.IdNsx == nsx.Nsx.Id);
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y == null &&
+            //    hg != null &&
+            //    ms != null &&
+            //    nsx == null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdHangGiay == hg.HangGiay.Id
+            //                                                    & c.ChiTietGiay.IdMauSac == ms.MauSac.Id
+            //                                                    );
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y == null &&
+            //    hg != null &&
+            //    ms == null &&
+            //    nsx != null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => 
+            //                                                     c.ChiTietGiay.IdHangGiay == hg.HangGiay.Id
+
+            //                                                    & c.ChiTietGiay.IdNsx == nsx.Nsx.Id);
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y == null &&
+            //    hg == null &&
+            //    ms != null &&
+            //    nsx != null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c =>  c.ChiTietGiay.IdMauSac == ms.MauSac.Id
+            //                                                    & c.ChiTietGiay.IdNsx == nsx.Nsx.Id);
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y != null &&
+            //    hg != null &&
+            //    ms != null &&
+            //    nsx == null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    & c.ChiTietGiay.IdHangGiay == hg.HangGiay.Id
+            //                                                    & c.ChiTietGiay.IdMauSac == ms.MauSac.Id
+            //                                                    );
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y != null &&
+            //    hg == null &&
+            //    ms != null &&
+            //    nsx != null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    & c.ChiTietGiay.IdMauSac == ms.MauSac.Id
+            //                                                    & c.ChiTietGiay.IdNsx == nsx.Nsx.Id);
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y != null &&
+            //    hg != null &&
+            //    ms == null &&
+            //    nsx != null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    & c.ChiTietGiay.IdHangGiay == hg.HangGiay.Id
+            //                                                    & c.ChiTietGiay.IdNsx == nsx.Nsx.Id);
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+            //if (
+            //    y == null &&
+            //    hg != null &&
+            //    ms != null &&
+            //    nsx != null
+            //)
+            //{
+            //    var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id
+            //                                                    & c.ChiTietGiay.IdHangGiay == hg.HangGiay.Id
+            //                                                    & c.ChiTietGiay.IdMauSac == ms.MauSac.Id
+            //                                                    & c.ChiTietGiay.IdNsx == nsx.Nsx.Id);
+
+            //    List<ChiTietSale> cChiTietSales;
+            //    cChiTietSales = new List<ChiTietSale>();
+            //    foreach (var a in z)
+            //    {
+            //        Guid IdSale = x.Sale.Id;
+            //        Guid IdChiTietGiay = a.ChiTietGiay.Id;
+            //        int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+            //        cChiTietSales.Add(new ChiTietSale()
+            //        {
+            //            IdSale = IdSale,
+            //            IdChiTietGiay = IdChiTietGiay,
+            //            TrangThai = TrangThai,
+            //        });
+            //    }
+
+            //    return cChiTietSales;
+            //}
+
+
+
+            //List<ChiTietSale> cu;
+            //cu = new List<ChiTietSale>();
+
+            //return cu;
+
+            ////return new ChiTietSale()
+            ////{
+            ////    IdSale = x.Sale.Id,
+            ////    IdChiTietGiay = z
+            ////    TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1,
+            ////};
+
+            #endregion
         }
 
 
         private void btn_themsale_Click(object sender, EventArgs e)
         {
-
+           
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm", "Thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -442,14 +888,18 @@ namespace C_GUI.QLForm
         }
 
 
-        private void btn_mausac_DpiChangedBeforeParent(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void cmb_giay_OnSelectedIndexChanged_1(object sender, EventArgs e)
         {
-            LoadDataSP2(_IQlChiTietGiay.GetAllView().Where(c => (c.Giay.TenGiay.ToLower().Contains(cmb_giay.Texts.ToLower()))).ToList());
+            if (cmb_giay.Texts==null
+                &&cmb_hanggiay.Items==null
+                &&cmb_mausac.Items==null
+                &&cmb_nsx.Items==null)
+            {
+                
+            }
+            LoadDataSP2(_IQlChiTietGiay.GetAllView().Where(c => (c.Giay.TenGiay.ToLower().Contains(cmb_giay.Texts.ToLower()) || c.HangGiay.TenHangGiay.ToLower().Contains(cmb_hanggiay.Texts.ToLower()))).ToList());
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
@@ -460,6 +910,26 @@ namespace C_GUI.QLForm
             cmb_nsx.Texts = null;
             cmb_sale.Texts = null;
             LoadDataSP2(_IQlChiTietGiay.GetAllView());
+        }
+
+        private void cmb_hanggiay_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDataSP2(_IQlChiTietGiay.GetAllView().Where(c => (c.Giay.TenGiay.ToLower().Contains(cmb_giay.Texts.ToLower()))).ToList());
+        }
+
+        private void dgrid_SP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(dgrid_SP.Rows[e.RowIndex].Cells[8].Value.ToString());
+        }
+
+        private void cmb_mausac_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_nsx_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

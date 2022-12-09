@@ -55,6 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rjButton1 = new C_GUI.RJControls.RJButton();
             this.btn_nsx = new FontAwesome.Sharp.IconButton();
             this.btn_mausac = new FontAwesome.Sharp.IconButton();
             this.btn_hanggiay = new FontAwesome.Sharp.IconButton();
@@ -72,7 +73,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_giay = new C_GUI.RJControls.RJComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.rjButton1 = new C_GUI.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.a.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_showsanpham)).BeginInit();
@@ -357,7 +357,6 @@
             this.a.TabIndex = 1;
             this.a.TabStop = false;
             this.a.Text = "THÔNG TIN SIZE";
-            this.a.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dgrid_showsanpham
             // 
@@ -373,6 +372,7 @@
             // 
             // dgrid_SP
             // 
+            this.dgrid_SP.AllowUserToAddRows = false;
             this.dgrid_SP.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrid_SP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_SP.Location = new System.Drawing.Point(358, 577);
@@ -382,6 +382,7 @@
             this.dgrid_SP.RowTemplate.Height = 29;
             this.dgrid_SP.Size = new System.Drawing.Size(919, 213);
             this.dgrid_SP.TabIndex = 58;
+            this.dgrid_SP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_SP_CellContentClick);
             // 
             // dgrid_SALE
             // 
@@ -394,6 +395,7 @@
             this.dgrid_SALE.RowTemplate.Height = 29;
             this.dgrid_SALE.Size = new System.Drawing.Size(359, 160);
             this.dgrid_SALE.TabIndex = 50;
+            this.dgrid_SALE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_SALE_CellContentClick);
             // 
             // label12
             // 
@@ -522,6 +524,28 @@
             this.panel2.Size = new System.Drawing.Size(323, 376);
             this.panel2.TabIndex = 47;
             // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.Turquoise;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.rjButton1.BorderColor = System.Drawing.Color.Black;
+            this.rjButton1.BorderRadius = 10;
+            this.rjButton1.BorderSize = 2;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rjButton1.ForeColor = System.Drawing.Color.Black;
+            this.rjButton1.Location = new System.Drawing.Point(227, 236);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(88, 30);
+            this.rjButton1.SizeImage = new System.Drawing.Size(20, 20);
+            this.rjButton1.TabIndex = 75;
+            this.rjButton1.Text = "Clean";
+            this.rjButton1.TextColor = System.Drawing.Color.Black;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
             // btn_nsx
             // 
             this.btn_nsx.IconChar = FontAwesome.Sharp.IconChar.Plus;
@@ -549,7 +573,6 @@
             this.btn_mausac.TabIndex = 73;
             this.btn_mausac.UseVisualStyleBackColor = true;
             this.btn_mausac.Click += new System.EventHandler(this.btn_mausac_Click);
-            this.btn_mausac.DpiChangedBeforeParent += new System.EventHandler(this.btn_mausac_DpiChangedBeforeParent);
             // 
             // btn_hanggiay
             // 
@@ -583,6 +606,7 @@
             this.cmb_nsx.Size = new System.Drawing.Size(200, 31);
             this.cmb_nsx.TabIndex = 71;
             this.cmb_nsx.Texts = "";
+            this.cmb_nsx.OnSelectedIndexChanged += new System.EventHandler(this.cmb_nsx_OnSelectedIndexChanged);
             // 
             // cmb_mausac
             // 
@@ -602,6 +626,7 @@
             this.cmb_mausac.Size = new System.Drawing.Size(200, 31);
             this.cmb_mausac.TabIndex = 70;
             this.cmb_mausac.Texts = "";
+            this.cmb_mausac.OnSelectedIndexChanged += new System.EventHandler(this.cmb_mausac_OnSelectedIndexChanged);
             // 
             // cmb_hanggiay
             // 
@@ -621,6 +646,7 @@
             this.cmb_hanggiay.Size = new System.Drawing.Size(200, 31);
             this.cmb_hanggiay.TabIndex = 69;
             this.cmb_hanggiay.Texts = "";
+            this.cmb_hanggiay.OnSelectedIndexChanged += new System.EventHandler(this.cmb_hanggiay_OnSelectedIndexChanged);
             // 
             // label15
             // 
@@ -790,28 +816,6 @@
             this.label9.Size = new System.Drawing.Size(53, 15);
             this.label9.TabIndex = 42;
             this.label9.Text = "Tên Sale";
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.Turquoise;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.Turquoise;
-            this.rjButton1.BorderColor = System.Drawing.Color.Black;
-            this.rjButton1.BorderRadius = 10;
-            this.rjButton1.BorderSize = 2;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rjButton1.ForeColor = System.Drawing.Color.Black;
-            this.rjButton1.Location = new System.Drawing.Point(227, 236);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(88, 30);
-            this.rjButton1.SizeImage = new System.Drawing.Size(20, 20);
-            this.rjButton1.TabIndex = 75;
-            this.rjButton1.Text = "Clean";
-            this.rjButton1.TextColor = System.Drawing.Color.Black;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // FormSale
             // 

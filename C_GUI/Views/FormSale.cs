@@ -1,8 +1,16 @@
-﻿using A_DAL.Entities;
+﻿using B_BUS.View_Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using B_BUS.IServices;
 using B_BUS.Services;
-using B_BUS.View_Models;
-using System.Data;
+using A_DAL.Entities;
 
 namespace C_GUI.QLForm
 {
@@ -12,7 +20,10 @@ namespace C_GUI.QLForm
         public IQLChiTietSale _IQlChiTietSale;
         public IQLGiay _IQlGiay;
         public IQLChiTietGiay _IQlChiTietGiay;
-        private Guid _ID;
+        public IQLHangGiay _IQlHangGiay;
+        public IQLMauSac _IQlMauSac;
+        public IQLNsx _IQlNsx;
+        Guid _ID;
         public FormSale()
         {
             InitializeComponent();
@@ -20,27 +31,51 @@ namespace C_GUI.QLForm
             _IQlChiTietSale = new QLChiTietSale();
             _IQlChiTietGiay = new QLChiTietGiay();
             _IQlGiay = new QLGiay();
+            _IQlHangGiay = new QLHangGiay();
+            _IQlMauSac = new QLMauSac();
+            _IQlNsx = new QLNsx();
             txt_ptgiam.Texts = "0";
             txt_sotiengiam.Texts = "0";
             LoadData(_IQlSale.GetAllView());
             LoadDataSP();
-            LoadDataSale(_IQlChiTietSale.GetAllView());
             Loadcmb();
+            
+            LoadDataSP2(_IQlChiTietGiay.GetAllView());
+            LoadDataSale(_IQlChiTietSale.GetAllView());
 
         }
         public void Loadcmb()
         {
             cmb_giay.Items.Clear();
             cmb_sale.Items.Clear();
-            foreach (Sale a in _IQlSale.GetAll())
+            cmb_hanggiay.Items.Clear();
+            cmb_mausac.Items.Clear();
+            cmb_nsx.Items.Clear();
+            foreach (var a in _IQlSale.GetAll())
             {
                 _ = cmb_sale.Items.Add(a.TenChuongTrinh);
             }
 
-            foreach (Giay a in _IQlGiay.GetAll())
+            foreach (var a in _IQlGiay.GetAll())
             {
                 _ = cmb_giay.Items.Add(a.TenGiay);
             }
+            foreach (var a in _IQlHangGiay.GetAll())
+            {
+                _ = cmb_hanggiay.Items.Add(a.TenHangGiay);
+            }
+
+            foreach (var a in _IQlMauSac.GetAll())
+            {
+                _ = cmb_mausac.Items.Add(a.TenMauSac);
+            }
+            foreach (var a in _IQlNsx.GetAll())
+            {
+                _ = cmb_nsx.Items.Add(a.TenNsx);
+            }
+
+
+
 
         }
         public void LoadData(List<SaleView> saleViews)
@@ -58,7 +93,7 @@ namespace C_GUI.QLForm
             dgrid_show.Columns[8].Name = "trạng thái";
             dgrid_show.Rows.Clear();
             dgrid_show.Columns[1].Visible = false;
-            foreach (SaleView a in saleViews)
+            foreach (var a in saleViews)
             {
                 _ = dgrid_show.Rows.Add(stt++, a.Sale.Id, a.Sale.MaGiamGia, a.Sale.TenChuongTrinh, a.Sale.PhanTramGiamGia, a.Sale.SoTiemGiamGia, a.Sale.NgayBatDau, a.Sale.NgayKetThuc, (a.Sale.NgayBatDau <= DateTime.Now && a.Sale.NgayKetThuc >= DateTime.Now) ? "hoat dong" : "khong hoat dong");
             }
@@ -76,29 +111,53 @@ namespace C_GUI.QLForm
             dgrid_SALE.Columns[4].Name = "trạng thái";
             dgrid_SALE.Rows.Clear();
             dgrid_SALE.Columns[1].Visible = false;
-            foreach (ChiTietSaleView a in chiTietSaleViews)
+            foreach (var a in chiTietSaleViews)
             {
                 _ = dgrid_SALE.Rows.Add(stt++, a.ChiTietSale.Id, a.Sale.TenChuongTrinh, a.Giay.TenGiay, (a.Sale.NgayBatDau <= DateTime.Now && a.Sale.NgayKetThuc >= DateTime.Now) ? "hoat dong" : "khong hoat dong");
             }
         }
+
         public void LoadDataSP()
         {
             int stt = 1;
-            dgrid_showsanpham.ColumnCount = 10;
+            dgrid_showsanpham.ColumnCount = 9;
             dgrid_showsanpham.Columns[0].Name = "stt";
             dgrid_showsanpham.Columns[1].Name = "Giá bán";
-            dgrid_showsanpham.Columns[2].Name = "Giá KM";
-            dgrid_showsanpham.Columns[3].Name = "Tên giày";
-            dgrid_showsanpham.Columns[4].Name = "Giá nhập";
-            dgrid_showsanpham.Columns[5].Name = "Số lượng tồn";
+            dgrid_showsanpham.Columns[2].Name = "Giá Khuyến mại";
+            dgrid_showsanpham.Columns[3].Name = "Màu sắc";
+            dgrid_showsanpham.Columns[4].Name = "Tên giày";
+            dgrid_showsanpham.Columns[5].Name = "Giá nhập";
+            dgrid_showsanpham.Columns[6].Name = "Số lượng tồn";
+            dgrid_showsanpham.Columns[7].Name = "Hãng giày";
+            dgrid_showsanpham.Columns[8].Name = "NSX";
 
             dgrid_showsanpham.Rows.Clear();
-            foreach (ChiTietSaleView a in _IQlChiTietSale.GetAllView())
+            foreach (var a in _IQlChiTietGiay.GetAllViewSale())
             {
-                GiayView? b = _IQlGiay.GetAllView().Find(c => c.Giay.Id == a.ChiTietGiay.IdGiay);
-                SaleView? c = _IQlSale.GetAllView().Find(c => c.Sale.Id == a.ChiTietSale.IdSale);
+                var b = _IQlChiTietSale.GetAllView().Find(c => c.ChiTietSale.IdChiTietGiay == a.ChiTietGiay.Id);
+                var c = _IQlSale.GetAllView().Find(c => c.Sale.Id == b.ChiTietSale.IdSale);
                 //var c = _IQlChiTietSale.GetAllView().Find(c => c.ChiTietSale.IdSale == b.Sale.Id);
-                _ = dgrid_showsanpham.Rows.Add(stt++, a.ChiTietGiay.GiaBan, a.ChiTietGiay.GiaBan - (a.ChiTietGiay.GiaBan * (c.Sale.PhanTramGiamGia / 100)) - c.Sale.SoTiemGiamGia, b.Giay.TenGiay, a.ChiTietGiay.GiaNhap, a.ChiTietGiay.SoLuongTon);
+                _ = dgrid_showsanpham.Rows.Add(stt++, a.ChiTietGiay.GiaBan, (a.ChiTietGiay.GiaBan - (a.ChiTietGiay.GiaBan * ((c.Sale.PhanTramGiamGia) / 100)) - c.Sale.SoTiemGiamGia), a.MauSac.TenMauSac, a.Giay.TenGiay, a.ChiTietGiay.GiaNhap, a.ChiTietGiay.SoLuongTon, a.HangGiay.TenHangGiay, a.Nsx.TenNsx);
+            }
+        }
+        public void LoadDataSP2(List<ChiTietGiayView> chiTietGiayViews)
+        {
+            int stt = 1;
+            dgrid_SP.ColumnCount = 8;
+            dgrid_SP.Columns[0].Name = "stt";
+            dgrid_SP.Columns[1].Name = "Giá bán";
+            dgrid_SP.Columns[2].Name = "Màu sắc";
+            dgrid_SP.Columns[3].Name = "Tên giày";
+            dgrid_SP.Columns[4].Name = "Giá nhập";
+            dgrid_SP.Columns[5].Name = "Số lượng tồn";
+            dgrid_SP.Columns[6].Name = "Hãng giày";
+            dgrid_SP.Columns[7].Name = "NSX";
+
+            dgrid_SALE.Rows.Clear();
+            foreach (var a in chiTietGiayViews)
+            {
+                //var c = _IQlChiTietSale.GetAllView().Find(c => c.ChiTietSale.IdSale == b.Sale.Id);
+                _ = dgrid_SP.Rows.Add(stt++, a.ChiTietGiay.GiaBan, a.MauSac.TenMauSac, a.Giay.TenGiay, a.ChiTietGiay.GiaNhap, a.ChiTietGiay.SoLuongTon, a.HangGiay.TenHangGiay, a.Nsx.TenNsx);
             }
         }
         public Sale GetvaluaContro()
@@ -133,16 +192,22 @@ namespace C_GUI.QLForm
                 _ = MessageBox.Show("Kiểm tra lại các giá trị đầu vào");
                 return;
             }
-            if (dtp_ngaybatdau.Value < DateTime.Today || dtp_ngayketthuc.Value < dtp_ngaybatdau.Value)
+            if (dtp_ngaybatdau.Value < (DateTime.Today) || dtp_ngayketthuc.Value < dtp_ngaybatdau.Value)
             {
                 _ = MessageBox.Show("Kiểm tra lại lịch");
                 return;
             }
 
 
-            if (int.Parse(txt_ptgiam.Texts) is < 0 or > 100)
+            if (int.Parse(txt_ptgiam.Texts) < 0 || int.Parse(txt_ptgiam.Texts) > 100)
             {
                 _ = MessageBox.Show("Kiểm tra lại số %");
+                return;
+            }
+
+            if (txt_ma.Texts == null || txt_ten.Texts == null || txt_ptgiam.Texts == null || txt_sotiengiam.Texts == null)
+            {
+                _ = MessageBox.Show("Kiểm tra lại thoonh tin nhập");
                 return;
             }
             try
@@ -164,6 +229,7 @@ namespace C_GUI.QLForm
                 LoadDataSP();
                 LoadDataSale(_IQlChiTietSale.GetAllView());
                 Loadcmb();
+
             }
         }
 
@@ -174,7 +240,7 @@ namespace C_GUI.QLForm
                 _ = MessageBox.Show("Kiểm tra lại lịch");
                 return;
             }
-            if (int.Parse(txt_ptgiam.Texts) is < 0 or > 100)
+            if (int.Parse(txt_ptgiam.Texts) < 0 || int.Parse(txt_ptgiam.Texts) > 100)
             {
                 _ = MessageBox.Show("Kiểm tra lại số %");
                 return;
@@ -190,6 +256,7 @@ namespace C_GUI.QLForm
                     LoadDataSP();
                     LoadDataSale(_IQlChiTietSale.GetAllView());
                     Loadcmb();
+
                 }
             }
         }
@@ -207,6 +274,7 @@ namespace C_GUI.QLForm
                     LoadData(_IQlSale.GetAllView()); LoadDataSP();
                     LoadDataSale(_IQlChiTietSale.GetAllView());
                     Loadcmb();
+
                 }
             }
         }
@@ -226,21 +294,37 @@ namespace C_GUI.QLForm
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_IQlSale.GetAllView().Where(c => c.Sale.TenChuongTrinh.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Sale.MaGiamGia.ToLower().Contains(txt_timkiem.Texts.ToLower())).ToList());
+            LoadData(_IQlSale.GetAllView().Where(c => (c.Sale.TenChuongTrinh.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Sale.MaGiamGia.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
         }
-        public ChiTietSale GetvaluaControSALE()
+        public List<ChiTietSale> GetvaluaControSALE()
         {
-            SaleView? x = _IQlSale.GetAllView().FirstOrDefault(c => c.Sale.TenChuongTrinh == cmb_sale.Texts);
+            var x = _IQlSale.GetAllView().FirstOrDefault(c => c.Sale.TenChuongTrinh == cmb_sale.Texts);
 
-            GiayView? y = _IQlGiay.GetAllView().FirstOrDefault(c => c.Giay.TenGiay == cmb_giay.Texts);
+            var y = _IQlGiay.GetAllView().FirstOrDefault(c => c.Giay.TenGiay == cmb_giay.Texts);
 
-            ChiTietGiayView? z = _IQlChiTietGiay.GetAllView().FirstOrDefault(c => c.ChiTietGiay.IdGiay == y.Giay.Id);
-            return new ChiTietSale()
+            var z = _IQlChiTietGiay.GetAllView().Where(c => c.ChiTietGiay.IdGiay == y.Giay.Id);
+            List<ChiTietSale> cChiTietSales;
+            cChiTietSales = new List<ChiTietSale>();
+            foreach (var a in z)
             {
-                IdSale = x.Sale.Id,
-                IdChiTietGiay = z.ChiTietGiay.Id,
-                TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1,
-            };
+                Guid IdSale = x.Sale.Id;
+                Guid IdChiTietGiay = a.ChiTietGiay.Id;
+                int TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1;
+                cChiTietSales.Add(new ChiTietSale()
+                {
+                    IdSale = IdSale,
+                    IdChiTietGiay = IdChiTietGiay,
+                    TrangThai = TrangThai,
+                });
+            }
+
+            return cChiTietSales;
+            //return new ChiTietSale()
+            //{
+            //    IdSale = x.Sale.Id,
+            //    IdChiTietGiay = z
+            //    TrangThai = (x.Sale.NgayBatDau <= DateTime.Now && x.Sale.NgayKetThuc >= DateTime.Now) ? 0 : 1,
+            //};
         }
 
 
@@ -250,7 +334,10 @@ namespace C_GUI.QLForm
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm", "Thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                _ = _IQlChiTietSale.Add(GetvaluaControSALE());
+                foreach (var a in GetvaluaControSALE())
+                {
+                    _IQlChiTietSale.Add(a);
+                }
                 LoadDataSP();
                 LoadDataSale(_IQlChiTietSale.GetAllView());
             }
@@ -263,11 +350,11 @@ namespace C_GUI.QLForm
             if (dialogResult == DialogResult.Yes)
             {
 
-                SaleView? x = _IQlSale.GetAllView().FirstOrDefault(c => c.Sale.TenChuongTrinh == cmb_sale.Texts);
+                var x = _IQlSale.GetAllView().FirstOrDefault(c => c.Sale.TenChuongTrinh == cmb_sale.Texts);
 
-                GiayView? y = _IQlGiay.GetAllView().FirstOrDefault(c => c.Giay.TenGiay == cmb_giay.Texts);
+                var y = _IQlGiay.GetAllView().FirstOrDefault(c => c.Giay.TenGiay == cmb_giay.Texts);
 
-                ChiTietGiayView? z = _IQlChiTietGiay.GetAllView().FirstOrDefault(c => c.ChiTietGiay.IdGiay == y.Giay.Id);
+                var z = _IQlChiTietGiay.GetAllView().FirstOrDefault(c => c.ChiTietGiay.IdGiay == y.Giay.Id);
 
                 bool thongBao = _IQlChiTietSale.Update(new A_DAL.Entities.ChiTietSale()
                 {
@@ -305,8 +392,8 @@ namespace C_GUI.QLForm
         {
             int index = e.RowIndex;
             _ID = Guid.Parse(dgrid_SALE.Rows[index].Cells[1].Value.ToString());
-            ChiTietSaleView? a = _IQlChiTietSale.GetAllView().FirstOrDefault(c => c.ChiTietSale.Id == _ID);
-            ChiTietGiayView? b = _IQlChiTietGiay.GetAllView().FirstOrDefault(c => c.ChiTietGiay.Id == a.ChiTietGiay.Id);
+            var a = _IQlChiTietSale.GetAllView().FirstOrDefault(c => c.ChiTietSale.Id == _ID);
+            var b = _IQlChiTietGiay.GetAllView().FirstOrDefault(c => c.ChiTietGiay.Id == a.ChiTietGiay.Id);
             cmb_sale.SelectedItem = _IQlChiTietSale.GetAllView().FirstOrDefault(c => c.ChiTietSale.IdSale == a.ChiTietSale.IdSale).Sale.TenChuongTrinh;
             cmb_giay.SelectedItem = _IQlChiTietGiay.GetAllView().FirstOrDefault(c => c.ChiTietGiay.Id == b.ChiTietGiay.Id).Giay.TenGiay;
 
@@ -320,7 +407,7 @@ namespace C_GUI.QLForm
         private void txt_timkiemsale__TextChanged(object sender, EventArgs e)
         {
 
-            LoadDataSale(_IQlChiTietSale.GetAllView().Where(c => c.Sale.TenChuongTrinh.ToLower().Contains(txt_timkiemsale.Texts.ToLower()) || c.Giay.TenGiay.ToLower().Contains(txt_timkiemsale.Texts.ToLower())).ToList());
+            LoadDataSale(_IQlChiTietSale.GetAllView().Where(c => (c.Sale.TenChuongTrinh.ToLower().Contains(txt_timkiemsale.Texts.ToLower()) || c.Giay.TenGiay.ToLower().Contains(txt_timkiemsale.Texts.ToLower()))).ToList());
         }
 
         private void dgrid_showsanpham_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -330,9 +417,35 @@ namespace C_GUI.QLForm
 
         private void btn_giay_Click(object sender, EventArgs e)
         {
-            FormGiay formGiay = new();
+            FormGiay formGiay = new FormGiay();
             formGiay.Show();
             Loadcmb();
+        }
+
+        private void btn_hanggiay_Click(object sender, EventArgs e)
+        {
+            FormHangGiay formHangGiayGiay = new FormHangGiay();
+            formHangGiayGiay.Show();
+            Loadcmb();
+        }
+
+        private void btn_mausac_Click(object sender, EventArgs e)
+        {
+            FormMauSac formMauSac = new FormMauSac();
+            formMauSac.Show();
+            Loadcmb();
+        }
+
+        private void btn_nsx_Click(object sender, EventArgs e)
+        {
+            FormNsx formnhNsx = new FormNsx();
+            formnhNsx.Show();
+            Loadcmb();
+        }
+
+        private void cmb_giay_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDataSP2(_IQlChiTietGiay.GetAllView().Where(c => (c.Giay.TenGiay.ToLower().Contains(cmb_giay.Texts.ToLower()) || c.HangGiay.TenHangGiay.ToLower().Contains(cmb_hanggiay.Texts.ToLower()))).ToList());
         }
     }
 }

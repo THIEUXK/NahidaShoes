@@ -362,12 +362,7 @@ namespace C_GUI.Views
                    return; 
                 }
 
-                string? anh = "";
-                var bytes = converterDemo(anhsp);
-                foreach (var VARIABLE in bytes)
-                {
-                    anh+=VARIABLE.ToString();
-                }
+                var anh = converterDemo(anhsp);
                 var mausac = _MauSac.GetAll().FirstOrDefault(c => c.TenMauSac == cmb_mausac.Texts);
                 var nsx = _Nsx.GetAll().FirstOrDefault(c => c.TenNsx == _rjcmbNSX.Texts);
                 var hanggiay = _hangGiay.GetAll().FirstOrDefault(c => c.TenHangGiay == _rjcmbHangGiay.Texts);
@@ -464,12 +459,7 @@ namespace C_GUI.Views
         }
         private void _rjbtnEdit_Click(object sender, EventArgs e)
         {
-            string? anh = "";
-            var bytes = converterDemo(anhsp);
-            foreach (var VARIABLE in bytes)
-            {
-                anh += VARIABLE.ToString();
-            }
+            var anh = converterDemo(anhsp);
             var mausac = _MauSac.GetAll().FirstOrDefault(c => c.TenMauSac == cmb_mausac.Texts);
             var nsx = _Nsx.GetAll().FirstOrDefault(c => c.TenNsx == _rjcmbNSX.Texts);
             var hanggiay = _hangGiay.GetAll().FirstOrDefault(c => c.TenHangGiay == _rjcmbHangGiay.Texts);

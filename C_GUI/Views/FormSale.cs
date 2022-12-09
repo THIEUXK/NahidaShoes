@@ -452,6 +452,14 @@ namespace C_GUI.QLForm
             LoadDataSP2(_IQlChiTietGiay.GetAllView().Where(c => (c.Giay.TenGiay.ToLower().Contains(cmb_giay.Texts.ToLower()))).ToList());
         }
 
-      
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            cmb_giay.Texts = null;
+            cmb_hanggiay.Texts = null;
+            cmb_mausac.Texts = null;
+            cmb_nsx.Texts = null;
+            cmb_sale.Texts = null;
+            LoadDataSP2(_IQlChiTietGiay.GetAllView());
+        }
     }
 }

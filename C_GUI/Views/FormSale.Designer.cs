@@ -72,6 +72,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_giay = new C_GUI.RJControls.RJComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.rjButton1 = new C_GUI.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_show)).BeginInit();
             this.a.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_showsanpham)).BeginInit();
@@ -498,6 +499,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Controls.Add(this.rjButton1);
             this.panel2.Controls.Add(this.btn_nsx);
             this.panel2.Controls.Add(this.btn_mausac);
             this.panel2.Controls.Add(this.btn_hanggiay);
@@ -789,6 +791,28 @@
             this.label9.TabIndex = 42;
             this.label9.Text = "Tên Sale";
             // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.Turquoise;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.rjButton1.BorderColor = System.Drawing.Color.Black;
+            this.rjButton1.BorderRadius = 10;
+            this.rjButton1.BorderSize = 2;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rjButton1.ForeColor = System.Drawing.Color.Black;
+            this.rjButton1.Location = new System.Drawing.Point(227, 236);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(88, 30);
+            this.rjButton1.SizeImage = new System.Drawing.Size(20, 20);
+            this.rjButton1.TabIndex = 75;
+            this.rjButton1.Text = "Clean";
+            this.rjButton1.TextColor = System.Drawing.Color.Black;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
             // FormSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -857,5 +881,6 @@
         private FontAwesome.Sharp.IconButton btn_nsx;
         private FontAwesome.Sharp.IconButton btn_mausac;
         private FontAwesome.Sharp.IconButton btn_hanggiay;
+        private RJControls.RJButton rjButton1;
     }
 }

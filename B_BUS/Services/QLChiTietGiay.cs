@@ -16,6 +16,8 @@ namespace B_BUS.Services
         public IGenericRepository<HangGiay> igHangGiay;
         public IGenericRepository<ChieuCaoDeGiay> igchieucaodegiay;
         public IGenericRepository<Giay> igGiay;
+        public IGenericRepository<ChiTietSale> igChiTietSale;
+        public IGenericRepository<Sale> igSale;
         public QLChiTietGiay()
         {
             igchiTietGiay = new GenericRepository<ChiTietGiay>();
@@ -25,6 +27,8 @@ namespace B_BUS.Services
             igHangGiay = new GenericRepository<HangGiay>();
             igchieucaodegiay = new GenericRepository<ChieuCaoDeGiay>();
             igGiay = new GenericRepository<Giay>();
+            igChiTietSale = new GenericRepository<ChiTietSale>();
+            igSale = new GenericRepository<Sale>();
 
         }
         public bool Add(ChiTietGiay obj)

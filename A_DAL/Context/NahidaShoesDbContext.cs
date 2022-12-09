@@ -20,6 +20,7 @@ namespace A_DAL.Context
             ///////////////////////////////
             _ = builder.Entity<ChiTietGiay>().HasKey(c => c.Id);
             _ = builder.Entity<ChiTietGiay>().Property(c => c.Id);
+            _ = builder.Entity<ChiTietGiay>().Property(c => c.Anh).HasColumnType("image");
             _ = builder.Entity<ChiTietGiay>().HasIndex(c => new { c.IdMauSac, c.IdSize, c.IdNsx, c.IdHangGiay, c.IdChieuCaoDeGiay, c.IdGiay }).IsUnique(true);
             ///////////////////////////////
             _ = builder.Entity<ChiTietSale>().HasKey(c => c.Id);

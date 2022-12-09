@@ -39,10 +39,8 @@ namespace C_GUI.QLForm
             LoadData(_IQlSale.GetAllView());
             LoadDataSP();
             Loadcmb();
-            
             LoadDataSP2(_IQlChiTietGiay.GetAllView());
             LoadDataSale(_IQlChiTietSale.GetAllView());
-
         }
         public void Loadcmb()
         {
@@ -153,7 +151,7 @@ namespace C_GUI.QLForm
             dgrid_SP.Columns[6].Name = "Hãng giày";
             dgrid_SP.Columns[7].Name = "NSX";
 
-            dgrid_SALE.Rows.Clear();
+            dgrid_SP.Rows.Clear();
             foreach (var a in chiTietGiayViews)
             {
                 //var c = _IQlChiTietSale.GetAllView().Find(c => c.ChiTietSale.IdSale == b.Sale.Id);
@@ -443,9 +441,17 @@ namespace C_GUI.QLForm
             Loadcmb();
         }
 
-        private void cmb_giay_OnSelectedIndexChanged(object sender, EventArgs e)
+
+        private void btn_mausac_DpiChangedBeforeParent(object sender, EventArgs e)
         {
-            LoadDataSP2(_IQlChiTietGiay.GetAllView().Where(c => (c.Giay.TenGiay.ToLower().Contains(cmb_giay.Texts.ToLower()) || c.HangGiay.TenHangGiay.ToLower().Contains(cmb_hanggiay.Texts.ToLower()))).ToList());
+
         }
+
+        private void cmb_giay_OnSelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            LoadDataSP2(_IQlChiTietGiay.GetAllView().Where(c => (c.Giay.TenGiay.ToLower().Contains(cmb_giay.Texts.ToLower()))).ToList());
+        }
+
+      
     }
 }

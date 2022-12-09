@@ -55,6 +55,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_nsx = new FontAwesome.Sharp.IconButton();
+            this.btn_mausac = new FontAwesome.Sharp.IconButton();
+            this.btn_hanggiay = new FontAwesome.Sharp.IconButton();
             this.cmb_nsx = new C_GUI.RJControls.RJComboBox();
             this.cmb_mausac = new C_GUI.RJControls.RJComboBox();
             this.cmb_hanggiay = new C_GUI.RJControls.RJComboBox();
@@ -495,6 +498,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Controls.Add(this.btn_nsx);
+            this.panel2.Controls.Add(this.btn_mausac);
+            this.panel2.Controls.Add(this.btn_hanggiay);
             this.panel2.Controls.Add(this.cmb_nsx);
             this.panel2.Controls.Add(this.cmb_mausac);
             this.panel2.Controls.Add(this.cmb_hanggiay);
@@ -513,6 +519,49 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(323, 376);
             this.panel2.TabIndex = 47;
+            // 
+            // btn_nsx
+            // 
+            this.btn_nsx.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_nsx.IconColor = System.Drawing.Color.Black;
+            this.btn_nsx.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_nsx.IconSize = 30;
+            this.btn_nsx.Location = new System.Drawing.Point(287, 207);
+            this.btn_nsx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_nsx.Name = "btn_nsx";
+            this.btn_nsx.Size = new System.Drawing.Size(28, 25);
+            this.btn_nsx.TabIndex = 74;
+            this.btn_nsx.UseVisualStyleBackColor = true;
+            this.btn_nsx.Click += new System.EventHandler(this.btn_nsx_Click);
+            // 
+            // btn_mausac
+            // 
+            this.btn_mausac.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_mausac.IconColor = System.Drawing.Color.Black;
+            this.btn_mausac.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_mausac.IconSize = 30;
+            this.btn_mausac.Location = new System.Drawing.Point(287, 170);
+            this.btn_mausac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_mausac.Name = "btn_mausac";
+            this.btn_mausac.Size = new System.Drawing.Size(28, 25);
+            this.btn_mausac.TabIndex = 73;
+            this.btn_mausac.UseVisualStyleBackColor = true;
+            this.btn_mausac.Click += new System.EventHandler(this.btn_mausac_Click);
+            this.btn_mausac.DpiChangedBeforeParent += new System.EventHandler(this.btn_mausac_DpiChangedBeforeParent);
+            // 
+            // btn_hanggiay
+            // 
+            this.btn_hanggiay.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btn_hanggiay.IconColor = System.Drawing.Color.Black;
+            this.btn_hanggiay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_hanggiay.IconSize = 30;
+            this.btn_hanggiay.Location = new System.Drawing.Point(287, 133);
+            this.btn_hanggiay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_hanggiay.Name = "btn_hanggiay";
+            this.btn_hanggiay.Size = new System.Drawing.Size(28, 25);
+            this.btn_hanggiay.TabIndex = 72;
+            this.btn_hanggiay.UseVisualStyleBackColor = true;
+            this.btn_hanggiay.Click += new System.EventHandler(this.btn_hanggiay_Click);
             // 
             // cmb_nsx
             // 
@@ -728,6 +777,7 @@
             this.cmb_giay.Size = new System.Drawing.Size(200, 31);
             this.cmb_giay.TabIndex = 42;
             this.cmb_giay.Texts = "";
+            this.cmb_giay.OnSelectedIndexChanged += new System.EventHandler(this.cmb_giay_OnSelectedIndexChanged_1);
             // 
             // label9
             // 
@@ -804,5 +854,8 @@
         private Label label15;
         private Label label13;
         private Label label11;
+        private FontAwesome.Sharp.IconButton btn_nsx;
+        private FontAwesome.Sharp.IconButton btn_mausac;
+        private FontAwesome.Sharp.IconButton btn_hanggiay;
     }
 }

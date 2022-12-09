@@ -50,7 +50,7 @@ namespace C_GUI.QLForm
                 _ = _iQLChieuCaoDeGiay.Add(GetCtrlValues());
                 LoadData(_iQLChieuCaoDeGiay.GetAllView());
             }
-           
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace C_GUI.QLForm
                     LoadData(_iQLChieuCaoDeGiay.GetAllView());
                 }
             }
-            
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace C_GUI.QLForm
                     LoadData(_iQLChieuCaoDeGiay.GetAllView());
                 }
             }
-            
+
         }
 
         private void dgrid_show_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,7 +101,7 @@ namespace C_GUI.QLForm
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_iQLChieuCaoDeGiay.GetAllView().Where(c => (c.ChieuCaoDeGiay.MaKichCo.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
+            LoadData(_iQLChieuCaoDeGiay.GetAllView().Where(c => c.ChieuCaoDeGiay.MaKichCo.ToLower().Contains(txt_timkiem.Texts.ToLower())).ToList());
         }
     }
 }

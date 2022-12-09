@@ -47,7 +47,7 @@ namespace B_BUS.Services
 
         public Guid IdSize(Size obj)
         {
-            Size x = new Size()
+            Size x = new()
             {
                 Id = Guid.NewGuid(),
                 MaSize = obj.MaSize,
@@ -55,8 +55,7 @@ namespace B_BUS.Services
                 SoSize = obj.SoSize,
                 TrangThai = obj.TrangThai
             };
-            if (igSize.Add(x)) return x.Id;
-            else return Guid.Empty;
+            return igSize.Add(x) ? x.Id : Guid.Empty;
         }
 
         public bool CheckMa(string ma)

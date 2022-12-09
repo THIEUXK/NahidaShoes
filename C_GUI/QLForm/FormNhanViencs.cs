@@ -23,7 +23,7 @@ namespace C_GUI.QLForm
         }
         public void LoadcmbChucVu()
         {
-            foreach (var a in _IQlChucVu.GetAll())
+            foreach (ChucVu a in _IQlChucVu.GetAll())
             {
                 _ = cmb_chucvu.Items.Add(a.TenChucVu);
             }
@@ -31,7 +31,7 @@ namespace C_GUI.QLForm
         public void LoadcmbCuaHang()
         {
 
-            foreach (var a in _IQlCuaHang.GetAll())
+            foreach (CuaHang a in _IQlCuaHang.GetAll())
             {
                 _ = cmb_cuahang.Items.Add(a.TenCuaHang);
             }
@@ -144,7 +144,7 @@ namespace C_GUI.QLForm
                 _ = _IQlNhanVien.Add(GetvaluaContro());
                 LoadData(_IQlNhanVien.GetAllView());
             }
-            
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -176,7 +176,7 @@ namespace C_GUI.QLForm
                     LoadData(_IQlNhanVien.GetAllView());
                 }
             }
-            
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -191,12 +191,12 @@ namespace C_GUI.QLForm
                     LoadData(_IQlNhanVien.GetAllView());
                 }
             }
-            
+
         }
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_IQlNhanVien.GetAllView().Where(c => (c.NhanVien.TenNhanVien.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.NhanVien.MaNhanVien.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
+            LoadData(_IQlNhanVien.GetAllView().Where(c => c.NhanVien.TenNhanVien.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.NhanVien.MaNhanVien.ToLower().Contains(txt_timkiem.Texts.ToLower())).ToList());
         }
     }
 }

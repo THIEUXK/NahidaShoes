@@ -32,7 +32,7 @@ namespace C_GUI.QLForm
             foreach (GiayView a in giayViews)
             {
 
-                _ = dgrid_showGiay.Rows.Add(stt++,a.Giay.Id ,a.Giay.MaGiay, a.Giay.TenGiay, a.Giay.TrangThai == 1 ? "hoạt động" : "Không hoạt động");
+                _ = dgrid_showGiay.Rows.Add(stt++, a.Giay.Id, a.Giay.MaGiay, a.Giay.TenGiay, a.Giay.TrangThai == 1 ? "hoạt động" : "Không hoạt động");
             }
 
         }
@@ -70,7 +70,7 @@ namespace C_GUI.QLForm
                 _ = _IQLGiay.Add(GetvaluaContro());
                 LoadData(_IQLGiay.GetAllView());
             }
-            
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace C_GUI.QLForm
                     LoadData(_IQLGiay.GetAllView());
                 }
             }
-            
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -100,12 +100,12 @@ namespace C_GUI.QLForm
                     LoadData(_IQLGiay.GetAllView());
                 }
             }
-            
+
         }
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_IQLGiay.GetAllView().Where(c => (c.Giay.MaGiay.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Giay.TenGiay.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
+            LoadData(_IQLGiay.GetAllView().Where(c => c.Giay.MaGiay.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Giay.TenGiay.ToLower().Contains(txt_timkiem.Texts.ToLower())).ToList());
         }
     }
 }

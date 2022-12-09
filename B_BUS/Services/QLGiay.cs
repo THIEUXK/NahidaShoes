@@ -39,15 +39,15 @@ namespace B_BUS.Services
 
         public Guid idGiay(Giay obj)
         {
-            Giay x = new Giay();
+            Giay x = new()
+            {
+                Id = Guid.NewGuid(),
+                MaGiay = obj.MaGiay,
+                TenGiay = obj.TenGiay,
+                TrangThai = obj.TrangThai
+            };
 
-            x.Id = Guid.NewGuid();
-            x.MaGiay = obj.MaGiay;
-            x.TenGiay = obj.TenGiay;
-            x.TrangThai = obj.TrangThai;
-            
-            if (igiay.Add(x)) return x.Id;
-            else return Guid.Empty;
+            return igiay.Add(x) ? x.Id : Guid.Empty;
         }
 
         public Giay? GetByMa(string? ma)

@@ -75,7 +75,7 @@ namespace C_GUI.QLForm
                 _ = _IQlCuaHang.Add(GetvaluaContro());
                 LoadData(_IQlCuaHang.GetAllView());
             }
-            
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -90,8 +90,8 @@ namespace C_GUI.QLForm
                     LoadData(_IQlCuaHang.GetAllView());
                 }
             }
-            
-            
+
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -107,18 +107,18 @@ namespace C_GUI.QLForm
                     LoadData(_IQlCuaHang.GetAllView());
                 }
             }
-           
+
         }
 
         private void dgrid_show_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            
+
         }
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_IQlCuaHang.GetAllView().Where(c => (c.CuaHang.TenCuaHang.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.CuaHang.MaCuaHang.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
+            LoadData(_IQlCuaHang.GetAllView().Where(c => c.CuaHang.TenCuaHang.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.CuaHang.MaCuaHang.ToLower().Contains(txt_timkiem.Texts.ToLower())).ToList());
         }
     }
 }

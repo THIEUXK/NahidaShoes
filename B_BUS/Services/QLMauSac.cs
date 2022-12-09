@@ -40,15 +40,14 @@ namespace B_BUS.Services
 
         public Guid IdMauSac(MauSac obj)
         {
-            MauSac x = new MauSac()
+            MauSac x = new()
             {
                 Id = Guid.NewGuid(),
                 MaMauSac = obj.MaMauSac,
                 TenMauSac = obj.TenMauSac,
                 TrangThai = obj.TrangThai
             };
-            if (_igmausac.Add(x)) return x.Id;
-            else return Guid.Empty;
+            return _igmausac.Add(x) ? x.Id : Guid.Empty;
         }
 
         public MauSac? GetByMa(string? ma)

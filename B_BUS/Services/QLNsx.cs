@@ -49,16 +49,16 @@ namespace B_BUS.Services
         }
         public Guid IdNsx(Nsx nsx)
         {
-            Nsx n = new Nsx();
+            Nsx n = new()
+            {
+                Id = Guid.NewGuid(),
+                MaNsx = nsx.MaNsx,
+                TenNsx = nsx.TenNsx,
+                DiaChi = nsx.DiaChi,
+                TrangThai = nsx.TrangThai
+            };
 
-            n.Id = Guid.NewGuid();
-            n.MaNsx = nsx.MaNsx;
-            n.TenNsx = nsx.TenNsx;
-            n.DiaChi = nsx.DiaChi;
-            n.TrangThai = nsx.TrangThai;
-            
-            if (ignsxview.Add(n)) return n.Id;
-            else return Guid.Empty;             
+            return ignsxview.Add(n) ? n.Id : Guid.Empty;
         }
         public List<NsxView> GetAllView()
         {

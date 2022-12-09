@@ -63,7 +63,7 @@ namespace C_GUI.QLForm
                 _ = _iQLNsx.Add(GetCtrlValues());
                 LoadData(_iQLNsx.GetAllView());
             }
-            
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace C_GUI.QLForm
                     LoadData(_iQLNsx.GetAllView());
                 }
             }
-            
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -93,12 +93,12 @@ namespace C_GUI.QLForm
                     LoadData(_iQLNsx.GetAllView());
                 }
             }
-           
+
         }
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_iQLNsx.GetAllView().Where(c => (c.Nsx.TenNsx.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Nsx.MaNsx.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
+            LoadData(_iQLNsx.GetAllView().Where(c => c.Nsx.TenNsx.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Nsx.MaNsx.ToLower().Contains(txt_timkiem.Texts.ToLower())).ToList());
         }
     }
 }

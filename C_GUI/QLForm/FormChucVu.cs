@@ -65,12 +65,12 @@ namespace C_GUI.Views
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm", "Thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-            
 
-            _ = _IQlChucVu.Add(GetvaluaContro());
+
+                _ = _IQlChucVu.Add(GetvaluaContro());
                 LoadData(_IQlChucVu.GetAllView());
             }
-            
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace C_GUI.Views
                     LoadData(_IQlChucVu.GetAllView());
                 }
             }
-        
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace C_GUI.Views
                     LoadData(_IQlChucVu.GetAllView());
                 }
             }
-            
+
         }
 
         private void txt_timkiem_ChangeUICues(object sender, UICuesEventArgs e)
@@ -110,7 +110,7 @@ namespace C_GUI.Views
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_IQlChucVu.GetAllView().Where(c => (c.ChucVu.TenChucVu.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.ChucVu.MaChucVu.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
+            LoadData(_IQlChucVu.GetAllView().Where(c => c.ChucVu.TenChucVu.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.ChucVu.MaChucVu.ToLower().Contains(txt_timkiem.Texts.ToLower())).ToList());
         }
     }
 }

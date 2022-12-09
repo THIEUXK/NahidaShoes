@@ -1,8 +1,8 @@
-﻿        using OfficeOpenXml;
+﻿using A_DAL.Entities;
+using B_BUS.IServices;
+using B_BUS.Services;
+using OfficeOpenXml;
 using System.Data;
-        using A_DAL.Entities;
-        using B_BUS.IServices;
-        using B_BUS.Services;
 using Size = A_DAL.Entities.Size;
 
 namespace C_GUI.Views
@@ -19,13 +19,13 @@ namespace C_GUI.Views
         public int GiaNhap;
         public int GiaBan;
         public int SoluongTon;
-        private IQLChiTietGiay _ChiTietGiay;
-        private IQLMauSac _MauSac;
-        IQLNsx _Nsx;
-        private IQLSize _Size;
-        private IQLHangGiay _hangGiay;
-        IQLChieuCaoDeGiay _ChieuCaoDeGiay;
-        private IQLGiay _Giay;
+        private readonly IQLChiTietGiay _ChiTietGiay;
+        private readonly IQLMauSac _MauSac;
+        private readonly IQLNsx _Nsx;
+        private readonly IQLSize _Size;
+        private readonly IQLHangGiay _hangGiay;
+        private readonly IQLChieuCaoDeGiay _ChieuCaoDeGiay;
+        private readonly IQLGiay _Giay;
         public FormImport()
         {
             InitializeComponent();
@@ -133,7 +133,7 @@ namespace C_GUI.Views
                         GiaNhap = int.Parse(_dgrvThongTinSanPham.Rows[i].Cells[8].Value.ToString());
                         SoluongTon = int.Parse(_dgrvThongTinSanPham.Rows[i].Cells[9].Value.ToString());
 
-                        var n = new Nsx()
+                        Nsx n = new()
                         {
                             MaNsx = (_Nsx.GetAll().Count + 1).ToString(),
                             TenNsx = TenNSX,
@@ -142,10 +142,10 @@ namespace C_GUI.Views
                         };
 
                         Guid IdNsx = _Nsx.IdNsx(n);
-                      //  MessageBox.Show(IdNsx.ToString());
+                        //  MessageBox.Show(IdNsx.ToString());
 
 
-                        var m = new MauSac()
+                        MauSac m = new()
                         {
                             MaMauSac = (_MauSac.GetAll().Count + 1).ToString(),
                             TenMauSac = TenMausac,
@@ -153,7 +153,7 @@ namespace C_GUI.Views
                         };
                         Guid idMauSac = _MauSac.IdMauSac(m);
 
-                        var s = new Size()
+                        Size s = new()
                         {
                             MaSize = (_Size.GetAll().Count + 1).ToString(),
                             TenSize = TenSize,
@@ -162,7 +162,7 @@ namespace C_GUI.Views
                         };
                         Guid idSize = _Size.IdSize(s);
 
-                        var h = new HangGiay()
+                        HangGiay h = new()
                         {
                             MaHangGiay = (_hangGiay.GetAll().Count + 1).ToString(),
                             TenHangGiay = TenHangGiay,
@@ -170,7 +170,7 @@ namespace C_GUI.Views
                         };
                         Guid IdHangGiay = _hangGiay.IdHangGiay(h);
 
-                        var k = new ChieuCaoDeGiay()
+                        ChieuCaoDeGiay k = new()
                         {
                             MaKichCo = (_ChieuCaoDeGiay.GetAll().Count + 1).ToString(),
                             KichCo = KichCo,
@@ -178,7 +178,7 @@ namespace C_GUI.Views
                         };
                         Guid IdKichCo = _ChieuCaoDeGiay.IdChieuCaoDeGiay(k);
 
-                        var l = new Giay()
+                        Giay l = new()
                         {
                             MaGiay = (_Giay.GetAll().Count + 1).ToString(),
                             TenGiay = TenGiay,
@@ -186,8 +186,8 @@ namespace C_GUI.Views
 
                         };
                         Guid giay = _Giay.idGiay(l);
-                      //  MessageBox.Show(giay.ToString());
-                        var spCt = new ChiTietGiay()
+                        //  MessageBox.Show(giay.ToString());
+                        ChiTietGiay spCt = new()
                         {
                             Id = Guid.NewGuid(),
                             MoTa = Mota,
@@ -203,23 +203,23 @@ namespace C_GUI.Views
                             IdSize = idSize,
 
                         };
-                        _ChiTietGiay.Add(spCt);
-                       // MessageBox.Show("ID ChiTietSanPham");
+                        _ = _ChiTietGiay.Add(spCt);
+                        // MessageBox.Show("ID ChiTietSanPham");
 
                     }
                     catch (Exception)
                     {
 
-                        MessageBox.Show("Lỗi");
+                        _ = MessageBox.Show("Lỗi");
                     }
                 }
-                MessageBox.Show("Thêm Thanh Công");
-                
+                _ = MessageBox.Show("Thêm Thanh Công");
+
 
 
             }
         }
     }
-    }
+}
 
 

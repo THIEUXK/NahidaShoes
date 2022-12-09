@@ -64,14 +64,24 @@ namespace C_GUI.Views
             {
                 ImageSize = new System.Drawing.Size(75, 75)
             };
-            img.Images.Add(Image.FromFile("O:\\Git\\NahidaShoes\\C_GUI\\Resources\\calendarDark.png"));
+            foreach (B_BUS.View_Models.ChiTietGiayView item in lstChiTietGiayView)
+            {
+                if (item.ChiTietGiay.Anh != null)
+                {
+                    img.Images.Add(item.ChiTietGiay.Id.ToString(), Image.FromStream(new MemoryStream(item.ChiTietGiay.Anh)));
+                }
+                else
+                {
+                    img.Images.Add(item.ChiTietGiay.Id.ToString(), Image.FromFile("O:\\Git\\NahidaShoes\\C_GUI\\Resources\\calendarDark.png"));
+                }
+            }
             _lsvShowSanPham.LargeImageList = img;
             foreach (B_BUS.View_Models.ChiTietGiayView item in lstChiTietGiayView)
             {
                 string[] row = { item.Giay.TenGiay, item.MauSac.TenMauSac, item.HangGiay.TenHangGiay, item.Nsx.TenNsx, item.Size.TenSize, item.ChieuCaoDeGiay.MaKichCo, item.ChiTietGiay.GiaBan.ToString(), item.ChiTietGiay.SoLuongTon.ToString(), item.ChiTietGiay.MoTa, item.ChiTietGiay.Id.ToString() };
                 ListViewItem listViewItem = new(row)
                 {
-                    ImageIndex = 0
+                    ImageKey = item.ChiTietGiay.Id.ToString()
                 };
                 _ = _lsvShowSanPham.Items.Add(listViewItem);
             }

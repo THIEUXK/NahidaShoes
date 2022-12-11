@@ -64,7 +64,7 @@
             this._rjbtnAdd = new C_GUI.RJControls.RJButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
-            this._rjtbxTimKiem = new C_GUI.RJControls.RJTextBox();
+            this.tbx_timkiem = new C_GUI.RJControls.RJTextBox();
             this._dgrvThongTinSanPham = new System.Windows.Forms.DataGridView();
             this.btn_link = new C_GUI.RJControls.RJButton();
             this.btn_save = new C_GUI.RJControls.RJButton();
@@ -109,7 +109,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 21);
+            this.groupBox1.Location = new System.Drawing.Point(11, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(981, 356);
             this.groupBox1.TabIndex = 0;
@@ -127,7 +127,7 @@
             this.btn_themtheloai.FlatAppearance.BorderSize = 0;
             this.btn_themtheloai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_themtheloai.ForeColor = System.Drawing.Color.Black;
-            this.btn_themtheloai.Location = new System.Drawing.Point(441, 274);
+            this.btn_themtheloai.Location = new System.Drawing.Point(441, 275);
             this.btn_themtheloai.Name = "btn_themtheloai";
             this.btn_themtheloai.Size = new System.Drawing.Size(162, 39);
             this.btn_themtheloai.SizeImage = new System.Drawing.Size(20, 20);
@@ -146,8 +146,8 @@
             this._rtbxMota.BorderSize = 2;
             this._rtbxMota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rtbxMota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rtbxMota.Location = new System.Drawing.Point(692, 235);
-            this._rtbxMota.Margin = new System.Windows.Forms.Padding(4);
+            this._rtbxMota.Location = new System.Drawing.Point(693, 235);
+            this._rtbxMota.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this._rtbxMota.MaxLength = 20;
             this._rtbxMota.Multiline = false;
             this._rtbxMota.Name = "_rtbxMota";
@@ -273,10 +273,10 @@
             this.cmb_mausac.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cmb_mausac.ListTextColor = System.Drawing.Color.DimGray;
             this.cmb_mausac.Location = new System.Drawing.Point(178, 237);
-            this.cmb_mausac.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmb_mausac.MinimumSize = new System.Drawing.Size(200, 29);
             this.cmb_mausac.Name = "cmb_mausac";
             this.cmb_mausac.Padding = new System.Windows.Forms.Padding(1);
-            this.cmb_mausac.Size = new System.Drawing.Size(215, 33);
+            this.cmb_mausac.Size = new System.Drawing.Size(215, 44);
             this.cmb_mausac.TabIndex = 27;
             this.cmb_mausac.Texts = "";
             // 
@@ -292,10 +292,10 @@
             this.cmb_theloai.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cmb_theloai.ListTextColor = System.Drawing.Color.DimGray;
             this.cmb_theloai.Location = new System.Drawing.Point(178, 285);
-            this.cmb_theloai.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmb_theloai.MinimumSize = new System.Drawing.Size(200, 29);
             this.cmb_theloai.Name = "cmb_theloai";
             this.cmb_theloai.Padding = new System.Windows.Forms.Padding(1);
-            this.cmb_theloai.Size = new System.Drawing.Size(215, 33);
+            this.cmb_theloai.Size = new System.Drawing.Size(215, 44);
             this.cmb_theloai.TabIndex = 26;
             this.cmb_theloai.Texts = "";
             // 
@@ -303,7 +303,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(7, 290);
+            this.label10.Location = new System.Drawing.Point(7, 291);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 23);
             this.label10.TabIndex = 25;
@@ -328,8 +328,8 @@
             this._rjtbxSoLuongTon.BorderSize = 2;
             this._rjtbxSoLuongTon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rjtbxSoLuongTon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxSoLuongTon.Location = new System.Drawing.Point(692, 133);
-            this._rjtbxSoLuongTon.Margin = new System.Windows.Forms.Padding(4);
+            this._rjtbxSoLuongTon.Location = new System.Drawing.Point(693, 133);
+            this._rjtbxSoLuongTon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this._rjtbxSoLuongTon.MaxLength = 20;
             this._rjtbxSoLuongTon.Multiline = false;
             this._rjtbxSoLuongTon.Name = "_rjtbxSoLuongTon";
@@ -351,8 +351,8 @@
             this._rjtbxGiaBan.BorderSize = 2;
             this._rjtbxGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rjtbxGiaBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxGiaBan.Location = new System.Drawing.Point(692, 83);
-            this._rjtbxGiaBan.Margin = new System.Windows.Forms.Padding(4);
+            this._rjtbxGiaBan.Location = new System.Drawing.Point(693, 83);
+            this._rjtbxGiaBan.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this._rjtbxGiaBan.MaxLength = 20;
             this._rjtbxGiaBan.Multiline = false;
             this._rjtbxGiaBan.Name = "_rjtbxGiaBan";
@@ -374,8 +374,8 @@
             this._rjtbxGiaNhap.BorderSize = 2;
             this._rjtbxGiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._rjtbxGiaNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxGiaNhap.Location = new System.Drawing.Point(692, 33);
-            this._rjtbxGiaNhap.Margin = new System.Windows.Forms.Padding(4);
+            this._rjtbxGiaNhap.Location = new System.Drawing.Point(693, 33);
+            this._rjtbxGiaNhap.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this._rjtbxGiaNhap.MaxLength = 20;
             this._rjtbxGiaNhap.Multiline = false;
             this._rjtbxGiaNhap.Name = "_rjtbxGiaNhap";
@@ -401,10 +401,10 @@
             this._rjcmbCCDeGiay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbCCDeGiay.ListTextColor = System.Drawing.Color.DimGray;
             this._rjcmbCCDeGiay.Location = new System.Drawing.Point(178, 189);
-            this._rjcmbCCDeGiay.MinimumSize = new System.Drawing.Size(200, 30);
+            this._rjcmbCCDeGiay.MinimumSize = new System.Drawing.Size(200, 29);
             this._rjcmbCCDeGiay.Name = "_rjcmbCCDeGiay";
             this._rjcmbCCDeGiay.Padding = new System.Windows.Forms.Padding(1);
-            this._rjcmbCCDeGiay.Size = new System.Drawing.Size(215, 33);
+            this._rjcmbCCDeGiay.Size = new System.Drawing.Size(215, 44);
             this._rjcmbCCDeGiay.TabIndex = 12;
             this._rjcmbCCDeGiay.Texts = "";
             // 
@@ -420,10 +420,10 @@
             this._rjcmbHangGiay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbHangGiay.ListTextColor = System.Drawing.Color.DimGray;
             this._rjcmbHangGiay.Location = new System.Drawing.Point(178, 141);
-            this._rjcmbHangGiay.MinimumSize = new System.Drawing.Size(200, 30);
+            this._rjcmbHangGiay.MinimumSize = new System.Drawing.Size(200, 29);
             this._rjcmbHangGiay.Name = "_rjcmbHangGiay";
             this._rjcmbHangGiay.Padding = new System.Windows.Forms.Padding(1);
-            this._rjcmbHangGiay.Size = new System.Drawing.Size(215, 33);
+            this._rjcmbHangGiay.Size = new System.Drawing.Size(215, 44);
             this._rjcmbHangGiay.TabIndex = 11;
             this._rjcmbHangGiay.Texts = "";
             // 
@@ -439,10 +439,10 @@
             this._rjcmbSize.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbSize.ListTextColor = System.Drawing.Color.DimGray;
             this._rjcmbSize.Location = new System.Drawing.Point(178, 93);
-            this._rjcmbSize.MinimumSize = new System.Drawing.Size(200, 30);
+            this._rjcmbSize.MinimumSize = new System.Drawing.Size(200, 29);
             this._rjcmbSize.Name = "_rjcmbSize";
             this._rjcmbSize.Padding = new System.Windows.Forms.Padding(1);
-            this._rjcmbSize.Size = new System.Drawing.Size(215, 33);
+            this._rjcmbSize.Size = new System.Drawing.Size(215, 44);
             this._rjcmbSize.TabIndex = 10;
             this._rjcmbSize.Texts = "";
             // 
@@ -458,10 +458,10 @@
             this._rjcmbNSX.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbNSX.ListTextColor = System.Drawing.Color.DimGray;
             this._rjcmbNSX.Location = new System.Drawing.Point(178, 45);
-            this._rjcmbNSX.MinimumSize = new System.Drawing.Size(200, 30);
+            this._rjcmbNSX.MinimumSize = new System.Drawing.Size(200, 29);
             this._rjcmbNSX.Name = "_rjcmbNSX";
             this._rjcmbNSX.Padding = new System.Windows.Forms.Padding(1);
-            this._rjcmbNSX.Size = new System.Drawing.Size(215, 33);
+            this._rjcmbNSX.Size = new System.Drawing.Size(215, 44);
             this._rjcmbNSX.TabIndex = 9;
             this._rjcmbNSX.Texts = "";
             // 
@@ -476,11 +476,11 @@
             this._rjcmbTenGiay.IconColor = System.Drawing.Color.MediumSlateBlue;
             this._rjcmbTenGiay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this._rjcmbTenGiay.ListTextColor = System.Drawing.Color.DimGray;
-            this._rjcmbTenGiay.Location = new System.Drawing.Point(692, 183);
-            this._rjcmbTenGiay.MinimumSize = new System.Drawing.Size(200, 30);
+            this._rjcmbTenGiay.Location = new System.Drawing.Point(693, 183);
+            this._rjcmbTenGiay.MinimumSize = new System.Drawing.Size(200, 29);
             this._rjcmbTenGiay.Name = "_rjcmbTenGiay";
             this._rjcmbTenGiay.Padding = new System.Windows.Forms.Padding(1);
-            this._rjcmbTenGiay.Size = new System.Drawing.Size(215, 33);
+            this._rjcmbTenGiay.Size = new System.Drawing.Size(215, 44);
             this._rjcmbTenGiay.TabIndex = 8;
             this._rjcmbTenGiay.Texts = "";
             // 
@@ -538,7 +538,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(7, 94);
+            this.label3.Location = new System.Drawing.Point(7, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 23);
             this.label3.TabIndex = 2;
@@ -558,7 +558,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(521, 186);
+            this.label1.Location = new System.Drawing.Point(521, 187);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 0;
@@ -627,7 +627,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this._rjtbxTimKiem);
+            this.groupBox2.Controls.Add(this.tbx_timkiem);
             this.groupBox2.Controls.Add(this._dgrvThongTinSanPham);
             this.groupBox2.Location = new System.Drawing.Point(19, 408);
             this.groupBox2.Name = "groupBox2";
@@ -646,34 +646,34 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "Tìm Kiếm";
             // 
-            // _rjtbxTimKiem
+            // tbx_timkiem
             // 
-            this._rjtbxTimKiem.BackColor = System.Drawing.SystemColors.Window;
-            this._rjtbxTimKiem.BorderColor = System.Drawing.Color.Black;
-            this._rjtbxTimKiem.BorderFocusColor = System.Drawing.Color.Red;
-            this._rjtbxTimKiem.BorderRadius = 15;
-            this._rjtbxTimKiem.BorderSize = 2;
-            this._rjtbxTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._rjtbxTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._rjtbxTimKiem.Location = new System.Drawing.Point(155, 35);
-            this._rjtbxTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this._rjtbxTimKiem.MaxLength = 20;
-            this._rjtbxTimKiem.Multiline = false;
-            this._rjtbxTimKiem.Name = "_rjtbxTimKiem";
-            this._rjtbxTimKiem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this._rjtbxTimKiem.PasswordChar = false;
-            this._rjtbxTimKiem.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this._rjtbxTimKiem.PlaceholderText = "";
-            this._rjtbxTimKiem.Size = new System.Drawing.Size(312, 35);
-            this._rjtbxTimKiem.TabIndex = 1;
-            this._rjtbxTimKiem.Texts = "";
-            this._rjtbxTimKiem.UnderlinedStyle = false;
-            this._rjtbxTimKiem._TextChanged += new System.EventHandler(this.rjTextBox1__TextChanged);
+            this.tbx_timkiem.BackColor = System.Drawing.SystemColors.Window;
+            this.tbx_timkiem.BorderColor = System.Drawing.Color.Black;
+            this.tbx_timkiem.BorderFocusColor = System.Drawing.Color.Red;
+            this.tbx_timkiem.BorderRadius = 15;
+            this.tbx_timkiem.BorderSize = 2;
+            this.tbx_timkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbx_timkiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbx_timkiem.Location = new System.Drawing.Point(155, 35);
+            this.tbx_timkiem.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tbx_timkiem.MaxLength = 20;
+            this.tbx_timkiem.Multiline = false;
+            this.tbx_timkiem.Name = "tbx_timkiem";
+            this.tbx_timkiem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbx_timkiem.PasswordChar = false;
+            this.tbx_timkiem.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbx_timkiem.PlaceholderText = "";
+            this.tbx_timkiem.Size = new System.Drawing.Size(312, 35);
+            this.tbx_timkiem.TabIndex = 1;
+            this.tbx_timkiem.Texts = "";
+            this.tbx_timkiem.UnderlinedStyle = false;
+            this.tbx_timkiem._TextChanged += new System.EventHandler(this.btn_export_Click);
             // 
             // _dgrvThongTinSanPham
             // 
             this._dgrvThongTinSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._dgrvThongTinSanPham.Location = new System.Drawing.Point(18, 86);
+            this._dgrvThongTinSanPham.Location = new System.Drawing.Point(18, 85);
             this._dgrvThongTinSanPham.Name = "_dgrvThongTinSanPham";
             this._dgrvThongTinSanPham.RowHeadersWidth = 51;
             this._dgrvThongTinSanPham.RowTemplate.Height = 29;
@@ -743,6 +743,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::C_GUI.Properties.Resources.ch__m_c;
             this.pictureBox1.Location = new System.Drawing.Point(999, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(277, 284);
@@ -751,7 +752,7 @@
             // 
             // btn_linkanh
             // 
-            this.btn_linkanh.Location = new System.Drawing.Point(1004, 311);
+            this.btn_linkanh.Location = new System.Drawing.Point(1003, 311);
             this.btn_linkanh.Name = "btn_linkanh";
             this.btn_linkanh.Size = new System.Drawing.Size(94, 29);
             this.btn_linkanh.TabIndex = 29;
@@ -763,7 +764,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 750);
+            this.ClientSize = new System.Drawing.Size(1445, 749);
             this.Controls.Add(this.btn_linkanh);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_export);
@@ -809,7 +810,7 @@
         private Label label1;
         private GroupBox groupBox2;
         private Label label11;
-        private RJControls.RJTextBox _rjtbxTimKiem;
+        private RJControls.RJTextBox tbx_timkiem;
         private DataGridView _dgrvThongTinSanPham;
         private RJControls.RJButton _rjbtnRemove;
         private RJControls.RJButton _rjbtnEdit;

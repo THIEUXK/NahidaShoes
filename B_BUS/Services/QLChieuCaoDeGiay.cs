@@ -37,15 +37,14 @@ namespace B_BUS.Services
 
         public Guid IdChieuCaoDeGiay(ChieuCaoDeGiay obj)
         {
-            ChieuCaoDeGiay x = new ChieuCaoDeGiay()
+            ChieuCaoDeGiay x = new()
             {
                 Id = Guid.NewGuid(),
                 MaKichCo = obj.MaKichCo,
                 KichCo = obj.KichCo,
                 TrangThai = obj.TrangThai
             };
-            if (igChieuCaoDeGiay.Add(x)) return x.Id;
-            else return Guid.Empty;
+            return igChieuCaoDeGiay.Add(x) ? x.Id : Guid.Empty;
         }
 
         public ChieuCaoDeGiay? GetByMa(string? ma)

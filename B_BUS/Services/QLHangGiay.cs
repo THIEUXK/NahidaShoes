@@ -40,15 +40,14 @@ namespace B_BUS.Services
 
         public Guid IdHangGiay(HangGiay obj)
         {
-            HangGiay x = new HangGiay()
+            HangGiay x = new()
             {
                 Id = Guid.NewGuid(),
                 MaHangGiay = obj.MaHangGiay,
                 TenHangGiay = obj.TenHangGiay,
                 TrangThai = obj.TrangThai
             };
-            if (_iHangGiay.Add(x)) return x.Id;
-            else return Guid.Empty;
+            return _iHangGiay.Add(x) ? x.Id : Guid.Empty;
         }
 
         public HangGiay? GetByMa(string? ma)

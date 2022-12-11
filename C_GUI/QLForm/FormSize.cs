@@ -33,7 +33,7 @@ namespace C_GUI.QLForm
             foreach (SizeView a in sizeViews)
             {
 
-                _ = dgrid_showSize.Rows.Add(stt++,a.Size.Id, a.Size.MaSize, a.Size.TenSize,a.Size.SoSize, a.Size.TrangThai == 1 ? "hoạt động" : "Không hoạt động");
+                _ = dgrid_showSize.Rows.Add(stt++, a.Size.Id, a.Size.MaSize, a.Size.TenSize, a.Size.SoSize, a.Size.TrangThai == 1 ? "hoạt động" : "Không hoạt động");
             }
 
         }
@@ -44,7 +44,7 @@ namespace C_GUI.QLForm
             {
                 MaSize = txt_ma.Texts,
                 TenSize = txt_ten.Texts,
-                SoSize =int.Parse(txt_sosize.Texts),
+                SoSize = int.Parse(txt_sosize.Texts),
                 TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0,
             };
         }
@@ -64,18 +64,21 @@ namespace C_GUI.QLForm
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm sửa", "Thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                bool thongBao = _IQLSize.Update(new A_DAL.Entities.Size() { Id = _ID,
+                bool thongBao = _IQLSize.Update(new A_DAL.Entities.Size()
+                {
+                    Id = _ID,
                     MaSize = txt_ma.Texts,
                     TenSize = txt_ten.Texts,
                     SoSize = int.Parse(txt_sosize.Texts),
-                    TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0});
+                    TrangThai = rbtn_hoatdong.Checked == true ? 1 : 0
+                });
                 if (thongBao)
                 {
                     _ = MessageBox.Show("Sửa thành công");
                     LoadData(_IQLSize.GetAllView());
                 }
             }
-            
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -90,21 +93,21 @@ namespace C_GUI.QLForm
                     LoadData(_IQLSize.GetAllView());
                 }
             }
-            
+
         }
 
-       
+
 
         private void txt_timkiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_IQLSize.GetAllView().Where(c => (c.Size.TenSize.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Size.MaSize.ToLower().Contains(txt_timkiem.Texts.ToLower()))).ToList());
+            LoadData(_IQLSize.GetAllView().Where(c => c.Size.TenSize.ToLower().Contains(txt_timkiem.Texts.ToLower()) || c.Size.MaSize.ToLower().Contains(txt_timkiem.Texts.ToLower())).ToList());
         }
 
         private void dgrid_showSize_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
             _ID = Guid.Parse(dgrid_showSize.Rows[index].Cells[1].Value.ToString());
-            txt_ma.Texts =dgrid_showSize.Rows[index].Cells[2].Value.ToString();
+            txt_ma.Texts = dgrid_showSize.Rows[index].Cells[2].Value.ToString();
             txt_ten.Texts = dgrid_showSize.Rows[index].Cells[3].Value.ToString();
             txt_sosize.Texts = dgrid_showSize.Rows[index].Cells[4].Value.ToString();
             if (dgrid_showSize.Rows[index].Cells[4].Value.ToString() == "hoat dong")
@@ -117,6 +120,6 @@ namespace C_GUI.QLForm
             }
         }
     }
-    }
+}
 
 

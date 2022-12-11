@@ -67,7 +67,7 @@ namespace C_GUI.QLForm
                 _ = _IQlMauSac.Add(GetvaluaContro());
                 LoadData(_IQlMauSac.GetAllView());
             }
-           
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace C_GUI.QLForm
                     LoadData(_IQlMauSac.GetAllView());
                 }
             }
-           
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -97,12 +97,12 @@ namespace C_GUI.QLForm
                     LoadData(_IQlMauSac.GetAllView());
                 }
             }
-           
+
         }
 
         private void _tbxTimKiem__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_IQlMauSac.GetAllView().Where(c => (c.MauSac.TenMauSac.ToLower().Contains(_tbxTimKiem.Texts.ToLower()) || c.MauSac.MaMauSac.ToLower().Contains(_tbxTimKiem.Texts.ToLower()))).ToList());
+            LoadData(_IQlMauSac.GetAllView().Where(c => c.MauSac.TenMauSac.ToLower().Contains(_tbxTimKiem.Texts.ToLower()) || c.MauSac.MaMauSac.ToLower().Contains(_tbxTimKiem.Texts.ToLower())).ToList());
         }
     }
 }

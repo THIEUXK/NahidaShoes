@@ -19,7 +19,7 @@ namespace B_BUS.Services
             _igchitietsale = new GenericRepository<ChiTietSale>();
             _igsale = new GenericRepository<Sale>();
             igchiTietGiay = new GenericRepository<ChiTietGiay>();
-            iGiay=new GenericRepository<Giay>();
+            iGiay = new GenericRepository<Giay>();
         }
         public bool Add(ChiTietSale obj)
         {

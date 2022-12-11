@@ -1,11 +1,11 @@
 ﻿using A_DAL.Entities;
 using B_BUS.IServices;
 using B_BUS.Services;
+using B_BUS.View_Models;
 using C_GUI.QLForm;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Text.RegularExpressions;
-using B_BUS.View_Models;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -76,7 +76,7 @@ namespace C_GUI.Views
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
-            LoadData(_ChiTietGiay.GetAllView().Where(c => c.Giay.TenGiay.ToLower().Contains(tbx_timkiem.Texts.ToLower()) ||c.Size.TenSize.ToLower().Contains(tbx_timkiem.Texts.ToLower())|| c.Nsx.TenNsx.ToLower().Contains(tbx_timkiem.Texts.ToLower())|| c.MauSac.TenMauSac.ToLower().Contains(tbx_timkiem.Texts.ToLower())|| c.HangGiay.TenHangGiay.ToLower().Contains(tbx_timkiem.Texts.ToLower())).ToList());
+            LoadData(_ChiTietGiay.GetAllView().Where(c => c.Giay.TenGiay.ToLower().Contains(tbx_timkiem.Texts.ToLower()) || c.Size.TenSize.ToLower().Contains(tbx_timkiem.Texts.ToLower()) || c.Nsx.TenNsx.ToLower().Contains(tbx_timkiem.Texts.ToLower()) || c.MauSac.TenMauSac.ToLower().Contains(tbx_timkiem.Texts.ToLower()) || c.HangGiay.TenHangGiay.ToLower().Contains(tbx_timkiem.Texts.ToLower())).ToList());
         }
 
         public bool check()
@@ -200,7 +200,7 @@ namespace C_GUI.Views
                 return false;
             }
 
-           
+
             return true;
         }
         public void LoadComBo()
@@ -368,9 +368,9 @@ namespace C_GUI.Views
             A_DAL.Entities.Size? size = _Size.GetAll().FirstOrDefault(c => c.TenSize == _rjcmbSize.Texts);
             Giay? giay = _Giay.GetAll().FirstOrDefault(c => c.TenGiay == _rjcmbTenGiay.Texts);
             ChieuCaoDeGiay? ccDeGiay = _ChieuCaoDeGiay.GetAll().FirstOrDefault(c => c.KichCo == int.Parse(_rjcmbCCDeGiay.Texts));
-            if (_ChiTietGiay.CheckMa(size.Id,nsx.Id,mausac.Id,hanggiay.Id,giay.Id,ccDeGiay.Id) == false)
+            if (_ChiTietGiay.CheckMa(size.Id, nsx.Id, mausac.Id, hanggiay.Id, giay.Id, ccDeGiay.Id) == false)
             {
-                MessageBox.Show("Mã Trùng");
+                _ = MessageBox.Show("Mã Trùng");
                 return;
             }
             bool thongbao = _ChiTietGiay.Add(new ChiTietGiay()
@@ -841,16 +841,24 @@ namespace C_GUI.Views
         {
             TheLoai? idtheloais = _theloai.GetAll().FirstOrDefault(c => c.MaTheLoai == cmb_theloai.Texts);
             Guid Idchitietgiay = Idwhenclick;
-            if(idtheloais== null)
+            if (idtheloais == null)
             {
                 return;
-            }    
+            }
             Guid idtheloai = idtheloais.Id;
-            _ = _Ichotiett.Add(new ChiTietTheLoai()
+            try
             {
-                IdChiTietGiay = Idwhenclick,
-                IdTheLoai = idtheloai,
-            });
+                _ = _Ichotiett.Add(new ChiTietTheLoai()
+                {
+                    IdChiTietGiay = Idwhenclick,
+                    IdTheLoai = idtheloai,
+                });
+                _ = MessageBox.Show("Đã thêm");
+            }
+            catch (Exception)
+            {
+            }
+
         }
 
         private void btn_export_Click(object sender, EventArgs e)
@@ -942,6 +950,6 @@ namespace C_GUI.Views
             return xByte;
         }
 
-      
+
     }
 }

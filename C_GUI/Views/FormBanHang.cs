@@ -410,59 +410,84 @@ namespace C_GUI.Views
 
         private void _lsvShowSanPham_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            // Determine if clicked column is already the column that is being sorted.
-            if (e.Column == lvwColumnSorter.SortColumn)
+            try
             {
-                // Reverse the current sort direction for this column.
-                lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
-            }
-            else
-            {
-                // Set the column number that is to be sorted; default to ascending.
-                lvwColumnSorter.SortColumn = e.Column;
-                lvwColumnSorter.Order = SortOrder.Ascending;
-            }
+                // Determine if clicked column is already the column that is being sorted.
+                if (e.Column == lvwColumnSorter.SortColumn)
+                {
+                    // Reverse the current sort direction for this column.
+                    lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+                }
+                else
+                {
+                    // Set the column number that is to be sorted; default to ascending.
+                    lvwColumnSorter.SortColumn = e.Column;
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
 
-            // Perform the sort with these new sort options.
-            _lsvShowSanPham.Sort();
+                // Perform the sort with these new sort options.
+                _lsvShowSanPham.Sort();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void _lsvGioHang_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            // Determine if clicked column is already the column that is being sorted.
-            if (e.Column == lvwColumnSorter.SortColumn)
+            try
             {
-                // Reverse the current sort direction for this column.
-                lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
-            }
-            else
-            {
-                // Set the column number that is to be sorted; default to ascending.
-                lvwColumnSorter.SortColumn = e.Column;
-                lvwColumnSorter.Order = SortOrder.Ascending;
-            }
+                // Determine if clicked column is already the column that is being sorted.
+                if (e.Column == lvwColumnSorter.SortColumn)
+                {
+                    // Reverse the current sort direction for this column.
+                    lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+                }
+                else
+                {
+                    // Set the column number that is to be sorted; default to ascending.
+                    lvwColumnSorter.SortColumn = e.Column;
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
 
-            // Perform the sort with these new sort options.
-            _lsvGioHang.Sort();
+                // Perform the sort with these new sort options.
+                _lsvGioHang.Sort();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void _lsvHoaDon_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            // Determine if clicked column is already the column that is being sorted.
-            if (e.Column == lvwColumnSorter.SortColumn)
+            try
             {
-                // Reverse the current sort direction for this column.
-                lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+                // Determine if clicked column is already the column that is being sorted.
+                if (e.Column == lvwColumnSorter.SortColumn)
+                {
+                    // Reverse the current sort direction for this column.
+                    lvwColumnSorter.Order = lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+                }
+                else
+                {
+                    // Set the column number that is to be sorted; default to ascending.
+                    lvwColumnSorter.SortColumn = e.Column;
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+
+                // Perform the sort with these new sort options.
+                _lsvHoaDon.Sort();
             }
-            else
+            catch (Exception)
             {
-                // Set the column number that is to be sorted; default to ascending.
-                lvwColumnSorter.SortColumn = e.Column;
-                lvwColumnSorter.Order = SortOrder.Ascending;
+
+                throw;
             }
 
-            // Perform the sort with these new sort options.
-            _lsvHoaDon.Sort();
         }
 
         private void _btnShipHang_Click(object sender, EventArgs e)
@@ -778,6 +803,11 @@ namespace C_GUI.Views
             {
                 ChiTietGiay? chiTietGiay = _qlChiTietGiay.GetAll().FirstOrDefault(c => c.Id == hoaDonChiTiet.IdChiTietGiay);
                 chiTietGiay.SoLuongTon += hoaDonChiTiet.SoLuong - Convert.ToInt32(_tbxSoLuong.Texts.Trim());
+                if (chiTietGiay.SoLuongTon < 0)
+                {
+                    return;
+                }
+
                 _ = _qlChiTietGiay.Update(chiTietGiay);
                 hoaDonChiTiet.DonGia = Convert.ToSingle(_tbxDonGia.Texts.Trim());
                 hoaDonChiTiet.SoLuong = Convert.ToInt32(_tbxSoLuong.Texts.Trim());

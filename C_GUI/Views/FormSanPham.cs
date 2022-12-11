@@ -841,6 +841,10 @@ namespace C_GUI.Views
         {
             TheLoai? idtheloais = _theloai.GetAll().FirstOrDefault(c => c.MaTheLoai == cmb_theloai.Texts);
             Guid Idchitietgiay = Idwhenclick;
+            if(idtheloais== null)
+            {
+                return;
+            }    
             Guid idtheloai = idtheloais.Id;
             _ = _Ichotiett.Add(new ChiTietTheLoai()
             {

@@ -314,7 +314,7 @@ namespace C_GUI.Views
                                     soTienGiam += sale.SoTiemGiamGia;
                                 }
                             }
-                            float donGia = (chiTietGiay.GiaBan * (1 - phanTramGiam)) - soTienGiam;
+                            float donGia = (chiTietGiay.GiaBan * (100 - phanTramGiam)/100) - soTienGiam;
                             if (donGia < 0)
                             {
                                 donGia = 0;
